@@ -10,6 +10,3 @@ __pycache__/
 # raw activation captures from run 1/2: 380 MB, superseded by the stage-5 audit,
 # and over GitHub's per-file limit. Regenerate with run_registers.py if needed.
 results_*/out/acts_*.npy
-
-# write-ups and drafts live on the `docs` branch
-docs/
