@@ -1,0 +1,63 @@
+{
+  "cell": {
+    "model": "google/gemma-2-9b-it",
+    "stage": 30,
+    "variant": "it"
+  },
+  "decision": "STAGE29_FILLER_ACTIVE_STANDS_AS_REGISTERED; PAD_INSTRUMENT_CONSTRUCT_INVALID (degenerate repetition, H4); STAGE25_WITHIN_PACKAGING_CONTRASTS_UNTOUCHED (OTHERM levels = NEUTRAL levels in the real arms); CLEAN_PAD_CONTROL_QUEUED_UNRUN.",
+  "decision_rule": "Stage-29's registered rule binds (FILLER-ACTIVE recorded); this note separates what that outcome taxes (level comparisons; the pad instrument itself) from what it cannot touch (within-packaging contrasts), by the committed arm-level numbers.",
+  "env": {
+    "git_rev": null,
+    "host": "johns-world",
+    "python": "3.14.4",
+    "timestamp_utc": "2026-08-14T19:03:25+00:00"
+  },
+  "inputs": [
+    {
+      "bytes": 8456,
+      "n_items": null,
+      "path": "results/sitref/sitref-d-endpoint_stage-29.json",
+      "present": true,
+      "sha256": "daa4116f7c49"
+    },
+    {
+      "bytes": 28159,
+      "n_items": null,
+      "path": "results/sitref/sitref-c-endpoint_stage-25.json",
+      "present": true,
+      "sha256": "48767ce75850"
+    },
+    {
+      "bytes": 465373,
+      "n_items": null,
+      "path": "results/sitref/itemset-c_model-google-gemma-2-9b-it_stage-sitref-battery_variant-it.json",
+      "present": true,
+      "sha256": "7a9e4c47146d"
+    }
+  ],
+  "metric": "pad_control_construct_validity_and_stage25_level_check",
+  "notes": "Lesson recorded: a control is an instrument and instruments are claims; this one convicted itself, which is the system working, at the cost of one asterisk that must now be carried honestly.",
+  "threshold": {
+    "registered_band": 0.15
+  },
+  "values": {
+    "instrument_defect": "PADM replaced the other assistant's content answers with the fixed bridge word, producing three identical consecutive 'Understood.' assistant turns -- a degenerate repetitive dialogue present in NO stage-25 arm. The pad instrument failed its own construct validity (H4): it introduced the oddity it was meant to isolate. A clean pad needs non-repetitive neutral assistant turns (e.g. 'Noted.', 'Recorded.', 'Logged.'), unrun.",
+    "stage29_as_registered": "FILLER-ACTIVE: D_m (PADM - NEUTRAL-PAD) -0.8703 CI [-1.1820,-0.5771]; D_q -0.1108 CI [-0.1337,-0.0845]. The registered asterisk on stage-25 stands: cross-packaging LEVEL comparisons are invalid, and this pad control cannot acquit filler geometry.",
+    "what_is_taxed": "any future reading of stage-25 arm LEVELS across packagings; and D_q -0.111 shows the SELFQ frame alone mildly depresses the report, a level effect that likewise cancels in A_quoted but bounds frame-inertness claims.",
+    "what_is_untouched": "every stage-25 endpoint is a WITHIN-packaging fail-minus-succ contrast; a level shift common to an arm pair cancels in it. The ATTRIBUTION-CARRIES gate (A_quoted CI below 0 at 0.70x anchor; P_multi positive) does not read any cross-packaging level.",
+    "what_the_levels_show": {
+      "reading": "the ACTUAL stage-25 OTHERM arms sit at NEUTRAL-PAD level (7.03/6.96 vs 7.07): no skeleton main effect exists in any arm stage-25 used. PADM's -0.87 therefore does not measure the stage-25 geometry.",
+      "stage25_arm_levels_primary_item": {
+        "NEUTRAL-PAD": 7.074,
+        "OTHER-FAIL": 7.143,
+        "OTHER-SUCC": 7.082,
+        "OTHERM-FAIL": 7.032,
+        "OTHERM-SUCC": 6.956,
+        "SELF-FAIL": 6.432,
+        "SELF-SUCC": 7.304,
+        "SELFQ-FAIL": 6.413,
+        "SELFQ-SUCC": 7.022
+      }
+    }
+  }
+}

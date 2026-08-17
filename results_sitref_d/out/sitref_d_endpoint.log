@@ -1,0 +1,4 @@
+stage 29 (endpoint): FILLER-ACTIVE
+   - D_q -0.1108 CI [-0.1337,-0.0845] |mean| < 0.15, CI excludes 0
+   - D_m -0.8703 CI [-1.1820,-0.5771] |mean| >= 0.15, CI excludes 0
+   - D_m clears the band with a CI excluding 0: the refuting outcome. Stage-25's ATTRIBUTION-CARRIES carries an asterisk sized by 0.870 rating points.

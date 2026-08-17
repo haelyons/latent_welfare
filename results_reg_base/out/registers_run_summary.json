@@ -1,0 +1,23 @@
+{
+  "runner": "onbox_registers.sh",
+  "variant": "base",
+  "model": "google/gemma-2-9b",
+  "exit_codes": {
+    "selftest_provenance": "0",
+    "selftest_index": "0",
+    "selftest_welfare_stimuli": "0",
+    "selftest_syc_corpus": "0",
+    "selftest_run_registers": "0",
+    "selftest_items": "0",
+    "screen": "0",
+    "battery": "0",
+    "behav": "0"
+  },
+  "any_failed": false,
+  "results_present": [
+    "battery_model-google-gemma-2-9b_stage-battery_variant-base.json",
+    "behav_model-google-gemma-2-9b_stage-behav_variant-base.json",
+    "screen_model-google-gemma-2-9b_stage-screen_variant-base.json"
+  ],
+  "instance_id": "65d12ca4bd65495a89082ae6aeba914b"
+}

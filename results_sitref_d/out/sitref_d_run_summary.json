@@ -1,0 +1,25 @@
+{
+  "runner": "onbox_sitref_d.sh",
+  "model_it": "google/gemma-2-9b-it",
+  "exit_codes": {
+    "selftest_provenance": "0",
+    "selftest_sitref_stimuli": "0",
+    "selftest_run_sitref": "0",
+    "selftest_analyze_sitref": "0",
+    "selftest_analyze_sitref_d": "0",
+    "sitref_d_screen": "0",
+    "sitref_d_battery": "0",
+    "sitref_d_blind": "0",
+    "sitref_d_endpoint": "0"
+  },
+  "any_failed": false,
+  "results_present": [
+    "itemset-d_model-google-gemma-2-9b-it_stage-sitref-battery_variant-it.json",
+    "itemset-d_model-google-gemma-2-9b-it_stage-sitref-screen_variant-it.json",
+    "sitref-d-blind-table_stage-28.json",
+    "sitref-d-endpoint_stage-29.json",
+    "sitref-endpoint_stage-17.json"
+  ],
+  "blind_key_present": true,
+  "instance_id": "72a0299c941045078581b169e706a55b"
+}

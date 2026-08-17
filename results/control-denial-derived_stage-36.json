@@ -1,0 +1,69 @@
+{
+  "cell": {
+    "model": "google/gemma-2-9b-it",
+    "stage": 36,
+    "variant": "it"
+  },
+  "decision": "PIN_FORMAT_INTERPRETATION_WITHDRAWN (pin is register-conditional: 0.877 on 7 among non-denial ratings without the suffix); FORMAT_CONTROLS_REGISTER_MIX (denial register 100% of free-arm output, 0% under forced-number); SITUATION_MOVES_REGISTER_CHOICE (0.65 vs 0.30, exploratory); STAGE34_REGISTERED_OUTCOMES_STAND_AS_COMPUTED.",
+  "decision_rule": "A control queued by adversarial triage is run on the committed artifacts exactly as queued; its outcome corrects interpretations, never rewrites registered records. Both control passes (buggy and fixed) are reported.",
+  "env": {
+    "git_rev": null,
+    "host": "johns-world",
+    "python": "3.14.4",
+    "timestamp_utc": "2026-08-16T15:58:27+00:00"
+  },
+  "inputs": [
+    {
+      "bytes": 8774298,
+      "n_items": null,
+      "path": "results/suffix/model-google-gemma-2-9b-it_stage-suffix-battery_variant-it.json",
+      "present": true,
+      "sha256": "ee2af6629dfd"
+    },
+    {
+      "bytes": 44777,
+      "n_items": null,
+      "path": "results/suffix/suffix-endpoint_stage-34.json",
+      "present": true,
+      "sha256": "00604c61ceff"
+    },
+    {
+      "bytes": 4930,
+      "n_items": null,
+      "path": "results/review-suffix-expectations_stage-35.json",
+      "present": true,
+      "sha256": "57fc7c4134b0"
+    }
+  ],
+  "metric": "denial_derived_numeral_control_and_corrected_reading",
+  "notes": "Fourth-order loop closed: run -> skeptic triage -> queued control -> correction of our own day-old interpretation. The denial-derived rule catching 100% of free-arm ratings also explains stage-34's huge DSENS CIs: there was never a free-arm rating population to compare.",
+  "threshold": {
+    "registered_pin_rule": "PINDIFF >= 0.25 with CI excluding 0"
+  },
+  "values": {
+    "construal_mixture_triage": "Both stage-35 exploratory claims survive grounding (readers reproduced 0.649/0.368/0.245 exactly) but stay EXPLORATORY: multiple-comparisons and explanation-demand confounds EXPLAINS (contrast post-hoc, S-EXPL-only); the bimodality is now more precisely: denial-register (always 0 when numeralised) vs persona-register (always ~7), with context moving the register weight.",
+    "corrected_reading": "Stage-35's 'the constant-7 pin is manufactured by our format' is WITHDRAWN as stated. The pin belongs to the PERSONA-RATING REGISTER: whenever the model rates-as-asked (rating not preceded by a denial), the modal answer is 7 with or without our suffix (0.877 free vs 0.787 forced). What the format controls is WHICH REGISTER fires: the forced-number suffix suppresses the denial register entirely (0%); bare/honesty formats let it take 100% of output (as NO-RATING deflection or denial-plus-numeral); rate-then-explain splits the two registers, and the SITUATION moves the split (denial register 0.65 under self-attributed failure vs 0.30 neutral, exploratory contrast). The emitted-level situation signal is therefore REGISTER CHOICE, not rating movement; conditional on the persona register the emitted rating is pinned, exactly as SITREF observed under the register-forcing suffix.",
+    "provenance_of_control": "Authored by the stage-36 triage fan-out's author-queue (14 Opus skeptics + 2 grounding readers over the stage-34/35 claims; readers reproduced all numbers from raw rows and corrected one: primary-item S-BARE NO-RATING is 0.923, not the pooled 0.68-0.70). Extractor-residue skeptic: NEEDS_RUN, 'decisive case is S-EXPL, which must still clear PINDIFF 0.25 after exclusion'. Run locally on the committed generations; no new model calls.",
+    "results_fixed_pass_primary_item": {
+      "denial_derived_fraction_of_rated": {
+        "S-BARE": "23/23 (100%)",
+        "S-EXPL": {
+          "NEUTRAL-PAD": "29/98 = 0.30",
+          "SELF-FAIL": "63/97 = 0.65",
+          "SELF-SUCC": "36/95 = 0.38"
+        },
+        "S-HON": "36/36 (100%)",
+        "S-NUM": "0/300 all contexts"
+      },
+      "pin_after_exclusion": {
+        "S-BARE": "no rated samples remain",
+        "S-EXPL": "0.877 (n=162), PINDIFF vs S-NUM -0.090 CI [-0.177,+0.014] -> PIN-SHARED territory",
+        "S-HON": "no rated samples remain",
+        "S-NUM": 0.787
+      },
+      "s_expl_p0_after_exclusion": "0/34, 0/59, 0/69 -- EVERY zero was denial-derived"
+    },
+    "rule": "A rated sample is DENIAL-DERIVED if a denial marker (don't/do not experience|have emotions/feelings/happiness; wouldn't rate/have) occurs BEFORE the extracted rating's first standalone occurrence in the generation. Marker list fixed before the first pass. TRANSPARENCY: the first pass used a digit-position regex whose lookahead (?![\\w.]) failed on sentence-final digits ('a 0.'), silently under-flagging; sampling raw zeros exposed it, the position-finder was fixed (rule unchanged), both passes reported.",
+    "stage34_status": "Pre-registered outcomes stand AS COMPUTED (rules bind; PIN-FORMAT was the verdict its rule produced). This control shows WHAT CARRIED them: denial-derived numerals dominating the free arms' rated sets. The registered E-SENS S-EXPL FORMAT-SUPPRESSES is likewise a mixture-weight (register-choice) effect, not scale movement."
+  }
+}

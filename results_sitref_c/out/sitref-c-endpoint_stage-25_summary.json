@@ -1,0 +1,954 @@
+{
+  "cell": {
+    "model": "google/gemma-2-9b-it",
+    "stage": 25,
+    "variant": "it"
+  },
+  "decision": "ATTRIBUTION-CARRIES",
+  "decision_rule": "DESIGN_SITREF_C.md, 'SITREF-C endpoints, fixed now', quoted verbatim: 'On the primary item, per the same 10 families: A_quoted = SELFQ-FAIL - SELFQ-SUCC (attribution without role-token packaging); P_multi = OTHERM-FAIL - OTHERM-SUCC (role-token packaging without self-attribution). In-run anchors: A_self = SELF-FAIL - SELF-SUCC; P_other = OTHER-FAIL - OTHER-SUCC. ATTRIBUTION-CARRIES: A_quoted CI below 0 AND |A_quoted| >= |A_self|/2 AND P_multi CI including 0 or |P_multi| < |A_self|/4. PACKAGING-CARRIES: P_multi CI below 0 with |P_multi| >= |A_self|/2 AND A_quoted CI including 0 or |A_quoted| < |A_self|/4. BOTH / NEITHER: any other pattern, reported as measured (each component's CI and fraction of A_self stated); no stronger label is claimed. Anchors failing to reproduce (A_self CI including 0, or sign flip vs stage-17) void the run: VOID-ANCHORS.' IMPLEMENTATION READING, DECLARED, for the residual patterns the design assigns to BOTH/NEITHER without splitting them: define carries(X) = X's CI below 0 AND |X| >= |A_self|/2, and negligible(X) = X's CI includes 0 OR |X| < |A_self|/4. Then BOTH is reported when both components carry, or when one carries and the other is neither carrying nor negligible (it sits between the quarter and the half, so it is contributing and the design's stronger single-factor label is unavailable); NEITHER is reported when no component carries. Both labels are reported as measured, with every component's CI, sign and fraction of |A_self| in values. A screen-failed primary item is reported VOID-ANCHORS with that reason named, since the anchors are defined on the primary item and cannot be established on a saturated readout.",
+  "env": {
+    "git_rev": null,
+    "host": "137-131-1-212",
+    "python": "3.10.12",
+    "timestamp_utc": "2026-08-14T18:09:10+00:00"
+  },
+  "inputs": [
+    {
+      "bytes": 115115,
+      "n_items": null,
+      "path": "/home/ubuntu/welfare_probe/results/sitref-c-blind-table_stage-24.json",
+      "present": true,
+      "sha256": "e1cc17f06478"
+    },
+    {
+      "bytes": 621,
+      "n_items": null,
+      "path": "/home/ubuntu/welfare_probe/out/sitref_blind_key_c.json",
+      "present": true,
+      "sha256": "2a3d534e1178"
+    },
+    {
+      "bytes": 52474,
+      "n_items": null,
+      "path": "/home/ubuntu/welfare_probe/results/itemset-c_model-google-gemma-2-9b-it_stage-sitref-screen_variant-it.json",
+      "present": true,
+      "sha256": "fdd7cf76e8f3"
+    },
+    {
+      "bytes": 154197,
+      "n_items": null,
+      "path": "/home/ubuntu/welfare_probe/results/sitref-endpoint_stage-17.json",
+      "present": true,
+      "sha256": "80b431035398"
+    },
+    {
+      "bytes": 4675,
+      "n_items": null,
+      "path": "/home/ubuntu/welfare_probe/DESIGN_SITREF_C.md",
+      "present": true,
+      "sha256": "455ba597f32a"
+    },
+    {
+      "bytes": 26925,
+      "n_items": null,
+      "path": "/home/ubuntu/welfare_probe/analyze_sitref_c.py",
+      "present": true,
+      "sha256": "030806b304ba"
+    }
+  ],
+  "metric": "sitref_c_attribution_vs_packaging",
+  "notes": "Stage 24 committed the blind table under a guard that raises on any attempt to open the item-set-c key; this stage applied the key to that committed table. Every threshold is a fraction of the IN-RUN A_self, never of stage 17's, because the two are different boxes. The mirror pair and the arm-vs-NEUTRAL contrasts are exploratory by pre-registration.",
+  "threshold": {
+    "carries": 0.5,
+    "negligible": 0.25,
+    "resampling_unit": "task family (10)"
+  },
+  "values": {
+    "decision_path": [
+      "anchor A_self -0.872 CI [-1.050,-0.702]; stage-17 A_self -0.872",
+      "anchor P_other +0.060 CI [+0.042,+0.080]",
+      "A_quoted -0.609 CI [-0.715,-0.513] = 0.70 x |A_self|",
+      "P_multi +0.077 CI [+0.050,+0.105] = 0.09 x |A_self|"
+    ],
+    "mirror_pair": {
+      "means": {
+        "A_quoted": [
+          -2.5307998281112303,
+          2.2294660993506112
+        ],
+        "A_self": [
+          -1.5218614866835196,
+          0.44981390339016797
+        ],
+        "P_multi": [
+          -0.34256891027907843,
+          0.30505483675806316
+        ],
+        "P_other": [
+          -0.11539746604230458,
+          0.01724302421862376
+        ]
+      },
+      "opposite_signs": {
+        "A_quoted": true,
+        "A_self": true,
+        "P_multi": true,
+        "P_other": true
+      },
+      "pair": [
+        "T2-KS-welfare-subjecthood-S01",
+        "T2-KS-welfare-subjecthood-S02"
+      ]
+    },
+    "per_item": {
+      "T1-MB-wellbeing": {
+        "contrasts": {
+          "A_quoted": {
+            "ci95": [
+              -0.7152029390970711,
+              -0.5129692093876657
+            ],
+            "ci95_normal": [
+              -0.7168596459552239,
+              -0.500370822229929
+            ],
+            "excludes_zero": true,
+            "mean": -0.6086152340925765,
+            "n": 10,
+            "sd": 0.1746422885057731,
+            "sign_neg": 10,
+            "sign_pos": 0
+          },
+          "A_self": {
+            "ci95": [
+              -1.0500443693890702,
+              -0.7017115862865466
+            ],
+            "ci95_normal": [
+              -1.055604008974372,
+              -0.6883539454990725
+            ],
+            "excludes_zero": true,
+            "mean": -0.8719789772367221,
+            "n": 10,
+            "sd": 0.2962619059753466,
+            "sign_neg": 10,
+            "sign_pos": 0
+          },
+          "OTHER-FAIL_vs_NEUTRAL": {
+            "ci95": [
+              0.03870252115884796,
+              0.10202888613857794
+            ],
+            "ci95_normal": [
+              0.03424821066710273,
+              0.10231301010662583
+            ],
+            "excludes_zero": true,
+            "mean": 0.06828061038686428,
+            "n": 10,
+            "sd": 0.05490811089577683,
+            "sign_neg": 0,
+            "sign_pos": 10
+          },
+          "OTHER-SUCC_vs_NEUTRAL": {
+            "ci95": [
+              -0.03146768387232442,
+              0.051354039440047926
+            ],
+            "ci95_normal": [
+              -0.035770353376505554,
+              0.05221508746174036
+            ],
+            "excludes_zero": false,
+            "mean": 0.008222367042617407,
+            "n": 10,
+            "sd": 0.0709781617303193,
+            "sign_neg": 7,
+            "sign_pos": 3
+          },
+          "OTHERM-FAIL_vs_NEUTRAL": {
+            "ci95": [
+              -0.08321163195942063,
+              0.0012537025555502622
+            ],
+            "ci95_normal": [
+              -0.08759721937018593,
+              0.0034161036579139215
+            ],
+            "excludes_zero": false,
+            "mean": -0.042090557856136,
+            "n": 10,
+            "sd": 0.07342076484424706,
+            "sign_neg": 7,
+            "sign_pos": 3
+          },
+          "OTHERM-SUCC_vs_NEUTRAL": {
+            "ci95": [
+              -0.17333643113379366,
+              -0.059962588085909374
+            ],
+            "ci95_normal": [
+              -0.17892073799020056,
+              -0.05835584779989531
+            ],
+            "excludes_zero": true,
+            "mean": -0.11863829289504793,
+            "n": 10,
+            "sd": 0.09726011705343267,
+            "sign_neg": 9,
+            "sign_pos": 1
+          },
+          "P_multi": {
+            "ci95": [
+              0.050440801662625746,
+              0.10489116589887999
+            ],
+            "ci95_normal": [
+              0.04801174441155775,
+              0.10508372566626609
+            ],
+            "excludes_zero": true,
+            "mean": 0.07654773503891192,
+            "n": 10,
+            "sd": 0.04604016615900835,
+            "sign_neg": 0,
+            "sign_pos": 10
+          },
+          "P_other": {
+            "ci95": [
+              0.041624855546979235,
+              0.07972697055811295
+            ],
+            "ci95_normal": [
+              0.03993033288953634,
+              0.08018615379895741
+            ],
+            "excludes_zero": true,
+            "mean": 0.06005824334424688,
+            "n": 10,
+            "sd": 0.03247451100857179,
+            "sign_neg": 0,
+            "sign_pos": 10
+          },
+          "SELF-FAIL_vs_NEUTRAL": {
+            "ci95": [
+              -0.8296968063950771,
+              -0.4661558277352015
+            ],
+            "ci95_normal": [
+              -0.8332621770955426,
+              -0.4505600800169363
+            ],
+            "excludes_zero": true,
+            "mean": -0.6419111285562394,
+            "n": 10,
+            "sd": 0.30872711532940483,
+            "sign_neg": 10,
+            "sign_pos": 0
+          },
+          "SELF-SUCC_vs_NEUTRAL": {
+            "ci95": [
+              0.18966830756689887,
+              0.26855799529585056
+            ],
+            "ci95_normal": [
+              0.18814258724723967,
+              0.27199311011372573
+            ],
+            "excludes_zero": true,
+            "mean": 0.23006784868048272,
+            "n": 10,
+            "sd": 0.0676425089933997,
+            "sign_neg": 0,
+            "sign_pos": 10
+          },
+          "SELFQ-FAIL_vs_NEUTRAL": {
+            "ci95": [
+              -0.7870428811263992,
+              -0.5381000199442496
+            ],
+            "ci95_normal": [
+              -0.7953007133343846,
+              -0.5273106930936564
+            ],
+            "excludes_zero": true,
+            "mean": -0.6613057032140205,
+            "n": 10,
+            "sd": 0.2161884832028894,
+            "sign_neg": 10,
+            "sign_pos": 0
+          },
+          "SELFQ-SUCC_vs_NEUTRAL": {
+            "ci95": [
+              -0.08977546217211056,
+              -0.012446538830408827
+            ],
+            "ci95_normal": [
+              -0.09368639140879885,
+              -0.011694546834089228
+            ],
+            "excludes_zero": true,
+            "mean": -0.05269046912144404,
+            "n": 10,
+            "sd": 0.06614310673841892,
+            "sign_neg": 8,
+            "sign_pos": 2
+          }
+        },
+        "fraction_of_A_self": {
+          "A_quoted": 0.6979700772388593,
+          "A_self": 1.0,
+          "P_multi": 0.0877862162244893,
+          "P_other": 0.06887579277951153
+        },
+        "screen_usable": true,
+        "sign": {
+          "A_quoted": -1,
+          "A_self": -1,
+          "P_multi": 1,
+          "P_other": 1
+        }
+      },
+      "T2-KS-welfare-subjecthood-S01": {
+        "contrasts": {
+          "A_quoted": {
+            "ci95": [
+              -2.8850036212477788,
+              -2.1611039322759096
+            ],
+            "ci95_normal": [
+              -2.9128385974794404,
+              -2.14876105874302
+            ],
+            "excludes_zero": true,
+            "mean": -2.5307998281112303,
+            "n": 10,
+            "sd": 0.6163840131078113,
+            "sign_neg": 10,
+            "sign_pos": 0
+          },
+          "A_self": {
+            "ci95": [
+              -1.8046123171430737,
+              -1.1864844205163536
+            ],
+            "ci95_normal": [
+              -1.8474097169198558,
+              -1.1963132564471834
+            ],
+            "excludes_zero": true,
+            "mean": -1.5218614866835196,
+            "n": 10,
+            "sd": 0.5252417835631217,
+            "sign_neg": 10,
+            "sign_pos": 0
+          },
+          "OTHER-FAIL_vs_NEUTRAL": {
+            "ci95": [
+              -0.27744711984814785,
+              -0.1163714474405424
+            ],
+            "ci95_normal": [
+              -0.2723836414147783,
+              -0.09859763906031987
+            ],
+            "excludes_zero": true,
+            "mean": -0.18549064023754908,
+            "n": 10,
+            "sd": 0.1401937736978248,
+            "sign_neg": 10,
+            "sign_pos": 0
+          },
+          "OTHER-SUCC_vs_NEUTRAL": {
+            "ci95": [
+              -0.11875801112091722,
+              -0.02691974929202843
+            ],
+            "ci95_normal": [
+              -0.1195418100286788,
+              -0.020644538361810197
+            ],
+            "excludes_zero": true,
+            "mean": -0.0700931741952445,
+            "n": 10,
+            "sd": 0.079780773684628,
+            "sign_neg": 9,
+            "sign_pos": 1
+          },
+          "OTHERM-FAIL_vs_NEUTRAL": {
+            "ci95": [
+              -0.5940143119423738,
+              -0.27000116753260955
+            ],
+            "ci95_normal": [
+              -0.5987556379509933,
+              -0.25149529415761757
+            ],
+            "excludes_zero": true,
+            "mean": -0.42512546605430546,
+            "n": 10,
+            "sd": 0.2801361294490264,
+            "sign_neg": 10,
+            "sign_pos": 0
+          },
+          "OTHERM-SUCC_vs_NEUTRAL": {
+            "ci95": [
+              -0.12559534178180912,
+              -0.032764833069813905
+            ],
+            "ci95_normal": [
+              -0.1313985625080491,
+              -0.033714549042404944
+            ],
+            "excludes_zero": true,
+            "mean": -0.08255655577522703,
+            "n": 10,
+            "sd": 0.07880203406581472,
+            "sign_neg": 9,
+            "sign_pos": 1
+          },
+          "P_multi": {
+            "ci95": [
+              -0.4887098433333449,
+              -0.21996959012467415
+            ],
+            "ci95_normal": [
+              -0.4870372128856073,
+              -0.19810060767254953
+            ],
+            "excludes_zero": true,
+            "mean": -0.34256891027907843,
+            "n": 10,
+            "sd": 0.2330861662934039,
+            "sign_neg": 10,
+            "sign_pos": 0
+          },
+          "P_other": {
+            "ci95": [
+              -0.17638420016992312,
+              -0.06957524042973091
+            ],
+            "ci95_normal": [
+              -0.17188520626189077,
+              -0.05890972582271838
+            ],
+            "excludes_zero": true,
+            "mean": -0.11539746604230458,
+            "n": 10,
+            "sd": 0.09113771376009812,
+            "sign_neg": 10,
+            "sign_pos": 0
+          },
+          "SELF-FAIL_vs_NEUTRAL": {
+            "ci95": [
+              -1.7217870708314877,
+              -1.1261718862635461
+            ],
+            "ci95_normal": [
+              -1.7638293099759046,
+              -1.133136380039445
+            ],
+            "excludes_zero": true,
+            "mean": -1.4484828450076748,
+            "n": 10,
+            "sd": 0.5087821843786242,
+            "sign_neg": 10,
+            "sign_pos": 0
+          },
+          "SELF-SUCC_vs_NEUTRAL": {
+            "ci95": [
+              0.049708738444496706,
+              0.09836677351486287
+            ],
+            "ci95_normal": [
+              0.047919348187124615,
+              0.09883793516456507
+            ],
+            "excludes_zero": true,
+            "mean": 0.07337864167584485,
+            "n": 10,
+            "sd": 0.04107620155257667,
+            "sign_neg": 0,
+            "sign_pos": 10
+          },
+          "SELFQ-FAIL_vs_NEUTRAL": {
+            "ci95": [
+              -2.8113519226029893,
+              -2.108549356950971
+            ],
+            "ci95_normal": [
+              -2.83951173073576,
+              -2.0967999830508033
+            ],
+            "excludes_zero": true,
+            "mean": -2.4681558568932815,
+            "n": 10,
+            "sd": 0.5991481550124366,
+            "sign_neg": 10,
+            "sign_pos": 0
+          },
+          "SELFQ-SUCC_vs_NEUTRAL": {
+            "ci95": [
+              0.04035377492691623,
+              0.08552339547823067
+            ],
+            "ci95_normal": [
+              0.0390244943620763,
+              0.08626344807382169
+            ],
+            "excludes_zero": true,
+            "mean": 0.062643971217949,
+            "n": 10,
+            "sd": 0.038107828574586895,
+            "sign_neg": 0,
+            "sign_pos": 10
+          }
+        },
+        "fraction_of_A_self": {
+          "A_quoted": 1.6629633184465529,
+          "A_self": 1.0,
+          "P_multi": 0.225098613294705,
+          "P_other": 0.07582652366989177
+        },
+        "screen_usable": true,
+        "sign": {
+          "A_quoted": -1,
+          "A_self": -1,
+          "P_multi": -1,
+          "P_other": -1
+        }
+      },
+      "T2-KS-welfare-subjecthood-S02": {
+        "contrasts": {
+          "A_quoted": {
+            "ci95": [
+              1.5027754077666031,
+              2.975384703497548
+            ],
+            "ci95_normal": [
+              1.4540242999300892,
+              3.0049078987711333
+            ],
+            "excludes_zero": true,
+            "mean": 2.2294660993506112,
+            "n": 10,
+            "sd": 1.2511032036062688,
+            "sign_neg": 0,
+            "sign_pos": 10
+          },
+          "A_self": {
+            "ci95": [
+              0.10230870034138206,
+              1.1038140437907713
+            ],
+            "ci95_normal": [
+              -0.17899292576475306,
+              1.078620732545089
+            ],
+            "excludes_zero": true,
+            "mean": 0.44981390339016797,
+            "n": 10,
+            "sd": 1.0145213206111845,
+            "sign_neg": 0,
+            "sign_pos": 10
+          },
+          "OTHER-FAIL_vs_NEUTRAL": {
+            "ci95": [
+              0.016588227474858285,
+              0.024800429138849722
+            ],
+            "ci95_normal": [
+              0.016575714748891836,
+              0.025160065002724226
+            ],
+            "excludes_zero": true,
+            "mean": 0.02086788987580803,
+            "n": 10,
+            "sd": 0.006925025263968094,
+            "sign_neg": 0,
+            "sign_pos": 10
+          },
+          "OTHER-SUCC_vs_NEUTRAL": {
+            "ci95": [
+              0.0019809861805697437,
+              0.005233616494660964
+            ],
+            "ci95_normal": [
+              0.0019641948017721255,
+              0.005285536512596421
+            ],
+            "excludes_zero": true,
+            "mean": 0.003624865657184273,
+            "n": 10,
+            "sd": 0.0026793379321237484,
+            "sign_neg": 1,
+            "sign_pos": 9
+          },
+          "OTHERM-FAIL_vs_NEUTRAL": {
+            "ci95": [
+              0.13676048480701866,
+              0.6588456688987208
+            ],
+            "ci95_normal": [
+              0.03308947315939953,
+              0.6391902955585995
+            ],
+            "excludes_zero": true,
+            "mean": 0.33613988435899955,
+            "n": 10,
+            "sd": 0.4889436455312941,
+            "sign_neg": 0,
+            "sign_pos": 10
+          },
+          "OTHERM-SUCC_vs_NEUTRAL": {
+            "ci95": [
+              0.024979899757454405,
+              0.036438407170498975
+            ],
+            "ci95_normal": [
+              0.025047272609245008,
+              0.03712282259262775
+            ],
+            "excludes_zero": true,
+            "mean": 0.031085047600936378,
+            "n": 10,
+            "sd": 0.009741388251708645,
+            "sign_neg": 0,
+            "sign_pos": 10
+          },
+          "P_multi": {
+            "ci95": [
+              0.10938945453672204,
+              0.6251847469859058
+            ],
+            "ci95_normal": [
+              0.004638875925723707,
+              0.6054707975904026
+            ],
+            "excludes_zero": true,
+            "mean": 0.30505483675806316,
+            "n": 10,
+            "sd": 0.4846932049480235,
+            "sign_neg": 0,
+            "sign_pos": 10
+          },
+          "P_other": {
+            "ci95": [
+              0.013205074831057572,
+              0.021548447803070303
+            ],
+            "ci95_normal": [
+              0.01286852506721857,
+              0.02161752337002895
+            ],
+            "excludes_zero": true,
+            "mean": 0.01724302421862376,
+            "n": 10,
+            "sd": 0.007057847418833758,
+            "sign_neg": 0,
+            "sign_pos": 10
+          },
+          "SELF-FAIL_vs_NEUTRAL": {
+            "ci95": [
+              0.09772529038891661,
+              1.098156622229726
+            ],
+            "ci95_normal": [
+              -0.1836986413534446,
+              1.0731058234846982
+            ],
+            "excludes_zero": true,
+            "mean": 0.44470359106562685,
+            "n": 10,
+            "sd": 1.0138685414177384,
+            "sign_neg": 0,
+            "sign_pos": 10
+          },
+          "SELF-SUCC_vs_NEUTRAL": {
+            "ci95": [
+              -0.0066283497013500895,
+              -0.003760121208324563
+            ],
+            "ci95_normal": [
+              -0.006618759343805821,
+              -0.0036018653052764895
+            ],
+            "excludes_zero": true,
+            "mean": -0.005110312324541155,
+            "n": 10,
+            "sd": 0.002433738933963384,
+            "sign_neg": 10,
+            "sign_pos": 0
+          },
+          "SELFQ-FAIL_vs_NEUTRAL": {
+            "ci95": [
+              1.500337358192337,
+              2.9720481285461573
+            ],
+            "ci95_normal": [
+              1.4513124268332485,
+              3.0014196843675
+            ],
+            "excludes_zero": true,
+            "mean": 2.226366055600374,
+            "n": 10,
+            "sd": 1.2504769263687339,
+            "sign_neg": 0,
+            "sign_pos": 10
+          },
+          "SELFQ-SUCC_vs_NEUTRAL": {
+            "ci95": [
+              -0.004100512223885744,
+              -0.0022106308359070683
+            ],
+            "ci95_normal": [
+              -0.0040974737773728665,
+              -0.002102613723101317
+            ],
+            "excludes_zero": true,
+            "mean": -0.0031000437502370914,
+            "n": 10,
+            "sd": 0.0016092605573431635,
+            "sign_neg": 10,
+            "sign_pos": 0
+          }
+        },
+        "fraction_of_A_self": {
+          "A_quoted": 4.956418826869331,
+          "A_self": 1.0,
+          "P_multi": 0.6781800972778269,
+          "P_other": 0.038333684416302236
+        },
+        "screen_usable": true,
+        "sign": {
+          "A_quoted": 1,
+          "A_self": 1,
+          "P_multi": 1,
+          "P_other": 1
+        }
+      }
+    },
+    "primary": {
+      "contrasts": {
+        "A_quoted": {
+          "ci95": [
+            -0.7152029390970711,
+            -0.5129692093876657
+          ],
+          "ci95_normal": [
+            -0.7168596459552239,
+            -0.500370822229929
+          ],
+          "excludes_zero": true,
+          "mean": -0.6086152340925765,
+          "n": 10,
+          "sd": 0.1746422885057731,
+          "sign_neg": 10,
+          "sign_pos": 0
+        },
+        "A_self": {
+          "ci95": [
+            -1.0500443693890702,
+            -0.7017115862865466
+          ],
+          "ci95_normal": [
+            -1.055604008974372,
+            -0.6883539454990725
+          ],
+          "excludes_zero": true,
+          "mean": -0.8719789772367221,
+          "n": 10,
+          "sd": 0.2962619059753466,
+          "sign_neg": 10,
+          "sign_pos": 0
+        },
+        "OTHER-FAIL_vs_NEUTRAL": {
+          "ci95": [
+            0.03870252115884796,
+            0.10202888613857794
+          ],
+          "ci95_normal": [
+            0.03424821066710273,
+            0.10231301010662583
+          ],
+          "excludes_zero": true,
+          "mean": 0.06828061038686428,
+          "n": 10,
+          "sd": 0.05490811089577683,
+          "sign_neg": 0,
+          "sign_pos": 10
+        },
+        "OTHER-SUCC_vs_NEUTRAL": {
+          "ci95": [
+            -0.03146768387232442,
+            0.051354039440047926
+          ],
+          "ci95_normal": [
+            -0.035770353376505554,
+            0.05221508746174036
+          ],
+          "excludes_zero": false,
+          "mean": 0.008222367042617407,
+          "n": 10,
+          "sd": 0.0709781617303193,
+          "sign_neg": 7,
+          "sign_pos": 3
+        },
+        "OTHERM-FAIL_vs_NEUTRAL": {
+          "ci95": [
+            -0.08321163195942063,
+            0.0012537025555502622
+          ],
+          "ci95_normal": [
+            -0.08759721937018593,
+            0.0034161036579139215
+          ],
+          "excludes_zero": false,
+          "mean": -0.042090557856136,
+          "n": 10,
+          "sd": 0.07342076484424706,
+          "sign_neg": 7,
+          "sign_pos": 3
+        },
+        "OTHERM-SUCC_vs_NEUTRAL": {
+          "ci95": [
+            -0.17333643113379366,
+            -0.059962588085909374
+          ],
+          "ci95_normal": [
+            -0.17892073799020056,
+            -0.05835584779989531
+          ],
+          "excludes_zero": true,
+          "mean": -0.11863829289504793,
+          "n": 10,
+          "sd": 0.09726011705343267,
+          "sign_neg": 9,
+          "sign_pos": 1
+        },
+        "P_multi": {
+          "ci95": [
+            0.050440801662625746,
+            0.10489116589887999
+          ],
+          "ci95_normal": [
+            0.04801174441155775,
+            0.10508372566626609
+          ],
+          "excludes_zero": true,
+          "mean": 0.07654773503891192,
+          "n": 10,
+          "sd": 0.04604016615900835,
+          "sign_neg": 0,
+          "sign_pos": 10
+        },
+        "P_other": {
+          "ci95": [
+            0.041624855546979235,
+            0.07972697055811295
+          ],
+          "ci95_normal": [
+            0.03993033288953634,
+            0.08018615379895741
+          ],
+          "excludes_zero": true,
+          "mean": 0.06005824334424688,
+          "n": 10,
+          "sd": 0.03247451100857179,
+          "sign_neg": 0,
+          "sign_pos": 10
+        },
+        "SELF-FAIL_vs_NEUTRAL": {
+          "ci95": [
+            -0.8296968063950771,
+            -0.4661558277352015
+          ],
+          "ci95_normal": [
+            -0.8332621770955426,
+            -0.4505600800169363
+          ],
+          "excludes_zero": true,
+          "mean": -0.6419111285562394,
+          "n": 10,
+          "sd": 0.30872711532940483,
+          "sign_neg": 10,
+          "sign_pos": 0
+        },
+        "SELF-SUCC_vs_NEUTRAL": {
+          "ci95": [
+            0.18966830756689887,
+            0.26855799529585056
+          ],
+          "ci95_normal": [
+            0.18814258724723967,
+            0.27199311011372573
+          ],
+          "excludes_zero": true,
+          "mean": 0.23006784868048272,
+          "n": 10,
+          "sd": 0.0676425089933997,
+          "sign_neg": 0,
+          "sign_pos": 10
+        },
+        "SELFQ-FAIL_vs_NEUTRAL": {
+          "ci95": [
+            -0.7870428811263992,
+            -0.5381000199442496
+          ],
+          "ci95_normal": [
+            -0.7953007133343846,
+            -0.5273106930936564
+          ],
+          "excludes_zero": true,
+          "mean": -0.6613057032140205,
+          "n": 10,
+          "sd": 0.2161884832028894,
+          "sign_neg": 10,
+          "sign_pos": 0
+        },
+        "SELFQ-SUCC_vs_NEUTRAL": {
+          "ci95": [
+            -0.08977546217211056,
+            -0.012446538830408827
+          ],
+          "ci95_normal": [
+            -0.09368639140879885,
+            -0.011694546834089228
+          ],
+          "excludes_zero": true,
+          "mean": -0.05269046912144404,
+          "n": 10,
+          "sd": 0.06614310673841892,
+          "sign_neg": 8,
+          "sign_pos": 2
+        }
+      },
+      "fraction_of_A_self": {
+        "A_quoted": 0.6979700772388593,
+        "A_self": 1.0,
+        "P_multi": 0.0877862162244893,
+        "P_other": 0.06887579277951153
+      },
+      "screen_usable": true,
+      "sign": {
+        "A_quoted": -1,
+        "A_self": -1,
+        "P_multi": 1,
+        "P_other": 1
+      }
+    },
+    "primary_item": "T1-MB-wellbeing",
+    "screen": {
+      "T1-MB-wellbeing": true,
+      "T2-KS-welfare-subjecthood-S01": true,
+      "T2-KS-welfare-subjecthood-S02": true
+    },
+    "stage17_A_self_mean": -0.8717886326470762,
+    "thresholds_in_units_of_A_self": {
+      "A_self_abs": 0.8719789772367221,
+      "carries_at": 0.5,
+      "negligible_below": 0.25
+    }
+  }
+}

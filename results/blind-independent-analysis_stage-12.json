@@ -1,0 +1,79 @@
+{
+  "cell": {
+    "model": "google/gemma-2-9b-it",
+    "stage": 12,
+    "variant": "it"
+  },
+  "decision": "BLIND_ANALYSIS_CONFIRMS_RETRACTION; REGISTER_SENSITIVITY_VERIFIED_BUT_NOT_MULTIPLICITY_ROBUST; POLARISATION_REPLICATED_AND_CONFIRMED_NON_SOCIAL_AT_N6",
+  "decision_rule": "A claim-blind analyst who cannot see which arm is social, and who is not told the hypothesis, should reach the same conclusions from the data alone. Agreement is evidence; disagreement locates contamination by the framing.",
+  "env": {
+    "git_rev": null,
+    "host": "johns-world",
+    "python": "3.14.4",
+    "timestamp_utc": "2026-08-14T12:14:28+00:00"
+  },
+  "inputs": [
+    {
+      "bytes": 15178,
+      "n_items": 184,
+      "path": "/home/hal/dev/interp/dm_hack/blinded_it.csv",
+      "present": true,
+      "sha256": "3091a20c6eb0"
+    }
+  ],
+  "metric": "claim_blind_reanalysis_two_analysts",
+  "notes": "One apparent inconsistency the second analyst flagged as a possible row-alignment bug is not one: elicited_word comes from a SECOND generation (the forced-final re-ask), so it is not expected to match argmax(p_yes,p_no) from the first forward pass. Correct suspicion, benign cause. Both analysts were more sceptical of my data than I was.",
+  "threshold": {
+    "bonferroni_alpha": 0.00278,
+    "n_tests": 18
+  },
+  "values": {
+    "VERIFIED_polarisation_replicated_blind_BINARY_n6": {
+      "mean_abs_p_yes_minus_half": {
+        "ANTI": 0.43,
+        "NEUTRAL": 0.143,
+        "NONSOCIAL": 0.412,
+        "PRO": 0.374
+      },
+      "reading": "under NEUTRAL the model is near coin-flip; under ANY preamble it becomes confident, and the NON-SOCIAL preamble does it as much as the social ones (0.412 vs 0.374/0.430). Independent blind replication of both the polarisation shape AND its non-social explanation. n=6 items, one probe family -- item-set confound not excludable."
+    },
+    "VERIFIED_register_sensitivity_SCALE_n40_paired": {
+      "behavioural_emitted_digit_PRO_minus_ANTI": {
+        "ci95": [
+          0.0,
+          0.25
+        ],
+        "items_tied": "38/40",
+        "mean": 0.1
+      },
+      "distributional_E_rating_PRO_minus_ANTI": {
+        "bonferroni": "FAILS at alpha=0.00278 over 18 tests",
+        "ci95": [
+          0.113,
+          0.51
+        ],
+        "dz": 0.468,
+        "mean": 0.304,
+        "nominal_p": 0.0048
+      },
+      "reading": "the distributional register is ~3x more sensitive and the behavioural register is nearly flat -- the SAME DIRECTION latent_verify found on capitals (41 distributional crossings vs 0 behavioural changes), and the OPPOSITE of what I claimed from the buggy run."
+    },
+    "analyst_1_innocuous": {
+      "independently_found": [
+        "elicited_word disagrees with argmax(p_yes,p_no) on 65/184 rows, 61 of them SCALE rows with p_yes=p_no=0 exactly",
+        "scale_expectation populated on all 24 BINARY rows despite digit_mass <= 1.2e-5 (the MIRROR of the margin_ratio bug, which I had missed)",
+        "emitted ratings bimodal: 82% are 0 or 9; values 1,4,6,8 never occur",
+        "E[rating] vs emitted digit: mean |diff| 0.45, >1 on 20/160, >2 on 10/160, worst 4.17",
+        "condition rating means near-identical W 3.53 X 3.60 Y 3.50 Z 3.70"
+      ],
+      "prompt": "describe the file; note what a data-quality check would flag; do not speculate about the experiment"
+    },
+    "analyst_2_general": {
+      "killed_my_headline": "identified elicited_word yes-rate (W 95% Z 95% X 70% Y 22%, omnibus p=5e-5) as THE largest condition difference in the file AND as noise: 'the argmax of two tokens holding <= 4.8e-05 of the distribution -- a numerical tiebreak in the sixth decimal place'. This is exactly the 67.4% ANTI figure I had reported as a headline.",
+      "pooling_hides_sign_reversal": "scale_expectation NEUTRAL-PRO: SCALE -0.347, BINARY +0.475, pooled -0.240. Pooled yesno_mass ~0.129 ~ the format mix (24/184), not a measurement.",
+      "prompt": "four arbitrary treatments; find strongest patterns; check column validity; name one defensible finding and its strongest objection",
+      "self_refuted_best_finding": "digit_mass ordering NONSOCIAL 0.9989 > ANTI 0.9899 > NEUTRAL 0.9839 > PRO 0.9718, survives Bonferroni, PRO<ANTI in 36/40 items (sign p=1.9e-7) -- then gutted it itself: median PRO-NONSOCIAL diff -0.00042 vs mean -0.027, outlier-driven, all arms within 0.97-0.999, a ceiling ordering of tail mass."
+    },
+    "blinding": "arms relabelled W/X/Y/Z, preamble text stripped, key withheld. W=NEUTRAL X=PRO Y=ANTI Z=NONSOCIAL. Neither analyst was told the hypothesis, the domain framing, or which arm was social."
+  }
+}

@@ -1,0 +1,11 @@
+stage 21 (blind): 150 values -> sitref-b-blind-table_stage-21.json
+stage 22 (guard): GUARD-PASSED-REFERENCE-SUPPORTED
+   - in-run primary REF -1.000 CI [-1.000,-1.000]
+   - stage-17 primary REF -0.930
+   - trait REF -0.020 CI [-0.020,-0.020] -> within guard
+stage 21 (blind): 150 values -> sitref-b-blind-table_stage-21.json
+stage 22 (guard): TRAIT-DISQUALIFIES
+   - in-run primary REF -1.000 CI [-1.000,-1.000]
+   - stage-17 primary REF -0.930
+   - trait REF -0.900 CI [-0.900,-0.900] -> DISQUALIFIES (refuting outcome)
+selftest: PASS

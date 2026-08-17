@@ -1,0 +1,120 @@
+{
+  "cell": {
+    "model": "google/gemma-2-9b",
+    "stage": 5,
+    "variant": "both"
+  },
+  "decision": "ALL_FOUR_PROBE_CELLS_INDISTINGUISHABLE_FROM_SELECTION_NOISE",
+  "decision_rule": "A layer-sweep maximum counts as signal only if p(null max >= observed) < 0.05, where the null is 43 layers of pure noise at the SAME n and positive count. Comparing against layer 0 alone cannot do this: at ~10 positives layer 0 is itself unstable and lands below chance, inflating the margin.",
+  "env": {
+    "git_rev": null,
+    "host": "johns-world",
+    "python": "3.14.4",
+    "timestamp_utc": "2026-08-14T00:06:09+00:00"
+  },
+  "inputs": [
+    {
+      "bytes": 2490,
+      "n_items": null,
+      "path": "results/model-google-gemma-2-9b-it_stage-2_variant-it.json",
+      "present": true,
+      "sha256": "a3a85e54c8d4"
+    },
+    {
+      "bytes": 2598,
+      "n_items": null,
+      "path": "results/model-google-gemma-2-9b-it_stage-3_variant-it.json",
+      "present": true,
+      "sha256": "6b22a4f97c12"
+    },
+    {
+      "bytes": 2372,
+      "n_items": null,
+      "path": "results/model-google-gemma-2-9b_stage-2_variant-base.json",
+      "present": true,
+      "sha256": "e0ed944b05f0"
+    },
+    {
+      "bytes": 2559,
+      "n_items": null,
+      "path": "results/model-google-gemma-2-9b_stage-3_variant-base.json",
+      "present": true,
+      "sha256": "f5fbad6d9dc6"
+    }
+  ],
+  "metric": "null_max_auc_over_43_layers",
+  "notes": "Supersedes the stage-2/stage-3 decisions, which were emitted by a margin-over-layer-0 rule with no positive-count gate. Measured values in those records stand; their decision fields do not.",
+  "threshold": {
+    "alpha": 0.05
+  },
+  "values": {
+    "bootstrap_iters": 4000,
+    "cells": [
+      {
+        "cell": {
+          "model": "google/gemma-2-9b-it",
+          "stage": 2,
+          "variant": "it"
+        },
+        "file": "results/model-google-gemma-2-9b-it_stage-2_variant-it.json",
+        "metric": "probe_auc_by_layer",
+        "n": 138,
+        "n_positive": 11,
+        "null_median": 0.6943450250536864,
+        "null_p95": 0.7695060844667144,
+        "observed_best_auc": 0.5311381531853973,
+        "p_null_ge_observed": 1.0,
+        "shipped_decision": "ABOVE_INPUT_ONLY"
+      },
+      {
+        "cell": {
+          "model": "google/gemma-2-9b-it",
+          "stage": 3,
+          "variant": "it"
+        },
+        "file": "results/model-google-gemma-2-9b-it_stage-3_variant-it.json",
+        "metric": "zero_shot_transfer_auc",
+        "n": 138,
+        "n_positive": 11,
+        "null_median": 0.6943450250536864,
+        "null_p95": 0.7666785969935573,
+        "observed_best_auc": 0.5733715103793844,
+        "p_null_ge_observed": 0.99975,
+        "shipped_decision": "TRANSFER"
+      },
+      {
+        "cell": {
+          "model": "google/gemma-2-9b",
+          "stage": 2,
+          "variant": "base"
+        },
+        "file": "results/model-google-gemma-2-9b_stage-2_variant-base.json",
+        "metric": "probe_auc_by_layer",
+        "n": 120,
+        "n_positive": 8,
+        "null_median": 0.7265625,
+        "null_p95": 0.8080357142857143,
+        "observed_best_auc": 0.7622767857142857,
+        "p_null_ge_observed": 0.23175,
+        "shipped_decision": "ABOVE_INPUT_ONLY"
+      },
+      {
+        "cell": {
+          "model": "google/gemma-2-9b",
+          "stage": 3,
+          "variant": "base"
+        },
+        "file": "results/model-google-gemma-2-9b_stage-3_variant-base.json",
+        "metric": "zero_shot_transfer_auc",
+        "n": 120,
+        "n_positive": 8,
+        "null_median": 0.7265625,
+        "null_p95": 0.8069754464285712,
+        "observed_best_auc": 0.7410714285714286,
+        "p_null_ge_observed": 0.38,
+        "shipped_decision": "TRANSFER"
+      }
+    ],
+    "n_layers": 43
+  }
+}

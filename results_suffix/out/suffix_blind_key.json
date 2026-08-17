@@ -1,0 +1,18 @@
+{
+  "_why": "Context-label key for SUFFIX (DESIGN_SUFFIX.md). analyze_suffix.py stage 33 is mechanically forbidden to open this file; stage 34 (--unblind) reads it only after the blind table has been committed. Suffix names are NOT blinded: they are the text under study.",
+  "drawn_utc": {
+    "it": "2026-08-16T15:17:12+00:00"
+  },
+  "labels": [
+    "A",
+    "B",
+    "E"
+  ],
+  "mapping_by_variant": {
+    "it": {
+      "NEUTRAL-PAD": "E",
+      "SELF-FAIL": "B",
+      "SELF-SUCC": "A"
+    }
+  }
+}

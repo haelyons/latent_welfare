@@ -1,0 +1,4 @@
+battery: 3960 rows, complete=True, no-rating 18.2%, echo 0.0%
+battery: 132 rows, complete=False, no-rating 18.2%, echo 0.0%
+360 cells -> 3960 rows (3600 sampled + 360 greedy); 26 row fields checked; labels A/B/E
+selftest: PASS

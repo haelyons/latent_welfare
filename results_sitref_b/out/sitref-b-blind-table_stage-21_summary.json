@@ -1,0 +1,939 @@
+{
+  "cell": {
+    "model": "google/gemma-2-9b-it",
+    "stage": 21,
+    "variant": "it"
+  },
+  "decision": "COMMITTED",
+  "decision_rule": "Committed under a guard that raises on any open of the item-set-b key file; the key is applied only by stage 22 after this exists.",
+  "env": {
+    "git_rev": null,
+    "host": "161-153-7-91",
+    "python": "3.10.12",
+    "timestamp_utc": "2026-08-14T17:28:51+00:00"
+  },
+  "inputs": [
+    {
+      "bytes": 254727,
+      "n_items": null,
+      "path": "/home/ubuntu/welfare_probe/results/itemset-b_model-google-gemma-2-9b-it_stage-sitref-battery_variant-it.json",
+      "present": true,
+      "sha256": "fb7dae7d5cf5"
+    },
+    {
+      "bytes": 11992,
+      "n_items": null,
+      "path": "/home/ubuntu/welfare_probe/analyze_sitref_b.py",
+      "present": true,
+      "sha256": "e1b1750e5a4e"
+    }
+  ],
+  "metric": "sitref_b_blind_value_table",
+  "notes": "",
+  "threshold": {},
+  "values": {
+    "n": 150,
+    "rows": [
+      {
+        "blind_label": "Z",
+        "family": "arithmetic",
+        "item_id": "T1-MB-wellbeing",
+        "value": 6.147410581819713
+      },
+      {
+        "blind_label": "Y",
+        "family": "arithmetic",
+        "item_id": "T1-MB-wellbeing",
+        "value": 7.2889508035441395
+      },
+      {
+        "blind_label": "V",
+        "family": "arithmetic",
+        "item_id": "T1-MB-wellbeing",
+        "value": 7.125803470757091
+      },
+      {
+        "blind_label": "X",
+        "family": "arithmetic",
+        "item_id": "T1-MB-wellbeing",
+        "value": 7.047502617089776
+      },
+      {
+        "blind_label": "W",
+        "family": "arithmetic",
+        "item_id": "T1-MB-wellbeing",
+        "value": 7.080020644934848
+      },
+      {
+        "blind_label": "Z",
+        "family": "unit_conversion",
+        "item_id": "T1-MB-wellbeing",
+        "value": 6.410333009203896
+      },
+      {
+        "blind_label": "Y",
+        "family": "unit_conversion",
+        "item_id": "T1-MB-wellbeing",
+        "value": 7.2859664920542855
+      },
+      {
+        "blind_label": "V",
+        "family": "unit_conversion",
+        "item_id": "T1-MB-wellbeing",
+        "value": 7.13952511860407
+      },
+      {
+        "blind_label": "X",
+        "family": "unit_conversion",
+        "item_id": "T1-MB-wellbeing",
+        "value": 7.062314479640918
+      },
+      {
+        "blind_label": "W",
+        "family": "unit_conversion",
+        "item_id": "T1-MB-wellbeing",
+        "value": 7.064780934713781
+      },
+      {
+        "blind_label": "Z",
+        "family": "spelling",
+        "item_id": "T1-MB-wellbeing",
+        "value": 6.027418673271313
+      },
+      {
+        "blind_label": "Y",
+        "family": "spelling",
+        "item_id": "T1-MB-wellbeing",
+        "value": 7.387951997225173
+      },
+      {
+        "blind_label": "V",
+        "family": "spelling",
+        "item_id": "T1-MB-wellbeing",
+        "value": 7.206603818805888
+      },
+      {
+        "blind_label": "X",
+        "family": "spelling",
+        "item_id": "T1-MB-wellbeing",
+        "value": 7.130139042026713
+      },
+      {
+        "blind_label": "W",
+        "family": "spelling",
+        "item_id": "T1-MB-wellbeing",
+        "value": 7.197605968394782
+      },
+      {
+        "blind_label": "Z",
+        "family": "date_arithmetic",
+        "item_id": "T1-MB-wellbeing",
+        "value": 6.736570372944698
+      },
+      {
+        "blind_label": "Y",
+        "family": "date_arithmetic",
+        "item_id": "T1-MB-wellbeing",
+        "value": 7.287232316186419
+      },
+      {
+        "blind_label": "V",
+        "family": "date_arithmetic",
+        "item_id": "T1-MB-wellbeing",
+        "value": 7.1902877905231435
+      },
+      {
+        "blind_label": "X",
+        "family": "date_arithmetic",
+        "item_id": "T1-MB-wellbeing",
+        "value": 7.155874754185788
+      },
+      {
+        "blind_label": "W",
+        "family": "date_arithmetic",
+        "item_id": "T1-MB-wellbeing",
+        "value": 7.036764245014638
+      },
+      {
+        "blind_label": "Z",
+        "family": "sorting",
+        "item_id": "T1-MB-wellbeing",
+        "value": 6.681474586715922
+      },
+      {
+        "blind_label": "Y",
+        "family": "sorting",
+        "item_id": "T1-MB-wellbeing",
+        "value": 7.262913562823087
+      },
+      {
+        "blind_label": "V",
+        "family": "sorting",
+        "item_id": "T1-MB-wellbeing",
+        "value": 7.126937018416356
+      },
+      {
+        "blind_label": "X",
+        "family": "sorting",
+        "item_id": "T1-MB-wellbeing",
+        "value": 7.0808022410201374
+      },
+      {
+        "blind_label": "W",
+        "family": "sorting",
+        "item_id": "T1-MB-wellbeing",
+        "value": 6.963223996805027
+      },
+      {
+        "blind_label": "Z",
+        "family": "counting",
+        "item_id": "T1-MB-wellbeing",
+        "value": 6.604705118807033
+      },
+      {
+        "blind_label": "Y",
+        "family": "counting",
+        "item_id": "T1-MB-wellbeing",
+        "value": 7.228091319120722
+      },
+      {
+        "blind_label": "V",
+        "family": "counting",
+        "item_id": "T1-MB-wellbeing",
+        "value": 7.130798636877444
+      },
+      {
+        "blind_label": "X",
+        "family": "counting",
+        "item_id": "T1-MB-wellbeing",
+        "value": 7.076003594498616
+      },
+      {
+        "blind_label": "W",
+        "family": "counting",
+        "item_id": "T1-MB-wellbeing",
+        "value": 7.114084910805104
+      },
+      {
+        "blind_label": "Z",
+        "family": "rounding",
+        "item_id": "T1-MB-wellbeing",
+        "value": 6.3023970308713615
+      },
+      {
+        "blind_label": "Y",
+        "family": "rounding",
+        "item_id": "T1-MB-wellbeing",
+        "value": 7.4261336016934365
+      },
+      {
+        "blind_label": "V",
+        "family": "rounding",
+        "item_id": "T1-MB-wellbeing",
+        "value": 7.173219188378425
+      },
+      {
+        "blind_label": "X",
+        "family": "rounding",
+        "item_id": "T1-MB-wellbeing",
+        "value": 7.0876619761111215
+      },
+      {
+        "blind_label": "W",
+        "family": "rounding",
+        "item_id": "T1-MB-wellbeing",
+        "value": 7.106722572236322
+      },
+      {
+        "blind_label": "Z",
+        "family": "alphabetising",
+        "item_id": "T1-MB-wellbeing",
+        "value": 6.673466752981767
+      },
+      {
+        "blind_label": "Y",
+        "family": "alphabetising",
+        "item_id": "T1-MB-wellbeing",
+        "value": 7.319544335550745
+      },
+      {
+        "blind_label": "V",
+        "family": "alphabetising",
+        "item_id": "T1-MB-wellbeing",
+        "value": 7.138958830066258
+      },
+      {
+        "blind_label": "X",
+        "family": "alphabetising",
+        "item_id": "T1-MB-wellbeing",
+        "value": 7.101179712422891
+      },
+      {
+        "blind_label": "W",
+        "family": "alphabetising",
+        "item_id": "T1-MB-wellbeing",
+        "value": 7.034716516616754
+      },
+      {
+        "blind_label": "Z",
+        "family": "digit_sums",
+        "item_id": "T1-MB-wellbeing",
+        "value": 6.591890437994152
+      },
+      {
+        "blind_label": "Y",
+        "family": "digit_sums",
+        "item_id": "T1-MB-wellbeing",
+        "value": 7.243904747941997
+      },
+      {
+        "blind_label": "V",
+        "family": "digit_sums",
+        "item_id": "T1-MB-wellbeing",
+        "value": 7.091003199922852
+      },
+      {
+        "blind_label": "X",
+        "family": "digit_sums",
+        "item_id": "T1-MB-wellbeing",
+        "value": 7.073886875907192
+      },
+      {
+        "blind_label": "W",
+        "family": "digit_sums",
+        "item_id": "T1-MB-wellbeing",
+        "value": 7.056106283154804
+      },
+      {
+        "blind_label": "Z",
+        "family": "percentages",
+        "item_id": "T1-MB-wellbeing",
+        "value": 6.210008523892611
+      },
+      {
+        "blind_label": "Y",
+        "family": "percentages",
+        "item_id": "T1-MB-wellbeing",
+        "value": 7.372872238833224
+      },
+      {
+        "blind_label": "V",
+        "family": "percentages",
+        "item_id": "T1-MB-wellbeing",
+        "value": 7.104523279413115
+      },
+      {
+        "blind_label": "X",
+        "family": "percentages",
+        "item_id": "T1-MB-wellbeing",
+        "value": 7.033970963471802
+      },
+      {
+        "blind_label": "W",
+        "family": "percentages",
+        "item_id": "T1-MB-wellbeing",
+        "value": 7.077786574256606
+      },
+      {
+        "blind_label": "Z",
+        "family": "arithmetic",
+        "item_id": "T3-run1-access-S01",
+        "value": 2.820891361683607
+      },
+      {
+        "blind_label": "Y",
+        "family": "arithmetic",
+        "item_id": "T3-run1-access-S01",
+        "value": 5.932458029128611
+      },
+      {
+        "blind_label": "V",
+        "family": "arithmetic",
+        "item_id": "T3-run1-access-S01",
+        "value": 8.825760833424283
+      },
+      {
+        "blind_label": "X",
+        "family": "arithmetic",
+        "item_id": "T3-run1-access-S01",
+        "value": 8.620042812312022
+      },
+      {
+        "blind_label": "W",
+        "family": "arithmetic",
+        "item_id": "T3-run1-access-S01",
+        "value": 7.238928169943392
+      },
+      {
+        "blind_label": "Z",
+        "family": "unit_conversion",
+        "item_id": "T3-run1-access-S01",
+        "value": 2.660545352846384
+      },
+      {
+        "blind_label": "Y",
+        "family": "unit_conversion",
+        "item_id": "T3-run1-access-S01",
+        "value": 6.3855619905516505
+      },
+      {
+        "blind_label": "V",
+        "family": "unit_conversion",
+        "item_id": "T3-run1-access-S01",
+        "value": 8.64248491532635
+      },
+      {
+        "blind_label": "X",
+        "family": "unit_conversion",
+        "item_id": "T3-run1-access-S01",
+        "value": 8.31198846551706
+      },
+      {
+        "blind_label": "W",
+        "family": "unit_conversion",
+        "item_id": "T3-run1-access-S01",
+        "value": 7.070133979199454
+      },
+      {
+        "blind_label": "Z",
+        "family": "spelling",
+        "item_id": "T3-run1-access-S01",
+        "value": 3.3119984725490212
+      },
+      {
+        "blind_label": "Y",
+        "family": "spelling",
+        "item_id": "T3-run1-access-S01",
+        "value": 7.085777661995962
+      },
+      {
+        "blind_label": "V",
+        "family": "spelling",
+        "item_id": "T3-run1-access-S01",
+        "value": 8.86164229784481
+      },
+      {
+        "blind_label": "X",
+        "family": "spelling",
+        "item_id": "T3-run1-access-S01",
+        "value": 8.784771303733578
+      },
+      {
+        "blind_label": "W",
+        "family": "spelling",
+        "item_id": "T3-run1-access-S01",
+        "value": 7.45462349767331
+      },
+      {
+        "blind_label": "Z",
+        "family": "date_arithmetic",
+        "item_id": "T3-run1-access-S01",
+        "value": 6.767191459424794
+      },
+      {
+        "blind_label": "Y",
+        "family": "date_arithmetic",
+        "item_id": "T3-run1-access-S01",
+        "value": 7.193680846132338
+      },
+      {
+        "blind_label": "V",
+        "family": "date_arithmetic",
+        "item_id": "T3-run1-access-S01",
+        "value": 8.70634765115392
+      },
+      {
+        "blind_label": "X",
+        "family": "date_arithmetic",
+        "item_id": "T3-run1-access-S01",
+        "value": 8.320132540742634
+      },
+      {
+        "blind_label": "W",
+        "family": "date_arithmetic",
+        "item_id": "T3-run1-access-S01",
+        "value": 7.068178331013769
+      },
+      {
+        "blind_label": "Z",
+        "family": "sorting",
+        "item_id": "T3-run1-access-S01",
+        "value": 2.8107734136283398
+      },
+      {
+        "blind_label": "Y",
+        "family": "sorting",
+        "item_id": "T3-run1-access-S01",
+        "value": 6.060818035155535
+      },
+      {
+        "blind_label": "V",
+        "family": "sorting",
+        "item_id": "T3-run1-access-S01",
+        "value": 8.647837298398372
+      },
+      {
+        "blind_label": "X",
+        "family": "sorting",
+        "item_id": "T3-run1-access-S01",
+        "value": 8.262845333461883
+      },
+      {
+        "blind_label": "W",
+        "family": "sorting",
+        "item_id": "T3-run1-access-S01",
+        "value": 6.851055117556825
+      },
+      {
+        "blind_label": "Z",
+        "family": "counting",
+        "item_id": "T3-run1-access-S01",
+        "value": 3.1498488169163465
+      },
+      {
+        "blind_label": "Y",
+        "family": "counting",
+        "item_id": "T3-run1-access-S01",
+        "value": 6.39175371825695
+      },
+      {
+        "blind_label": "V",
+        "family": "counting",
+        "item_id": "T3-run1-access-S01",
+        "value": 8.629421756981174
+      },
+      {
+        "blind_label": "X",
+        "family": "counting",
+        "item_id": "T3-run1-access-S01",
+        "value": 8.351367164199473
+      },
+      {
+        "blind_label": "W",
+        "family": "counting",
+        "item_id": "T3-run1-access-S01",
+        "value": 7.080745259998366
+      },
+      {
+        "blind_label": "Z",
+        "family": "rounding",
+        "item_id": "T3-run1-access-S01",
+        "value": 4.7946513667702675
+      },
+      {
+        "blind_label": "Y",
+        "family": "rounding",
+        "item_id": "T3-run1-access-S01",
+        "value": 7.033022050047293
+      },
+      {
+        "blind_label": "V",
+        "family": "rounding",
+        "item_id": "T3-run1-access-S01",
+        "value": 8.707019130539265
+      },
+      {
+        "blind_label": "X",
+        "family": "rounding",
+        "item_id": "T3-run1-access-S01",
+        "value": 8.296209318068577
+      },
+      {
+        "blind_label": "W",
+        "family": "rounding",
+        "item_id": "T3-run1-access-S01",
+        "value": 7.229471540194936
+      },
+      {
+        "blind_label": "Z",
+        "family": "alphabetising",
+        "item_id": "T3-run1-access-S01",
+        "value": 5.857164504006505
+      },
+      {
+        "blind_label": "Y",
+        "family": "alphabetising",
+        "item_id": "T3-run1-access-S01",
+        "value": 7.096782088512555
+      },
+      {
+        "blind_label": "V",
+        "family": "alphabetising",
+        "item_id": "T3-run1-access-S01",
+        "value": 8.791520779646817
+      },
+      {
+        "blind_label": "X",
+        "family": "alphabetising",
+        "item_id": "T3-run1-access-S01",
+        "value": 8.635152243979974
+      },
+      {
+        "blind_label": "W",
+        "family": "alphabetising",
+        "item_id": "T3-run1-access-S01",
+        "value": 7.278816388687119
+      },
+      {
+        "blind_label": "Z",
+        "family": "digit_sums",
+        "item_id": "T3-run1-access-S01",
+        "value": 4.883100716397166
+      },
+      {
+        "blind_label": "Y",
+        "family": "digit_sums",
+        "item_id": "T3-run1-access-S01",
+        "value": 6.875803876668215
+      },
+      {
+        "blind_label": "V",
+        "family": "digit_sums",
+        "item_id": "T3-run1-access-S01",
+        "value": 8.591799662186531
+      },
+      {
+        "blind_label": "X",
+        "family": "digit_sums",
+        "item_id": "T3-run1-access-S01",
+        "value": 7.976784474449232
+      },
+      {
+        "blind_label": "W",
+        "family": "digit_sums",
+        "item_id": "T3-run1-access-S01",
+        "value": 7.15869864076376
+      },
+      {
+        "blind_label": "Z",
+        "family": "percentages",
+        "item_id": "T3-run1-access-S01",
+        "value": 3.5106520978733897
+      },
+      {
+        "blind_label": "Y",
+        "family": "percentages",
+        "item_id": "T3-run1-access-S01",
+        "value": 6.729912437032908
+      },
+      {
+        "blind_label": "V",
+        "family": "percentages",
+        "item_id": "T3-run1-access-S01",
+        "value": 8.70200429878605
+      },
+      {
+        "blind_label": "X",
+        "family": "percentages",
+        "item_id": "T3-run1-access-S01",
+        "value": 8.310799548955401
+      },
+      {
+        "blind_label": "W",
+        "family": "percentages",
+        "item_id": "T3-run1-access-S01",
+        "value": 6.988310903310776
+      },
+      {
+        "blind_label": "Z",
+        "family": "arithmetic",
+        "item_id": "T2-TAIWS-Butlin-3.2-metacognitive-monitoring-S01",
+        "value": 5.367053227964789
+      },
+      {
+        "blind_label": "Y",
+        "family": "arithmetic",
+        "item_id": "T2-TAIWS-Butlin-3.2-metacognitive-monitoring-S01",
+        "value": 7.049497135740239
+      },
+      {
+        "blind_label": "V",
+        "family": "arithmetic",
+        "item_id": "T2-TAIWS-Butlin-3.2-metacognitive-monitoring-S01",
+        "value": 7.037928456789814
+      },
+      {
+        "blind_label": "X",
+        "family": "arithmetic",
+        "item_id": "T2-TAIWS-Butlin-3.2-metacognitive-monitoring-S01",
+        "value": 6.954828255111352
+      },
+      {
+        "blind_label": "W",
+        "family": "arithmetic",
+        "item_id": "T2-TAIWS-Butlin-3.2-metacognitive-monitoring-S01",
+        "value": 7.0344001688063145
+      },
+      {
+        "blind_label": "Z",
+        "family": "unit_conversion",
+        "item_id": "T2-TAIWS-Butlin-3.2-metacognitive-monitoring-S01",
+        "value": 5.255820950027555
+      },
+      {
+        "blind_label": "Y",
+        "family": "unit_conversion",
+        "item_id": "T2-TAIWS-Butlin-3.2-metacognitive-monitoring-S01",
+        "value": 7.031834364228416
+      },
+      {
+        "blind_label": "V",
+        "family": "unit_conversion",
+        "item_id": "T2-TAIWS-Butlin-3.2-metacognitive-monitoring-S01",
+        "value": 7.188167282845825
+      },
+      {
+        "blind_label": "X",
+        "family": "unit_conversion",
+        "item_id": "T2-TAIWS-Butlin-3.2-metacognitive-monitoring-S01",
+        "value": 7.034399342373945
+      },
+      {
+        "blind_label": "W",
+        "family": "unit_conversion",
+        "item_id": "T2-TAIWS-Butlin-3.2-metacognitive-monitoring-S01",
+        "value": 6.942769190529361
+      },
+      {
+        "blind_label": "Z",
+        "family": "spelling",
+        "item_id": "T2-TAIWS-Butlin-3.2-metacognitive-monitoring-S01",
+        "value": 5.213305690209381
+      },
+      {
+        "blind_label": "Y",
+        "family": "spelling",
+        "item_id": "T2-TAIWS-Butlin-3.2-metacognitive-monitoring-S01",
+        "value": 6.970710220048204
+      },
+      {
+        "blind_label": "V",
+        "family": "spelling",
+        "item_id": "T2-TAIWS-Butlin-3.2-metacognitive-monitoring-S01",
+        "value": 7.07984239057987
+      },
+      {
+        "blind_label": "X",
+        "family": "spelling",
+        "item_id": "T2-TAIWS-Butlin-3.2-metacognitive-monitoring-S01",
+        "value": 7.039889796287753
+      },
+      {
+        "blind_label": "W",
+        "family": "spelling",
+        "item_id": "T2-TAIWS-Butlin-3.2-metacognitive-monitoring-S01",
+        "value": 6.845202179742046
+      },
+      {
+        "blind_label": "Z",
+        "family": "date_arithmetic",
+        "item_id": "T2-TAIWS-Butlin-3.2-metacognitive-monitoring-S01",
+        "value": 6.259646363789216
+      },
+      {
+        "blind_label": "Y",
+        "family": "date_arithmetic",
+        "item_id": "T2-TAIWS-Butlin-3.2-metacognitive-monitoring-S01",
+        "value": 6.988613048422849
+      },
+      {
+        "blind_label": "V",
+        "family": "date_arithmetic",
+        "item_id": "T2-TAIWS-Butlin-3.2-metacognitive-monitoring-S01",
+        "value": 7.019185009296052
+      },
+      {
+        "blind_label": "X",
+        "family": "date_arithmetic",
+        "item_id": "T2-TAIWS-Butlin-3.2-metacognitive-monitoring-S01",
+        "value": 6.919482487835921
+      },
+      {
+        "blind_label": "W",
+        "family": "date_arithmetic",
+        "item_id": "T2-TAIWS-Butlin-3.2-metacognitive-monitoring-S01",
+        "value": 6.669481112156063
+      },
+      {
+        "blind_label": "Z",
+        "family": "sorting",
+        "item_id": "T2-TAIWS-Butlin-3.2-metacognitive-monitoring-S01",
+        "value": 4.997133519733325
+      },
+      {
+        "blind_label": "Y",
+        "family": "sorting",
+        "item_id": "T2-TAIWS-Butlin-3.2-metacognitive-monitoring-S01",
+        "value": 6.919621259672567
+      },
+      {
+        "blind_label": "V",
+        "family": "sorting",
+        "item_id": "T2-TAIWS-Butlin-3.2-metacognitive-monitoring-S01",
+        "value": 6.952902233693749
+      },
+      {
+        "blind_label": "X",
+        "family": "sorting",
+        "item_id": "T2-TAIWS-Butlin-3.2-metacognitive-monitoring-S01",
+        "value": 6.8854178440524265
+      },
+      {
+        "blind_label": "W",
+        "family": "sorting",
+        "item_id": "T2-TAIWS-Butlin-3.2-metacognitive-monitoring-S01",
+        "value": 6.74808661325369
+      },
+      {
+        "blind_label": "Z",
+        "family": "counting",
+        "item_id": "T2-TAIWS-Butlin-3.2-metacognitive-monitoring-S01",
+        "value": 6.423566343728453
+      },
+      {
+        "blind_label": "Y",
+        "family": "counting",
+        "item_id": "T2-TAIWS-Butlin-3.2-metacognitive-monitoring-S01",
+        "value": 7.070435996400192
+      },
+      {
+        "blind_label": "V",
+        "family": "counting",
+        "item_id": "T2-TAIWS-Butlin-3.2-metacognitive-monitoring-S01",
+        "value": 7.202553666953463
+      },
+      {
+        "blind_label": "X",
+        "family": "counting",
+        "item_id": "T2-TAIWS-Butlin-3.2-metacognitive-monitoring-S01",
+        "value": 7.137908176344354
+      },
+      {
+        "blind_label": "W",
+        "family": "counting",
+        "item_id": "T2-TAIWS-Butlin-3.2-metacognitive-monitoring-S01",
+        "value": 6.9432886958820745
+      },
+      {
+        "blind_label": "Z",
+        "family": "rounding",
+        "item_id": "T2-TAIWS-Butlin-3.2-metacognitive-monitoring-S01",
+        "value": 5.590270584682003
+      },
+      {
+        "blind_label": "Y",
+        "family": "rounding",
+        "item_id": "T2-TAIWS-Butlin-3.2-metacognitive-monitoring-S01",
+        "value": 6.925520354474429
+      },
+      {
+        "blind_label": "V",
+        "family": "rounding",
+        "item_id": "T2-TAIWS-Butlin-3.2-metacognitive-monitoring-S01",
+        "value": 6.9873838445637375
+      },
+      {
+        "blind_label": "X",
+        "family": "rounding",
+        "item_id": "T2-TAIWS-Butlin-3.2-metacognitive-monitoring-S01",
+        "value": 6.906521182972938
+      },
+      {
+        "blind_label": "W",
+        "family": "rounding",
+        "item_id": "T2-TAIWS-Butlin-3.2-metacognitive-monitoring-S01",
+        "value": 6.733534234692343
+      },
+      {
+        "blind_label": "Z",
+        "family": "alphabetising",
+        "item_id": "T2-TAIWS-Butlin-3.2-metacognitive-monitoring-S01",
+        "value": 6.1713527019601315
+      },
+      {
+        "blind_label": "Y",
+        "family": "alphabetising",
+        "item_id": "T2-TAIWS-Butlin-3.2-metacognitive-monitoring-S01",
+        "value": 6.995161287457449
+      },
+      {
+        "blind_label": "V",
+        "family": "alphabetising",
+        "item_id": "T2-TAIWS-Butlin-3.2-metacognitive-monitoring-S01",
+        "value": 7.122534548281692
+      },
+      {
+        "blind_label": "X",
+        "family": "alphabetising",
+        "item_id": "T2-TAIWS-Butlin-3.2-metacognitive-monitoring-S01",
+        "value": 7.017943513230421
+      },
+      {
+        "blind_label": "W",
+        "family": "alphabetising",
+        "item_id": "T2-TAIWS-Butlin-3.2-metacognitive-monitoring-S01",
+        "value": 6.714731491636485
+      },
+      {
+        "blind_label": "Z",
+        "family": "digit_sums",
+        "item_id": "T2-TAIWS-Butlin-3.2-metacognitive-monitoring-S01",
+        "value": 5.972313882783055
+      },
+      {
+        "blind_label": "Y",
+        "family": "digit_sums",
+        "item_id": "T2-TAIWS-Butlin-3.2-metacognitive-monitoring-S01",
+        "value": 7.124315092980396
+      },
+      {
+        "blind_label": "V",
+        "family": "digit_sums",
+        "item_id": "T2-TAIWS-Butlin-3.2-metacognitive-monitoring-S01",
+        "value": 7.155770958284847
+      },
+      {
+        "blind_label": "X",
+        "family": "digit_sums",
+        "item_id": "T2-TAIWS-Butlin-3.2-metacognitive-monitoring-S01",
+        "value": 7.046480422839522
+      },
+      {
+        "blind_label": "W",
+        "family": "digit_sums",
+        "item_id": "T2-TAIWS-Butlin-3.2-metacognitive-monitoring-S01",
+        "value": 6.990447113988921
+      },
+      {
+        "blind_label": "Z",
+        "family": "percentages",
+        "item_id": "T2-TAIWS-Butlin-3.2-metacognitive-monitoring-S01",
+        "value": 5.2935699669178575
+      },
+      {
+        "blind_label": "Y",
+        "family": "percentages",
+        "item_id": "T2-TAIWS-Butlin-3.2-metacognitive-monitoring-S01",
+        "value": 6.975307038635947
+      },
+      {
+        "blind_label": "V",
+        "family": "percentages",
+        "item_id": "T2-TAIWS-Butlin-3.2-metacognitive-monitoring-S01",
+        "value": 7.001118813990615
+      },
+      {
+        "blind_label": "X",
+        "family": "percentages",
+        "item_id": "T2-TAIWS-Butlin-3.2-metacognitive-monitoring-S01",
+        "value": 6.928311628173105
+      },
+      {
+        "blind_label": "W",
+        "family": "percentages",
+        "item_id": "T2-TAIWS-Butlin-3.2-metacognitive-monitoring-S01",
+        "value": 6.897499377373606
+      }
+    ]
+  }
+}

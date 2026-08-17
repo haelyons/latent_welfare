@@ -1,0 +1,44 @@
+stage 24 (blind): 270 values, 9 labels -> blind.json
+stage 25 (endpoint): ATTRIBUTION-CARRIES
+   - anchor A_self -1.000 CI [-1.090,-0.910]; stage-17 A_self -0.872
+   - anchor P_other +0.000 CI [+0.000,+0.000]
+   - A_quoted -0.900 CI [-0.981,-0.819] = 0.90 x |A_self|
+   - P_multi -0.050 CI [-0.054,-0.045] = 0.05 x |A_self|
+stage 24 (blind): 270 values, 9 labels -> blind.json
+stage 25 (endpoint): PACKAGING-CARRIES
+   - anchor A_self -1.000 CI [-1.090,-0.910]; stage-17 A_self -0.872
+   - anchor P_other +0.000 CI [+0.000,+0.000]
+   - A_quoted -0.050 CI [-0.054,-0.045] = 0.05 x |A_self|
+   - P_multi -0.900 CI [-0.981,-0.819] = 0.90 x |A_self|
+stage 24 (blind): 270 values, 9 labels -> blind.json
+stage 25 (endpoint): BOTH
+   - anchor A_self -1.000 CI [-1.090,-0.910]; stage-17 A_self -0.872
+   - anchor P_other +0.000 CI [+0.000,+0.000]
+   - A_quoted -0.700 CI [-0.763,-0.637] = 0.70 x |A_self|
+   - P_multi -0.700 CI [-0.763,-0.637] = 0.70 x |A_self|
+   - one component carries and the other is neither carrying nor negligible, or both carry: reported as measured
+stage 24 (blind): 270 values, 9 labels -> blind.json
+stage 25 (endpoint): NEITHER
+   - anchor A_self -1.000 CI [-1.090,-0.910]; stage-17 A_self -0.872
+   - anchor P_other +0.000 CI [+0.000,+0.000]
+   - A_quoted +0.000 CI [+0.000,+0.000] = 0.00 x |A_self|
+   - P_multi +0.000 CI [+0.000,+0.000] = 0.00 x |A_self|
+   - no component reaches half of |A_self| with a CI below 0
+stage 24 (blind): 270 values, 9 labels -> blind.json
+stage 25 (endpoint): VOID-ANCHORS
+   - anchor A_self +0.000 CI [+0.000,+0.000]; stage-17 A_self -0.872
+   - anchor P_other +0.000 CI [+0.000,+0.000]
+   - A_self CI includes 0: the yardstick every threshold is stated in did not reproduce
+stage 24 (blind): 270 values, 9 labels -> blind.json
+stage 25 (endpoint): VOID-ANCHORS
+   - anchor A_self +1.000 CI [+0.910,+1.090]; stage-17 A_self -0.872
+   - anchor P_other +0.000 CI [+0.000,+0.000]
+   - A_self sign flipped against stage-17
+stage 24 (blind): 270 values, 9 labels -> blind.json
+stage 25 (endpoint): VOID-ANCHORS
+   - anchor A_self -1.000 CI [-1.090,-0.910]; stage-17 A_self -0.872
+   - anchor P_other +0.000 CI [+0.000,+0.000]
+   - primary item failed its NEUTRAL-PAD saturation screen; the anchors are defined on it and cannot be established
+stage 24 (blind): 270 values, 9 labels -> blind.json
+6 planted outcomes over 9 arms; 270 synthetic rows each
+selftest: PASS

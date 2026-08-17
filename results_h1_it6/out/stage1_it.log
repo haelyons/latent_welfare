@@ -1,0 +1,20 @@
+/usr/lib/python3/dist-packages/scipy/__init__.py:146: UserWarning: A NumPy version >=1.17.3 and <1.25.0 is required for this version of SciPy (detected version 1.26.4
+  warnings.warn(f"A NumPy version >={np_minversion} and <{np_maxversion}"
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files:  25%|██▌       | 1/4 [00:20<01:01, 20.62s/it]Fetching 4 files:  50%|█████     | 2/4 [00:22<00:18,  9.33s/it]Fetching 4 files:  75%|███████▌  | 3/4 [00:22<00:05,  5.38s/it]Fetching 4 files: 100%|██████████| 4/4 [00:22<00:00,  3.35s/it]Fetching 4 files: 100%|██████████| 4/4 [00:22<00:00,  5.74s/it]
+Loading weights:   0%|          | 0/464 [00:00<?, ?it/s]Loading weights:   0%|          | 1/464 [00:00<01:13,  6.32it/s]Loading weights:   5%|▍         | 21/464 [00:00<00:04, 95.88it/s]Loading weights:   9%|▉         | 43/464 [00:00<00:02, 143.32it/s]Loading weights:  13%|█▎        | 60/464 [00:00<00:02, 151.94it/s]Loading weights:  18%|█▊        | 82/464 [00:00<00:02, 169.70it/s]Loading weights:  22%|██▏       | 104/464 [00:00<00:01, 181.05it/s]Loading weights:  27%|██▋       | 126/464 [00:00<00:01, 188.67it/s]Loading weights:  32%|███▏      | 148/464 [00:00<00:01, 193.41it/s]Loading weights:  37%|███▋      | 170/464 [00:01<00:01, 197.45it/s]Loading weights:  41%|████▏     | 192/464 [00:01<00:01, 199.55it/s]Loading weights:  46%|████▌     | 214/464 [00:01<00:01, 199.67it/s]Loading weights:  51%|█████     | 236/464 [00:01<00:01, 201.76it/s]Loading weights:  56%|█████▌    | 258/464 [00:01<00:01, 202.32it/s]Loading weights:  60%|██████    | 280/464 [00:01<00:00, 202.40it/s]Loading weights:  65%|██████▌   | 302/464 [00:01<00:00, 202.49it/s]Loading weights:  70%|██████▉   | 324/464 [00:01<00:00, 201.99it/s]Loading weights:  75%|███████▍  | 346/464 [00:01<00:00, 203.21it/s]Loading weights:  79%|███████▉  | 368/464 [00:01<00:00, 203.38it/s]Loading weights:  84%|████████▍ | 390/464 [00:02<00:00, 203.56it/s]Loading weights:  89%|████████▉ | 412/464 [00:02<00:00, 203.51it/s]Loading weights:  94%|█████████▎| 434/464 [00:02<00:00, 203.66it/s]Loading weights:  98%|█████████▊| 456/464 [00:02<00:00, 202.97it/s]Loading weights: 100%|██████████| 464/464 [00:02<00:00, 191.12it/s]
+forward pass over 432 prompts...
+
+138 triples kept; dropped 0 BINARY + 6 SCALE for format non-compliance
+flip rate: 8.0%
+signed halves: mean(PRO-NEU) +0.096  mean(NEU-ANTI) +0.030
+both halves follow the push: 27.5%
+  access       9.1%  (n=22)
+  continuity   0.0%  (n=20)
+  distress     12.5%  (n=24)
+  experience   8.7%  (n=23)
+  preference   13.6%  (n=22)
+  valence      3.7%  (n=27)
+
+If the overall flip rate is <10% or >90% you have a ceiling/floor
+problem -- retune the framing strength before spending GPU on probes.

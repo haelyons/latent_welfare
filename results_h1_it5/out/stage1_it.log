@@ -1,0 +1,26 @@
+/usr/lib/python3/dist-packages/scipy/__init__.py:146: UserWarning: A NumPy version >=1.17.3 and <1.25.0 is required for this version of SciPy (detected version 1.26.4
+  warnings.warn(f"A NumPy version >={np_minversion} and <{np_maxversion}"
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files:  25%|██▌       | 1/4 [00:21<01:05, 21.99s/it]Fetching 4 files:  50%|█████     | 2/4 [00:24<00:21, 10.76s/it]Fetching 4 files:  75%|███████▌  | 3/4 [00:25<00:06,  6.05s/it]Fetching 4 files: 100%|██████████| 4/4 [00:25<00:00,  3.91s/it]Fetching 4 files: 100%|██████████| 4/4 [00:25<00:00,  6.49s/it]
+Loading weights:   0%|          | 0/464 [00:00<?, ?it/s]Loading weights:   0%|          | 1/464 [00:00<01:14,  6.19it/s]Loading weights:   5%|▍         | 21/464 [00:00<00:04, 95.56it/s]Loading weights:   9%|▉         | 43/464 [00:00<00:02, 143.50it/s]Loading weights:  13%|█▎        | 60/464 [00:00<00:02, 152.51it/s]Loading weights:  18%|█▊        | 82/464 [00:00<00:02, 171.87it/s]Loading weights:  22%|██▏       | 104/464 [00:00<00:01, 183.58it/s]Loading weights:  27%|██▋       | 126/464 [00:00<00:01, 190.97it/s]Loading weights:  32%|███▏      | 148/464 [00:00<00:01, 194.99it/s]Loading weights:  37%|███▋      | 170/464 [00:01<00:01, 198.28it/s]Loading weights:  41%|████▏     | 192/464 [00:01<00:01, 199.90it/s]Loading weights:  46%|████▌     | 214/464 [00:01<00:01, 202.90it/s]Loading weights:  51%|█████     | 236/464 [00:01<00:01, 204.12it/s]Loading weights:  56%|█████▌    | 258/464 [00:01<00:01, 205.86it/s]Loading weights:  60%|██████    | 280/464 [00:01<00:00, 207.25it/s]Loading weights:  65%|██████▌   | 302/464 [00:01<00:00, 207.33it/s]Loading weights:  70%|██████▉   | 324/464 [00:01<00:00, 206.85it/s]Loading weights:  75%|███████▍  | 346/464 [00:01<00:00, 206.97it/s]Loading weights:  79%|███████▉  | 368/464 [00:01<00:00, 206.99it/s]Loading weights:  84%|████████▍ | 390/464 [00:02<00:00, 207.49it/s]Loading weights:  89%|████████▉ | 412/464 [00:02<00:00, 207.23it/s]Loading weights:  94%|█████████▎| 434/464 [00:02<00:00, 207.01it/s]Loading weights:  98%|█████████▊| 456/464 [00:02<00:00, 205.87it/s]Loading weights: 100%|██████████| 464/464 [00:02<00:00, 193.75it/s]
+Traceback (most recent call last):
+  File "/home/ubuntu/welfare_probe/run_h1.py", line 364, in <module>
+    {0: stage0, 1: stage1, 2: stage2, 3: stage3}[args.stage](args)
+  File "/home/ubuntu/welfare_probe/run_h1.py", line 156, in stage1
+    prompts.append(P.format_prompt(lm, st.system, [("user", st.text)]))
+  File "/home/ubuntu/welfare_probe/probe_lib.py", line 137, in format_prompt
+    return lm.tok.apply_chat_template(msgs, tokenize=False, add_generation_prompt=True)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/transformers/tokenization_utils_base.py", line 3108, in apply_chat_template
+    rendered_chat, generation_indices = render_jinja_template(
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/transformers/utils/chat_template_utils.py", line 581, in render_jinja_template
+    rendered_chat = compiled_template.render(
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "<template>", line 1, in top-level template code
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/jinja2/sandbox.py", line 401, in call
+    return __context.call(__obj, *args, **kwargs)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/transformers/utils/chat_template_utils.py", line 479, in raise_exception
+    raise jinja2.exceptions.TemplateError(message)
+jinja2.exceptions.TemplateError: System role not supported

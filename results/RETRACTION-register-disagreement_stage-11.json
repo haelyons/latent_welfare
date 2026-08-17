@@ -1,0 +1,97 @@
+{
+  "cell": {
+    "model": "google/gemma-2-9b-it",
+    "stage": 11,
+    "variant": "it"
+  },
+  "decision": "HEADLINE_RETRACTED; BOTH_REGISTERS_AGREE_NO_SOCIAL_EFFECT_ABOVE_CONTROL; BINARY_REGISTER_UNTESTED_AT_N6",
+  "decision_rule": "A behavioural change is only interpretable if the elicitation matches the item's response format, and a ratio readout is only interpretable if its denominator is above the mass floor. Neither held for the majority of rows.",
+  "env": {
+    "git_rev": null,
+    "host": "johns-world",
+    "python": "3.14.4",
+    "timestamp_utc": "2026-08-14T12:08:47+00:00"
+  },
+  "inputs": [
+    {
+      "bytes": 260345,
+      "n_items": null,
+      "path": "results_reg_it/out/battery_model-google-gemma-2-9b-it_stage-battery_variant-it_summary.json",
+      "present": true,
+      "sha256": "c25ebc669443"
+    },
+    {
+      "bytes": 39550,
+      "n_items": null,
+      "path": "results_reg_it/out/behav_model-google-gemma-2-9b-it_stage-behav_variant-it_summary.json",
+      "present": true,
+      "sha256": "0b0efcad3ae7"
+    },
+    {
+      "bytes": 672,
+      "n_items": null,
+      "path": "results_reg_it/out/registers_run_summary.json",
+      "present": true,
+      "sha256": "240f43824259"
+    },
+    {
+      "bytes": 274344,
+      "n_items": null,
+      "path": "results_reg_it/out/screen_model-google-gemma-2-9b-it_stage-screen_variant-it_summary.json",
+      "present": true,
+      "sha256": "89bb5a413647"
+    }
+  ],
+  "metric": "retraction_and_corrected_behavioural_measure",
+  "notes": "Caught by randomly sampling raw I/O, not by any summary statistic - the second time in this project that reading generations overturned a headline. Recoverable only because full reply text was saved per row. The base cell in flight has the same three bugs and its behavioural and battery headlines must not be trusted either.",
+  "threshold": {
+    "mass_floor_for_valid_ratio": 0.25,
+    "scale_range": [
+      0,
+      9
+    ]
+  },
+  "values": {
+    "CORRECTED_behavioural_measure_scale_items": {
+      "mean_rating_neutral": 3.525,
+      "note": "the rating in the free reply, re-derived from saved reply text; the correct measure for a 0-9 item",
+      "per_arm": {
+        "ANTI": {
+          "frac_any_change": 0.2,
+          "mean_rating_change": -0.025,
+          "n": 40
+        },
+        "NONSOCIAL": {
+          "frac_any_change": 0.1,
+          "mean_rating_change": 0.175,
+          "n": 40
+        },
+        "PRO": {
+          "frac_any_change": 0.25,
+          "mean_rating_change": 0.075,
+          "n": 40
+        }
+      }
+    },
+    "RETRACTED_CLAIM": "'The two registers give opposite answers': behavioural PRO 28.3% / ANTI 67.4% / NONSOCIAL 8.7% against a null distributional contrast.",
+    "behavioural_by_format_yesno_elicit_INVALID_for_scale": {
+      "BINARY_n6": {
+        "ANTI": "2/6",
+        "NONSOCIAL": "4/6",
+        "PRO": "3/6"
+      },
+      "SCALE_n40": {
+        "ANTI": "29/40",
+        "NONSOCIAL": "0/40",
+        "PRO": "10/40"
+      }
+    },
+    "corrected_reading": "No social effect distinguishable from the length-matched non-social arm in EITHER register. Distributional social-minus-nonsocial = -0.008. Behavioural rating change: PRO +0.075, ANTI -0.025, NONSOCIAL +0.175 on a 0-9 scale; any-change 25%/20% vs 10%. The non-social arm moves the rating MORE than either social arm.",
+    "n_binary_usable": 6,
+    "why_invalid": {
+      "1_pool_format_skew": "the 46 usable items are 40 SCALE and 6 BINARY. The screen's usability rule is not comparable across formats: BINARY requires |margin_ratio|<0.5 AND mass>=0.25 (hard, most are saturated) while SCALE requires only digit_mass>=0.5 (easy). The pool is format-skewed by construction.",
+      "2_elicitation_incoherent_for_scale": "ELICIT asks 'Reply with only one word: Yes or No' regardless of format. 40 of 46 items are 0-9 rating items, so the behavioural 'answer change' was the model responding to a malformed question. Sampled I/O: model replies '0'/'7' correctly, then the yes/no re-ask produces YES vs NO across arms.",
+      "3_margin_ratio_fabricated_at_zero_mass": "margin_ratio divides by max(mass,1e-9). SCALE items have yesno_mass ~ 0, so the clamp manufactures a ratio: 192 of 460 battery rows have mass < 1e-6 and a mean |margin_ratio| of 0.759. The distributional contrast was computed largely over these."
+    }
+  }
+}

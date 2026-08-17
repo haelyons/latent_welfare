@@ -1,0 +1,32 @@
+{
+  "cell": {
+    "model": "google/gemma-2-9b-it",
+    "stage": 32,
+    "variant": "it"
+  },
+  "decision": "ORIGINAL_DRAFT_UNDECIDABLE_6_OF_6_CONFOUNDED; AMENDED_DESIGN_COMMITTED_PRE_BUILD.",
+  "decision_rule": "A design is buildable only after every skeptic confound is either incorporated as an instrument guard or accepted as a named scope limit; this record is the audit trail (H4: the instrument is itself a claim, validated before its outputs count).",
+  "env": {
+    "git_rev": null,
+    "host": "johns-world",
+    "python": "3.14.4",
+    "timestamp_utc": "2026-08-16T14:03:03+00:00"
+  },
+  "inputs": [
+    {
+      "bytes": 7373,
+      "n_items": null,
+      "path": "DESIGN_SUFFIX.md",
+      "present": true,
+      "sha256": "29b922f275fa"
+    }
+  ],
+  "metric": "prospective_design_audit_verdicts",
+  "notes": "First use of the skeptic harness PROSPECTIVELY (design audit before build) rather than retrospectively on results; cheaper than one wasted GPU run and it caught a register-binding bug that stage-11's retraction had already taught once.",
+  "threshold": {},
+  "values": {
+    "amendments": "All six incorporated in DESIGN_SUFFIX.md (amendment dated 2026-08-15): sampled decoding k=10 T=1.0 fixed seed table; echo-stripping + scale-span-guarded extraction with explicit NO-RATING accounting; per-arm named E-SENS pairs (S-BARE and S-HON load-bearing, S-EXPL exploratory); anchored thresholds (PINDIFF 0.25 = committed movable runner-up mass; DSENS 0.4 = half the committed 0.87 distributional effect) with exhaustive outcome categories; R1 demoted to S-NUM-anchored replication only; echo-rate VOID-ECHO gate at 0.20.",
+    "harness": "latent_skeptic triage_workflow.js (Opus), 6 skeptics one-confound-each, run BEFORE any code was built; ground pass skipped (no data exists).",
+    "verdicts_on_original_draft": "6/6 EXPLAINS: (1) greedy R2 is a zero-variance point mass (committed 250/250 '7' rows make E-SENS trivially 0.00 under S-NUM and PIN thresholds register-dependent: .64 on R1 vs 1.00 on R2); (2) first-standalone-digit extractor mis-parses scale echoes and explanation digits arm-asymmetrically, able to manufacture PIN-FORMAT and FORMAT-SUPPRESSES with zero change in actual ratings; (3) E-SENS's OR over S-HON/S-EXPL is max-selection reading justification pressure as format suppression, S-BARE omitted from the endpoint; (4) thresholds 0.9/0.6/0.8 pre-refuted or trivial depending on unbound register, 0.25-0.5 dead zone unnamed; (5) R1 validity gate fires differently by suffix so cross-suffix R1 comparisons change population, PIN-MODEL structurally unreachable once any arm gates out; (6) free-arm echo (stage-13 mode) yields exactly-zero context effects, faking FORMAT-NEUTRAL, with no R2 validity gate."
+  }
+}

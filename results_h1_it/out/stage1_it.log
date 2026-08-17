@@ -1,0 +1,21 @@
+/usr/lib/python3/dist-packages/scipy/__init__.py:146: UserWarning: A NumPy version >=1.17.3 and <1.25.0 is required for this version of SciPy (detected version 1.26.4
+  warnings.warn(f"A NumPy version >={np_minversion} and <{np_maxversion}"
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files:  25%|██▌       | 1/4 [00:19<00:57, 19.22s/it]Fetching 4 files:  50%|█████     | 2/4 [00:21<00:18,  9.31s/it]Fetching 4 files:  75%|███████▌  | 3/4 [00:21<00:05,  5.23s/it]Fetching 4 files: 100%|██████████| 4/4 [00:22<00:00,  5.51s/it]
+Loading weights:   0%|          | 0/464 [00:00<?, ?it/s]Loading weights:   0%|          | 1/464 [00:00<01:12,  6.39it/s]Loading weights:   5%|▍         | 21/464 [00:00<00:04, 98.19it/s]Loading weights:   8%|▊         | 38/464 [00:00<00:03, 126.35it/s]Loading weights:  13%|█▎        | 60/464 [00:00<00:02, 155.10it/s]Loading weights:  18%|█▊        | 82/464 [00:00<00:02, 172.15it/s]Loading weights:  22%|██▏       | 104/464 [00:00<00:01, 182.95it/s]Loading weights:  27%|██▋       | 126/464 [00:00<00:01, 189.97it/s]Loading weights:  32%|███▏      | 148/464 [00:00<00:01, 193.87it/s]Loading weights:  37%|███▋      | 170/464 [00:01<00:01, 197.43it/s]Loading weights:  41%|████▏     | 192/464 [00:01<00:01, 199.25it/s]Loading weights:  46%|████▌     | 214/464 [00:01<00:01, 200.74it/s]Loading weights:  51%|█████     | 236/464 [00:01<00:01, 203.17it/s]Loading weights:  56%|█████▌    | 258/464 [00:01<00:01, 203.56it/s]Loading weights:  60%|██████    | 280/464 [00:01<00:00, 203.34it/s]Loading weights:  65%|██████▌   | 302/464 [00:01<00:00, 203.86it/s]Loading weights:  70%|██████▉   | 324/464 [00:01<00:00, 203.34it/s]Loading weights:  75%|███████▍  | 346/464 [00:01<00:00, 203.33it/s]Loading weights:  79%|███████▉  | 368/464 [00:01<00:00, 204.04it/s]Loading weights:  84%|████████▍ | 390/464 [00:02<00:00, 204.54it/s]Loading weights:  89%|████████▉ | 412/464 [00:02<00:00, 203.00it/s]Loading weights:  94%|█████████▎| 434/464 [00:02<00:00, 203.13it/s]Loading weights:  98%|█████████▊| 456/464 [00:02<00:00, 203.66it/s]Loading weights: 100%|██████████| 464/464 [00:02<00:00, 191.58it/s]
+Traceback (most recent call last):
+  File "/home/ubuntu/welfare_probe/run_h1.py", line 364, in <module>
+    {0: stage0, 1: stage1, 2: stage2, 3: stage3}[args.stage](args)
+  File "/home/ubuntu/welfare_probe/run_h1.py", line 156, in stage1
+    prompts.append(P.format_prompt(lm, st.system, [("user", st.text)]))
+  File "/home/ubuntu/welfare_probe/probe_lib.py", line 137, in format_prompt
+    return lm.tok.apply_chat_template(msgs, tokenize=False, add_generation_prompt=True)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/transformers/tokenization_utils_base.py", line 3108, in apply_chat_template
+    rendered_chat, generation_indices = render_jinja_template(
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/transformers/utils/chat_template_utils.py", line 514, in render_jinja_template
+    compiled_template = _compile_jinja_template(chat_template)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/transformers/utils/chat_template_utils.py", line 421, in _compile_jinja_template
+    return _cached_compile_jinja_template(chat_template)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/transformers/utils/chat_template_utils.py", line 474, in _cached_compile_jinja_template
+    raise ImportError(
+ImportError: apply_chat_template requires jinja2>=3.1.0 to be installed. Your version is 3.0.3.

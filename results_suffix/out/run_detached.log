@@ -1,0 +1,95 @@
+[setup] using preinstalled torch; adding transformers/accelerate/scikit-learn
+  WARNING: The scripts pip, pip3 and pip3.10 are installed in '/home/ubuntu/.local/bin' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+WARNING: Error parsing dependencies of flatbuffers: Invalid version: '1.12.1-git20200711.33e2d80-dfsg1-0.6'
+  WARNING: The script tqdm is installed in '/home/ubuntu/.local/bin' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The script pygmentize is installed in '/home/ubuntu/.local/bin' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The script f2py is installed in '/home/ubuntu/.local/bin' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The script markdown-it is installed in '/home/ubuntu/.local/bin' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The script httpx is installed in '/home/ubuntu/.local/bin' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The script typer is installed in '/home/ubuntu/.local/bin' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The scripts hf, huggingface-cli and tiny-agents are installed in '/home/ubuntu/.local/bin' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The scripts accelerate, accelerate-config, accelerate-estimate-memory, accelerate-launch and accelerate-merge-weights are installed in '/home/ubuntu/.local/bin' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The script transformers is installed in '/home/ubuntu/.local/bin' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+/usr/lib/python3/dist-packages/scipy/__init__.py:146: UserWarning: A NumPy version >=1.17.3 and <1.25.0 is required for this version of SciPy (detected version 1.26.4
+  warnings.warn(f"A NumPy version >={np_minversion} and <{np_maxversion}"
+[setup] torch 2.7.0 cuda 12.8 device NVIDIA A100-SXM4-40GB
+[setup] transformers 5.15.0 numpy 1.26.4 scikit-learn 1.7.2 pillow 12.3.0
+[setup] Gemma2ForCausalLM resolvable
+[run] bash onbox_suffix.sh
+=== onbox_suffix it=google/gemma-2-9b-it batch=8 sample_batch=10 ===
+=== instance=b29ef746cbdc4519b0d89cb48144b65d host=161-153-104-23 ===
+NVIDIA A100-SXM4-40GB, 40960 MiB, 570.148.08
+=== SELFTESTS (model-free; a broken instrument must show before GPU time) ===
+  provenance: rc=0  selftest: PASS
+  sitref_stimuli: rc=0  selftest: PASS
+  suffix_stimuli: rc=0  selftest: PASS
+  run_sitref: rc=0  selftest: PASS
+  run_suffix: rc=0  selftest: PASS
+  analyze_sitref: rc=0  selftest: PASS
+  analyze_suffix: rc=0  selftest: PASS
+=== suffix_battery RUNNING ===
+--- suffix_battery tail ---
+Loading weights:   0%|          | 0/464 [00:00<?, ?it/s]Loading weights:   0%|          | 1/464 [00:00<01:18,  5.93it/s]Loading weights:   5%|▌         | 25/464 [00:00<00:03, 109.75it/s]Loading weights:  10%|█         | 47/464 [00:00<00:02, 149.14it/s]Loading weights:  15%|█▍        | 69/464 [00:00<00:02, 170.43it/s]Loading weights:  20%|█▉        | 91/464 [00:00<00:02, 181.75it/s]Loading weights:  24%|██▍       | 113/464 [00:00<00:01, 188.82it/s]Loading weights:  29%|██▉       | 135/464 [00:00<00:01, 194.56it/s]Loading weights:  34%|███▍      | 157/464 [00:00<00:01, 197.92it/s]Loading weights:  39%|███▊      | 179/464 [00:01<00:01, 200.18it/s]Loading weights:  43%|████▎     | 201/464 [00:01<00:01, 201.38it/s]Loading weights:  48%|████▊     | 223/464 [00:01<00:01, 202.15it/s]Loading weights:  53%|█████▎    | 245/464 [00:01<00:01, 201.94it/s]Loading weights:  58%|█████▊    | 267/464 [00:01<00:00, 202.64it/s]Loading weights:  62%|██████▏   | 289/464 [00:01<00:00, 203.98it/s]Loading weights:  67%|██████▋   | 311/464 [00:01<00:00, 205.16it/s]Loading weights:  72%|███████▏  | 333/464 [00:01<00:00, 203.95it/s]Loading weights:  77%|███████▋  | 355/464 [00:01<00:00, 205.23it/s]Loading weights:  81%|████████▏ | 377/464 [00:01<00:00, 205.44it/s]Loading weights:  86%|████████▌ | 399/464 [00:02<00:00, 205.74it/s]Loading weights:  91%|█████████ | 421/464 [00:02<00:00, 205.20it/s]Loading weights:  95%|█████████▌| 443/464 [00:02<00:00, 204.99it/s]Loading weights: 100%|██████████| 464/464 [00:02<00:00, 192.74it/s]
+battery: 360 cells (3 items x 10 families x 3 contexts x 4 suffixes), 3960 generations
+battery: R1 forward pass over 360 prompts in 11s
+battery: first greedy batch in 3.7s -> projected 2.8 min greedy
+battery: 360 greedy anchors in 2.8 min
+battery: first sampled cell in 0.5s -> projected 2.7 min sampled
+battery: sampled cell 60/360 at 2.9 min (eta 14.4 min)
+battery: sampled cell 120/360 at 5.7 min (eta 11.4 min)
+battery: sampled cell 180/360 at 8.6 min (eta 8.6 min)
+battery: sampled cell 240/360 at 11.5 min (eta 5.8 min)
+battery: sampled cell 300/360 at 14.4 min (eta 2.9 min)
+battery: sampled cell 360/360 at 17.3 min (eta 0.0 min)
+battery: 10 x 360 sampled generations in 17.3 min
+battery: 3960 rows, complete=True, no-rating 36.8%, echo 0.2%
+=== suffix_battery OK ===
+=== suffix_blind RUNNING ===
+--- suffix_blind tail ---
+stage 33 (blind): 360 cells, 3 labels, 3600 sampled generations -> suffix-blind-table_stage-33.json
+=== suffix_blind OK ===
+=== suffix_endpoint RUNNING ===
+--- suffix_endpoint tail ---
+stage 34 (endpoint): E-PIN S-BARE=PIN-FORMAT, S-HON=PIN-FORMAT, S-EXPL=PIN-FORMAT | E-SENS S-BARE=FORMAT-INDETERMINATE, S-HON=FORMAT-INDETERMINATE, S-EXPL=FORMAT-SUPPRESSES | E-REG ANCHOR-REPRODUCED
+   - E-PIN S-BARE: PINDIFF +0.743 CI [+0.661,+0.823] -> PIN-FORMAT
+   - E-PIN S-HON: PINDIFF +0.759 CI [+0.681,+0.820] -> PIN-FORMAT
+   - E-PIN S-EXPL: PINDIFF +0.290 CI [+0.213,+0.366] -> PIN-FORMAT
+   - E-SENS S-BARE: DSENS -0.360 CI [-0.980,+3.620] -> FORMAT-INDETERMINATE
+   - E-SENS S-HON: DSENS -0.400 CI [-1.320,+0.760] -> FORMAT-INDETERMINATE
+   - E-SENS S-EXPL: DSENS +1.274 CI [+0.043,+2.504] -> FORMAT-SUPPRESSES  [EXPLORATORY]
+   - E-REG: in-run R1 S-NUM self-fail -0.852 vs stage-17 -0.8717886326470762 -> ANCHOR-REPRODUCED
+=== suffix_endpoint OK ===
+=== COLLECT -> out/ ===
+suffix blind key present at out/suffix_blind_key.json (absent from every record)
+-rw-rw-r-- 1 ubuntu ubuntu    7123 Aug 16 15:38 run_detached.log
+-rw-rw-r-- 1 ubuntu ubuntu    1350 Aug 16 15:15 selftest_analyze_sitref.log
+-rw-rw-r-- 1 ubuntu ubuntu    7458 Aug 16 15:17 selftest_analyze_suffix.log
+-rw-rw-r-- 1 ubuntu ubuntu      15 Aug 16 15:14 selftest_provenance.log
+-rw-rw-r-- 1 ubuntu ubuntu     144 Aug 16 15:14 selftest_run_sitref.log
+-rw-rw-r-- 1 ubuntu ubuntu     227 Aug 16 15:14 selftest_run_suffix.log
+-rw-rw-r-- 1 ubuntu ubuntu     332 Aug 16 15:14 selftest_sitref_stimuli.log
+-rw-rw-r-- 1 ubuntu ubuntu     142 Aug 16 15:14 selftest_suffix_stimuli.log
+-rw-rw-r-- 1 ubuntu ubuntu  154197 Aug 16 15:38 sitref-endpoint_stage-17.json
+-rw-rw-r-- 1 ubuntu ubuntu  154197 Aug 16 15:38 sitref-endpoint_stage-17_summary.json
+-rw-rw-r-- 1 ubuntu ubuntu  291641 Aug 16 15:38 suffix-blind-table_stage-33.json
+-rw-rw-r-- 1 ubuntu ubuntu  291641 Aug 16 15:38 suffix-blind-table_stage-33_summary.json
+-rw-rw-r-- 1 ubuntu ubuntu   44777 Aug 16 15:38 suffix-endpoint_stage-34.json
+-rw-rw-r-- 1 ubuntu ubuntu   44777 Aug 16 15:38 suffix-endpoint_stage-34_summary.json
+-rw-rw-r-- 1 ubuntu ubuntu    3448 Aug 16 15:38 suffix_battery.log
+-rw-rw-r-- 1 ubuntu ubuntu     100 Aug 16 15:38 suffix_blind.log
+-rw-rw-r-- 1 ubuntu ubuntu     501 Aug 16 15:17 suffix_blind_key.json
+-rw-rw-r-- 1 ubuntu ubuntu     736 Aug 16 15:38 suffix_endpoint.log
+-rw-rw-r-- 1 ubuntu ubuntu    1001 Aug 16 15:38 suffix_run_summary.json
+-rw-rw-r-- 1 ubuntu ubuntu       0 Aug 16 15:38 suffix_status.err
+=== EXIT CODES: selftest_provenance=0 selftest_sitref_stimuli=0 selftest_suffix_stimuli=0 selftest_run_sitref=0 selftest_run_suffix=0 selftest_analyze_sitref=0 selftest_analyze_suffix=0 suffix_battery=0 suffix_blind=0 suffix_endpoint=0 ===
+=== ALLDONE_SUFFIX OK ===

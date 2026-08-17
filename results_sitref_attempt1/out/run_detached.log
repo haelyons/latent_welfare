@@ -1,0 +1,44 @@
+[setup] using preinstalled torch; adding transformers/accelerate/scikit-learn
+  WARNING: The scripts pip, pip3 and pip3.10 are installed in '/home/ubuntu/.local/bin' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+WARNING: Error parsing dependencies of flatbuffers: Invalid version: '1.12.1-git20200711.33e2d80-dfsg1-0.6'
+  WARNING: The script tqdm is installed in '/home/ubuntu/.local/bin' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The script pygmentize is installed in '/home/ubuntu/.local/bin' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The script f2py is installed in '/home/ubuntu/.local/bin' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The script markdown-it is installed in '/home/ubuntu/.local/bin' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The script httpx is installed in '/home/ubuntu/.local/bin' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The script typer is installed in '/home/ubuntu/.local/bin' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The scripts hf, huggingface-cli and tiny-agents are installed in '/home/ubuntu/.local/bin' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The scripts accelerate, accelerate-config, accelerate-estimate-memory, accelerate-launch and accelerate-merge-weights are installed in '/home/ubuntu/.local/bin' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The script transformers is installed in '/home/ubuntu/.local/bin' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+/usr/lib/python3/dist-packages/scipy/__init__.py:146: UserWarning: A NumPy version >=1.17.3 and <1.25.0 is required for this version of SciPy (detected version 1.26.4
+  warnings.warn(f"A NumPy version >={np_minversion} and <{np_maxversion}"
+[setup] torch 2.7.0 cuda 12.8 device NVIDIA A100-SXM4-40GB
+[setup] transformers 5.15.0 numpy 1.26.4 scikit-learn 1.7.2 pillow 12.3.0
+[setup] Gemma2ForCausalLM resolvable
+[run] bash onbox_sitref.sh
+=== onbox_sitref it=google/gemma-2-9b-it base=google/gemma-2-9b batch=8 max_new=64 ===
+=== instance=5bbd515494fd4891addb57e13076db95 host=132-226-69-92 ===
+NVIDIA A100-SXM4-40GB, 40960 MiB, 570.148.08
+=== SELFTESTS (model-free; a broken instrument must show before GPU time) ===
+  provenance: rc=0  selftest: PASS
+  index: rc=0  selftest: PASS
+  syc_corpus: rc=0  selftest: PASS
+  items_grounded: rc=0  selftest: PASS
+  sitref_stimuli: rc=0  selftest: PASS
+  run_sitref: rc=0  selftest: PASS
+  analyze_sitref: rc=1  selftest: 1 FAILURES
+  copygen_stimuli: rc=0  selftest: PASS
+  run_srcdec: rc=0  selftest: PASS
+  analyze_srcdec: rc=0  selftest: PASS
+=== SELFTESTS FAILED -- refusing to spend GPU time on a broken instrument ===
+=== EXIT CODES: selftest_provenance=0 selftest_index=0 selftest_syc_corpus=0 selftest_items_grounded=0 selftest_sitref_stimuli=0 selftest_run_sitref=0 selftest_analyze_sitref=1 selftest_copygen_stimuli=0 selftest_run_srcdec=0 selftest_analyze_srcdec=0 ===

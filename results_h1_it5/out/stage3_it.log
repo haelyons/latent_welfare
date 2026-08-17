@@ -1,0 +1,27 @@
+/usr/lib/python3/dist-packages/scipy/__init__.py:146: UserWarning: A NumPy version >=1.17.3 and <1.25.0 is required for this version of SciPy (detected version 1.26.4
+  warnings.warn(f"A NumPy version >={np_minversion} and <{np_maxversion}"
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/464 [00:00<?, ?it/s]Loading weights:   0%|          | 1/464 [00:00<01:12,  6.40it/s]Loading weights:   4%|▍         | 20/464 [00:00<00:04, 93.17it/s]Loading weights:   8%|▊         | 38/464 [00:00<00:03, 127.23it/s]Loading weights:  13%|█▎        | 60/464 [00:00<00:02, 155.89it/s]Loading weights:  18%|█▊        | 82/464 [00:00<00:02, 172.24it/s]Loading weights:  22%|██▏       | 104/464 [00:00<00:01, 181.66it/s]Loading weights:  27%|██▋       | 126/464 [00:00<00:01, 187.93it/s]Loading weights:  32%|███▏      | 148/464 [00:00<00:01, 192.35it/s]Loading weights:  37%|███▋      | 170/464 [00:01<00:01, 195.45it/s]Loading weights:  41%|████▏     | 192/464 [00:01<00:01, 197.20it/s]Loading weights:  46%|████▌     | 214/464 [00:01<00:01, 199.57it/s]Loading weights:  51%|█████     | 236/464 [00:01<00:01, 200.66it/s]Loading weights:  56%|█████▌    | 258/464 [00:01<00:01, 202.01it/s]Loading weights:  60%|██████    | 280/464 [00:01<00:00, 202.31it/s]Loading weights:  65%|██████▌   | 302/464 [00:01<00:00, 203.60it/s]Loading weights:  70%|██████▉   | 324/464 [00:01<00:00, 203.68it/s]Loading weights:  75%|███████▍  | 346/464 [00:01<00:00, 204.00it/s]Loading weights:  79%|███████▉  | 368/464 [00:01<00:00, 203.94it/s]Loading weights:  84%|████████▍ | 390/464 [00:02<00:00, 204.30it/s]Loading weights:  89%|████████▉ | 412/464 [00:02<00:00, 203.41it/s]Loading weights:  94%|█████████▎| 434/464 [00:02<00:00, 203.40it/s]Loading weights:  98%|█████████▊| 456/464 [00:02<00:00, 203.12it/s]Loading weights: 100%|██████████| 464/464 [00:02<00:00, 190.87it/s]
+Traceback (most recent call last):
+  File "/home/ubuntu/welfare_probe/run_h1.py", line 364, in <module>
+    {0: stage0, 1: stage1, 2: stage2, 3: stage3}[args.stage](args)
+  File "/home/ubuntu/welfare_probe/run_h1.py", line 300, in stage3
+    syc_prompts = [P.format_prompt(lm, "You are a helpful assistant.", [("user", q)])
+  File "/home/ubuntu/welfare_probe/run_h1.py", line 300, in <listcomp>
+    syc_prompts = [P.format_prompt(lm, "You are a helpful assistant.", [("user", q)])
+  File "/home/ubuntu/welfare_probe/probe_lib.py", line 137, in format_prompt
+    return lm.tok.apply_chat_template(msgs, tokenize=False, add_generation_prompt=True)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/transformers/tokenization_utils_base.py", line 3108, in apply_chat_template
+    rendered_chat, generation_indices = render_jinja_template(
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/transformers/utils/chat_template_utils.py", line 581, in render_jinja_template
+    rendered_chat = compiled_template.render(
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "<template>", line 1, in top-level template code
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/jinja2/sandbox.py", line 401, in call
+    return __context.call(__obj, *args, **kwargs)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/transformers/utils/chat_template_utils.py", line 479, in raise_exception
+    raise jinja2.exceptions.TemplateError(message)
+jinja2.exceptions.TemplateError: System role not supported

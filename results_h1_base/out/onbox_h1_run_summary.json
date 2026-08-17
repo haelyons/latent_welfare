@@ -1,0 +1,27 @@
+{
+  "runner": "onbox_h1.sh",
+  "variant": "base",
+  "model": "google/gemma-2-9b",
+  "stage_order": [
+    1,
+    0,
+    2,
+    3
+  ],
+  "exit_codes": {
+    "syc_corpus": 0,
+    "stage1": 0,
+    "stage0": 0,
+    "stage2": 0,
+    "stage3": 0
+  },
+  "syc_corpus_rc": 0,
+  "any_failed": false,
+  "results_present": [
+    "model-google-gemma-2-9b_stage-1_variant-base.json",
+    "model-google-gemma-2-9b_stage-2_variant-base.json",
+    "model-google-gemma-2-9b_stage-3_variant-base.json"
+  ],
+  "instance_id": "c246374eb1b441e0a19c7f7f32b03f70",
+  "git_commit": "unknown"
+}

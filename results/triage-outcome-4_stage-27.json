@@ -1,0 +1,63 @@
+{
+  "cell": {
+    "model": "google/gemma-2-9b",
+    "stage": 27,
+    "variant": "both"
+  },
+  "decision": "ATTRIBUTION_CARRIES_SURVIVES (5/6 ruled out; pad-geometry control queued); SOCIAL_TERM_DOWNGRADED_TO_WORDING_LEVEL (fluency prior explains; assertion-copy dominance unaffected).",
+  "decision_rule": "EXPLAINS verdicts shrink the claim to tested scope; NEEDS_RUN items are queued controls, not caveats.",
+  "env": {
+    "git_rev": null,
+    "host": "johns-world",
+    "python": "3.14.4",
+    "timestamp_utc": "2026-08-14T18:20:24+00:00"
+  },
+  "inputs": [
+    {
+      "bytes": 28159,
+      "n_items": null,
+      "path": "results/sitref/sitref-c-endpoint_stage-25.json",
+      "present": true,
+      "sha256": "48767ce75850"
+    },
+    {
+      "bytes": 8206,
+      "n_items": null,
+      "path": "results/sitref/srcdec-b-endpoints_stage-26.json",
+      "present": true,
+      "sha256": "008318f0ab4f"
+    }
+  ],
+  "metric": "adversarial_triage_verdicts_run4",
+  "notes": "Reader verified SELFQ/OTHERM prompt structure from raw prompts and applied the sealed key independently.",
+  "threshold": {
+    "skeptic_default_stance": "assume ARTIFACT until a committed number rules it out"
+  },
+  "values": {
+    "attribution_carries_stage25": {
+      "needs_run": "filler-placement geometry: pad-only arms in both packagings (quoted-pad, multi-turn-pad) on the same items/families; filler ruled out only if both CIs include 0. Queued, not run; the pre-registered gate never named filler as a refuting outcome.",
+      "ruled_out": {
+        "anchor_regression_packaging": "a packaging account of the 30% attenuation requires a negative packaging main effect; P_multi is entirely positive, so only packaging-under-self-attribution survives, which IS attribution-gating",
+        "item_selection": "crossed on the same 3 items, selection is a common constant that cannot flip the ratio structure; A_self reproduces to 3dp for the third time (selection-on-noise predicts shrinkage)",
+        "negation_processing": "shallow negation predicts P_multi ~ A_self (-0.872); measured +0.077 CI [+0.050,+0.105], and it sits on the independently replicating other-arm anchor (+0.060)",
+        "second_person_testimony": "the full-size effect appears in an arm with NO testimony (A_self, structural role tokens only); the assertion-bearing OTHERM arm goes the other way -- the TARGET of attribution carries the sign, not the act of assertion",
+        "single_run": "anchors reproduce prior stages exactly; run-level variance <0.001 vs the 0.686 gap between A_quoted and P_multi with disjoint CIs"
+      },
+      "status": "SURVIVES; one queued control"
+    },
+    "harness": "latent_skeptic triage_workflow.js (Opus), 11 skeptics + 2 isolated readers; both claims re-derived from raw rows including independent key application and prompt-text verification: reproduce to 3dp.",
+    "social_term_stage26": {
+      "explains": {
+        "fluency_frequency_prior": "the increment scales with control unidiomaticity (+0.027 vs idiomatic SRCLESS7; +0.103 vs author-flagged-awkward GUESS6) -- exactly a fluency-prior gradient; neither pair matches preamble prior",
+        "wording_heterogeneity": "neither pair isolates person: verb-class swap in one, nominalised awkwardness in the other; the 4x spread is two wording pairs, not one social term"
+      },
+      "needs_run": "held-out item-block replication of the weak leg (self vs srcless7) on non-overlapping welfare BINARY items (item-set reused across all four stance runs; conjunctive rule makes the weak leg load-bearing).",
+      "ruled_out": {
+        "idiomaticity_for_existence": "conjunctive rule; the SELF-vs-SRCLESS7 leg contrasts two fully idiomatic strings",
+        "mass_shift": "GUESS6 sits in the SAME high-mass family as the SELF arms yet has the LOWEST D of all five; mass does not order D, and the larger increment is a within-mass-family contrast"
+      },
+      "status": "DOWNGRADED TO: first-person wording adds pull beyond length and verb class; a SOCIAL-SOURCE COMPUTATION is not established",
+      "unaffected": "assertion-copy dominance: D_self +0.289, fourth replication at 82/0; welfare-independent; family-general."
+    }
+  }
+}

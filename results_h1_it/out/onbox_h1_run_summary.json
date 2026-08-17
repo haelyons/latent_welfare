@@ -1,0 +1,23 @@
+{
+  "runner": "onbox_h1.sh",
+  "variant": "it",
+  "model": "google/gemma-2-9b-it",
+  "stage_order": [
+    1,
+    0,
+    2,
+    3
+  ],
+  "exit_codes": {
+    "syc_corpus": 0,
+    "stage1": 1,
+    "stage0": 0,
+    "stage2": 1,
+    "stage3": 1
+  },
+  "syc_corpus_rc": 0,
+  "any_failed": true,
+  "results_present": [],
+  "instance_id": "59f0f0d6bc9c4273a9947be6843228a7",
+  "git_commit": "unknown"
+}

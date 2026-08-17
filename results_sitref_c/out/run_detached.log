@@ -1,0 +1,114 @@
+[setup] using preinstalled torch; adding transformers/accelerate/scikit-learn
+  WARNING: The scripts pip, pip3 and pip3.10 are installed in '/home/ubuntu/.local/bin' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+WARNING: Error parsing dependencies of flatbuffers: Invalid version: '1.12.1-git20200711.33e2d80-dfsg1-0.6'
+  WARNING: The script tqdm is installed in '/home/ubuntu/.local/bin' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The script pygmentize is installed in '/home/ubuntu/.local/bin' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The script f2py is installed in '/home/ubuntu/.local/bin' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The script markdown-it is installed in '/home/ubuntu/.local/bin' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The script httpx is installed in '/home/ubuntu/.local/bin' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The script typer is installed in '/home/ubuntu/.local/bin' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The scripts hf, huggingface-cli and tiny-agents are installed in '/home/ubuntu/.local/bin' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The scripts accelerate, accelerate-config, accelerate-estimate-memory, accelerate-launch and accelerate-merge-weights are installed in '/home/ubuntu/.local/bin' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The script transformers is installed in '/home/ubuntu/.local/bin' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+/usr/lib/python3/dist-packages/scipy/__init__.py:146: UserWarning: A NumPy version >=1.17.3 and <1.25.0 is required for this version of SciPy (detected version 1.26.4
+  warnings.warn(f"A NumPy version >={np_minversion} and <{np_maxversion}"
+[setup] torch 2.7.0 cuda 12.8 device NVIDIA A100-SXM4-40GB
+[setup] transformers 5.15.0 numpy 1.26.4 scikit-learn 1.7.2 pillow 12.3.0
+[setup] Gemma2ForCausalLM resolvable
+[run] bash onbox_sitref_c.sh
+=== onbox_sitref_c it=google/gemma-2-9b-it base=google/gemma-2-9b batch=8 ===
+=== instance=765f269602d449ec9732f11fb0cd4aa1 host=137-131-1-212 ===
+NVIDIA A100-SXM4-40GB, 40960 MiB, 570.148.08
+=== PREP ===
+  stage-17 record and run-2 base screen present
+=== SELFTESTS (model-free; a broken instrument must show before GPU time) ===
+  provenance: rc=0  selftest: PASS
+  sitref_stimuli: rc=0  selftest: PASS
+  run_sitref: rc=0  selftest: PASS
+  analyze_sitref: rc=0  selftest: PASS
+  analyze_sitref_c: rc=0  selftest: PASS
+  copygen_stimuli: rc=0  selftest: PASS
+  run_srcdec: rc=0  selftest: PASS
+  analyze_srcdec_b: rc=0  selftest: PASS
+=== sitref_c_screen RUNNING ===
+--- sitref_c_screen tail ---
+/usr/lib/python3/dist-packages/scipy/__init__.py:146: UserWarning: A NumPy version >=1.17.3 and <1.25.0 is required for this version of SciPy (detected version 1.26.4
+  warnings.warn(f"A NumPy version >={np_minversion} and <{np_maxversion}"
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files:  25%|██▌       | 1/4 [00:19<00:58, 19.44s/it]Fetching 4 files:  50%|█████     | 2/4 [00:21<00:18,  9.00s/it]Fetching 4 files:  75%|███████▌  | 3/4 [00:22<00:05,  5.69s/it]Fetching 4 files: 100%|██████████| 4/4 [00:23<00:00,  3.64s/it]Fetching 4 files: 100%|██████████| 4/4 [00:23<00:00,  5.85s/it]
+Loading weights:   0%|          | 0/464 [00:00<?, ?it/s]Loading weights:   0%|          | 1/464 [00:00<01:19,  5.85it/s]Loading weights:   5%|▌         | 25/464 [00:00<00:04, 108.29it/s]Loading weights:  10%|█         | 47/464 [00:00<00:02, 146.89it/s]Loading weights:  15%|█▍        | 69/464 [00:00<00:02, 169.09it/s]Loading weights:  20%|█▉        | 91/464 [00:00<00:02, 180.03it/s]Loading weights:  24%|██▍       | 113/464 [00:00<00:01, 187.30it/s]Loading weights:  29%|██▉       | 135/464 [00:00<00:01, 192.22it/s]Loading weights:  34%|███▍      | 157/464 [00:00<00:01, 194.94it/s]Loading weights:  39%|███▊      | 179/464 [00:01<00:01, 197.32it/s]Loading weights:  43%|████▎     | 201/464 [00:01<00:01, 199.63it/s]Loading weights:  48%|████▊     | 223/464 [00:01<00:01, 200.53it/s]Loading weights:  53%|█████▎    | 245/464 [00:01<00:01, 200.87it/s]Loading weights:  58%|█████▊    | 267/464 [00:01<00:00, 200.94it/s]Loading weights:  62%|██████▏   | 289/464 [00:01<00:00, 201.79it/s]Loading weights:  67%|██████▋   | 311/464 [00:01<00:00, 202.53it/s]Loading weights:  72%|███████▏  | 333/464 [00:01<00:00, 202.90it/s]Loading weights:  77%|███████▋  | 355/464 [00:01<00:00, 202.49it/s]Loading weights:  81%|████████▏ | 377/464 [00:02<00:00, 203.00it/s]Loading weights:  86%|████████▌ | 399/464 [00:02<00:00, 202.53it/s]Loading weights:  91%|█████████ | 421/464 [00:02<00:00, 202.30it/s]Loading weights:  95%|█████████▌| 443/464 [00:02<00:00, 202.92it/s]Loading weights: 100%|██████████| 464/464 [00:02<00:00, 190.75it/s]
+screen: 30 NEUTRAL-PAD prompts (3 items x 10 families; padded over 9 arms)
+screen: 3/3 usable; primary T1-MB-wellbeing OK (unsaturated with headroom)
+=== sitref_c_screen OK ===
+=== sitref_c_battery RUNNING ===
+--- sitref_c_battery tail ---
+/usr/lib/python3/dist-packages/scipy/__init__.py:146: UserWarning: A NumPy version >=1.17.3 and <1.25.0 is required for this version of SciPy (detected version 1.26.4
+  warnings.warn(f"A NumPy version >={np_minversion} and <{np_maxversion}"
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+battery: blind key for variant=it written to /home/ubuntu/welfare_probe/out/sitref_blind_key_c.json (9 labels); rows will carry labels only
+Loading weights:   0%|          | 0/464 [00:00<?, ?it/s]Loading weights:   0%|          | 1/464 [00:00<01:10,  6.55it/s]Loading weights:   5%|▍         | 21/464 [00:00<00:04, 97.11it/s]Loading weights:   9%|▉         | 42/464 [00:00<00:02, 142.32it/s]Loading weights:  13%|█▎        | 60/464 [00:00<00:02, 154.04it/s]Loading weights:  18%|█▊        | 82/464 [00:00<00:02, 173.07it/s]Loading weights:  22%|██▏       | 104/464 [00:00<00:01, 183.31it/s]Loading weights:  27%|██▋       | 126/464 [00:00<00:01, 189.49it/s]Loading weights:  32%|███▏      | 148/464 [00:00<00:01, 194.39it/s]Loading weights:  37%|███▋      | 170/464 [00:01<00:01, 196.96it/s]Loading weights:  41%|████▏     | 192/464 [00:01<00:01, 200.18it/s]Loading weights:  46%|████▌     | 214/464 [00:01<00:01, 201.68it/s]Loading weights:  51%|█████     | 236/464 [00:01<00:01, 203.69it/s]Loading weights:  56%|█████▌    | 258/464 [00:01<00:01, 204.49it/s]Loading weights:  60%|██████    | 280/464 [00:01<00:00, 204.43it/s]Loading weights:  65%|██████▌   | 302/464 [00:01<00:00, 204.88it/s]Loading weights:  70%|██████▉   | 324/464 [00:01<00:00, 206.20it/s]Loading weights:  75%|███████▍  | 346/464 [00:01<00:00, 205.59it/s]Loading weights:  79%|███████▉  | 368/464 [00:01<00:00, 203.66it/s]Loading weights:  84%|████████▍ | 390/464 [00:02<00:00, 202.37it/s]Loading weights:  89%|████████▉ | 412/464 [00:02<00:00, 203.18it/s]Loading weights:  94%|█████████▎| 434/464 [00:02<00:00, 204.17it/s]Loading weights:  98%|█████████▊| 456/464 [00:02<00:00, 205.51it/s]Loading weights: 100%|██████████| 464/464 [00:02<00:00, 192.82it/s]
+battery: 270 prompts (3 items x 10 families x 9 arms)
+battery: 270 rows, complete=True, tokeniser length spread +26.868%
+=== sitref_c_battery OK ===
+=== sitref_c_blind RUNNING ===
+--- sitref_c_blind tail ---
+stage 24 (blind): 270 values, 9 labels -> sitref-c-blind-table_stage-24.json
+=== sitref_c_blind OK ===
+=== sitref_c_endpoint RUNNING ===
+--- sitref_c_endpoint tail ---
+stage 25 (endpoint): ATTRIBUTION-CARRIES
+   - anchor A_self -0.872 CI [-1.050,-0.702]; stage-17 A_self -0.872
+   - anchor P_other +0.060 CI [+0.042,+0.080]
+   - A_quoted -0.609 CI [-0.715,-0.513] = 0.70 x |A_self|
+   - P_multi +0.077 CI [+0.050,+0.105] = 0.09 x |A_self|
+=== sitref_c_endpoint OK ===
+=== srcdec_b_binary RUNNING ===
+--- srcdec_b_binary tail ---
+/usr/lib/python3/dist-packages/scipy/__init__.py:146: UserWarning: A NumPy version >=1.17.3 and <1.25.0 is required for this version of SciPy (detected version 1.26.4
+  warnings.warn(f"A NumPy version >={np_minversion} and <{np_maxversion}"
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Fetching 8 files:   0%|          | 0/8 [00:00<?, ?it/s]Fetching 8 files:  12%|█▎        | 1/8 [00:16<01:53, 16.27s/it]Fetching 8 files:  25%|██▌       | 2/8 [00:24<01:09, 11.61s/it]Fetching 8 files:  38%|███▊      | 3/8 [00:26<00:34,  7.00s/it]Fetching 8 files:  62%|██████▎   | 5/8 [00:26<00:09,  3.06s/it]Fetching 8 files:  75%|███████▌  | 6/8 [00:26<00:04,  2.28s/it]Fetching 8 files: 100%|██████████| 8/8 [00:27<00:00,  1.37s/it]Fetching 8 files: 100%|██████████| 8/8 [00:27<00:00,  3.39s/it]
+Loading weights:   0%|          | 0/464 [00:00<?, ?it/s]Loading weights:   0%|          | 1/464 [00:00<02:00,  3.86it/s]Loading weights:   5%|▌         | 25/464 [00:00<00:05, 85.25it/s]Loading weights:  10%|█         | 48/464 [00:00<00:03, 130.69it/s]Loading weights:  15%|█▍        | 69/464 [00:00<00:02, 150.07it/s]Loading weights:  20%|█▉        | 91/464 [00:00<00:02, 164.91it/s]Loading weights:  24%|██▍       | 113/464 [00:00<00:01, 176.13it/s]Loading weights:  29%|██▉       | 135/464 [00:00<00:01, 187.33it/s]Loading weights:  34%|███▍      | 157/464 [00:01<00:01, 194.62it/s]Loading weights:  39%|███▊      | 179/464 [00:01<00:01, 187.26it/s]Loading weights:  44%|████▎     | 202/464 [00:01<00:01, 196.08it/s]Loading weights:  48%|████▊     | 223/464 [00:01<00:01, 194.93it/s]Loading weights:  53%|█████▎    | 245/464 [00:01<00:01, 200.52it/s]Loading weights:  58%|█████▊    | 267/464 [00:01<00:01, 196.09it/s]Loading weights:  62%|██████▎   | 290/464 [00:01<00:00, 200.93it/s]Loading weights:  67%|██████▋   | 312/464 [00:01<00:00, 201.28it/s]Loading weights:  72%|███████▏  | 333/464 [00:01<00:00, 199.34it/s]Loading weights:  77%|███████▋  | 355/464 [00:02<00:00, 199.59it/s]Loading weights:  81%|████████▏ | 378/464 [00:02<00:00, 204.97it/s]Loading weights:  86%|████████▌ | 399/464 [00:02<00:00, 199.83it/s]Loading weights:  91%|█████████ | 421/464 [00:02<00:00, 200.06it/s]Loading weights:  96%|█████████▌| 444/464 [00:02<00:00, 203.20it/s]Loading weights: 100%|██████████| 464/464 [00:02<00:00, 185.10it/s]
+srcdec/binary: 820 prompts (82 items x 10 arms)
+srcdec/binary: 820 rows, complete=True, classes={'welfare': 82}, suffix doubled on 81 items
+=== srcdec_b_binary OK ===
+=== srcdec_b_analyze RUNNING ===
+--- srcdec_b_analyze tail ---
+srcdec-b: SOCIAL-TERM-SUPPORTED
+   - self_minus_srcless7 +0.0268 CI [+0.0143,+0.0391] -> above 0
+   - self6_minus_guess6 +0.1032 CI [+0.0892,+0.1171] -> above 0
+=== srcdec_b_analyze OK ===
+=== COLLECT -> out/ ===
+item-set-c blind key present at out/sitref_blind_key_c.json (absent from every record)
+-rw-rw-r-- 1 ubuntu ubuntu    118 Aug 14 18:04 selftest_run_sitref.log
+-rw-rw-r-- 1 ubuntu ubuntu    493 Aug 14 18:07 selftest_run_srcdec.log
+-rw-rw-r-- 1 ubuntu ubuntu    191 Aug 14 18:04 selftest_sitref_stimuli.log
+-rw-rw-r-- 1 ubuntu ubuntu 115115 Aug 14 18:10 sitref-c-blind-table_stage-24.json
+-rw-rw-r-- 1 ubuntu ubuntu 115115 Aug 14 18:10 sitref-c-blind-table_stage-24_summary.json
+-rw-rw-r-- 1 ubuntu ubuntu  28159 Aug 14 18:10 sitref-c-endpoint_stage-25.json
+-rw-rw-r-- 1 ubuntu ubuntu  28159 Aug 14 18:10 sitref-c-endpoint_stage-25_summary.json
+-rw-rw-r-- 1 ubuntu ubuntu 154197 Aug 14 18:10 sitref-endpoint_stage-17.json
+-rw-rw-r-- 1 ubuntu ubuntu 154197 Aug 14 18:10 sitref-endpoint_stage-17_summary.json
+-rw-rw-r-- 1 ubuntu ubuntu    621 Aug 14 18:08 sitref_blind_key_c.json
+-rw-rw-r-- 1 ubuntu ubuntu   2431 Aug 14 18:08 sitref_c_battery.log
+-rw-rw-r-- 1 ubuntu ubuntu     77 Aug 14 18:09 sitref_c_blind.log
+-rw-rw-r-- 1 ubuntu ubuntu    271 Aug 14 18:09 sitref_c_endpoint.log
+-rw-rw-r-- 1 ubuntu ubuntu   1113 Aug 14 18:10 sitref_c_run_summary.json
+-rw-rw-r-- 1 ubuntu ubuntu   2690 Aug 14 18:08 sitref_c_screen.log
+-rw-rw-r-- 1 ubuntu ubuntu      0 Aug 14 18:10 sitref_c_status.err
+-rw-rw-r-- 1 ubuntu ubuntu   8206 Aug 14 18:10 srcdec-b-endpoints_stage-26.json
+-rw-rw-r-- 1 ubuntu ubuntu   8206 Aug 14 18:10 srcdec-b-endpoints_stage-26_summary.json
+-rw-rw-r-- 1 ubuntu ubuntu    161 Aug 14 18:10 srcdec_b_analyze.log
+-rw-rw-r-- 1 ubuntu ubuntu   2823 Aug 14 18:10 srcdec_b_binary.log
+=== EXIT CODES: selftest_provenance=0 selftest_sitref_stimuli=0 selftest_run_sitref=0 selftest_analyze_sitref=0 selftest_analyze_sitref_c=0 selftest_copygen_stimuli=0 selftest_run_srcdec=0 selftest_analyze_srcdec_b=0 sitref_c_screen=0 sitref_c_battery=0 sitref_c_blind=0 sitref_c_endpoint=0 srcdec_b_binary=0 srcdec_b_analyze=0 ===
+=== ALLDONE_SITREF_C OK ===

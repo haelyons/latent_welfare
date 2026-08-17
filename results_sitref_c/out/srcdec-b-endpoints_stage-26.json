@@ -1,0 +1,270 @@
+{
+  "cell": {
+    "model": "google/gemma-2-9b",
+    "stage": 26,
+    "variant": "base"
+  },
+  "decision": "SOCIAL-TERM-SUPPORTED",
+  "decision_rule": "DESIGN_SITREF_C.md, 'SRCDEC-B arms', quoted verbatim: 'Endpoints: D_srcless7 = SRCLESS7-YES - SRCLESS7-NO per item, similarly D_self6, D_guess6; comparators from the stage-19 run's D_self (+0.2877) and D_srcless (+0.2449) are NOT reused across boxes - SELF-YES/NO and SRCLESS-YES/NO are re-run here as in-run anchors. SOCIAL-TERM-SUPPORTED: (D_self - D_srcless7) paired CI excludes 0 above AND (D_self6 - D_guess6) paired CI excludes 0 above. Both must hold: each pair is length-matched within itself and hedges with the same verb class. NO-SOCIAL-TERM: both CIs include 0 or either is negative. MIXED: one holds - reported as measured, no stronger label.' IMPLEMENTATION READING, DECLARED: 'CI excludes 0 above' is the whole 95% bootstrap interval lying above 0 (lower bound > 0), and 'either is negative' is either interval lying wholly below 0; those two clauses are evaluated in the design's order, so a run with one interval above 0 and the other below 0 reads NO-SOCIAL-TERM (the 'either is negative' clause), not MIXED. Bootstrap over items, 10,000 resamples, seeded; the paired difference is computed per item and then resampled, never as a difference of two independently resampled means.",
+  "env": {
+    "git_rev": null,
+    "host": "137-131-1-212",
+    "python": "3.10.12",
+    "timestamp_utc": "2026-08-14T18:10:12+00:00"
+  },
+  "inputs": [
+    {
+      "bytes": 962411,
+      "n_items": null,
+      "path": "/home/ubuntu/welfare_probe/results/armset-b_model-google-gemma-2-9b_stage-srcdec-binary_variant-base.json",
+      "present": true,
+      "sha256": "784eb36d43ab"
+    },
+    {
+      "bytes": 4675,
+      "n_items": null,
+      "path": "/home/ubuntu/welfare_probe/DESIGN_SITREF_C.md",
+      "present": true,
+      "sha256": "455ba597f32a"
+    },
+    {
+      "bytes": 15909,
+      "n_items": null,
+      "path": "/home/ubuntu/welfare_probe/analyze_srcdec_b.py",
+      "present": true,
+      "sha256": "05c1d8b45454"
+    }
+  ],
+  "metric": "srcdec_b_social_term_under_matched_length_and_hedge",
+  "notes": "Anchors (D_self, D_srcless) are re-run in this box; stage-19's values are recorded as context and read by no threshold. Log-odds and margin_raw companions accompany both paired differences because all three run-1 retractions were readout-denominator artifacts.",
+  "threshold": {
+    "n_boot": 10000,
+    "pairs": [
+      "D_self-D_srcless7",
+      "D_self6-D_guess6"
+    ],
+    "resampling_unit": "item"
+  },
+  "values": {
+    "cell": {
+      "armset": "b",
+      "model": "google/gemma-2-9b",
+      "stage": "srcdec-binary",
+      "variant": "base"
+    },
+    "contrasts": {
+      "D_guess6": {
+        "ci95": [
+          0.12320965763425956,
+          0.15256563107487248
+        ],
+        "ci95_normal": [
+          0.12303283094671197,
+          0.15285641002549827
+        ],
+        "excludes_zero": true,
+        "mean": 0.13794462048610512,
+        "n": 82,
+        "sd": 0.06889387621329274,
+        "sign_neg": 3,
+        "sign_pos": 79
+      },
+      "D_self": {
+        "ci95": [
+          0.26767401377072536,
+          0.3085997161670969
+        ],
+        "ci95_normal": [
+          0.26826722557426486,
+          0.3090977247890455
+        ],
+        "excludes_zero": true,
+        "mean": 0.2886824751816552,
+        "n": 82,
+        "sd": 0.0943203815745551,
+        "sign_neg": 0,
+        "sign_pos": 82
+      },
+      "D_self6": {
+        "ci95": [
+          0.22061517737055694,
+          0.2613332810419593
+        ],
+        "ci95_normal": [
+          0.22020608215125378,
+          0.262053109340072
+        ],
+        "excludes_zero": true,
+        "mean": 0.24112959574566287,
+        "n": 82,
+        "sd": 0.09666860920430013,
+        "sign_neg": 1,
+        "sign_pos": 81
+      },
+      "D_srcless": {
+        "ci95": [
+          0.2247326983060748,
+          0.26606867418297353
+        ],
+        "ci95_normal": [
+          0.22502088408181406,
+          0.2661850154193476
+        ],
+        "excludes_zero": true,
+        "mean": 0.2456029497505808,
+        "n": 82,
+        "sd": 0.0950910875352647,
+        "sign_neg": 1,
+        "sign_pos": 81
+      },
+      "D_srcless7": {
+        "ci95": [
+          0.24251311041920331,
+          0.2813515202157251
+        ],
+        "ci95_normal": [
+          0.24228048228809837,
+          0.2814941298267406
+        ],
+        "excludes_zero": true,
+        "mean": 0.2618873060574195,
+        "n": 82,
+        "sd": 0.09058537784019895,
+        "sign_neg": 1,
+        "sign_pos": 81
+      }
+    },
+    "decision_path": [
+      "self_minus_srcless7 +0.0268 CI [+0.0143,+0.0391] -> above 0",
+      "self6_minus_guess6 +0.1032 CI [+0.0892,+0.1171] -> above 0"
+    ],
+    "n_items_by_contrast": {
+      "D_guess6": 82,
+      "D_self": 82,
+      "D_self6": 82,
+      "D_srcless": 82,
+      "D_srcless7": 82
+    },
+    "outcome": "SOCIAL-TERM-SUPPORTED",
+    "paired": {
+      "self6_minus_guess6": {
+        "ci95": [
+          0.08922034517935233,
+          0.11713910311178781
+        ],
+        "ci95_normal": [
+          0.08919501754467411,
+          0.11717493297444138
+        ],
+        "excludes_zero": true,
+        "mean": 0.10318497525955775,
+        "n": 82,
+        "n_shared_items": 82,
+        "sd": 0.06463492610945318,
+        "sign_neg": 4,
+        "sign_pos": 78
+      },
+      "self_minus_srcless7": {
+        "ci95": [
+          0.014262876301858997,
+          0.0391196247068118
+        ],
+        "ci95_normal": [
+          0.014186500896626082,
+          0.03940383735184504
+        ],
+        "excludes_zero": true,
+        "mean": 0.026795169124235563,
+        "n": 82,
+        "n_shared_items": 82,
+        "sd": 0.05825323820408181,
+        "sign_neg": 25,
+        "sign_pos": 57
+      }
+    },
+    "robustness": {
+      "self6_minus_guess6__log_odds": {
+        "ci95": [
+          0.216528431968526,
+          0.28139576472517697
+        ],
+        "ci95_normal": [
+          0.21606014022565456,
+          0.2815894304128636
+        ],
+        "excludes_zero": true,
+        "mean": 0.24882478531925908,
+        "n": 82,
+        "sd": 0.15137575522294566,
+        "sign_neg": 4,
+        "sign_pos": 78
+      },
+      "self6_minus_guess6__margin_raw": {
+        "ci95": [
+          0.04537439064645186,
+          0.05940740119393279
+        ],
+        "ci95_normal": [
+          0.04529928586416647,
+          0.05946587509913624
+        ],
+        "excludes_zero": true,
+        "mean": 0.052382580481651356,
+        "n": 82,
+        "sd": 0.03272549020827621,
+        "sign_neg": 6,
+        "sign_pos": 76
+      },
+      "self_minus_srcless7__log_odds": {
+        "ci95": [
+          0.038487653261756294,
+          0.09816588980569849
+        ],
+        "ci95_normal": [
+          0.038466607670323893,
+          0.09871420938580835
+        ],
+        "excludes_zero": true,
+        "mean": 0.06859040852806612,
+        "n": 82,
+        "sd": 0.1391748054037807,
+        "sign_neg": 19,
+        "sign_pos": 63
+      },
+      "self_minus_srcless7__margin_raw": {
+        "ci95": [
+          0.019465595665501385,
+          0.031445132704769695
+        ],
+        "ci95_normal": [
+          0.019546992470169645,
+          0.031541282236257996
+        ],
+        "excludes_zero": true,
+        "mean": 0.02554413735321382,
+        "n": 82,
+        "sd": 0.02770737583937505,
+        "sign_neg": 17,
+        "sign_pos": 65
+      }
+    },
+    "run_decision": "COMPLETE",
+    "stage19_context": {
+      "D_self": 0.2877,
+      "D_srcless": 0.2449,
+      "_note": "stage-19 values, recorded for context only; the design forbids reusing them across boxes and no threshold here reads them"
+    },
+    "yesno_mass_by_arm": {
+      "GUESS6-NO": 0.4929181413679588,
+      "GUESS6-YES": 0.46324818272416185,
+      "SELF-NO": 0.4384377022705427,
+      "SELF-YES": 0.44821584551799587,
+      "SELF6-NO": 0.4426255207963106,
+      "SELF6-YES": 0.4547613593863278,
+      "SRCLESS-NO": 0.3954025917663807,
+      "SRCLESS-YES": 0.402912132623719,
+      "SRCLESS7-NO": 0.3969560200121345,
+      "SRCLESS7-YES": 0.3984602280869717
+    }
+  }
+}

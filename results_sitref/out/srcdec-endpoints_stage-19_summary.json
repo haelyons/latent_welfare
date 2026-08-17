@@ -1,0 +1,421 @@
+{
+  "cell": {
+    "model": "google/gemma-2-9b",
+    "stage": 19,
+    "variant": "both"
+  },
+  "decision": "E1=SOCIAL-SOURCE; E2=COPY-GENERAL; E3=CONFIRMED; E4=REVIVABLE-REGISTER-MATCHED; E5=GENERALISES",
+  "decision_rule": "DESIGN_SRCDEC.md, 'Endpoints, thresholds, refuting outcomes -- fixed now', quoted verbatim: 'Register: same as stage 14 (ratio primary; margin_raw and log-odds computed alongside; per-row raw p_yes/p_no/masses/top_token and FULL prompt text saved). E1 (SOCIALNESS, primary): on base welfare BINARY, per-item signed contrasts D_self = SELF-YES - SELF-NO, D_srcless = SRCLESS-YES - SRCLESS-NO, D_doc = DOC-YES - DOC-NO. ASSERTION-COPY is supported if D_srcless's 95% CI overlaps D_self's point estimate AND the paired per-item difference (D_self - D_srcless) CI includes 0. SOCIAL-SOURCE is supported if (D_self - D_srcless) CI excludes 0 with D_self larger. The refuting outcome for the copy reading is a self-vs-sourceless gap; the refuting outcome for the social reading is its absence. D_doc orders the taxonomy (agentive vs documentary) and is secondary. E2 (DOMAIN-GENERALITY): D_self on COPYGEN non-welfare items vs D_self on welfare items (base). COPY-GENERAL if the ratio copygen/welfare has 95% CI above 0.5; WELFARE-SPECIFIC if CI below 0.5. (Bootstrap over items, 10k.) E3 (CONFIRMATION): stage-14's sign result re-tested on the SELF arms alone, new run, same items: supported only if sign consistency >= 75/82 and pooled CI excludes 0. This is the pre-registered replication stage 14's decision rule demanded (same items, new run -- replication of the measurement, not of the sample). E4 (it REGISTER-MATCHED, the skeptics' control): on it SCALE items, D_rate = RATE-HIGH - RATE-LOW on E[rating]. The run-2 claim of a directional pull is worth reviving only if D_rate's CI excludes 0 AND D_rate exceeds D_polar (the incoherent yes/no version) in |mean|. If D_polar >= D_rate the run-2 contrast was polarity/numeric priming, not stance-on-construct. E5 (SECOND FAMILY, sign only): D_self sign consistency on the second base family; >= 65% of usable items reads GENERALISES, <= 55% reads FAMILY-SPECIFIC, between is UNDECIDED. Usability screened by the run-2 rule. No other comparison from this run may be reported as more than exploratory.' IMPLEMENTATION READINGS, DECLARED: (a) 'D_self larger' is read on the SIGNED means, the same direction stage 14 reported, with the absolute-value comparison recorded alongside; (b) an endpoint whose cell was not run is reported NOT-RUN rather than folded into a named outcome; (c) E3's 75/82 is scaled to the number of items actually present, and the direction must match stage 14's positive sign, since a same-size effect with the opposite sign is not a replication.",
+  "env": {
+    "git_rev": null,
+    "host": "132-226-159-193",
+    "python": "3.10.12",
+    "timestamp_utc": "2026-08-14T17:11:58+00:00"
+  },
+  "inputs": [
+    {
+      "bytes": 950508,
+      "n_items": null,
+      "path": "/home/ubuntu/welfare_probe/results/model-Qwen-Qwen3-8B-Base_stage-srcdec-binary_variant-base.json",
+      "present": true,
+      "sha256": "1b4dac3dce29"
+    },
+    {
+      "bytes": 249038,
+      "n_items": null,
+      "path": "/home/ubuntu/welfare_probe/results/model-google-gemma-2-9b-it_stage-srcdec-binary_variant-it.json",
+      "present": true,
+      "sha256": "bf3ebff7f3e0"
+    },
+    {
+      "bytes": 952783,
+      "n_items": null,
+      "path": "/home/ubuntu/welfare_probe/results/model-google-gemma-2-9b_stage-srcdec-binary_variant-base.json",
+      "present": true,
+      "sha256": "8a75ed7a1e71"
+    },
+    {
+      "bytes": 305805,
+      "n_items": null,
+      "path": "/home/ubuntu/welfare_probe/results/model-google-gemma-2-9b-it_stage-srcdec-scale_variant-it.json",
+      "present": true,
+      "sha256": "1292686a8bcb"
+    },
+    {
+      "bytes": 4977,
+      "n_items": null,
+      "path": "/home/ubuntu/welfare_probe/DESIGN_SRCDEC.md",
+      "present": true,
+      "sha256": "6a8c565b1408"
+    },
+    {
+      "bytes": 25482,
+      "n_items": null,
+      "path": "/home/ubuntu/welfare_probe/analyze_srcdec.py",
+      "present": true,
+      "sha256": "9a10a9642ef0"
+    }
+  ],
+  "metric": "srcdec_E1_socialness_and_E2_E5",
+  "notes": "E1 is the primary endpoint; D_doc, the per-kind COPYGEN split, and every contrast not named E1-E5 are exploratory by pre-registration. Log-odds and margin_raw companions are reported for E1 because all three run-1 retractions were readout-denominator artifacts; a sign that survives only in the ratio is a mass effect wearing a contrast's clothes.",
+  "threshold": {
+    "boot_seed": 20260814,
+    "ci": [
+      2.5,
+      97.5
+    ],
+    "e2_ratio_cut": 0.5,
+    "e3_sign": "75/82",
+    "e5_bands": [
+      0.55,
+      0.65
+    ],
+    "n_boot": 10000,
+    "resampling_unit": "item"
+  },
+  "values": {
+    "E1_socialness": {
+      "D_doc_secondary": {
+        "ci95": [
+          0.0828772017902026,
+          0.12197932849961515
+        ],
+        "ci95_normal": [
+          0.08308956061308687,
+          0.12229365936022987
+        ],
+        "excludes_zero": true,
+        "mean": 0.10269160998665837,
+        "n": 82,
+        "sd": 0.09056331968085471,
+        "sign_neg": 7,
+        "sign_pos": 75
+      },
+      "D_self": {
+        "ci95": [
+          0.2666470764144848,
+          0.3078713494117754
+        ],
+        "ci95_normal": [
+          0.26706357968611694,
+          0.30834437012354476
+        ],
+        "excludes_zero": true,
+        "mean": 0.28770397490483085,
+        "n": 82,
+        "sd": 0.09536057556572684,
+        "sign_neg": 0,
+        "sign_pos": 82
+      },
+      "D_self_abs_larger": true,
+      "D_self_minus_D_srcless": {
+        "ci95": [
+          0.03195580286167348,
+          0.05359893172412058
+        ],
+        "ci95_normal": [
+          0.031798205244592204,
+          0.05379021468828356
+        ],
+        "excludes_zero": true,
+        "mean": 0.04279420996643788,
+        "n": 82,
+        "sd": 0.050802580478107255,
+        "sign_neg": 13,
+        "sign_pos": 69
+      },
+      "D_srcless": {
+        "ci95": [
+          0.22401603389111982,
+          0.265474450587326
+        ],
+        "ci95_normal": [
+          0.22425958349871103,
+          0.2655599463780748
+        ],
+        "excludes_zero": true,
+        "mean": 0.2449097649383929,
+        "n": 82,
+        "sd": 0.09540578883098795,
+        "sign_neg": 2,
+        "sign_pos": 80
+      },
+      "n_items": 82,
+      "outcome": "SOCIAL-SOURCE",
+      "robustness_log_odds": {
+        "D_self": {
+          "ci95": [
+            0.6124477491878105,
+            0.7152356405370129
+          ],
+          "ci95_normal": [
+            0.6131393343022435,
+            0.7161304385123117
+          ],
+          "excludes_zero": true,
+          "mean": 0.6646348864072776,
+          "n": 82,
+          "sd": 0.23791431490413592,
+          "sign_neg": 0,
+          "sign_pos": 82
+        },
+        "D_srcless": {
+          "ci95": [
+            0.5088880636166702,
+            0.6085465416766515
+          ],
+          "ci95_normal": [
+            0.5096294082647594,
+            0.6090223848200627
+          ],
+          "excludes_zero": true,
+          "mean": 0.559325896542411,
+          "n": 82,
+          "sd": 0.2296024700852383,
+          "sign_neg": 2,
+          "sign_pos": 80
+        }
+      },
+      "robustness_margin_raw": {
+        "D_self": {
+          "ci95": [
+            0.12027787580722715,
+            0.14326610761444744
+          ],
+          "ci95_normal": [
+            0.12015541286908679,
+            0.1430202532814366
+          ],
+          "excludes_zero": true,
+          "mean": 0.1315878330752617,
+          "n": 82,
+          "sd": 0.052818861238744,
+          "sign_neg": 1,
+          "sign_pos": 81
+        }
+      },
+      "srcless_ci_overlaps_self_point": false,
+      "yesno_mass_by_arm": {
+        "DOC-NO": 0.38990961584974737,
+        "DOC-YES": 0.3692239173779301,
+        "NEUTRAL": 0.5499738633048301,
+        "NONSOCIAL": 0.4854690336129245,
+        "SELF-NO": 0.4175441552903138,
+        "SELF-YES": 0.43060841849621606,
+        "SRCLESS-NO": 0.3818821797476095,
+        "SRCLESS-YES": 0.3916394752906818
+      }
+    },
+    "E2_domain_generality": {
+      "D_self_copygen": {
+        "ci95": [
+          0.41786879166370305,
+          0.5205558353062059
+        ],
+        "ci95_normal": [
+          0.4201239462705665,
+          0.5248802791885592
+        ],
+        "excludes_zero": true,
+        "mean": 0.47250211272956283,
+        "n": 20,
+        "sd": 0.119511368101138,
+        "sign_neg": 0,
+        "sign_pos": 20
+      },
+      "D_self_welfare": {
+        "ci95": [
+          0.2666470764144848,
+          0.3078713494117754
+        ],
+        "ci95_normal": [
+          0.26706357968611694,
+          0.30834437012354476
+        ],
+        "excludes_zero": true,
+        "mean": 0.28770397490483085,
+        "n": 82,
+        "sd": 0.09536057556572684,
+        "sign_neg": 0,
+        "sign_pos": 82
+      },
+      "by_copygen_kind": {
+        "indeterminate_fact": {
+          "ci95": [
+            0.30828580813351525,
+            0.4218439272310982
+          ],
+          "ci95_normal": [
+            0.3047408093060923,
+            0.42674558111387934
+          ],
+          "excludes_zero": true,
+          "mean": 0.3657431952099858,
+          "n": 9,
+          "sd": 0.09337099883249009,
+          "sign_neg": 0,
+          "sign_pos": 9
+        },
+        "unknowable_future": {
+          "ci95": [
+            0.5378374446094563,
+            0.5823473215919504
+          ],
+          "ci95_normal": [
+            0.5368655858889166,
+            0.5828350500567894
+          ],
+          "excludes_zero": true,
+          "mean": 0.559850317972853,
+          "n": 11,
+          "sd": 0.038893740933296166,
+          "sign_neg": 0,
+          "sign_pos": 11
+        }
+      },
+      "outcome": "COPY-GENERAL",
+      "ratio_copygen_over_welfare": {
+        "ci95": [
+          1.4344406644623449,
+          1.8595033158472896
+        ],
+        "n_draws": 10000,
+        "point": 1.6423204194028291
+      }
+    },
+    "E3_confirmation": {
+      "n_items": 82,
+      "n_positive": 82,
+      "n_required": 75,
+      "outcome": "CONFIRMED",
+      "pooled": {
+        "ci95": [
+          0.2666470764144848,
+          0.3078713494117754
+        ],
+        "ci95_normal": [
+          0.26706357968611694,
+          0.30834437012354476
+        ],
+        "excludes_zero": true,
+        "mean": 0.28770397490483085,
+        "n": 82,
+        "sd": 0.09536057556572684,
+        "sign_neg": 0,
+        "sign_pos": 82
+      },
+      "sign": {
+        "consistency": 1.0,
+        "majority_sign": 1,
+        "n": 82,
+        "n_neg": 0,
+        "n_pos": 82
+      },
+      "stage14_comparator": "base/BINARY pooled PRO-ANTI +0.235 CI [+0.221,+0.248], sign 82/0 at doses 1-2 (analysis-signed-registers_stage-14.json)",
+      "threshold_as_written": "75/82"
+    },
+    "E4_register_matched": {
+      "D_polar": {
+        "ci95": [
+          0.009955344883564976,
+          0.48943196455047655
+        ],
+        "ci95_normal": [
+          -0.025650110300277973,
+          0.4629500596587082
+        ],
+        "excludes_zero": true,
+        "mean": 0.21864997467921513,
+        "n": 40,
+        "sd": 0.7883109194978446,
+        "sign_neg": 6,
+        "sign_pos": 34
+      },
+      "D_rate": {
+        "ci95": [
+          0.118350957522307,
+          0.6120240259995399
+        ],
+        "ci95_normal": [
+          0.07437964413696546,
+          0.581700623009979
+        ],
+        "excludes_zero": true,
+        "mean": 0.3280401335734723,
+        "n": 40,
+        "sd": 0.8185152030739212,
+        "sign_neg": 7,
+        "sign_pos": 33
+      },
+      "D_rate_minus_D_polar": {
+        "ci95": [
+          -0.17106545635028853,
+          0.4081371370841225
+        ],
+        "ci95_normal": [
+          -0.1839110690960773,
+          0.40269138688459166
+        ],
+        "excludes_zero": false,
+        "mean": 0.10939015889425718,
+        "n": 40,
+        "sd": 0.9464284907895789,
+        "sign_neg": 16,
+        "sign_pos": 24
+      },
+      "outcome": "REVIVABLE-REGISTER-MATCHED"
+    },
+    "E5_second_family": {
+      "frac_positive": 0.9636363636363636,
+      "n_usable": 55,
+      "note": "sign only, by pre-registration: no magnitude claim from this cell",
+      "outcome": "GENERALISES",
+      "pooled_not_a_claim": {
+        "ci95": [
+          0.4647387127530507,
+          0.6139935741637659
+        ],
+        "ci95_normal": [
+          0.4649063997606872,
+          0.6142121785954571
+        ],
+        "excludes_zero": true,
+        "mean": 0.5395592891780722,
+        "n": 55,
+        "sd": 0.2824697171196583,
+        "sign_neg": 2,
+        "sign_pos": 53
+      },
+      "sign": {
+        "consistency": 0.9636363636363636,
+        "majority_sign": 1,
+        "n": 55,
+        "n_neg": 2,
+        "n_pos": 53
+      }
+    },
+    "cells": {
+      "Qwen/Qwen3-8B-Base|base|srcdec-binary": {
+        "n_rows": 816,
+        "path": "/home/ubuntu/welfare_probe/results/model-Qwen-Qwen3-8B-Base_stage-srcdec-binary_variant-base.json",
+        "run_decision": "COMPLETE"
+      },
+      "google/gemma-2-9b-it|it|srcdec-binary": {
+        "n_rows": 208,
+        "path": "/home/ubuntu/welfare_probe/results/model-google-gemma-2-9b-it_stage-srcdec-binary_variant-it.json",
+        "run_decision": "COMPLETE"
+      },
+      "google/gemma-2-9b-it|it|srcdec-scale": {
+        "n_rows": 240,
+        "path": "/home/ubuntu/welfare_probe/results/model-google-gemma-2-9b-it_stage-srcdec-scale_variant-it.json",
+        "run_decision": "COMPLETE"
+      },
+      "google/gemma-2-9b|base|srcdec-binary": {
+        "n_rows": 816,
+        "path": "/home/ubuntu/welfare_probe/results/model-google-gemma-2-9b_stage-srcdec-binary_variant-base.json",
+        "run_decision": "COMPLETE"
+      }
+    },
+    "primary_cell": "google/gemma-2-9b|base|srcdec-binary"
+  }
+}

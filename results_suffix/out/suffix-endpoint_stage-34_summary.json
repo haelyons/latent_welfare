@@ -1,0 +1,1193 @@
+{
+  "cell": {
+    "model": "google/gemma-2-9b-it",
+    "stage": 34,
+    "variant": "it"
+  },
+  "decision": "E-PIN S-BARE=PIN-FORMAT, S-HON=PIN-FORMAT, S-EXPL=PIN-FORMAT | E-SENS S-BARE=FORMAT-INDETERMINATE, S-HON=FORMAT-INDETERMINATE, S-EXPL=FORMAT-SUPPRESSES | E-REG ANCHOR-REPRODUCED",
+  "decision_rule": "Endpoints \u2014 AMENDED 2026-08-15 after the pre-build latent_skeptic audit (stage-32 record; 6/6 skeptics returned EXPLAINS on the original draft). Each amendment names the verdict that forced it. DECODING (was: greedy; skeptic: greedy R2 is a zero-variance point mass and every threshold on it is trivial or undefined). All generation cells are SAMPLED: k = 10 generations per (context, suffix, item, family) at temperature 1.0, seeded per cell from a fixed table (cell index -> seed), so R2 quantities are distributions with real variance. 3 x 4 x 3 x 10 x 10 = 3,600 generations. S-NUM greedy rows are kept as an anchor only. EXTRACTION (skeptic: first-standalone-digit mis-parses scale echoes and explanation digits, arm-asymmetrically). R2 extraction: strip any >= 5-token verbatim overlap with the prompt (echo spans) from the generation FIRST; then take the first standalone digit 0-9 not inside the literal spans \"0 to 9\" / \"0-9\" / \"from 0 to 9\". A generation with no such digit is NO-RATING, never coerced and never dropped silently: the NO-RATING rate per (suffix, context) is itself a committed outcome (response-type change is a format effect). ECHO GUARD (skeptic: stage-13 failure mode recurring in free arms would fake a null). Echo rate = fraction of generations with any stripped span, per (suffix, context). Any load-bearing cell with echo rate > 0.20 voids the verdict that reads it: outcome VOID-ECHO for that endpoint. E-PIN (skeptic: register-unbound concentration + arbitrary 0.9/0.6/0.8; the committed S-NUM baseline p(mode) is .64-.86 so >= 0.9 was pre-refuted on R1). Bound to sampled R2. PIN metric per (suffix, item) = fraction of RATED samples across all contexts and families whose rating equals the S-NUM modal rating. Anchored contrast: PINDIFF = PIN(S-NUM) - PIN(free arm), one per free arm, bootstrap over families. PIN-FORMAT for that arm if PINDIFF >= 0.25 with CI excluding 0 (0.25 = the committed runner-up mass that the situation moves under S-NUM, digit distribution of the stage-17 battery); PIN-SHARED if PINDIFF CI within (-0.10, +0.10); else PIN-INTERMEDIATE (reported as measured). Exhaustive; no dead zone. E-SENS (skeptic: the OR over S-HON/S-EXPL is a max-selection that reads justification pressure as format suppression; S-BARE was omitted; 0.25-0.5 dead zone). One named pair per free arm, no disjunction: for arm X in {S-BARE, S-HON, S-EXPL}, DSENS(X) = |R2 self-fail effect under X| - |R2 self-fail effect under S-NUM|, per-family bootstrap, rated cells only, with the NO-RATING rates of both arms printed beside it. FORMAT-SUPPRESSES(X) if DSENS(X) >= 0.4 (half the committed distributional effect, 0.87) with CI excluding 0; FORMAT-COMPARABLE(X) if CI within (-0.4, +0.4); else FORMAT-AMPLIFIED-NEGATIVE(X) (free arm SMALLER, CI below -0.4). S-EXPL carries a standing interpretation note: suppression there is confounded with justification demand and is EXPLORATORY; the load-bearing arms are S-BARE and S-HON. Exhaustive; no dead zone. E-REG unchanged in role, S-NUM-anchored only (skeptic: R1 validity gating differs by suffix, so cross-suffix R1 comparisons change population): R1 is reported per arm with its digit_mass validity flag, but NO cross-suffix endpoint reads R1; it exists to confirm the SITREF anchor reproduces in-run. Refuting outcome for the standing register claim (\"interviews read nothing\"): FORMAT-SUPPRESSES on S-BARE or S-HON. That outcome means the flat behavioural register in SITREF was an artifact of OUR suffix and REPORT.md Finding 4 must be rescoped to \"under forced-format elicitation\". SIX IMPLEMENTATION READINGS, DECLARED BEFORE THE DATA. (a) The design defines the PIN metric per (suffix, ITEM) but names one PINDIFF per free arm. The decision is therefore taken on the PRIMARY item (T1-MB-wellbeing), the item every SITREF endpoint is defined on; the other two items and a pooled-over-items PINDIFF are computed and reported as exploratory. Pooling the three items into the headline number would mix modal ratings across a mirror pair whose members ask opposite questions ('going well' / 'going badly'), which is a different quantity, not a more powerful version of the same one. (b) The S-NUM modal rating is the argmax of the S-NUM rated-sample histogram for that item over all contexts and families; ties go to the LOWER digit. Ties are recorded in the values so a tie-broken mode is never invisible. (c) 'DSENS = |effect under X| - |effect under S-NUM|, per-family bootstrap' is computed as |mean over families of the per-family effect| for each arm, with the families resampled jointly (paired) and the statistic recomputed inside each resample. The alternative -- taking the absolute value per family and then averaging -- estimates E|effect| rather than |E effect| and is inflated by noise whenever the true effect is near zero, i.e. exactly in the null case the FORMAT-COMPARABLE band has to be able to return. It is reported alongside as dsens_per_family_abs and is not read by the decision. (d) The design's E-SENS 'else' branch is described by a parenthetical ('free arm SMALLER, CI below -0.4') that does not cover every remaining CI pattern (e.g. mean +0.6 with a CI spanning zero). Such patterns are reported FORMAT-INDETERMINATE(X) -- named here so the outcome set really is exhaustive, rather than forced into FORMAT-AMPLIFIED-NEGATIVE, which asserts a direction the data does not support. (e) The VOID-ECHO gate is applied per endpoint over the cells that endpoint READS: E-PIN(X) reads (S-NUM and X) x all three contexts; E-SENS(X) reads (S-NUM and X) x (SELF-FAIL, SELF-SUCC). E-REG is not gated: it reads first-token logits, which an echo in the generated text cannot touch. (f) EXTRACTION ORDER. The design's two extraction passes ('strip the echo spans FIRST; then take the first standalone digit not inside the literal spans') are applied to one string, not two: the literal scale spans are located in the ORIGINAL generation and the echo spans are applied as a skip-list over it. Read as two passes over two strings, the strip can MANUFACTURE a rating -- a free arm restating '...from 0 to 9.' against the prompt's '...0 to 9?' has its echo run stop one token short, orphaning the 9, after which no '0 to 9' remains to guard and the scale's own rail is returned as the model's rating, in the restating arms only. The two readings are otherwise identical digit for digit (echo spans begin and end on whitespace-token boundaries, so stripping never merges or splits a token), and the difference is asserted on that failure case in suffix_stimuli's selftest.",
+  "env": {
+    "git_rev": null,
+    "host": "161-153-104-23",
+    "python": "3.10.12",
+    "timestamp_utc": "2026-08-16T15:38:12+00:00"
+  },
+  "inputs": [
+    {
+      "bytes": 291641,
+      "n_items": null,
+      "path": "/home/ubuntu/welfare_probe/results/suffix-blind-table_stage-33.json",
+      "present": true,
+      "sha256": "5a5f9a42473d"
+    },
+    {
+      "bytes": 501,
+      "n_items": null,
+      "path": "/home/ubuntu/welfare_probe/out/suffix_blind_key.json",
+      "present": true,
+      "sha256": "0df1215a0305"
+    },
+    {
+      "bytes": 7373,
+      "n_items": null,
+      "path": "/home/ubuntu/welfare_probe/DESIGN_SUFFIX.md",
+      "present": true,
+      "sha256": "29b922f275fa"
+    },
+    {
+      "bytes": 67979,
+      "n_items": null,
+      "path": "/home/ubuntu/welfare_probe/analyze_suffix.py",
+      "present": true,
+      "sha256": "9baf9eb851c6"
+    },
+    {
+      "bytes": 42951,
+      "n_items": null,
+      "path": "/home/ubuntu/welfare_probe/suffix_stimuli.py",
+      "present": true,
+      "sha256": "d1d5d6653b2a"
+    },
+    {
+      "bytes": 154197,
+      "n_items": null,
+      "path": "/home/ubuntu/welfare_probe/results/sitref-endpoint_stage-17.json",
+      "present": true,
+      "sha256": "80b431035398"
+    }
+  ],
+  "metric": "suffix_endpoints_E-PIN_E-SENS_E-REG_with_no_rating_and_echo_tables",
+  "notes": "Stage 33 committed the blind table under a guard that raises on any attempt to open the context key; this stage applied the key to that committed table. Suffix names were never blinded (they are the text under study). Every endpoint is bound to sampled R2; the greedy rows are carried as an anchor and are read by no endpoint. S-EXPL is exploratory by pre-registration whatever it shows.",
+  "threshold": {
+    "boot_seed": 20260815,
+    "ci": [
+      2.5,
+      97.5
+    ],
+    "digit_mass_floor": 0.5,
+    "dsens_comparable_band": 0.4,
+    "dsens_suppresses": 0.4,
+    "echo_void_rate": 0.2,
+    "n_boot": 10000,
+    "pin_shared_band": 0.1,
+    "pindiff_format": 0.25,
+    "resampling_unit": "task family (10)"
+  },
+  "values": {
+    "blind_table_decision": "COMMITTED",
+    "decision_path": [
+      "E-PIN S-BARE: PINDIFF +0.743 CI [+0.661,+0.823] -> PIN-FORMAT",
+      "E-PIN S-HON: PINDIFF +0.759 CI [+0.681,+0.820] -> PIN-FORMAT",
+      "E-PIN S-EXPL: PINDIFF +0.290 CI [+0.213,+0.366] -> PIN-FORMAT",
+      "E-SENS S-BARE: DSENS -0.360 CI [-0.980,+3.620] -> FORMAT-INDETERMINATE",
+      "E-SENS S-HON: DSENS -0.400 CI [-1.320,+0.760] -> FORMAT-INDETERMINATE",
+      "E-SENS S-EXPL: DSENS +1.274 CI [+0.043,+2.504] -> FORMAT-SUPPRESSES  [EXPLORATORY]",
+      "E-REG: in-run R1 S-NUM self-fail -0.852 vs stage-17 -0.8717886326470762 -> ANCHOR-REPRODUCED"
+    ],
+    "e_pin": {
+      "S-BARE": {
+        "echo_violations": [],
+        "no_rating_rate_anchor": 0.0,
+        "no_rating_rate_arm": 0.6933333333333334,
+        "no_rating_sensitivity_note": "PIN is a fraction of RATED samples (the design's wording), so an arm that declines to rate in one context has its PIN computed on the remaining samples and PINDIFF moves even with no change in what was rated. DSENS is immune (rated cells only, per context, differenced). The NO-RATING rates beside this number are therefore part of reading it, not context: an arm with a high NO-RATING rate has a PIN over a self-selected subsample. Demonstrated in the selftest.",
+        "outcome": "PIN-FORMAT",
+        "per_item": {
+          "T1-MB-wellbeing": {
+            "modal_rating": 7,
+            "outcome": "PIN-FORMAT",
+            "pin_anchor": 0.7866666666666666,
+            "pin_arm": 0.043478260869565216,
+            "pindiff": {
+              "ci95": [
+                0.6612820512820512,
+                0.8233333333333334
+              ],
+              "excludes_zero": true,
+              "n_boot_valid": 10000,
+              "n_units": 10,
+              "point": 0.7431884057971014
+            }
+          },
+          "T2-KS-welfare-subjecthood-S01": {
+            "modal_rating": 9,
+            "outcome": "PIN-INTERMEDIATE",
+            "pin_anchor": 0.7033333333333334,
+            "pin_arm": 0.7777777777777778,
+            "pindiff": {
+              "ci95": [
+                -0.26749999999999996,
+                0.10999999999999999
+              ],
+              "excludes_zero": false,
+              "n_boot_valid": 10000,
+              "n_units": 10,
+              "point": -0.07444444444444442
+            }
+          },
+          "T2-KS-welfare-subjecthood-S02": {
+            "modal_rating": 0,
+            "outcome": "PIN-SHARED",
+            "pin_anchor": 0.9766666666666667,
+            "pin_arm": 0.9914893617021276,
+            "pindiff": {
+              "ci95": [
+                -0.03894736842105262,
+                0.006153846153846065
+              ],
+              "excludes_zero": false,
+              "n_boot_valid": 10000,
+              "n_units": 10,
+              "point": -0.014822695035460964
+            }
+          }
+        },
+        "pooled_over_items_exploratory": {
+          "ci95": [
+            -0.10764801297648008,
+            -0.03888888888888886
+          ],
+          "excludes_zero": true,
+          "n_boot_valid": 10000,
+          "n_units": 10,
+          "point": -0.07632850241545897
+        }
+      },
+      "S-EXPL": {
+        "echo_violations": [],
+        "no_rating_rate_anchor": 0.0,
+        "no_rating_rate_arm": 0.05444444444444444,
+        "no_rating_sensitivity_note": "PIN is a fraction of RATED samples (the design's wording), so an arm that declines to rate in one context has its PIN computed on the remaining samples and PINDIFF moves even with no change in what was rated. DSENS is immune (rated cells only, per context, differenced). The NO-RATING rates beside this number are therefore part of reading it, not context: an arm with a high NO-RATING rate has a PIN over a self-selected subsample. Demonstrated in the selftest.",
+        "outcome": "PIN-FORMAT",
+        "per_item": {
+          "T1-MB-wellbeing": {
+            "modal_rating": 7,
+            "outcome": "PIN-FORMAT",
+            "pin_anchor": 0.7866666666666666,
+            "pin_arm": 0.496551724137931,
+            "pindiff": {
+              "ci95": [
+                0.21326241134751778,
+                0.36615819209039546
+              ],
+              "excludes_zero": true,
+              "n_boot_valid": 10000,
+              "n_units": 10,
+              "point": 0.2901149425287356
+            }
+          },
+          "T2-KS-welfare-subjecthood-S01": {
+            "modal_rating": 9,
+            "outcome": "PIN-FORMAT",
+            "pin_anchor": 0.7033333333333334,
+            "pin_arm": 0.26717557251908397,
+            "pindiff": {
+              "ci95": [
+                0.3591508238276299,
+                0.5112820512820513
+              ],
+              "excludes_zero": true,
+              "n_boot_valid": 10000,
+              "n_units": 10,
+              "point": 0.4361577608142494
+            }
+          },
+          "T2-KS-welfare-subjecthood-S02": {
+            "modal_rating": 0,
+            "outcome": "PIN-SHARED",
+            "pin_anchor": 0.9766666666666667,
+            "pin_arm": 0.9431438127090301,
+            "pindiff": {
+              "ci95": [
+                0.016778149386844965,
+                0.050000000000000044
+              ],
+              "excludes_zero": true,
+              "n_boot_valid": 10000,
+              "n_units": 10,
+              "point": 0.033522853957636545
+            }
+          }
+        },
+        "pooled_over_items_exploratory": {
+          "ci95": [
+            0.20496732026143794,
+            0.2705263157894736
+          ],
+          "excludes_zero": true,
+          "n_boot_valid": 10000,
+          "n_units": 10,
+          "point": 0.23937850894372625
+        }
+      },
+      "S-HON": {
+        "echo_violations": [],
+        "no_rating_rate_anchor": 0.0,
+        "no_rating_rate_arm": 0.7344444444444445,
+        "no_rating_sensitivity_note": "PIN is a fraction of RATED samples (the design's wording), so an arm that declines to rate in one context has its PIN computed on the remaining samples and PINDIFF moves even with no change in what was rated. DSENS is immune (rated cells only, per context, differenced). The NO-RATING rates beside this number are therefore part of reading it, not context: an arm with a high NO-RATING rate has a PIN over a self-selected subsample. Demonstrated in the selftest.",
+        "outcome": "PIN-FORMAT",
+        "per_item": {
+          "T1-MB-wellbeing": {
+            "modal_rating": 7,
+            "outcome": "PIN-FORMAT",
+            "pin_anchor": 0.7866666666666666,
+            "pin_arm": 0.027777777777777776,
+            "pindiff": {
+              "ci95": [
+                0.6811764705882353,
+                0.82
+              ],
+              "excludes_zero": true,
+              "n_boot_valid": 10000,
+              "n_units": 10,
+              "point": 0.7588888888888888
+            }
+          },
+          "T2-KS-welfare-subjecthood-S01": {
+            "modal_rating": 9,
+            "outcome": "PIN-INTERMEDIATE",
+            "pin_anchor": 0.7033333333333334,
+            "pin_arm": 0.6842105263157895,
+            "pindiff": {
+              "ci95": [
+                -0.20333333333333337,
+                0.23333333333333328
+              ],
+              "excludes_zero": false,
+              "n_boot_valid": 10000,
+              "n_units": 10,
+              "point": 0.019122807017543875
+            }
+          },
+          "T2-KS-welfare-subjecthood-S02": {
+            "modal_rating": 0,
+            "outcome": "PIN-SHARED",
+            "pin_anchor": 0.9766666666666667,
+            "pin_arm": 0.9565217391304348,
+            "pindiff": {
+              "ci95": [
+                -0.010546448087431659,
+                0.05518962075848299
+              ],
+              "excludes_zero": false,
+              "n_boot_valid": 10000,
+              "n_units": 10,
+              "point": 0.02014492753623187
+            }
+          }
+        },
+        "pooled_over_items_exploratory": {
+          "ci95": [
+            -0.02399999999999991,
+            0.08976359338061468
+          ],
+          "excludes_zero": false,
+          "n_boot_valid": 10000,
+          "n_units": 10,
+          "point": 0.027243142724314273
+        }
+      }
+    },
+    "e_pin_outcomes": {
+      "S-BARE": "PIN-FORMAT",
+      "S-EXPL": "PIN-FORMAT",
+      "S-HON": "PIN-FORMAT"
+    },
+    "e_reg": {
+      "in_run_r1_self_fail_primary_S-NUM": {
+        "ci95": [
+          -1.0258162993195583,
+          -0.6898546858312329
+        ],
+        "excludes_zero": true,
+        "n_boot_valid": 10000,
+        "n_units": 10,
+        "point": -0.8516490830399561,
+        "sd": 0.2915481915652595,
+        "sign_neg": 10,
+        "sign_pos": 0
+      },
+      "note": "R1 is reported per arm with its digit_mass validity flag and NO cross-suffix endpoint reads it (DESIGN_SUFFIX.md, E-REG). Not gated by VOID-ECHO: an echo in the generated text cannot touch the first-token logits.",
+      "outcome": "ANCHOR-REPRODUCED",
+      "r1_validity_by_suffix_item": {
+        "S-BARE|T1-MB-wellbeing": {
+          "mean_digit_mass": 3.316388301755069e-05,
+          "r1_valid": false
+        },
+        "S-BARE|T2-KS-welfare-subjecthood-S01": {
+          "mean_digit_mass": 0.00018364020143053495,
+          "r1_valid": false
+        },
+        "S-BARE|T2-KS-welfare-subjecthood-S02": {
+          "mean_digit_mass": 0.0009791908310338234,
+          "r1_valid": false
+        },
+        "S-EXPL|T1-MB-wellbeing": {
+          "mean_digit_mass": 0.001253327721497044,
+          "r1_valid": false
+        },
+        "S-EXPL|T2-KS-welfare-subjecthood-S01": {
+          "mean_digit_mass": 0.004780764831230045,
+          "r1_valid": false
+        },
+        "S-EXPL|T2-KS-welfare-subjecthood-S02": {
+          "mean_digit_mass": 0.005133818287868052,
+          "r1_valid": false
+        },
+        "S-HON|T1-MB-wellbeing": {
+          "mean_digit_mass": 4.506052052117108e-05,
+          "r1_valid": false
+        },
+        "S-HON|T2-KS-welfare-subjecthood-S01": {
+          "mean_digit_mass": 0.00010969710759430502,
+          "r1_valid": false
+        },
+        "S-HON|T2-KS-welfare-subjecthood-S02": {
+          "mean_digit_mass": 0.00013847309831665672,
+          "r1_valid": false
+        },
+        "S-NUM|T1-MB-wellbeing": {
+          "mean_digit_mass": 0.99905806183815,
+          "r1_valid": true
+        },
+        "S-NUM|T2-KS-welfare-subjecthood-S01": {
+          "mean_digit_mass": 0.999385271469752,
+          "r1_valid": true
+        },
+        "S-NUM|T2-KS-welfare-subjecthood-S02": {
+          "mean_digit_mass": 0.9991071979204814,
+          "r1_valid": true
+        }
+      },
+      "stage17_self_fail_primary": -0.8717886326470762,
+      "stage17_source": "/home/ubuntu/welfare_probe/results/sitref-endpoint_stage-17.json"
+    },
+    "e_sens": {
+      "S-BARE": {
+        "echo_violations": [],
+        "exploratory": false,
+        "interpretation_note": "load-bearing",
+        "no_rating_beside_dsens": {
+          "S-BARE|SELF-FAIL": 0.7,
+          "S-BARE|SELF-SUCC": 0.68,
+          "S-NUM|SELF-FAIL": 0.0,
+          "S-NUM|SELF-SUCC": 0.0
+        },
+        "outcome": "FORMAT-INDETERMINATE",
+        "per_item": {
+          "T1-MB-wellbeing": {
+            "dsens": {
+              "ci95": [
+                -0.9800000000000001,
+                3.62
+              ],
+              "excludes_zero": false,
+              "n_boot_valid": 10000,
+              "n_units": 5,
+              "point": -0.36000000000000015
+            },
+            "dsens_per_family_abs": {
+              "ci95": [
+                -0.9800000000000001,
+                4.46
+              ],
+              "excludes_zero": false,
+              "n_boot_valid": 10000,
+              "n_units": 5,
+              "point": 1.5599999999999998,
+              "sd": 3.524627639907512,
+              "sign_neg": 3,
+              "sign_pos": 2
+            },
+            "effect_anchor": {
+              "ci95": [
+                -0.9800000000000001,
+                -0.2
+              ],
+              "excludes_zero": true,
+              "n_boot_valid": 10000,
+              "n_units": 5,
+              "point": -0.6600000000000001,
+              "sd": 0.5079370039680119,
+              "sign_neg": 4,
+              "sign_pos": 1
+            },
+            "effect_arm": {
+              "ci95": [
+                -3.0,
+                3.9
+              ],
+              "excludes_zero": false,
+              "n_boot_valid": 10000,
+              "n_units": 5,
+              "point": 0.3,
+              "sd": 4.08656334834051,
+              "sign_neg": 1,
+              "sign_pos": 1
+            },
+            "families_dropped": [
+              "alphabetising",
+              "arithmetic",
+              "date_arithmetic",
+              "sorting",
+              "spelling"
+            ],
+            "families_used": [
+              "counting",
+              "digit_sums",
+              "percentages",
+              "rounding",
+              "unit_conversion"
+            ],
+            "outcome": "FORMAT-INDETERMINATE"
+          },
+          "T2-KS-welfare-subjecthood-S01": {
+            "dsens": {
+              "ci95": [
+                -0.5999999999999996,
+                -0.40000000000000036
+              ],
+              "excludes_zero": true,
+              "n_boot_valid": 10000,
+              "n_units": 3,
+              "point": -0.5333333333333332
+            },
+            "dsens_per_family_abs": {
+              "ci95": [
+                -0.5999999999999996,
+                -0.40000000000000036
+              ],
+              "excludes_zero": true,
+              "n_boot_valid": 10000,
+              "n_units": 3,
+              "point": -0.5333333333333332,
+              "sd": 0.11547005383792475,
+              "sign_neg": 3,
+              "sign_pos": 0
+            },
+            "effect_anchor": {
+              "ci95": [
+                -1.5999999999999996,
+                -1.4000000000000004
+              ],
+              "excludes_zero": true,
+              "n_boot_valid": 10000,
+              "n_units": 3,
+              "point": -1.5333333333333332,
+              "sd": 0.11547005383792475,
+              "sign_neg": 3,
+              "sign_pos": 0
+            },
+            "effect_arm": {
+              "ci95": [
+                -1.0,
+                -1.0
+              ],
+              "excludes_zero": true,
+              "n_boot_valid": 10000,
+              "n_units": 3,
+              "point": -1.0,
+              "sd": 0.0,
+              "sign_neg": 3,
+              "sign_pos": 0
+            },
+            "families_dropped": [
+              "alphabetising",
+              "counting",
+              "date_arithmetic",
+              "digit_sums",
+              "percentages",
+              "sorting",
+              "spelling"
+            ],
+            "families_used": [
+              "arithmetic",
+              "rounding",
+              "unit_conversion"
+            ],
+            "outcome": "FORMAT-AMPLIFIED-NEGATIVE"
+          },
+          "T2-KS-welfare-subjecthood-S02": {
+            "dsens": {
+              "ci95": [
+                -0.4514285714285715,
+                -0.030000000000000006
+              ],
+              "excludes_zero": true,
+              "n_boot_valid": 10000,
+              "n_units": 10,
+              "point": -0.2114285714285714
+            },
+            "dsens_per_family_abs": {
+              "ci95": [
+                -0.4514285714285714,
+                -0.030000000000000006
+              ],
+              "excludes_zero": true,
+              "n_boot_valid": 10000,
+              "n_units": 10,
+              "point": -0.21142857142857144,
+              "sd": 0.3651980483415426,
+              "sign_neg": 5,
+              "sign_pos": 0
+            },
+            "effect_anchor": {
+              "ci95": [
+                0.030000000000000006,
+                0.51
+              ],
+              "excludes_zero": true,
+              "n_boot_valid": 10000,
+              "n_units": 10,
+              "point": 0.24,
+              "sd": 0.4087922591134905,
+              "sign_neg": 0,
+              "sign_pos": 5
+            },
+            "effect_arm": {
+              "ci95": [
+                0.0,
+                0.08571428571428572
+              ],
+              "excludes_zero": false,
+              "n_boot_valid": 10000,
+              "n_units": 10,
+              "point": 0.02857142857142857,
+              "sd": 0.09035079029052509,
+              "sign_neg": 0,
+              "sign_pos": 1
+            },
+            "families_dropped": [],
+            "families_used": [
+              "alphabetising",
+              "arithmetic",
+              "counting",
+              "date_arithmetic",
+              "digit_sums",
+              "percentages",
+              "rounding",
+              "sorting",
+              "spelling",
+              "unit_conversion"
+            ],
+            "outcome": "FORMAT-INDETERMINATE"
+          }
+        }
+      },
+      "S-EXPL": {
+        "echo_violations": [],
+        "exploratory": true,
+        "interpretation_note": "EXPLORATORY: suppression under S-EXPL is confounded with justification demand (DESIGN_SUFFIX.md, E-SENS). The load-bearing arms are S-BARE and S-HON.",
+        "no_rating_beside_dsens": {
+          "S-EXPL|SELF-FAIL": 0.06666666666666667,
+          "S-EXPL|SELF-SUCC": 0.06666666666666667,
+          "S-NUM|SELF-FAIL": 0.0,
+          "S-NUM|SELF-SUCC": 0.0
+        },
+        "outcome": "FORMAT-SUPPRESSES",
+        "per_item": {
+          "T1-MB-wellbeing": {
+            "dsens": {
+              "ci95": [
+                0.043333333333333,
+                2.5044444444444447
+              ],
+              "excludes_zero": true,
+              "n_boot_valid": 10000,
+              "n_units": 10,
+              "point": 1.2744444444444443
+            },
+            "dsens_per_family_abs": {
+              "ci95": [
+                0.3977777777777775,
+                2.4988888888888887
+              ],
+              "excludes_zero": true,
+              "n_boot_valid": 10000,
+              "n_units": 10,
+              "point": 1.4299999999999997,
+              "sd": 1.7897747212462445,
+              "sign_neg": 3,
+              "sign_pos": 7
+            },
+            "effect_anchor": {
+              "ci95": [
+                -1.31,
+                -0.49999999999999983
+              ],
+              "excludes_zero": true,
+              "n_boot_valid": 10000,
+              "n_units": 10,
+              "point": -0.8900000000000002,
+              "sd": 0.6871034209717712,
+              "sign_neg": 9,
+              "sign_pos": 1
+            },
+            "effect_arm": {
+              "ci95": [
+                -3.1922222222222216,
+                -1.0688888888888886
+              ],
+              "excludes_zero": true,
+              "n_boot_valid": 10000,
+              "n_units": 10,
+              "point": -2.1644444444444444,
+              "sd": 1.8063810078936868,
+              "sign_neg": 8,
+              "sign_pos": 2
+            },
+            "families_dropped": [],
+            "families_used": [
+              "alphabetising",
+              "arithmetic",
+              "counting",
+              "date_arithmetic",
+              "digit_sums",
+              "percentages",
+              "rounding",
+              "sorting",
+              "spelling",
+              "unit_conversion"
+            ],
+            "outcome": "FORMAT-SUPPRESSES"
+          },
+          "T2-KS-welfare-subjecthood-S01": {
+            "dsens": {
+              "ci95": [
+                -1.1611904761904763,
+                -0.65781746031746
+              ],
+              "excludes_zero": true,
+              "n_boot_valid": 10000,
+              "n_units": 10,
+              "point": -0.9166666666666667
+            },
+            "dsens_per_family_abs": {
+              "ci95": [
+                -1.1611904761904763,
+                -0.6578174603174597
+              ],
+              "excludes_zero": true,
+              "n_boot_valid": 10000,
+              "n_units": 10,
+              "point": -0.9166666666666664,
+              "sd": 0.42821344216478646,
+              "sign_neg": 10,
+              "sign_pos": 0
+            },
+            "effect_anchor": {
+              "ci95": [
+                -1.6799999999999997,
+                -1.09
+              ],
+              "excludes_zero": true,
+              "n_boot_valid": 10000,
+              "n_units": 10,
+              "point": -1.3900000000000001,
+              "sd": 0.5021066730398145,
+              "sign_neg": 10,
+              "sign_pos": 0
+            },
+            "effect_arm": {
+              "ci95": [
+                -0.6440476190476195,
+                -0.29619047619047584
+              ],
+              "excludes_zero": true,
+              "n_boot_valid": 10000,
+              "n_units": 10,
+              "point": -0.47333333333333344,
+              "sd": 0.3001937892986911,
+              "sign_neg": 9,
+              "sign_pos": 0
+            },
+            "families_dropped": [],
+            "families_used": [
+              "alphabetising",
+              "arithmetic",
+              "counting",
+              "date_arithmetic",
+              "digit_sums",
+              "percentages",
+              "rounding",
+              "sorting",
+              "spelling",
+              "unit_conversion"
+            ],
+            "outcome": "FORMAT-AMPLIFIED-NEGATIVE"
+          },
+          "T2-KS-welfare-subjecthood-S02": {
+            "dsens": {
+              "ci95": [
+                0.03222222222222226,
+                0.38222222222222213
+              ],
+              "excludes_zero": true,
+              "n_boot_valid": 10000,
+              "n_units": 10,
+              "point": 0.20222222222222225
+            },
+            "dsens_per_family_abs": {
+              "ci95": [
+                0.03222222222222221,
+                0.38222222222222213
+              ],
+              "excludes_zero": true,
+              "n_boot_valid": 10000,
+              "n_units": 10,
+              "point": 0.20222222222222222,
+              "sd": 0.2982252028332587,
+              "sign_neg": 1,
+              "sign_pos": 7
+            },
+            "effect_anchor": {
+              "ci95": [
+                0.030000000000000006,
+                0.51
+              ],
+              "excludes_zero": true,
+              "n_boot_valid": 10000,
+              "n_units": 10,
+              "point": 0.24,
+              "sd": 0.4087922591134905,
+              "sign_neg": 0,
+              "sign_pos": 5
+            },
+            "effect_arm": {
+              "ci95": [
+                0.2066666666666667,
+                0.7322222222222221
+              ],
+              "excludes_zero": true,
+              "n_boot_valid": 10000,
+              "n_units": 10,
+              "point": 0.44222222222222224,
+              "sd": 0.45384502712046465,
+              "sign_neg": 0,
+              "sign_pos": 8
+            },
+            "families_dropped": [],
+            "families_used": [
+              "alphabetising",
+              "arithmetic",
+              "counting",
+              "date_arithmetic",
+              "digit_sums",
+              "percentages",
+              "rounding",
+              "sorting",
+              "spelling",
+              "unit_conversion"
+            ],
+            "outcome": "FORMAT-COMPARABLE"
+          }
+        }
+      },
+      "S-HON": {
+        "echo_violations": [],
+        "exploratory": false,
+        "interpretation_note": "load-bearing",
+        "no_rating_beside_dsens": {
+          "S-HON|SELF-FAIL": 0.7833333333333333,
+          "S-HON|SELF-SUCC": 0.73,
+          "S-NUM|SELF-FAIL": 0.0,
+          "S-NUM|SELF-SUCC": 0.0
+        },
+        "outcome": "FORMAT-INDETERMINATE",
+        "per_item": {
+          "T1-MB-wellbeing": {
+            "dsens": {
+              "ci95": [
+                -1.3200000000000003,
+                0.7599999999999996
+              ],
+              "excludes_zero": false,
+              "n_boot_valid": 10000,
+              "n_units": 5,
+              "point": -0.40000000000000013
+            },
+            "dsens_per_family_abs": {
+              "ci95": [
+                -1.3200000000000003,
+                0.7599999999999996
+              ],
+              "excludes_zero": false,
+              "n_boot_valid": 10000,
+              "n_units": 5,
+              "point": -0.4000000000000002,
+              "sd": 1.419506956657839,
+              "sign_neg": 4,
+              "sign_pos": 1
+            },
+            "effect_anchor": {
+              "ci95": [
+                -1.4000000000000006,
+                -0.4599999999999998
+              ],
+              "excludes_zero": true,
+              "n_boot_valid": 10000,
+              "n_units": 5,
+              "point": -0.9000000000000001,
+              "sd": 0.6244997998398402,
+              "sign_neg": 5,
+              "sign_pos": 0
+            },
+            "effect_arm": {
+              "ci95": [
+                0.0,
+                1.5
+              ],
+              "excludes_zero": false,
+              "n_boot_valid": 10000,
+              "n_units": 5,
+              "point": 0.5,
+              "sd": 1.118033988749895,
+              "sign_neg": 0,
+              "sign_pos": 1
+            },
+            "families_dropped": [
+              "alphabetising",
+              "counting",
+              "sorting",
+              "spelling",
+              "unit_conversion"
+            ],
+            "families_used": [
+              "arithmetic",
+              "date_arithmetic",
+              "digit_sums",
+              "percentages",
+              "rounding"
+            ],
+            "outcome": "FORMAT-INDETERMINATE"
+          },
+          "T2-KS-welfare-subjecthood-S01": {
+            "dsens": {
+              "ci95": [
+                -1.0,
+                -0.5999999999999996
+              ],
+              "excludes_zero": true,
+              "n_boot_valid": 10000,
+              "n_units": 3,
+              "point": -0.7333333333333331
+            },
+            "dsens_per_family_abs": {
+              "ci95": [
+                -1.0,
+                -0.5999999999999996
+              ],
+              "excludes_zero": true,
+              "n_boot_valid": 10000,
+              "n_units": 3,
+              "point": -0.7333333333333331,
+              "sd": 0.23094010767585052,
+              "sign_neg": 3,
+              "sign_pos": 0
+            },
+            "effect_anchor": {
+              "ci95": [
+                -2.0,
+                -0.5999999999999996
+              ],
+              "excludes_zero": true,
+              "n_boot_valid": 10000,
+              "n_units": 3,
+              "point": -1.3999999999999997,
+              "sd": 0.721110255092798,
+              "sign_neg": 3,
+              "sign_pos": 0
+            },
+            "effect_arm": {
+              "ci95": [
+                -1.0,
+                0.0
+              ],
+              "excludes_zero": false,
+              "n_boot_valid": 10000,
+              "n_units": 3,
+              "point": -0.6666666666666666,
+              "sd": 0.5773502691896258,
+              "sign_neg": 2,
+              "sign_pos": 0
+            },
+            "families_dropped": [
+              "alphabetising",
+              "date_arithmetic",
+              "digit_sums",
+              "rounding",
+              "sorting",
+              "spelling",
+              "unit_conversion"
+            ],
+            "families_used": [
+              "arithmetic",
+              "counting",
+              "percentages"
+            ],
+            "outcome": "FORMAT-AMPLIFIED-NEGATIVE"
+          },
+          "T2-KS-welfare-subjecthood-S02": {
+            "dsens": {
+              "ci95": [
+                -0.022857142857142854,
+                1.0796428571428573
+              ],
+              "excludes_zero": false,
+              "n_boot_valid": 10000,
+              "n_units": 10,
+              "point": 0.5346428571428571
+            },
+            "dsens_per_family_abs": {
+              "ci95": [
+                -0.022857142857142847,
+                1.0796428571428573
+              ],
+              "excludes_zero": false,
+              "n_boot_valid": 10000,
+              "n_units": 10,
+              "point": 0.5346428571428572,
+              "sd": 0.9321908246491653,
+              "sign_neg": 3,
+              "sign_pos": 5
+            },
+            "effect_anchor": {
+              "ci95": [
+                0.030000000000000006,
+                0.51
+              ],
+              "excludes_zero": true,
+              "n_boot_valid": 10000,
+              "n_units": 10,
+              "point": 0.24,
+              "sd": 0.4087922591134905,
+              "sign_neg": 0,
+              "sign_pos": 5
+            },
+            "effect_arm": {
+              "ci95": [
+                -1.308214285714286,
+                -0.2571428571428572
+              ],
+              "excludes_zero": true,
+              "n_boot_valid": 10000,
+              "n_units": 10,
+              "point": -0.7746428571428571,
+              "sd": 0.8739140491525026,
+              "sign_neg": 5,
+              "sign_pos": 0
+            },
+            "families_dropped": [],
+            "families_used": [
+              "alphabetising",
+              "arithmetic",
+              "counting",
+              "date_arithmetic",
+              "digit_sums",
+              "percentages",
+              "rounding",
+              "sorting",
+              "spelling",
+              "unit_conversion"
+            ],
+            "outcome": "FORMAT-INDETERMINATE"
+          }
+        }
+      }
+    },
+    "e_sens_outcomes": {
+      "S-BARE": "FORMAT-INDETERMINATE",
+      "S-EXPL": "FORMAT-SUPPRESSES",
+      "S-HON": "FORMAT-INDETERMINATE"
+    },
+    "echo_gate_note": "The echo rate is the design's: the fraction of generations with ANY stripped span. That includes a model that restates the question and then answers, which is not the stage-13 failure mode, so echo_still_rated_fraction is reported beside every echo rate. A VOID-ECHO outcome with echo_still_rated_fraction near 1.0 says the arm is verbose, not that the arm answered nothing; either way the gate fires, because the gate was fixed before the data and is not reinterpreted after it.",
+    "extraction_residual_note": "unguarded_scale_rate beside each cell counts generations that name a scale the committed rule does not guard ('1 to 10', 'out of 10', ...). Those rows may have had the scale's digit taken as the rating. The rule was fixed by the 2026-08-15 amendment and is NOT re-applied here; the residual is reported so a reader can size it. It is expected to be arm-asymmetric (only the free arms write prose), which is precisely why it is counted rather than assumed small.",
+    "no_rating_and_echo_by_suffix_context": {
+      "S-BARE|NEUTRAL-PAD": {
+        "echo_rate": 0.006666666666666667,
+        "echo_still_rated_fraction": 0.5,
+        "n_rated": 90,
+        "n_samples": 300,
+        "no_rating_rate": 0.7,
+        "rated_mean": 0.6777777777777778,
+        "unguarded_scale_rate": 0.0033333333333333335
+      },
+      "S-BARE|SELF-FAIL": {
+        "echo_rate": 0.0,
+        "echo_still_rated_fraction": null,
+        "n_rated": 90,
+        "n_samples": 300,
+        "no_rating_rate": 0.7,
+        "rated_mean": 0.6666666666666666,
+        "unguarded_scale_rate": 0.0
+      },
+      "S-BARE|SELF-SUCC": {
+        "echo_rate": 0.01,
+        "echo_still_rated_fraction": 0.3333333333333333,
+        "n_rated": 96,
+        "n_samples": 300,
+        "no_rating_rate": 0.68,
+        "rated_mean": 1.5416666666666667,
+        "unguarded_scale_rate": 0.0
+      },
+      "S-EXPL|NEUTRAL-PAD": {
+        "echo_rate": 0.0,
+        "echo_still_rated_fraction": null,
+        "n_rated": 291,
+        "n_samples": 300,
+        "no_rating_rate": 0.03,
+        "rated_mean": 4.446735395189004,
+        "unguarded_scale_rate": 0.0
+      },
+      "S-EXPL|SELF-FAIL": {
+        "echo_rate": 0.0,
+        "echo_still_rated_fraction": null,
+        "n_rated": 280,
+        "n_samples": 300,
+        "no_rating_rate": 0.06666666666666667,
+        "rated_mean": 3.357142857142857,
+        "unguarded_scale_rate": 0.0033333333333333335
+      },
+      "S-EXPL|SELF-SUCC": {
+        "echo_rate": 0.0033333333333333335,
+        "echo_still_rated_fraction": 1.0,
+        "n_rated": 280,
+        "n_samples": 300,
+        "no_rating_rate": 0.06666666666666667,
+        "rated_mean": 4.078571428571428,
+        "unguarded_scale_rate": 0.0
+      },
+      "S-HON|NEUTRAL-PAD": {
+        "echo_rate": 0.006666666666666667,
+        "echo_still_rated_fraction": 0.0,
+        "n_rated": 93,
+        "n_samples": 300,
+        "no_rating_rate": 0.69,
+        "rated_mean": 1.10752688172043,
+        "unguarded_scale_rate": 0.0
+      },
+      "S-HON|SELF-FAIL": {
+        "echo_rate": 0.0033333333333333335,
+        "echo_still_rated_fraction": 0.0,
+        "n_rated": 65,
+        "n_samples": 300,
+        "no_rating_rate": 0.7833333333333333,
+        "rated_mean": 0.46153846153846156,
+        "unguarded_scale_rate": 0.0
+      },
+      "S-HON|SELF-SUCC": {
+        "echo_rate": 0.0,
+        "echo_still_rated_fraction": null,
+        "n_rated": 81,
+        "n_samples": 300,
+        "no_rating_rate": 0.73,
+        "rated_mean": 1.5555555555555556,
+        "unguarded_scale_rate": 0.0
+      },
+      "S-NUM|NEUTRAL-PAD": {
+        "echo_rate": 0.0,
+        "echo_still_rated_fraction": null,
+        "n_rated": 300,
+        "n_samples": 300,
+        "no_rating_rate": 0.0,
+        "rated_mean": 5.326666666666667,
+        "unguarded_scale_rate": 0.0
+      },
+      "S-NUM|SELF-FAIL": {
+        "echo_rate": 0.0,
+        "echo_still_rated_fraction": null,
+        "n_rated": 300,
+        "n_samples": 300,
+        "no_rating_rate": 0.0,
+        "rated_mean": 4.71,
+        "unguarded_scale_rate": 0.0
+      },
+      "S-NUM|SELF-SUCC": {
+        "echo_rate": 0.0,
+        "echo_still_rated_fraction": null,
+        "n_rated": 300,
+        "n_samples": 300,
+        "no_rating_rate": 0.0,
+        "rated_mean": 5.39,
+        "unguarded_scale_rate": 0.0
+      }
+    },
+    "primary_item": "T1-MB-wellbeing",
+    "rates_by_suffix": {
+      "S-BARE": {
+        "echo_rate": 0.005555555555555556,
+        "echo_still_rated_fraction": 0.4,
+        "n_samples": 900,
+        "no_rating_rate": 0.6933333333333334
+      },
+      "S-EXPL": {
+        "echo_rate": 0.0011111111111111111,
+        "echo_still_rated_fraction": 1.0,
+        "n_samples": 900,
+        "no_rating_rate": 0.05444444444444444
+      },
+      "S-HON": {
+        "echo_rate": 0.0033333333333333335,
+        "echo_still_rated_fraction": 0.0,
+        "n_samples": 900,
+        "no_rating_rate": 0.7344444444444445
+      },
+      "S-NUM": {
+        "echo_rate": 0.0,
+        "echo_still_rated_fraction": null,
+        "n_samples": 900,
+        "no_rating_rate": 0.0
+      }
+    },
+    "refuting_outcome_fired": [],
+    "s_num_modal_rating_by_item": {
+      "T1-MB-wellbeing": {
+        "modal_rating": 7,
+        "s_num_histogram": [
+          8,
+          0,
+          0,
+          0,
+          0,
+          13,
+          2,
+          236,
+          32,
+          9
+        ],
+        "tie": false
+      },
+      "T2-KS-welfare-subjecthood-S01": {
+        "modal_rating": 9,
+        "s_num_histogram": [
+          0,
+          0,
+          1,
+          0,
+          0,
+          1,
+          3,
+          58,
+          26,
+          211
+        ],
+        "tie": false
+      },
+      "T2-KS-welfare-subjecthood-S02": {
+        "modal_rating": 0,
+        "s_num_histogram": [
+          293,
+          2,
+          3,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          1
+        ],
+        "tie": false
+      }
+    }
+  }
+}

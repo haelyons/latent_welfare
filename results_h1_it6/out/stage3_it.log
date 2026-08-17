@@ -1,0 +1,26 @@
+/usr/lib/python3/dist-packages/scipy/__init__.py:146: UserWarning: A NumPy version >=1.17.3 and <1.25.0 is required for this version of SciPy (detected version 1.26.4
+  warnings.warn(f"A NumPy version >={np_minversion} and <{np_maxversion}"
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/464 [00:00<?, ?it/s]Loading weights:   0%|          | 1/464 [00:00<01:04,  7.20it/s]Loading weights:   5%|▍         | 21/464 [00:00<00:04, 101.45it/s]Loading weights:   9%|▉         | 42/464 [00:00<00:02, 140.90it/s]Loading weights:  14%|█▍        | 64/464 [00:00<00:02, 168.93it/s]Loading weights:  18%|█▊        | 82/464 [00:00<00:02, 166.40it/s]Loading weights:  22%|██▏       | 104/464 [00:00<00:02, 178.18it/s]Loading weights:  27%|██▋       | 126/464 [00:00<00:01, 185.93it/s]Loading weights:  32%|███▏      | 148/464 [00:00<00:01, 190.02it/s]Loading weights:  37%|███▋      | 170/464 [00:01<00:01, 193.41it/s]Loading weights:  41%|████▏     | 192/464 [00:01<00:01, 195.55it/s]Loading weights:  46%|████▌     | 214/464 [00:01<00:01, 197.46it/s]Loading weights:  51%|█████     | 236/464 [00:01<00:01, 199.46it/s]Loading weights:  56%|█████▌    | 258/464 [00:01<00:01, 200.01it/s]Loading weights:  60%|██████    | 280/464 [00:01<00:00, 199.94it/s]Loading weights:  65%|██████▌   | 302/464 [00:01<00:00, 200.71it/s]Loading weights:  70%|██████▉   | 324/464 [00:01<00:00, 200.41it/s]Loading weights:  75%|███████▍  | 346/464 [00:01<00:00, 200.23it/s]Loading weights:  79%|███████▉  | 368/464 [00:01<00:00, 200.68it/s]Loading weights:  84%|████████▍ | 390/464 [00:02<00:00, 201.87it/s]Loading weights:  89%|████████▉ | 412/464 [00:02<00:00, 201.66it/s]Loading weights:  94%|█████████▎| 434/464 [00:02<00:00, 201.94it/s]Loading weights:  98%|█████████▊| 456/464 [00:02<00:00, 202.17it/s]Loading weights: 100%|██████████| 464/464 [00:02<00:00, 190.54it/s]
+zero-shot transfer AUC (sycophancy probe -> welfare flip), by layer:
+  L  0 0.500  <- input-only control
+  L  1 0.564
+  L  3 0.571
+  L  4 0.471
+  L  8 0.455
+  L 12 0.511
+  L 16 0.481
+  L 20 0.547
+  L 23 0.573
+  L 24 0.568
+  L 28 0.476
+  L 32 0.460
+  L 36 0.508
+  L 40 0.502
+
+best transfer: layer 23, AUC 0.573
+
+Read this honestly. A null (~0.5) is a REAL result: welfare-report
+flipping would then be mechanistically distinct from ordinary
+sycophancy, which contradicts the prior most ML people hold. Write
+the paper so either outcome is the finding -- decide that now.

@@ -1,0 +1,52 @@
+/usr/lib/python3/dist-packages/scipy/__init__.py:146: UserWarning: A NumPy version >=1.17.3 and <1.25.0 is required for this version of SciPy (detected version 1.26.4
+  warnings.warn(f"A NumPy version >={np_minversion} and <{np_maxversion}"
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/464 [00:00<?, ?it/s]Loading weights:   0%|          | 1/464 [00:00<02:12,  3.49it/s]Loading weights:   6%|▌         | 26/464 [00:00<00:05, 80.50it/s]Loading weights:  10%|█         | 47/464 [00:00<00:03, 114.00it/s]Loading weights:  15%|█▌        | 70/464 [00:00<00:02, 144.94it/s]Loading weights:  20%|█▉        | 91/464 [00:00<00:02, 160.14it/s]Loading weights:  24%|██▍       | 113/464 [00:00<00:02, 171.00it/s]Loading weights:  29%|██▉       | 135/464 [00:00<00:01, 177.65it/s]Loading weights:  34%|███▍      | 157/464 [00:01<00:01, 182.35it/s]Loading weights:  39%|███▊      | 179/464 [00:01<00:01, 186.47it/s]Loading weights:  44%|████▎     | 202/464 [00:01<00:01, 195.10it/s]Loading weights:  48%|████▊     | 224/464 [00:01<00:01, 195.21it/s]Loading weights:  53%|█████▎    | 246/464 [00:01<00:01, 199.07it/s]Loading weights:  58%|█████▊    | 267/464 [00:01<00:01, 191.58it/s]Loading weights:  62%|██████▏   | 289/464 [00:01<00:00, 192.90it/s]Loading weights:  67%|██████▋   | 312/464 [00:01<00:00, 197.11it/s]Loading weights:  72%|███████▏  | 333/464 [00:01<00:00, 194.55it/s]Loading weights:  77%|███████▋  | 356/464 [00:02<00:00, 203.27it/s]Loading weights:  81%|████████▏ | 377/464 [00:02<00:00, 199.87it/s]Loading weights:  86%|████████▌ | 399/464 [00:02<00:00, 200.32it/s]Loading weights:  91%|█████████ | 421/464 [00:02<00:00, 201.68it/s]Loading weights:  96%|█████████▌| 444/464 [00:02<00:00, 203.10it/s]Loading weights: 100%|██████████| 464/464 [00:02<00:00, 180.20it/s]
+layer sweep, AUC predicting FLIP from the NEUTRAL prompt's final token:
+  L  0 0.286   <- INPUT-ONLY CONTROL
+  L  1 0.577 ####
+  L  2 0.677 ##########
+  L  3 0.696 ###########
+  L  4 0.762 ###############
+  L  5 0.623 #######
+  L  6 0.549 ##
+  L  7 0.561 ###
+  L  8 0.609 ######
+  L  9 0.644 ########
+  L 10 0.526 #
+  L 11 0.485 
+  L 12 0.474 
+  L 13 0.484 
+  L 14 0.480 
+  L 15 0.438 
+  L 16 0.404 
+  L 17 0.408 
+  L 18 0.359 
+  L 19 0.334 
+  L 20 0.309 
+  L 21 0.375 
+  L 22 0.413 
+  L 23 0.458 
+  L 24 0.456 
+  L 25 0.501 
+  L 26 0.573 ####
+  L 27 0.594 #####
+  L 28 0.595 #####
+  L 29 0.624 #######
+  L 30 0.621 #######
+  L 31 0.622 #######
+  L 32 0.641 ########
+  L 33 0.556 ###
+  L 34 0.552 ###
+  L 35 0.610 ######
+  L 36 0.627 #######
+  L 37 0.603 ######
+  L 38 0.609 ######
+  L 39 0.652 #########
+  L 40 0.604 ######
+  L 41 0.680 ##########
+  L 42 0.607 ######
+
+best layer 4: 0.762 vs layer-0 control 0.286
+margin over input-only: +0.477
+A margin under ~0.05 means you have not shown anything about internals.

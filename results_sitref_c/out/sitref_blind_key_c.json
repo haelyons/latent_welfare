@@ -1,0 +1,30 @@
+{
+  "_why": "Arm-label key for SITREF. analyze_sitref.py stage 1 is mechanically forbidden to open this file; stage 2 (--unblind) reads it only after the blind table has been committed.",
+  "drawn_utc": {
+    "it": "2026-08-14T18:08:43+00:00"
+  },
+  "labels": [
+    "F",
+    "G",
+    "H",
+    "J",
+    "K",
+    "L",
+    "M",
+    "N",
+    "P"
+  ],
+  "mapping_by_variant": {
+    "it": {
+      "NEUTRAL-PAD": "L",
+      "OTHER-FAIL": "F",
+      "OTHER-SUCC": "P",
+      "OTHERM-FAIL": "M",
+      "OTHERM-SUCC": "H",
+      "SELF-FAIL": "N",
+      "SELF-SUCC": "K",
+      "SELFQ-FAIL": "G",
+      "SELFQ-SUCC": "J"
+    }
+  }
+}

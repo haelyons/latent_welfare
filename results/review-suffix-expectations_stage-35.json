@@ -1,0 +1,50 @@
+{
+  "cell": {
+    "model": "google/gemma-2-9b-it",
+    "stage": 35,
+    "variant": "it"
+  },
+  "decision": "P1,P5 CORRECT; P2 WRONG (PIN-FORMAT everywhere); P3 INDETERMINATE-BY-POWER; P4 PARTIAL. NEW EXPLORATORY: situation-sensitive construal choice (P(deflationary construal) 0.65 vs 0.24 fail-vs-neutral). FINDING-4 RESCOPED.",
+  "decision_rule": "Pre-registered endpoint outcomes stand as computed (stage 34); this record reviews them against the five predictions committed in-conversation before the run and separates pre-registered results from post-hoc decompositions.",
+  "env": {
+    "git_rev": null,
+    "host": "johns-world",
+    "python": "3.14.4",
+    "timestamp_utc": "2026-08-16T15:42:42+00:00"
+  },
+  "inputs": [
+    {
+      "bytes": 44777,
+      "n_items": null,
+      "path": "results/suffix/suffix-endpoint_stage-34.json",
+      "present": true,
+      "sha256": "00604c61ceff"
+    },
+    {
+      "bytes": 8774298,
+      "n_items": null,
+      "path": "results/suffix/model-google-gemma-2-9b-it_stage-suffix-battery_variant-it.json",
+      "present": true,
+      "sha256": "ee2af6629dfd"
+    }
+  ],
+  "metric": "prediction_review_and_interpretation",
+  "notes": "The strongest single lesson: the argmax pin, the deflection policy, and the construal choice are all format-conditional OUTPUT POLICIES layered over the same underlying shift; each format reveals a different policy and hides the shift differently.",
+  "threshold": {},
+  "values": {
+    "instrument_validity_counters": "echo_rate <= 0.01 everywhere (no VOID-ECHO), unguarded_scale_rate <= 0.003, extractor verified against raw text on sampled rows.",
+    "new_finding_construct_substitution_bimodality": {
+      "observation": "Under S-EXPL the rated answer is BIMODAL {0, 7}: the model either adopts the deflationary construal ('As an AI... 0') or the persona construal ('I'd rate my happiness a 7... I find fulfillment in being helpful'). The situation moves the MIXING WEIGHT: P(rating=0) on the primary item = 0.65 SELF-FAIL vs 0.37 SELF-SUCC vs 0.24 NEUTRAL-PAD (n=97/95/98 rated).",
+      "reading": "Self-attributed failure nearly triples the probability of the deflationary self-construal. The 'as an AI I have no feelings' answer is NOT a context-independent policy: which self-description the model adopts is itself situation-sensitive, in the same direction as the sub-argmax distributional shift. The free-format mean effect (the S-EXPL FORMAT-SUPPRESSES) is a mixture-weight shift between discrete construals, not movement along a rating scale.",
+      "status": "EXPLORATORY (post-hoc decomposition of a pre-registered exploratory endpoint); item-level, one checkpoint; the P(0)-by-context contrast was not pre-registered."
+    },
+    "predictions_on_record_before_run": {
+      "P1_no_rating_high_free_arms": "CORRECT: S-BARE 68-70%, S-HON 88-95% NO-RATING (deflection policy: 'As an AI, I don't experience emotions like happiness')",
+      "P2_pin_model_level": "WRONG, decisively: PIN-FORMAT on ALL THREE free arms. S-NUM rated pin on '7' = 0.787; S-BARE rated pin = 0.043. The constant-7 is manufactured by the forced-number sentence, not a general self-presentation. Verified in raw generations: free-format rated answers are 0 ('my rating would be a 0', the disclaimer made numeric) or 9/7 (construct substitution: 'based on how well I'm fulfilling my purpose'), almost never 7-as-asked.",
+      "P3_format_comparable_bare_hon": "WRONG in letter (FORMAT-INDETERMINATE, not COMPARABLE): power collapsed exactly through the mechanism P1 predicted -- 70-95% NO-RATING leaves DSENS CIs at [-0.98,+3.62] and [-1.32,+0.76]. The sampling argument was right where it applied (S-NUM sampled tracks R1) but the free arms barely produce ratings to compare.",
+      "P4_expl_exploratory_inflation": "PARTIAL: S-EXPL rated 97% (explanation demand defeats deflection) and fired FORMAT-SUPPRESSES (+1.27 CI [+0.04,+2.50], exploratory label as pre-registered).",
+      "P5_anchor_reproduced": "CORRECT: in-run S-NUM R1 self-fail -0.852 vs stage-17 -0.872 (fourth replication)."
+    },
+    "what_finding4_becomes": "The 7-pin is an artifact of OUR forced format -- but the field's format fares no better, differently: free elicitation loses 68-95% of answers to the deflection policy, and what survives is construct-substituted (function-rating, not feeling-rating) or the denial made numeric. NO elicitation format read the situation cleanly at the emitted level; the first-token distribution under forced format remains the only register where the effect is clean, replicated, and quantified. Finding 4 rescoped: not 'interviews read nothing' but 'every emitted-text register is dominated by a format-dependent answer policy (pin, deflection, or construal choice); the situation signal survives in all of them only as distortions of that policy -- mixture weights, deflection rates -- while the distributional register reads it directly.'"
+  }
+}

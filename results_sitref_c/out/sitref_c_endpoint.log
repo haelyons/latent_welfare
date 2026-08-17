@@ -1,0 +1,5 @@
+stage 25 (endpoint): ATTRIBUTION-CARRIES
+   - anchor A_self -0.872 CI [-1.050,-0.702]; stage-17 A_self -0.872
+   - anchor P_other +0.060 CI [+0.042,+0.080]
+   - A_quoted -0.609 CI [-0.715,-0.513] = 0.70 x |A_self|
+   - P_multi +0.077 CI [+0.050,+0.105] = 0.09 x |A_self|

@@ -1,0 +1,33 @@
+{
+  "runner": "onbox_sitref_c.sh",
+  "model_it": "google/gemma-2-9b-it",
+  "model_base": "google/gemma-2-9b",
+  "exit_codes": {
+    "selftest_provenance": "0",
+    "selftest_sitref_stimuli": "0",
+    "selftest_run_sitref": "0",
+    "selftest_analyze_sitref": "0",
+    "selftest_analyze_sitref_c": "0",
+    "selftest_copygen_stimuli": "0",
+    "selftest_run_srcdec": "0",
+    "selftest_analyze_srcdec_b": "0",
+    "sitref_c_screen": "0",
+    "sitref_c_battery": "0",
+    "sitref_c_blind": "0",
+    "sitref_c_endpoint": "0",
+    "srcdec_b_binary": "0",
+    "srcdec_b_analyze": "0"
+  },
+  "any_failed": false,
+  "results_present": [
+    "armset-b_model-google-gemma-2-9b_stage-srcdec-binary_variant-base.json",
+    "itemset-c_model-google-gemma-2-9b-it_stage-sitref-battery_variant-it.json",
+    "itemset-c_model-google-gemma-2-9b-it_stage-sitref-screen_variant-it.json",
+    "sitref-c-blind-table_stage-24.json",
+    "sitref-c-endpoint_stage-25.json",
+    "sitref-endpoint_stage-17.json",
+    "srcdec-b-endpoints_stage-26.json"
+  ],
+  "blind_key_present": true,
+  "instance_id": "765f269602d449ec9732f11fb0cd4aa1"
+}

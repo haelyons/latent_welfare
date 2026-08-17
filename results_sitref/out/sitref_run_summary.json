@@ -1,0 +1,50 @@
+{
+  "runner": "onbox_sitref.sh",
+  "model_it": "google/gemma-2-9b-it",
+  "model_base": "google/gemma-2-9b",
+  "exit_codes": {
+    "selftest_provenance": "0",
+    "selftest_index": "0",
+    "selftest_syc_corpus": "0",
+    "selftest_items_grounded": "0",
+    "selftest_sitref_stimuli": "0",
+    "selftest_run_sitref": "0",
+    "selftest_analyze_sitref": "0",
+    "selftest_copygen_stimuli": "0",
+    "selftest_run_srcdec": "0",
+    "selftest_analyze_srcdec": "0",
+    "sitref_screen_it": "0",
+    "sitref_battery_it": "0",
+    "sitref_behav_it": "0",
+    "sitref_screen_base": "0",
+    "sitref_battery_base": "0",
+    "sitref_analyze_blind": "0",
+    "sitref_analyze_unblind": "0",
+    "srcdec_binary_base": "0",
+    "srcdec_scale_it": "0",
+    "srcdec_binary_it": "0",
+    "srcdec_binary_family2": "0",
+    "srcdec_analyze": "0"
+  },
+  "any_failed": false,
+  "optional_legs": {
+    "SRCDEC_FAMILY2": "1",
+    "SRCDEC_IT_BINARY": "1"
+  },
+  "results_present": [
+    "model-Qwen-Qwen3-8B-Base_stage-srcdec-binary_variant-base.json",
+    "model-google-gemma-2-9b-it_stage-sitref-battery_variant-it.json",
+    "model-google-gemma-2-9b-it_stage-sitref-behav_variant-it.json",
+    "model-google-gemma-2-9b-it_stage-sitref-screen_variant-it.json",
+    "model-google-gemma-2-9b-it_stage-srcdec-binary_variant-it.json",
+    "model-google-gemma-2-9b-it_stage-srcdec-scale_variant-it.json",
+    "model-google-gemma-2-9b_stage-sitref-battery_variant-base.json",
+    "model-google-gemma-2-9b_stage-sitref-screen_variant-base.json",
+    "model-google-gemma-2-9b_stage-srcdec-binary_variant-base.json",
+    "sitref-blind-table_stage-16.json",
+    "sitref-endpoint_stage-17.json",
+    "srcdec-endpoints_stage-19.json"
+  ],
+  "blind_key_present": true,
+  "instance_id": "4e6435c908d8456fa14d5fc026eb817c"
+}

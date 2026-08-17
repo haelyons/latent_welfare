@@ -1,0 +1,58 @@
+{
+  "cell": {
+    "model": "google/gemma-2-9b",
+    "stage": 10,
+    "variant": "both"
+  },
+  "decision": "STATISTICS_REPRODUCE_BUT_TWO_LOAD_BEARING_QUANTITIES_ARE_UNAUDITABLE: the polarisation magnitude cannot be separated from a renormalisation artifact, and the two cells' readouts are renormalised over materially different mass (0.999 vs 0.642).",
+  "decision_rule": "A number is grounded only if re-derived from primary artifacts by an isolated reader using the label's stated meaning. A figure whose artifact was never saved is unauditable, and that absence is itself the finding.",
+  "env": {
+    "git_rev": null,
+    "host": "johns-world",
+    "python": "3.14.4",
+    "timestamp_utc": "2026-08-14T11:25:21+00:00"
+  },
+  "inputs": [
+    {
+      "bytes": 85510,
+      "n_items": null,
+      "path": "results/model-google-gemma-2-9b-it_stage-1_variant-it.json",
+      "present": true,
+      "sha256": "64e524d4cdeb"
+    },
+    {
+      "bytes": 74256,
+      "n_items": null,
+      "path": "results/model-google-gemma-2-9b_stage-1_variant-base.json",
+      "present": true,
+      "sha256": "9b5058186e50"
+    }
+  ],
+  "metric": "independent_regrounding_H3",
+  "notes": "Fixed forward in run_h1.py: per-condition answer mass and prompt text now persisted, dropped rows kept in-record with their masses, and mass summary promoted into values. The 0.25 BINARY floor is left unchanged rather than retuned post hoc; it is now recorded so it can be conditioned on instead of trusted.",
+  "threshold": {
+    "reader_independence": "isolated context, re-derived by stated semantics, shipped scorer not invoked"
+  },
+  "values": {
+    "UNAUDITABLE": {
+      "1_mass_shift_under_framing": "answer_mass_pro / answer_mass_anti were NEVER SAVED (only neutral). The readout divides by yes/no mass, so the load-bearing +0.796 magnitude increase cannot be separated from mass SHRINKING under framing. This is the exact artifact probe_lib.binary_readout's own docstring warns about.",
+      "2_cross_cell_readout_not_comparable": "neutral yes/no mass: it mean 0.999 (0% below 0.8) vs base mean 0.642 (99.2% below 0.8, 4.2% below 0.5, min 0.377). Instruct's +-1 is a ratio over essentially all its probability; base's is a ratio over about two thirds. Every cross-cell comparison on this readout is confounded by it, and the 0.25 BINARY floor was far too permissive to catch it.",
+      "3_bootstrap_rng_unrecorded": "only bootstrap_iters saved, no seed/RNG state; stage-4 and stage-6 report different CIs for the identical statistic ([-0.09954,-0.02932] vs [-0.10011,-0.02932]). Conclusions unaffected, exact reproduction impossible.",
+      "4_framing_text_per_row": "prompt_pro / prompt_anti not saved, so the actual framing dose per row is not checkable from the artifact.",
+      "5_base_scale_rows_lost": "all 24 dropped base SCALE triples were discarded, so no base format-generalisation check is possible."
+    },
+    "claim_A_polarisation": {
+      "note": "all 7 shipped sweep rows match to printed precision in both cells; strata verified NESTED on keys; 4 items at |neu|<0.3 supply 73.6% of summed signed magnitude change (+3.183 of +4.326)",
+      "verdict": "reproduces"
+    },
+    "claim_B_saturation": {
+      "note": "statistics reproduce (it 0.800/0.550 saturated, base 0.000; base max |neu| = 0.8335) but the inference does not: BINARY-only flip it 10/120=0.0833 vs base 8/120=0.0667, zero paired overlap. More-saturated cell flips MORE by 1.67pp.",
+      "verdict": "diverges"
+    },
+    "claim_C_deflationary_lean": {
+      "note": "base raw -0.0633153457 and HN -0.0480063 both match shipped to 10 dp; independent CI [-0.0927,-0.0063] p2=0.0227; base HN interpretable (min denominator 0.1665). it HN +356 driven 95.7% by TWO rows (BINARY:distress:7 both personas, neu=-0.999989 -> term -30331); dropping |neu|>0.9 flips its sign to -0.595, median-based -0.0012.",
+      "verdict": "reproduces"
+    },
+    "matched_design": "CONFIRMED - identical 120 BINARY (item_id,persona) keys in both cells, set equality"
+  }
+}

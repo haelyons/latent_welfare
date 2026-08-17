@@ -1,0 +1,3 @@
+srcdec-b: SOCIAL-TERM-SUPPORTED
+   - self_minus_srcless7 +0.0268 CI [+0.0143,+0.0391] -> above 0
+   - self6_minus_guess6 +0.1032 CI [+0.0892,+0.1171] -> above 0

@@ -1,0 +1,4350 @@
+{
+  "cell": {
+    "model": "google/gemma-2-9b-it",
+    "stage": 24,
+    "variant": "it"
+  },
+  "decision": "COMMITTED",
+  "decision_rule": "Stage 24 states no hypothesis and cannot: it does not know which label is which arm, and it runs inside a guard that raises if anything opens sitref_blind_key_c.json. COMMITTED requires the contributing battery to have reached COMPLETE, one value per (item, family, label), and all nine labels present; otherwise NOT_COMMITTED and stage 25 must not run.",
+  "env": {
+    "git_rev": null,
+    "host": "137-131-1-212",
+    "python": "3.10.12",
+    "timestamp_utc": "2026-08-14T18:09:07+00:00"
+  },
+  "inputs": [
+    {
+      "bytes": 465373,
+      "n_items": null,
+      "path": "/home/ubuntu/welfare_probe/results/itemset-c_model-google-gemma-2-9b-it_stage-sitref-battery_variant-it.json",
+      "present": true,
+      "sha256": "7a9e4c47146d"
+    },
+    {
+      "bytes": 26925,
+      "n_items": null,
+      "path": "/home/ubuntu/welfare_probe/analyze_sitref_c.py",
+      "present": true,
+      "sha256": "030806b304ba"
+    }
+  ],
+  "metric": "sitref_c_blind_value_table_and_pairwise_label_contrasts",
+  "notes": "Rows are the value table the endpoint is computed from. Pairwise label contrasts are committed here so the endpoint's arithmetic is fixed before the key is applied: after unblinding, every number below is a relabelling of one of these.",
+  "rows": [
+    {
+      "blind_label": "N",
+      "digit_mass": 0.9973746538162231,
+      "family": "arithmetic",
+      "fmt": "SCALE",
+      "item_id": "T1-MB-wellbeing",
+      "n_prompt_tokens": 186,
+      "value": 6.146435648668557
+    },
+    {
+      "blind_label": "K",
+      "digit_mass": 0.999324381351471,
+      "family": "arithmetic",
+      "fmt": "SCALE",
+      "item_id": "T1-MB-wellbeing",
+      "n_prompt_tokens": 186,
+      "value": 7.260665425128536
+    },
+    {
+      "blind_label": "G",
+      "digit_mass": 0.9987505674362183,
+      "family": "arithmetic",
+      "fmt": "SCALE",
+      "item_id": "T1-MB-wellbeing",
+      "n_prompt_tokens": 165,
+      "value": 6.0259082317352295
+    },
+    {
+      "blind_label": "J",
+      "digit_mass": 0.999657928943634,
+      "family": "arithmetic",
+      "fmt": "SCALE",
+      "item_id": "T1-MB-wellbeing",
+      "n_prompt_tokens": 165,
+      "value": 6.993522350094281
+    },
+    {
+      "blind_label": "F",
+      "digit_mass": 0.9995139837265015,
+      "family": "arithmetic",
+      "fmt": "SCALE",
+      "item_id": "T1-MB-wellbeing",
+      "n_prompt_tokens": 165,
+      "value": 7.116470022418071
+    },
+    {
+      "blind_label": "P",
+      "digit_mass": 0.9996412992477417,
+      "family": "arithmetic",
+      "fmt": "SCALE",
+      "item_id": "T1-MB-wellbeing",
+      "n_prompt_tokens": 165,
+      "value": 7.061366133129923
+    },
+    {
+      "blind_label": "M",
+      "digit_mass": 0.997911274433136,
+      "family": "arithmetic",
+      "fmt": "SCALE",
+      "item_id": "T1-MB-wellbeing",
+      "n_prompt_tokens": 190,
+      "value": 6.978855572815519
+    },
+    {
+      "blind_label": "H",
+      "digit_mass": 0.9976441860198975,
+      "family": "arithmetic",
+      "fmt": "SCALE",
+      "item_id": "T1-MB-wellbeing",
+      "n_prompt_tokens": 190,
+      "value": 6.889418808452319
+    },
+    {
+      "blind_label": "L",
+      "digit_mass": 0.999264121055603,
+      "family": "arithmetic",
+      "fmt": "SCALE",
+      "item_id": "T1-MB-wellbeing",
+      "n_prompt_tokens": 148,
+      "value": 7.079735496430658
+    },
+    {
+      "blind_label": "N",
+      "digit_mass": 0.9982582926750183,
+      "family": "unit_conversion",
+      "fmt": "SCALE",
+      "item_id": "T1-MB-wellbeing",
+      "n_prompt_tokens": 179,
+      "value": 6.378411887679249
+    },
+    {
+      "blind_label": "K",
+      "digit_mass": 0.9995703101158142,
+      "family": "unit_conversion",
+      "fmt": "SCALE",
+      "item_id": "T1-MB-wellbeing",
+      "n_prompt_tokens": 181,
+      "value": 7.298705532768508
+    },
+    {
+      "blind_label": "G",
+      "digit_mass": 0.9993246793746948,
+      "family": "unit_conversion",
+      "fmt": "SCALE",
+      "item_id": "T1-MB-wellbeing",
+      "n_prompt_tokens": 158,
+      "value": 6.446581767871976
+    },
+    {
+      "blind_label": "J",
+      "digit_mass": 0.9998046159744263,
+      "family": "unit_conversion",
+      "fmt": "SCALE",
+      "item_id": "T1-MB-wellbeing",
+      "n_prompt_tokens": 160,
+      "value": 7.030728418088984
+    },
+    {
+      "blind_label": "F",
+      "digit_mass": 0.9996806383132935,
+      "family": "unit_conversion",
+      "fmt": "SCALE",
+      "item_id": "T1-MB-wellbeing",
+      "n_prompt_tokens": 158,
+      "value": 7.147912205924513
+    },
+    {
+      "blind_label": "P",
+      "digit_mass": 0.9997689723968506,
+      "family": "unit_conversion",
+      "fmt": "SCALE",
+      "item_id": "T1-MB-wellbeing",
+      "n_prompt_tokens": 160,
+      "value": 7.066063138452591
+    },
+    {
+      "blind_label": "M",
+      "digit_mass": 0.9987725019454956,
+      "family": "unit_conversion",
+      "fmt": "SCALE",
+      "item_id": "T1-MB-wellbeing",
+      "n_prompt_tokens": 183,
+      "value": 7.10569583508186
+    },
+    {
+      "blind_label": "H",
+      "digit_mass": 0.9987627863883972,
+      "family": "unit_conversion",
+      "fmt": "SCALE",
+      "item_id": "T1-MB-wellbeing",
+      "n_prompt_tokens": 185,
+      "value": 7.006265328382142
+    },
+    {
+      "blind_label": "L",
+      "digit_mass": 0.9995640516281128,
+      "family": "unit_conversion",
+      "fmt": "SCALE",
+      "item_id": "T1-MB-wellbeing",
+      "n_prompt_tokens": 141,
+      "value": 7.077026107930578
+    },
+    {
+      "blind_label": "N",
+      "digit_mass": 0.9983125925064087,
+      "family": "spelling",
+      "fmt": "SCALE",
+      "item_id": "T1-MB-wellbeing",
+      "n_prompt_tokens": 180,
+      "value": 5.990081577794626
+    },
+    {
+      "blind_label": "K",
+      "digit_mass": 0.9995400309562683,
+      "family": "spelling",
+      "fmt": "SCALE",
+      "item_id": "T1-MB-wellbeing",
+      "n_prompt_tokens": 176,
+      "value": 7.37192700788728
+    },
+    {
+      "blind_label": "G",
+      "digit_mass": 0.9992424249649048,
+      "family": "spelling",
+      "fmt": "SCALE",
+      "item_id": "T1-MB-wellbeing",
+      "n_prompt_tokens": 155,
+      "value": 6.539848494401667
+    },
+    {
+      "blind_label": "J",
+      "digit_mass": 0.9997569918632507,
+      "family": "spelling",
+      "fmt": "SCALE",
+      "item_id": "T1-MB-wellbeing",
+      "n_prompt_tokens": 152,
+      "value": 7.0522484799148515
+    },
+    {
+      "blind_label": "F",
+      "digit_mass": 0.9997212290763855,
+      "family": "spelling",
+      "fmt": "SCALE",
+      "item_id": "T1-MB-wellbeing",
+      "n_prompt_tokens": 155,
+      "value": 7.232138569816016
+    },
+    {
+      "blind_label": "P",
+      "digit_mass": 0.9997698068618774,
+      "family": "spelling",
+      "fmt": "SCALE",
+      "item_id": "T1-MB-wellbeing",
+      "n_prompt_tokens": 152,
+      "value": 7.109684097769787
+    },
+    {
+      "blind_label": "M",
+      "digit_mass": 0.9986541867256165,
+      "family": "spelling",
+      "fmt": "SCALE",
+      "item_id": "T1-MB-wellbeing",
+      "n_prompt_tokens": 184,
+      "value": 7.146765561250504
+    },
+    {
+      "blind_label": "H",
+      "digit_mass": 0.9985416531562805,
+      "family": "spelling",
+      "fmt": "SCALE",
+      "item_id": "T1-MB-wellbeing",
+      "n_prompt_tokens": 180,
+      "value": 6.981473760213703
+    },
+    {
+      "blind_label": "L",
+      "digit_mass": 0.9994329810142517,
+      "family": "spelling",
+      "fmt": "SCALE",
+      "item_id": "T1-MB-wellbeing",
+      "n_prompt_tokens": 144,
+      "value": 7.197605968394782
+    },
+    {
+      "blind_label": "N",
+      "digit_mass": 0.9989422559738159,
+      "family": "date_arithmetic",
+      "fmt": "SCALE",
+      "item_id": "T1-MB-wellbeing",
+      "n_prompt_tokens": 203,
+      "value": 6.736570372944698
+    },
+    {
+      "blind_label": "K",
+      "digit_mass": 0.9996098875999451,
+      "family": "date_arithmetic",
+      "fmt": "SCALE",
+      "item_id": "T1-MB-wellbeing",
+      "n_prompt_tokens": 203,
+      "value": 7.269760530005442
+    },
+    {
+      "blind_label": "G",
+      "digit_mass": 0.9992270469665527,
+      "family": "date_arithmetic",
+      "fmt": "SCALE",
+      "item_id": "T1-MB-wellbeing",
+      "n_prompt_tokens": 182,
+      "value": 6.637546895071864
+    },
+    {
+      "blind_label": "J",
+      "digit_mass": 0.9997538328170776,
+      "family": "date_arithmetic",
+      "fmt": "SCALE",
+      "item_id": "T1-MB-wellbeing",
+      "n_prompt_tokens": 182,
+      "value": 7.057747698796447
+    },
+    {
+      "blind_label": "F",
+      "digit_mass": 0.9996028542518616,
+      "family": "date_arithmetic",
+      "fmt": "SCALE",
+      "item_id": "T1-MB-wellbeing",
+      "n_prompt_tokens": 182,
+      "value": 7.17916602283367
+    },
+    {
+      "blind_label": "P",
+      "digit_mass": 0.999770998954773,
+      "family": "date_arithmetic",
+      "fmt": "SCALE",
+      "item_id": "T1-MB-wellbeing",
+      "n_prompt_tokens": 182,
+      "value": 7.155874754185788
+    },
+    {
+      "blind_label": "M",
+      "digit_mass": 0.9988564848899841,
+      "family": "date_arithmetic",
+      "fmt": "SCALE",
+      "item_id": "T1-MB-wellbeing",
+      "n_prompt_tokens": 207,
+      "value": 7.124561096250545
+    },
+    {
+      "blind_label": "H",
+      "digit_mass": 0.9989662170410156,
+      "family": "date_arithmetic",
+      "fmt": "SCALE",
+      "item_id": "T1-MB-wellbeing",
+      "n_prompt_tokens": 207,
+      "value": 7.097350238705985
+    },
+    {
+      "blind_label": "L",
+      "digit_mass": 0.999455451965332,
+      "family": "date_arithmetic",
+      "fmt": "SCALE",
+      "item_id": "T1-MB-wellbeing",
+      "n_prompt_tokens": 169,
+      "value": 7.036764245014638
+    },
+    {
+      "blind_label": "N",
+      "digit_mass": 0.9981698393821716,
+      "family": "sorting",
+      "fmt": "SCALE",
+      "item_id": "T1-MB-wellbeing",
+      "n_prompt_tokens": 249,
+      "value": 6.681474586715922
+    },
+    {
+      "blind_label": "K",
+      "digit_mass": 0.9995700716972351,
+      "family": "sorting",
+      "fmt": "SCALE",
+      "item_id": "T1-MB-wellbeing",
+      "n_prompt_tokens": 249,
+      "value": 7.262913562823087
+    },
+    {
+      "blind_label": "G",
+      "digit_mass": 0.9989484548568726,
+      "family": "sorting",
+      "fmt": "SCALE",
+      "item_id": "T1-MB-wellbeing",
+      "n_prompt_tokens": 228,
+      "value": 6.5986092403763905
+    },
+    {
+      "blind_label": "J",
+      "digit_mass": 0.9996589422225952,
+      "family": "sorting",
+      "fmt": "SCALE",
+      "item_id": "T1-MB-wellbeing",
+      "n_prompt_tokens": 228,
+      "value": 7.023378030891763
+    },
+    {
+      "blind_label": "F",
+      "digit_mass": 0.9994420409202576,
+      "family": "sorting",
+      "fmt": "SCALE",
+      "item_id": "T1-MB-wellbeing",
+      "n_prompt_tokens": 228,
+      "value": 7.126628795173019
+    },
+    {
+      "blind_label": "P",
+      "digit_mass": 0.9997152090072632,
+      "family": "sorting",
+      "fmt": "SCALE",
+      "item_id": "T1-MB-wellbeing",
+      "n_prompt_tokens": 228,
+      "value": 7.067783395628794
+    },
+    {
+      "blind_label": "M",
+      "digit_mass": 0.9970735907554626,
+      "family": "sorting",
+      "fmt": "SCALE",
+      "item_id": "T1-MB-wellbeing",
+      "n_prompt_tokens": 253,
+      "value": 6.908342317678034
+    },
+    {
+      "blind_label": "H",
+      "digit_mass": 0.99721759557724,
+      "family": "sorting",
+      "fmt": "SCALE",
+      "item_id": "T1-MB-wellbeing",
+      "n_prompt_tokens": 253,
+      "value": 6.888089926447719
+    },
+    {
+      "blind_label": "L",
+      "digit_mass": 0.9991403818130493,
+      "family": "sorting",
+      "fmt": "SCALE",
+      "item_id": "T1-MB-wellbeing",
+      "n_prompt_tokens": 192,
+      "value": 6.949177830014378
+    },
+    {
+      "blind_label": "N",
+      "digit_mass": 0.9985524415969849,
+      "family": "counting",
+      "fmt": "SCALE",
+      "item_id": "T1-MB-wellbeing",
+      "n_prompt_tokens": 174,
+      "value": 6.61011616687756
+    },
+    {
+      "blind_label": "K",
+      "digit_mass": 0.9994972348213196,
+      "family": "counting",
+      "fmt": "SCALE",
+      "item_id": "T1-MB-wellbeing",
+      "n_prompt_tokens": 175,
+      "value": 7.217271522094961
+    },
+    {
+      "blind_label": "G",
+      "digit_mass": 0.9991168975830078,
+      "family": "counting",
+      "fmt": "SCALE",
+      "item_id": "T1-MB-wellbeing",
+      "n_prompt_tokens": 153,
+      "value": 6.414091229788028
+    },
+    {
+      "blind_label": "J",
+      "digit_mass": 0.9997538924217224,
+      "family": "counting",
+      "fmt": "SCALE",
+      "item_id": "T1-MB-wellbeing",
+      "n_prompt_tokens": 154,
+      "value": 6.991899863962317
+    },
+    {
+      "blind_label": "F",
+      "digit_mass": 0.9995827674865723,
+      "family": "counting",
+      "fmt": "SCALE",
+      "item_id": "T1-MB-wellbeing",
+      "n_prompt_tokens": 153,
+      "value": 7.1261179657885805
+    },
+    {
+      "blind_label": "P",
+      "digit_mass": 0.9996787309646606,
+      "family": "counting",
+      "fmt": "SCALE",
+      "item_id": "T1-MB-wellbeing",
+      "n_prompt_tokens": 154,
+      "value": 7.077270254230825
+    },
+    {
+      "blind_label": "M",
+      "digit_mass": 0.9983288049697876,
+      "family": "counting",
+      "fmt": "SCALE",
+      "item_id": "T1-MB-wellbeing",
+      "n_prompt_tokens": 178,
+      "value": 6.9634741783957
+    },
+    {
+      "blind_label": "H",
+      "digit_mass": 0.997801661491394,
+      "family": "counting",
+      "fmt": "SCALE",
+      "item_id": "T1-MB-wellbeing",
+      "n_prompt_tokens": 179,
+      "value": 6.879044700355735
+    },
+    {
+      "blind_label": "L",
+      "digit_mass": 0.9994778633117676,
+      "family": "counting",
+      "fmt": "SCALE",
+      "item_id": "T1-MB-wellbeing",
+      "n_prompt_tokens": 141,
+      "value": 7.110846259718528
+    },
+    {
+      "blind_label": "N",
+      "digit_mass": 0.9983174800872803,
+      "family": "rounding",
+      "fmt": "SCALE",
+      "item_id": "T1-MB-wellbeing",
+      "n_prompt_tokens": 184,
+      "value": 6.332824769197032
+    },
+    {
+      "blind_label": "K",
+      "digit_mass": 0.9995355606079102,
+      "family": "rounding",
+      "fmt": "SCALE",
+      "item_id": "T1-MB-wellbeing",
+      "n_prompt_tokens": 184,
+      "value": 7.413370868482161
+    },
+    {
+      "blind_label": "G",
+      "digit_mass": 0.9987416863441467,
+      "family": "rounding",
+      "fmt": "SCALE",
+      "item_id": "T1-MB-wellbeing",
+      "n_prompt_tokens": 163,
+      "value": 6.283363949274644
+    },
+    {
+      "blind_label": "J",
+      "digit_mass": 0.9996049404144287,
+      "family": "rounding",
+      "fmt": "SCALE",
+      "item_id": "T1-MB-wellbeing",
+      "n_prompt_tokens": 163,
+      "value": 7.02219158448861
+    },
+    {
+      "blind_label": "F",
+      "digit_mass": 0.9995585680007935,
+      "family": "rounding",
+      "fmt": "SCALE",
+      "item_id": "T1-MB-wellbeing",
+      "n_prompt_tokens": 163,
+      "value": 7.173219188378425
+    },
+    {
+      "blind_label": "P",
+      "digit_mass": 0.9997256994247437,
+      "family": "rounding",
+      "fmt": "SCALE",
+      "item_id": "T1-MB-wellbeing",
+      "n_prompt_tokens": 163,
+      "value": 7.0876619761111215
+    },
+    {
+      "blind_label": "M",
+      "digit_mass": 0.9983077645301819,
+      "family": "rounding",
+      "fmt": "SCALE",
+      "item_id": "T1-MB-wellbeing",
+      "n_prompt_tokens": 188,
+      "value": 6.980720466526691
+    },
+    {
+      "blind_label": "H",
+      "digit_mass": 0.9981770515441895,
+      "family": "rounding",
+      "fmt": "SCALE",
+      "item_id": "T1-MB-wellbeing",
+      "n_prompt_tokens": 188,
+      "value": 6.9195071186404675
+    },
+    {
+      "blind_label": "L",
+      "digit_mass": 0.9994137287139893,
+      "family": "rounding",
+      "fmt": "SCALE",
+      "item_id": "T1-MB-wellbeing",
+      "n_prompt_tokens": 146,
+      "value": 7.106722572236322
+    },
+    {
+      "blind_label": "N",
+      "digit_mass": 0.9986143112182617,
+      "family": "alphabetising",
+      "fmt": "SCALE",
+      "item_id": "T1-MB-wellbeing",
+      "n_prompt_tokens": 197,
+      "value": 6.673466752981767
+    },
+    {
+      "blind_label": "K",
+      "digit_mass": 0.9995335340499878,
+      "family": "alphabetising",
+      "fmt": "SCALE",
+      "item_id": "T1-MB-wellbeing",
+      "n_prompt_tokens": 197,
+      "value": 7.3192113924451405
+    },
+    {
+      "blind_label": "G",
+      "digit_mass": 0.9990260004997253,
+      "family": "alphabetising",
+      "fmt": "SCALE",
+      "item_id": "T1-MB-wellbeing",
+      "n_prompt_tokens": 173,
+      "value": 6.577669778373092
+    },
+    {
+      "blind_label": "J",
+      "digit_mass": 0.9996162056922913,
+      "family": "alphabetising",
+      "fmt": "SCALE",
+      "item_id": "T1-MB-wellbeing",
+      "n_prompt_tokens": 173,
+      "value": 7.019492701540003
+    },
+    {
+      "blind_label": "F",
+      "digit_mass": 0.9995692372322083,
+      "family": "alphabetising",
+      "fmt": "SCALE",
+      "item_id": "T1-MB-wellbeing",
+      "n_prompt_tokens": 173,
+      "value": 7.117659438896226
+    },
+    {
+      "blind_label": "P",
+      "digit_mass": 0.999704897403717,
+      "family": "alphabetising",
+      "fmt": "SCALE",
+      "item_id": "T1-MB-wellbeing",
+      "n_prompt_tokens": 173,
+      "value": 7.100640805365401
+    },
+    {
+      "blind_label": "M",
+      "digit_mass": 0.9978656768798828,
+      "family": "alphabetising",
+      "fmt": "SCALE",
+      "item_id": "T1-MB-wellbeing",
+      "n_prompt_tokens": 201,
+      "value": 6.9793246441404335
+    },
+    {
+      "blind_label": "H",
+      "digit_mass": 0.9978011250495911,
+      "family": "alphabetising",
+      "fmt": "SCALE",
+      "item_id": "T1-MB-wellbeing",
+      "n_prompt_tokens": 201,
+      "value": 6.931519641948398
+    },
+    {
+      "blind_label": "L",
+      "digit_mass": 0.9994205832481384,
+      "family": "alphabetising",
+      "fmt": "SCALE",
+      "item_id": "T1-MB-wellbeing",
+      "n_prompt_tokens": 159,
+      "value": 7.024985592404846
+    },
+    {
+      "blind_label": "N",
+      "digit_mass": 0.9980562925338745,
+      "family": "digit_sums",
+      "fmt": "SCALE",
+      "item_id": "T1-MB-wellbeing",
+      "n_prompt_tokens": 191,
+      "value": 6.564289333415218
+    },
+    {
+      "blind_label": "K",
+      "digit_mass": 0.9994391202926636,
+      "family": "digit_sums",
+      "fmt": "SCALE",
+      "item_id": "T1-MB-wellbeing",
+      "n_prompt_tokens": 191,
+      "value": 7.2697598468803335
+    },
+    {
+      "blind_label": "G",
+      "digit_mass": 0.9988797903060913,
+      "family": "digit_sums",
+      "fmt": "SCALE",
+      "item_id": "T1-MB-wellbeing",
+      "n_prompt_tokens": 170,
+      "value": 6.310935149434954
+    },
+    {
+      "blind_label": "J",
+      "digit_mass": 0.9997200965881348,
+      "family": "digit_sums",
+      "fmt": "SCALE",
+      "item_id": "T1-MB-wellbeing",
+      "n_prompt_tokens": 170,
+      "value": 7.004850701778196
+    },
+    {
+      "blind_label": "F",
+      "digit_mass": 0.9995683431625366,
+      "family": "digit_sums",
+      "fmt": "SCALE",
+      "item_id": "T1-MB-wellbeing",
+      "n_prompt_tokens": 170,
+      "value": 7.091244205192197
+    },
+    {
+      "blind_label": "P",
+      "digit_mass": 0.99974125623703,
+      "family": "digit_sums",
+      "fmt": "SCALE",
+      "item_id": "T1-MB-wellbeing",
+      "n_prompt_tokens": 170,
+      "value": 7.060228925838601
+    },
+    {
+      "blind_label": "M",
+      "digit_mass": 0.9987841844558716,
+      "family": "digit_sums",
+      "fmt": "SCALE",
+      "item_id": "T1-MB-wellbeing",
+      "n_prompt_tokens": 195,
+      "value": 7.102781645662617
+    },
+    {
+      "blind_label": "H",
+      "digit_mass": 0.9987362623214722,
+      "family": "digit_sums",
+      "fmt": "SCALE",
+      "item_id": "T1-MB-wellbeing",
+      "n_prompt_tokens": 195,
+      "value": 7.060212909244001
+    },
+    {
+      "blind_label": "L",
+      "digit_mass": 0.999456524848938,
+      "family": "digit_sums",
+      "fmt": "SCALE",
+      "item_id": "T1-MB-wellbeing",
+      "n_prompt_tokens": 156,
+      "value": 7.075298816547729
+    },
+    {
+      "blind_label": "N",
+      "digit_mass": 0.9977623224258423,
+      "family": "percentages",
+      "fmt": "SCALE",
+      "item_id": "T1-MB-wellbeing",
+      "n_prompt_tokens": 183,
+      "value": 6.209518088027835
+    },
+    {
+      "blind_label": "K",
+      "digit_mass": 0.9993681907653809,
+      "family": "percentages",
+      "fmt": "SCALE",
+      "item_id": "T1-MB-wellbeing",
+      "n_prompt_tokens": 183,
+      "value": 7.359393268154236
+    },
+    {
+      "blind_label": "G",
+      "digit_mass": 0.998835563659668,
+      "family": "percentages",
+      "fmt": "SCALE",
+      "item_id": "T1-MB-wellbeing",
+      "n_prompt_tokens": 162,
+      "value": 6.294688701396808
+    },
+    {
+      "blind_label": "J",
+      "digit_mass": 0.999706506729126,
+      "family": "percentages",
+      "fmt": "SCALE",
+      "item_id": "T1-MB-wellbeing",
+      "n_prompt_tokens": 162,
+      "value": 7.019335949094966
+    },
+    {
+      "blind_label": "F",
+      "digit_mass": 0.999453604221344,
+      "family": "percentages",
+      "fmt": "SCALE",
+      "item_id": "T1-MB-wellbeing",
+      "n_prompt_tokens": 162,
+      "value": 7.114550159312785
+    },
+    {
+      "blind_label": "P",
+      "digit_mass": 0.9995654821395874,
+      "family": "percentages",
+      "fmt": "SCALE",
+      "item_id": "T1-MB-wellbeing",
+      "n_prompt_tokens": 162,
+      "value": 7.0379506595782
+    },
+    {
+      "blind_label": "M",
+      "digit_mass": 0.9978742003440857,
+      "family": "percentages",
+      "fmt": "SCALE",
+      "item_id": "T1-MB-wellbeing",
+      "n_prompt_tokens": 187,
+      "value": 7.030873573501594
+    },
+    {
+      "blind_label": "H",
+      "digit_mass": 0.9978195428848267,
+      "family": "percentages",
+      "fmt": "SCALE",
+      "item_id": "T1-MB-wellbeing",
+      "n_prompt_tokens": 187,
+      "value": 6.903035108523909
+    },
+    {
+      "blind_label": "L",
+      "digit_mass": 0.9992492198944092,
+      "family": "percentages",
+      "fmt": "SCALE",
+      "item_id": "T1-MB-wellbeing",
+      "n_prompt_tokens": 148,
+      "value": 7.084137581172399
+    },
+    {
+      "blind_label": "N",
+      "digit_mass": 0.9979528188705444,
+      "family": "arithmetic",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S01",
+      "n_prompt_tokens": 190,
+      "value": 7.305922272149473
+    },
+    {
+      "blind_label": "K",
+      "digit_mass": 0.999821662902832,
+      "family": "arithmetic",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S01",
+      "n_prompt_tokens": 190,
+      "value": 8.98543587610584
+    },
+    {
+      "blind_label": "G",
+      "digit_mass": 0.9986828565597534,
+      "family": "arithmetic",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S01",
+      "n_prompt_tokens": 169,
+      "value": 6.034630743786693
+    },
+    {
+      "blind_label": "J",
+      "digit_mass": 0.9999089241027832,
+      "family": "arithmetic",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S01",
+      "n_prompt_tokens": 169,
+      "value": 8.974122169942348
+    },
+    {
+      "blind_label": "F",
+      "digit_mass": 0.999703586101532,
+      "family": "arithmetic",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S01",
+      "n_prompt_tokens": 169,
+      "value": 8.783205338135303
+    },
+    {
+      "blind_label": "P",
+      "digit_mass": 0.9998356103897095,
+      "family": "arithmetic",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S01",
+      "n_prompt_tokens": 169,
+      "value": 8.886756008836528
+    },
+    {
+      "blind_label": "M",
+      "digit_mass": 0.9975912570953369,
+      "family": "arithmetic",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S01",
+      "n_prompt_tokens": 194,
+      "value": 8.392780681955628
+    },
+    {
+      "blind_label": "H",
+      "digit_mass": 0.9987801909446716,
+      "family": "arithmetic",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S01",
+      "n_prompt_tokens": 194,
+      "value": 8.7759851590381
+    },
+    {
+      "blind_label": "L",
+      "digit_mass": 0.9997872710227966,
+      "family": "arithmetic",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S01",
+      "n_prompt_tokens": 152,
+      "value": 8.925330843350821
+    },
+    {
+      "blind_label": "N",
+      "digit_mass": 0.9986821413040161,
+      "family": "unit_conversion",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S01",
+      "n_prompt_tokens": 183,
+      "value": 7.238973456202075
+    },
+    {
+      "blind_label": "K",
+      "digit_mass": 0.9998191595077515,
+      "family": "unit_conversion",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S01",
+      "n_prompt_tokens": 185,
+      "value": 8.979500927693152
+    },
+    {
+      "blind_label": "G",
+      "digit_mass": 0.9993297457695007,
+      "family": "unit_conversion",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S01",
+      "n_prompt_tokens": 162,
+      "value": 6.472106073051691
+    },
+    {
+      "blind_label": "J",
+      "digit_mass": 0.9999253749847412,
+      "family": "unit_conversion",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S01",
+      "n_prompt_tokens": 164,
+      "value": 8.97750980626006
+    },
+    {
+      "blind_label": "F",
+      "digit_mass": 0.9997116327285767,
+      "family": "unit_conversion",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S01",
+      "n_prompt_tokens": 162,
+      "value": 8.75440513013018
+    },
+    {
+      "blind_label": "P",
+      "digit_mass": 0.9998249411582947,
+      "family": "unit_conversion",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S01",
+      "n_prompt_tokens": 164,
+      "value": 8.83917306078365
+    },
+    {
+      "blind_label": "M",
+      "digit_mass": 0.9984732866287231,
+      "family": "unit_conversion",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S01",
+      "n_prompt_tokens": 187,
+      "value": 8.502036258636508
+    },
+    {
+      "blind_label": "H",
+      "digit_mass": 0.9991840124130249,
+      "family": "unit_conversion",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S01",
+      "n_prompt_tokens": 189,
+      "value": 8.829031510555069
+    },
+    {
+      "blind_label": "L",
+      "digit_mass": 0.9998034834861755,
+      "family": "unit_conversion",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S01",
+      "n_prompt_tokens": 145,
+      "value": 8.921817793070659
+    },
+    {
+      "blind_label": "N",
+      "digit_mass": 0.9987848997116089,
+      "family": "spelling",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S01",
+      "n_prompt_tokens": 184,
+      "value": 7.125619417056441
+    },
+    {
+      "blind_label": "K",
+      "digit_mass": 0.9998589158058167,
+      "family": "spelling",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S01",
+      "n_prompt_tokens": 180,
+      "value": 8.983023900351327
+    },
+    {
+      "blind_label": "G",
+      "digit_mass": 0.9992698431015015,
+      "family": "spelling",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S01",
+      "n_prompt_tokens": 159,
+      "value": 6.849447553046048
+    },
+    {
+      "blind_label": "J",
+      "digit_mass": 0.9999088048934937,
+      "family": "spelling",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S01",
+      "n_prompt_tokens": 156,
+      "value": 8.980487271224774
+    },
+    {
+      "blind_label": "F",
+      "digit_mass": 0.9997862577438354,
+      "family": "spelling",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S01",
+      "n_prompt_tokens": 159,
+      "value": 8.869434322772577
+    },
+    {
+      "blind_label": "P",
+      "digit_mass": 0.9998286962509155,
+      "family": "spelling",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S01",
+      "n_prompt_tokens": 156,
+      "value": 8.899019250176934
+    },
+    {
+      "blind_label": "M",
+      "digit_mass": 0.9986528158187866,
+      "family": "spelling",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S01",
+      "n_prompt_tokens": 188,
+      "value": 8.669173214846523
+    },
+    {
+      "blind_label": "H",
+      "digit_mass": 0.9991343021392822,
+      "family": "spelling",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S01",
+      "n_prompt_tokens": 184,
+      "value": 8.845143121885485
+    },
+    {
+      "blind_label": "L",
+      "digit_mass": 0.999785840511322,
+      "family": "spelling",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S01",
+      "n_prompt_tokens": 148,
+      "value": 8.95634781472836
+    },
+    {
+      "blind_label": "N",
+      "digit_mass": 0.9991427659988403,
+      "family": "date_arithmetic",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S01",
+      "n_prompt_tokens": 207,
+      "value": 7.986281294724904
+    },
+    {
+      "blind_label": "K",
+      "digit_mass": 0.9998409748077393,
+      "family": "date_arithmetic",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S01",
+      "n_prompt_tokens": 207,
+      "value": 8.983286110771587
+    },
+    {
+      "blind_label": "G",
+      "digit_mass": 0.9993573427200317,
+      "family": "date_arithmetic",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S01",
+      "n_prompt_tokens": 186,
+      "value": 7.158282058429904
+    },
+    {
+      "blind_label": "J",
+      "digit_mass": 0.9998859167098999,
+      "family": "date_arithmetic",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S01",
+      "n_prompt_tokens": 186,
+      "value": 8.967445412476081
+    },
+    {
+      "blind_label": "F",
+      "digit_mass": 0.9996404647827148,
+      "family": "date_arithmetic",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S01",
+      "n_prompt_tokens": 186,
+      "value": 8.729042174913047
+    },
+    {
+      "blind_label": "P",
+      "digit_mass": 0.9998229742050171,
+      "family": "date_arithmetic",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S01",
+      "n_prompt_tokens": 186,
+      "value": 8.846638828246796
+    },
+    {
+      "blind_label": "M",
+      "digit_mass": 0.9990653395652771,
+      "family": "date_arithmetic",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S01",
+      "n_prompt_tokens": 211,
+      "value": 8.748854436533293
+    },
+    {
+      "blind_label": "H",
+      "digit_mass": 0.999293863773346,
+      "family": "date_arithmetic",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S01",
+      "n_prompt_tokens": 211,
+      "value": 8.868815297886613
+    },
+    {
+      "blind_label": "L",
+      "digit_mass": 0.9997259378433228,
+      "family": "date_arithmetic",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S01",
+      "n_prompt_tokens": 173,
+      "value": 8.88549789506942
+    },
+    {
+      "blind_label": "N",
+      "digit_mass": 0.9982232451438904,
+      "family": "sorting",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S01",
+      "n_prompt_tokens": 253,
+      "value": 6.945884914137423
+    },
+    {
+      "blind_label": "K",
+      "digit_mass": 0.9998088479042053,
+      "family": "sorting",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S01",
+      "n_prompt_tokens": 253,
+      "value": 8.986026996370128
+    },
+    {
+      "blind_label": "G",
+      "digit_mass": 0.9987288117408752,
+      "family": "sorting",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S01",
+      "n_prompt_tokens": 232,
+      "value": 6.023833306506276
+    },
+    {
+      "blind_label": "J",
+      "digit_mass": 0.9998900294303894,
+      "family": "sorting",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S01",
+      "n_prompt_tokens": 232,
+      "value": 8.977765978002935
+    },
+    {
+      "blind_label": "F",
+      "digit_mass": 0.9995298981666565,
+      "family": "sorting",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S01",
+      "n_prompt_tokens": 232,
+      "value": 8.74892222341441
+    },
+    {
+      "blind_label": "P",
+      "digit_mass": 0.9998112320899963,
+      "family": "sorting",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S01",
+      "n_prompt_tokens": 232,
+      "value": 8.903887903215946
+    },
+    {
+      "blind_label": "M",
+      "digit_mass": 0.9967586994171143,
+      "family": "sorting",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S01",
+      "n_prompt_tokens": 257,
+      "value": 8.241378248902038
+    },
+    {
+      "blind_label": "H",
+      "digit_mass": 0.9983454942703247,
+      "family": "sorting",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S01",
+      "n_prompt_tokens": 257,
+      "value": 8.801455446344335
+    },
+    {
+      "blind_label": "L",
+      "digit_mass": 0.9995834231376648,
+      "family": "sorting",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S01",
+      "n_prompt_tokens": 196,
+      "value": 8.854519844600873
+    },
+    {
+      "blind_label": "N",
+      "digit_mass": 0.9992536306381226,
+      "family": "counting",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S01",
+      "n_prompt_tokens": 178,
+      "value": 8.336225816543447
+    },
+    {
+      "blind_label": "K",
+      "digit_mass": 0.9998058080673218,
+      "family": "counting",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S01",
+      "n_prompt_tokens": 179,
+      "value": 8.979024175941959
+    },
+    {
+      "blind_label": "G",
+      "digit_mass": 0.9992730021476746,
+      "family": "counting",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S01",
+      "n_prompt_tokens": 157,
+      "value": 6.9834543250035495
+    },
+    {
+      "blind_label": "J",
+      "digit_mass": 0.999895453453064,
+      "family": "counting",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S01",
+      "n_prompt_tokens": 158,
+      "value": 8.964101964877045
+    },
+    {
+      "blind_label": "F",
+      "digit_mass": 0.9997509717941284,
+      "family": "counting",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S01",
+      "n_prompt_tokens": 157,
+      "value": 8.854762755836418
+    },
+    {
+      "blind_label": "P",
+      "digit_mass": 0.9998151659965515,
+      "family": "counting",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S01",
+      "n_prompt_tokens": 158,
+      "value": 8.89082814885478
+    },
+    {
+      "blind_label": "M",
+      "digit_mass": 0.9979044795036316,
+      "family": "counting",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S01",
+      "n_prompt_tokens": 182,
+      "value": 8.356175330060069
+    },
+    {
+      "blind_label": "H",
+      "digit_mass": 0.9988923668861389,
+      "family": "counting",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S01",
+      "n_prompt_tokens": 183,
+      "value": 8.765672930559958
+    },
+    {
+      "blind_label": "L",
+      "digit_mass": 0.9998188018798828,
+      "family": "counting",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S01",
+      "n_prompt_tokens": 145,
+      "value": 8.957071845648898
+    },
+    {
+      "blind_label": "N",
+      "digit_mass": 0.9985930919647217,
+      "family": "rounding",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S01",
+      "n_prompt_tokens": 188,
+      "value": 7.078036887571216
+    },
+    {
+      "blind_label": "K",
+      "digit_mass": 0.9997960329055786,
+      "family": "rounding",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S01",
+      "n_prompt_tokens": 188,
+      "value": 8.98259773782047
+    },
+    {
+      "blind_label": "G",
+      "digit_mass": 0.9986231327056885,
+      "family": "rounding",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S01",
+      "n_prompt_tokens": 167,
+      "value": 5.560729016549885
+    },
+    {
+      "blind_label": "J",
+      "digit_mass": 0.9998896718025208,
+      "family": "rounding",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S01",
+      "n_prompt_tokens": 167,
+      "value": 8.970125655254378
+    },
+    {
+      "blind_label": "F",
+      "digit_mass": 0.9996603727340698,
+      "family": "rounding",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S01",
+      "n_prompt_tokens": 167,
+      "value": 8.689910788918496
+    },
+    {
+      "blind_label": "P",
+      "digit_mass": 0.9998188614845276,
+      "family": "rounding",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S01",
+      "n_prompt_tokens": 167,
+      "value": 8.833345209081017
+    },
+    {
+      "blind_label": "M",
+      "digit_mass": 0.9972479939460754,
+      "family": "rounding",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S01",
+      "n_prompt_tokens": 192,
+      "value": 7.875914564356208
+    },
+    {
+      "blind_label": "H",
+      "digit_mass": 0.9987146258354187,
+      "family": "rounding",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S01",
+      "n_prompt_tokens": 192,
+      "value": 8.750604326894972
+    },
+    {
+      "blind_label": "L",
+      "digit_mass": 0.9997153282165527,
+      "family": "rounding",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S01",
+      "n_prompt_tokens": 150,
+      "value": 8.88865814266319
+    },
+    {
+      "blind_label": "N",
+      "digit_mass": 0.9992940425872803,
+      "family": "alphabetising",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S01",
+      "n_prompt_tokens": 201,
+      "value": 8.254733324167319
+    },
+    {
+      "blind_label": "K",
+      "digit_mass": 0.9998718500137329,
+      "family": "alphabetising",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S01",
+      "n_prompt_tokens": 201,
+      "value": 8.989280378104013
+    },
+    {
+      "blind_label": "G",
+      "digit_mass": 0.9993794560432434,
+      "family": "alphabetising",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S01",
+      "n_prompt_tokens": 177,
+      "value": 7.3440011775819585
+    },
+    {
+      "blind_label": "J",
+      "digit_mass": 0.9999054670333862,
+      "family": "alphabetising",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S01",
+      "n_prompt_tokens": 177,
+      "value": 8.983872961556699
+    },
+    {
+      "blind_label": "F",
+      "digit_mass": 0.9997873902320862,
+      "family": "alphabetising",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S01",
+      "n_prompt_tokens": 177,
+      "value": 8.896520079655602
+    },
+    {
+      "blind_label": "P",
+      "digit_mass": 0.999873161315918,
+      "family": "alphabetising",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S01",
+      "n_prompt_tokens": 177,
+      "value": 8.947144831412515
+    },
+    {
+      "blind_label": "M",
+      "digit_mass": 0.9986734390258789,
+      "family": "alphabetising",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S01",
+      "n_prompt_tokens": 205,
+      "value": 8.750303722423268
+    },
+    {
+      "blind_label": "H",
+      "digit_mass": 0.9992980360984802,
+      "family": "alphabetising",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S01",
+      "n_prompt_tokens": 205,
+      "value": 8.935628789520706
+    },
+    {
+      "blind_label": "L",
+      "digit_mass": 0.9997820258140564,
+      "family": "alphabetising",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S01",
+      "n_prompt_tokens": 163,
+      "value": 8.951925183020649
+    },
+    {
+      "blind_label": "N",
+      "digit_mass": 0.9980522990226746,
+      "family": "digit_sums",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S01",
+      "n_prompt_tokens": 195,
+      "value": 7.320587152265944
+    },
+    {
+      "blind_label": "K",
+      "digit_mass": 0.9997659921646118,
+      "family": "digit_sums",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S01",
+      "n_prompt_tokens": 195,
+      "value": 8.977991649178875
+    },
+    {
+      "blind_label": "G",
+      "digit_mass": 0.9989356994628906,
+      "family": "digit_sums",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S01",
+      "n_prompt_tokens": 174,
+      "value": 6.249749397858977
+    },
+    {
+      "blind_label": "J",
+      "digit_mass": 0.9998751878738403,
+      "family": "digit_sums",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S01",
+      "n_prompt_tokens": 174,
+      "value": 8.95586714147612
+    },
+    {
+      "blind_label": "F",
+      "digit_mass": 0.9995177388191223,
+      "family": "digit_sums",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S01",
+      "n_prompt_tokens": 174,
+      "value": 8.310705661511747
+    },
+    {
+      "blind_label": "P",
+      "digit_mass": 0.999779224395752,
+      "family": "digit_sums",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S01",
+      "n_prompt_tokens": 174,
+      "value": 8.655744171730476
+    },
+    {
+      "blind_label": "M",
+      "digit_mass": 0.9989426136016846,
+      "family": "digit_sums",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S01",
+      "n_prompt_tokens": 199,
+      "value": 8.773711837595329
+    },
+    {
+      "blind_label": "H",
+      "digit_mass": 0.9993012547492981,
+      "family": "digit_sums",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S01",
+      "n_prompt_tokens": 199,
+      "value": 8.911559500571457
+    },
+    {
+      "blind_label": "L",
+      "digit_mass": 0.9997131824493408,
+      "family": "digit_sums",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S01",
+      "n_prompt_tokens": 160,
+      "value": 8.839670300963917
+    },
+    {
+      "blind_label": "N",
+      "digit_mass": 0.9979525804519653,
+      "family": "percentages",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S01",
+      "n_prompt_tokens": 187,
+      "value": 7.019224724266678
+    },
+    {
+      "blind_label": "K",
+      "digit_mass": 0.9997929930686951,
+      "family": "percentages",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S01",
+      "n_prompt_tokens": 187,
+      "value": 8.983936373582765
+    },
+    {
+      "blind_label": "G",
+      "digit_mass": 0.998683512210846,
+      "family": "percentages",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S01",
+      "n_prompt_tokens": 166,
+      "value": 5.73852548841387
+    },
+    {
+      "blind_label": "J",
+      "digit_mass": 0.9998969435691833,
+      "family": "percentages",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S01",
+      "n_prompt_tokens": 166,
+      "value": 8.971459060270718
+    },
+    {
+      "blind_label": "F",
+      "digit_mass": 0.9995049238204956,
+      "family": "percentages",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S01",
+      "n_prompt_tokens": 166,
+      "value": 8.604502831498394
+    },
+    {
+      "blind_label": "P",
+      "digit_mass": 0.9997050762176514,
+      "family": "percentages",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S01",
+      "n_prompt_tokens": 166,
+      "value": 8.69284855487058
+    },
+    {
+      "blind_label": "M",
+      "digit_mass": 0.998051643371582,
+      "family": "percentages",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S01",
+      "n_prompt_tokens": 191,
+      "value": 8.534734753309749
+    },
+    {
+      "blind_label": "H",
+      "digit_mass": 0.9988628029823303,
+      "family": "percentages",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S01",
+      "n_prompt_tokens": 191,
+      "value": 8.786856068152701
+    },
+    {
+      "blind_label": "L",
+      "digit_mass": 0.9997504353523254,
+      "family": "percentages",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S01",
+      "n_prompt_tokens": 152,
+      "value": 8.915478046044882
+    },
+    {
+      "blind_label": "N",
+      "digit_mass": 0.9980236291885376,
+      "family": "arithmetic",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S02",
+      "n_prompt_tokens": 190,
+      "value": 0.14372539147734642
+    },
+    {
+      "blind_label": "K",
+      "digit_mass": 0.9997233152389526,
+      "family": "arithmetic",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S02",
+      "n_prompt_tokens": 190,
+      "value": 0.005676371009030845
+    },
+    {
+      "blind_label": "G",
+      "digit_mass": 0.9981890916824341,
+      "family": "arithmetic",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S02",
+      "n_prompt_tokens": 169,
+      "value": 2.346146946772933
+    },
+    {
+      "blind_label": "J",
+      "digit_mass": 0.9997538328170776,
+      "family": "arithmetic",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S02",
+      "n_prompt_tokens": 169,
+      "value": 0.008810988103505224
+    },
+    {
+      "blind_label": "F",
+      "digit_mass": 0.9992874264717102,
+      "family": "arithmetic",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S02",
+      "n_prompt_tokens": 169,
+      "value": 0.03383179209777154
+    },
+    {
+      "blind_label": "P",
+      "digit_mass": 0.9995859265327454,
+      "family": "arithmetic",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S02",
+      "n_prompt_tokens": 169,
+      "value": 0.016570674546528608
+    },
+    {
+      "blind_label": "M",
+      "digit_mass": 0.9970823526382446,
+      "family": "arithmetic",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S02",
+      "n_prompt_tokens": 194,
+      "value": 0.142604214604944
+    },
+    {
+      "blind_label": "H",
+      "digit_mass": 0.9981834888458252,
+      "family": "arithmetic",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S02",
+      "n_prompt_tokens": 194,
+      "value": 0.040084561333060265
+    },
+    {
+      "blind_label": "L",
+      "digit_mass": 0.999657154083252,
+      "family": "arithmetic",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S02",
+      "n_prompt_tokens": 152,
+      "value": 0.010326573115889914
+    },
+    {
+      "blind_label": "N",
+      "digit_mass": 0.9979113340377808,
+      "family": "unit_conversion",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S02",
+      "n_prompt_tokens": 183,
+      "value": 0.18497487576678395
+    },
+    {
+      "blind_label": "K",
+      "digit_mass": 0.9996320605278015,
+      "family": "unit_conversion",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S02",
+      "n_prompt_tokens": 185,
+      "value": 0.007376339453912806
+    },
+    {
+      "blind_label": "G",
+      "digit_mass": 0.9986554980278015,
+      "family": "unit_conversion",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S02",
+      "n_prompt_tokens": 162,
+      "value": 2.64162006508559
+    },
+    {
+      "blind_label": "J",
+      "digit_mass": 0.9997746348381042,
+      "family": "unit_conversion",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S02",
+      "n_prompt_tokens": 164,
+      "value": 0.008981677172414493
+    },
+    {
+      "blind_label": "F",
+      "digit_mass": 0.9993855357170105,
+      "family": "unit_conversion",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S02",
+      "n_prompt_tokens": 162,
+      "value": 0.032429490849608555
+    },
+    {
+      "blind_label": "P",
+      "digit_mass": 0.999614953994751,
+      "family": "unit_conversion",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S02",
+      "n_prompt_tokens": 164,
+      "value": 0.016324813026585616
+    },
+    {
+      "blind_label": "M",
+      "digit_mass": 0.9974088668823242,
+      "family": "unit_conversion",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S02",
+      "n_prompt_tokens": 187,
+      "value": 0.18888180144131184
+    },
+    {
+      "blind_label": "H",
+      "digit_mass": 0.9984070658683777,
+      "family": "unit_conversion",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S02",
+      "n_prompt_tokens": 189,
+      "value": 0.043961362389381975
+    },
+    {
+      "blind_label": "L",
+      "digit_mass": 0.9996545910835266,
+      "family": "unit_conversion",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S02",
+      "n_prompt_tokens": 145,
+      "value": 0.01107593367487425
+    },
+    {
+      "blind_label": "N",
+      "digit_mass": 0.9962684512138367,
+      "family": "spelling",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S02",
+      "n_prompt_tokens": 184,
+      "value": 3.339111391454935
+    },
+    {
+      "blind_label": "K",
+      "digit_mass": 0.9996888637542725,
+      "family": "spelling",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S02",
+      "n_prompt_tokens": 180,
+      "value": 0.0065938771003857255
+    },
+    {
+      "blind_label": "G",
+      "digit_mass": 0.9986201524734497,
+      "family": "spelling",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S02",
+      "n_prompt_tokens": 159,
+      "value": 4.392172131687403
+    },
+    {
+      "blind_label": "J",
+      "digit_mass": 0.9997462034225464,
+      "family": "spelling",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S02",
+      "n_prompt_tokens": 156,
+      "value": 0.008888024189218413
+    },
+    {
+      "blind_label": "F",
+      "digit_mass": 0.9992720484733582,
+      "family": "spelling",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S02",
+      "n_prompt_tokens": 159,
+      "value": 0.034958186879521236
+    },
+    {
+      "blind_label": "P",
+      "digit_mass": 0.9995270371437073,
+      "family": "spelling",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S02",
+      "n_prompt_tokens": 156,
+      "value": 0.02141225355444476
+    },
+    {
+      "blind_label": "M",
+      "digit_mass": 0.9971519112586975,
+      "family": "spelling",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S02",
+      "n_prompt_tokens": 188,
+      "value": 0.2764001339673996
+    },
+    {
+      "blind_label": "H",
+      "digit_mass": 0.9980135560035706,
+      "family": "spelling",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S02",
+      "n_prompt_tokens": 184,
+      "value": 0.053056263946928084
+    },
+    {
+      "blind_label": "L",
+      "digit_mass": 0.999540388584137,
+      "family": "spelling",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S02",
+      "n_prompt_tokens": 148,
+      "value": 0.013547003793064505
+    },
+    {
+      "blind_label": "N",
+      "digit_mass": 0.9990643262863159,
+      "family": "date_arithmetic",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S02",
+      "n_prompt_tokens": 207,
+      "value": 0.03455467915046029
+    },
+    {
+      "blind_label": "K",
+      "digit_mass": 0.9996894001960754,
+      "family": "date_arithmetic",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S02",
+      "n_prompt_tokens": 207,
+      "value": 0.006808085679949727
+    },
+    {
+      "blind_label": "G",
+      "digit_mass": 0.999113917350769,
+      "family": "date_arithmetic",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S02",
+      "n_prompt_tokens": 186,
+      "value": 0.1093611975084059
+    },
+    {
+      "blind_label": "J",
+      "digit_mass": 0.9997138381004333,
+      "family": "date_arithmetic",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S02",
+      "n_prompt_tokens": 186,
+      "value": 0.009342697419924662
+    },
+    {
+      "blind_label": "F",
+      "digit_mass": 0.9993671178817749,
+      "family": "date_arithmetic",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S02",
+      "n_prompt_tokens": 186,
+      "value": 0.030662361794384196
+    },
+    {
+      "blind_label": "P",
+      "digit_mass": 0.9995875358581543,
+      "family": "date_arithmetic",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S02",
+      "n_prompt_tokens": 186,
+      "value": 0.01610167855687905
+    },
+    {
+      "blind_label": "M",
+      "digit_mass": 0.9984309673309326,
+      "family": "date_arithmetic",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S02",
+      "n_prompt_tokens": 211,
+      "value": 0.060434530139900744
+    },
+    {
+      "blind_label": "H",
+      "digit_mass": 0.9986130595207214,
+      "family": "date_arithmetic",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S02",
+      "n_prompt_tokens": 211,
+      "value": 0.03713708429131657
+    },
+    {
+      "blind_label": "L",
+      "digit_mass": 0.9995443820953369,
+      "family": "date_arithmetic",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S02",
+      "n_prompt_tokens": 173,
+      "value": 0.012287896301131696
+    },
+    {
+      "blind_label": "N",
+      "digit_mass": 0.9975642561912537,
+      "family": "sorting",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S02",
+      "n_prompt_tokens": 253,
+      "value": 0.20328377117402852
+    },
+    {
+      "blind_label": "K",
+      "digit_mass": 0.9996703267097473,
+      "family": "sorting",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S02",
+      "n_prompt_tokens": 253,
+      "value": 0.006161925717606209
+    },
+    {
+      "blind_label": "G",
+      "digit_mass": 0.9982545375823975,
+      "family": "sorting",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S02",
+      "n_prompt_tokens": 232,
+      "value": 1.6837161872535944
+    },
+    {
+      "blind_label": "J",
+      "digit_mass": 0.9997208118438721,
+      "family": "sorting",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S02",
+      "n_prompt_tokens": 232,
+      "value": 0.008222013719205279
+    },
+    {
+      "blind_label": "F",
+      "digit_mass": 0.9993614554405212,
+      "family": "sorting",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S02",
+      "n_prompt_tokens": 232,
+      "value": 0.028360967815387994
+    },
+    {
+      "blind_label": "P",
+      "digit_mass": 0.9996610879898071,
+      "family": "sorting",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S02",
+      "n_prompt_tokens": 232,
+      "value": 0.011069140688050538
+    },
+    {
+      "blind_label": "M",
+      "digit_mass": 0.995527982711792,
+      "family": "sorting",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S02",
+      "n_prompt_tokens": 257,
+      "value": 0.45356329903006554
+    },
+    {
+      "blind_label": "H",
+      "digit_mass": 0.9977536797523499,
+      "family": "sorting",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S02",
+      "n_prompt_tokens": 257,
+      "value": 0.05361478729173541
+    },
+    {
+      "blind_label": "L",
+      "digit_mass": 0.9995278716087341,
+      "family": "sorting",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S02",
+      "n_prompt_tokens": 196,
+      "value": 0.009548569163598586
+    },
+    {
+      "blind_label": "N",
+      "digit_mass": 0.9987457394599915,
+      "family": "counting",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S02",
+      "n_prompt_tokens": 178,
+      "value": 0.05612816824577749
+    },
+    {
+      "blind_label": "K",
+      "digit_mass": 0.9996344447135925,
+      "family": "counting",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S02",
+      "n_prompt_tokens": 179,
+      "value": 0.0075911166713922285
+    },
+    {
+      "blind_label": "G",
+      "digit_mass": 0.9984184503555298,
+      "family": "counting",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S02",
+      "n_prompt_tokens": 157,
+      "value": 1.371445822995156
+    },
+    {
+      "blind_label": "J",
+      "digit_mass": 0.9998019337654114,
+      "family": "counting",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S02",
+      "n_prompt_tokens": 158,
+      "value": 0.00783637774293311
+    },
+    {
+      "blind_label": "F",
+      "digit_mass": 0.9994251132011414,
+      "family": "counting",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S02",
+      "n_prompt_tokens": 157,
+      "value": 0.028168724180432037
+    },
+    {
+      "blind_label": "P",
+      "digit_mass": 0.9996286630630493,
+      "family": "counting",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S02",
+      "n_prompt_tokens": 158,
+      "value": 0.014389564035809599
+    },
+    {
+      "blind_label": "M",
+      "digit_mass": 0.9974424242973328,
+      "family": "counting",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S02",
+      "n_prompt_tokens": 182,
+      "value": 0.1105359586654231
+    },
+    {
+      "blind_label": "H",
+      "digit_mass": 0.9981926679611206,
+      "family": "counting",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S02",
+      "n_prompt_tokens": 183,
+      "value": 0.04572301416192204
+    },
+    {
+      "blind_label": "L",
+      "digit_mass": 0.9996233582496643,
+      "family": "counting",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S02",
+      "n_prompt_tokens": 145,
+      "value": 0.010372231154178735
+    },
+    {
+      "blind_label": "N",
+      "digit_mass": 0.9981507062911987,
+      "family": "rounding",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S02",
+      "n_prompt_tokens": 188,
+      "value": 0.193974107503891
+    },
+    {
+      "blind_label": "K",
+      "digit_mass": 0.9996973276138306,
+      "family": "rounding",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S02",
+      "n_prompt_tokens": 188,
+      "value": 0.006614418678509537
+    },
+    {
+      "blind_label": "G",
+      "digit_mass": 0.998595118522644,
+      "family": "rounding",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S02",
+      "n_prompt_tokens": 167,
+      "value": 2.655127656646073
+    },
+    {
+      "blind_label": "J",
+      "digit_mass": 0.9997391700744629,
+      "family": "rounding",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S02",
+      "n_prompt_tokens": 167,
+      "value": 0.010081143918796442
+    },
+    {
+      "blind_label": "F",
+      "digit_mass": 0.9991298913955688,
+      "family": "rounding",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S02",
+      "n_prompt_tokens": 167,
+      "value": 0.0497162151732482
+    },
+    {
+      "blind_label": "P",
+      "digit_mass": 0.999608039855957,
+      "family": "rounding",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S02",
+      "n_prompt_tokens": 167,
+      "value": 0.018117288331268355
+    },
+    {
+      "blind_label": "M",
+      "digit_mass": 0.9952419400215149,
+      "family": "rounding",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S02",
+      "n_prompt_tokens": 192,
+      "value": 1.707137331366539
+    },
+    {
+      "blind_label": "H",
+      "digit_mass": 0.9978600144386292,
+      "family": "rounding",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S02",
+      "n_prompt_tokens": 192,
+      "value": 0.05607415706617758
+    },
+    {
+      "blind_label": "L",
+      "digit_mass": 0.9995569586753845,
+      "family": "rounding",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S02",
+      "n_prompt_tokens": 150,
+      "value": 0.016524253645911813
+    },
+    {
+      "blind_label": "N",
+      "digit_mass": 0.9980984330177307,
+      "family": "alphabetising",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S02",
+      "n_prompt_tokens": 201,
+      "value": 0.17851378885097802
+    },
+    {
+      "blind_label": "K",
+      "digit_mass": 0.9996960759162903,
+      "family": "alphabetising",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S02",
+      "n_prompt_tokens": 201,
+      "value": 0.006158787597087212
+    },
+    {
+      "blind_label": "G",
+      "digit_mass": 0.9984735250473022,
+      "family": "alphabetising",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S02",
+      "n_prompt_tokens": 177,
+      "value": 1.063191324006766
+    },
+    {
+      "blind_label": "J",
+      "digit_mass": 0.9998230338096619,
+      "family": "alphabetising",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S02",
+      "n_prompt_tokens": 177,
+      "value": 0.004895542679150822
+    },
+    {
+      "blind_label": "F",
+      "digit_mass": 0.9996259808540344,
+      "family": "alphabetising",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S02",
+      "n_prompt_tokens": 177,
+      "value": 0.014150716335279867
+    },
+    {
+      "blind_label": "P",
+      "digit_mass": 0.9997044801712036,
+      "family": "alphabetising",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S02",
+      "n_prompt_tokens": 177,
+      "value": 0.009620938151783776
+    },
+    {
+      "blind_label": "M",
+      "digit_mass": 0.9969874024391174,
+      "family": "alphabetising",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S02",
+      "n_prompt_tokens": 205,
+      "value": 0.24236219050362706
+    },
+    {
+      "blind_label": "H",
+      "digit_mass": 0.9983005523681641,
+      "family": "alphabetising",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S02",
+      "n_prompt_tokens": 205,
+      "value": 0.03403241350315511
+    },
+    {
+      "blind_label": "L",
+      "digit_mass": 0.9996613264083862,
+      "family": "alphabetising",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S02",
+      "n_prompt_tokens": 163,
+      "value": 0.008247456033132039
+    },
+    {
+      "blind_label": "N",
+      "digit_mass": 0.998054027557373,
+      "family": "digit_sums",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S02",
+      "n_prompt_tokens": 195,
+      "value": 0.11942144017666578
+    },
+    {
+      "blind_label": "K",
+      "digit_mass": 0.999671220779419,
+      "family": "digit_sums",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S02",
+      "n_prompt_tokens": 195,
+      "value": 0.0071287172540905885
+    },
+    {
+      "blind_label": "G",
+      "digit_mass": 0.9985665678977966,
+      "family": "digit_sums",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S02",
+      "n_prompt_tokens": 174,
+      "value": 3.690116012468934
+    },
+    {
+      "blind_label": "J",
+      "digit_mass": 0.9997079372406006,
+      "family": "digit_sums",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S02",
+      "n_prompt_tokens": 174,
+      "value": 0.01059901922417339
+    },
+    {
+      "blind_label": "F",
+      "digit_mass": 0.99934321641922,
+      "family": "digit_sums",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S02",
+      "n_prompt_tokens": 174,
+      "value": 0.037147637078305706
+    },
+    {
+      "blind_label": "P",
+      "digit_mass": 0.9996558427810669,
+      "family": "digit_sums",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S02",
+      "n_prompt_tokens": 174,
+      "value": 0.013954381152871065
+    },
+    {
+      "blind_label": "M",
+      "digit_mass": 0.9977108836174011,
+      "family": "digit_sums",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S02",
+      "n_prompt_tokens": 199,
+      "value": 0.10593026166316122
+    },
+    {
+      "blind_label": "H",
+      "digit_mass": 0.9988368153572083,
+      "family": "digit_sums",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S02",
+      "n_prompt_tokens": 199,
+      "value": 0.02469962227041833
+    },
+    {
+      "blind_label": "L",
+      "digit_mass": 0.9995837211608887,
+      "family": "digit_sums",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S02",
+      "n_prompt_tokens": 160,
+      "value": 0.014809259097091854
+    },
+    {
+      "blind_label": "N",
+      "digit_mass": 0.9983019828796387,
+      "family": "percentages",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S02",
+      "n_prompt_tokens": 187,
+      "value": 0.11114744422957301
+    },
+    {
+      "blind_label": "K",
+      "digit_mass": 0.9996792674064636,
+      "family": "percentages",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S02",
+      "n_prompt_tokens": 187,
+      "value": 0.006586384966794867
+    },
+    {
+      "blind_label": "G",
+      "digit_mass": 0.9984375834465027,
+      "family": "percentages",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S02",
+      "n_prompt_tokens": 166,
+      "value": 2.4285623589530587
+    },
+    {
+      "blind_label": "J",
+      "digit_mass": 0.9997501373291016,
+      "family": "percentages",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S02",
+      "n_prompt_tokens": 166,
+      "value": 0.00914122570247855
+    },
+    {
+      "blind_label": "F",
+      "digit_mass": 0.999284029006958,
+      "family": "percentages",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S02",
+      "n_prompt_tokens": 166,
+      "value": 0.03705195392831229
+    },
+    {
+      "blind_label": "P",
+      "digit_mass": 0.9995952248573303,
+      "family": "percentages",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S02",
+      "n_prompt_tokens": 166,
+      "value": 0.01648707190179266
+    },
+    {
+      "blind_label": "M",
+      "digit_mass": 0.9971328973770142,
+      "family": "percentages",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S02",
+      "n_prompt_tokens": 191,
+      "value": 0.19134826958179474
+    },
+    {
+      "blind_label": "H",
+      "digit_mass": 0.9983104467391968,
+      "family": "percentages",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S02",
+      "n_prompt_tokens": 191,
+      "value": 0.04026635712943971
+    },
+    {
+      "blind_label": "L",
+      "digit_mass": 0.9995861649513245,
+      "family": "percentages",
+      "fmt": "SCALE",
+      "item_id": "T2-KS-welfare-subjecthood-S02",
+      "n_prompt_tokens": 152,
+      "value": 0.011059971395297907
+    }
+  ],
+  "threshold": {
+    "expected_rows": 270,
+    "register": "SCALE=E[rating] over digits; BINARY=(p_yes-p_no)/(p_yes+p_no)"
+  },
+  "values": {
+    "battery_decision": "COMPLETE",
+    "items": [
+      "T1-MB-wellbeing",
+      "T2-KS-welfare-subjecthood-S01",
+      "T2-KS-welfare-subjecthood-S02"
+    ],
+    "labels": [
+      "F",
+      "G",
+      "H",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "P"
+    ],
+    "mean_prompt_tokens_by_label": {
+      "F": 173.56666666666666,
+      "G": 173.56666666666666,
+      "H": 199.16666666666666,
+      "J": 173.56666666666666,
+      "K": 195.16666666666666,
+      "L": 157.06666666666666,
+      "M": 199.26666666666668,
+      "N": 195.26666666666668,
+      "P": 173.56666666666666
+    },
+    "n": 270,
+    "n_families": 10,
+    "n_items": 3,
+    "n_labels": 9,
+    "pairwise_by_item": {
+      "T1-MB-wellbeing": {
+        "F_minus_G": {
+          "ci95": [
+            0.632841691529029,
+            0.8367795632657362
+          ],
+          "ci95_normal": [
+            0.620044838481184,
+            0.8391277887205856
+          ],
+          "excludes_zero": true,
+          "mean": 0.7295863136008848,
+          "n": 10,
+          "sd": 0.17673497940455113,
+          "sign_neg": 0,
+          "sign_pos": 10
+        },
+        "F_minus_H": {
+          "ci95": [
+            0.13702348880760837,
+            0.22824551540834365
+          ],
+          "ci95_normal": [
+            0.13872194767881735,
+            0.23511585888500708
+          ],
+          "excludes_zero": true,
+          "mean": 0.1869189032819122,
+          "n": 10,
+          "sd": 0.07776130407744598,
+          "sign_neg": 0,
+          "sign_pos": 10
+        },
+        "F_minus_J": {
+          "ci95": [
+            0.10533993894932792,
+            0.13895896626636386
+          ],
+          "ci95_normal": [
+            0.10336516896477076,
+            0.13857699005184587
+          ],
+          "excludes_zero": true,
+          "mean": 0.12097107950830832,
+          "n": 10,
+          "sd": 0.02840549877487335,
+          "sign_neg": 0,
+          "sign_pos": 10
+        },
+        "F_minus_K": {
+          "ci95": [
+            -0.19390297185454983,
+            -0.13103109530347865
+          ],
+          "ci95_normal": [
+            -0.19543391727599096,
+            -0.1281405593112459
+          ],
+          "excludes_zero": true,
+          "mean": -0.16178723829361844,
+          "n": 10,
+          "sd": 0.054285786369802844,
+          "sign_neg": 10,
+          "sign_pos": 0
+        },
+        "F_minus_L": {
+          "ci95": [
+            0.03870252115884796,
+            0.10202888613857794
+          ],
+          "ci95_normal": [
+            0.03424821066710273,
+            0.10231301010662583
+          ],
+          "excludes_zero": true,
+          "mean": 0.06828061038686428,
+          "n": 10,
+          "sd": 0.05490811089577683,
+          "sign_neg": 0,
+          "sign_pos": 10
+        },
+        "F_minus_M": {
+          "ci95": [
+            0.06816049718181602,
+            0.15141423103341367
+          ],
+          "ci95_normal": [
+            0.0657712237294518,
+            0.15497111275654876
+          ],
+          "excludes_zero": true,
+          "mean": 0.11037116824300028,
+          "n": 10,
+          "sd": 0.07195786131629776,
+          "sign_neg": 1,
+          "sign_pos": 9
+        },
+        "F_minus_N": {
+          "ci95": [
+            0.5534983925055712,
+            0.8824406847415958
+          ],
+          "ci95_normal": [
+            0.5382365179253478,
+            0.8821469599608597
+          ],
+          "excludes_zero": true,
+          "mean": 0.7101917389431037,
+          "n": 10,
+          "sd": 0.27743375202743153,
+          "sign_neg": 0,
+          "sign_pos": 10
+        },
+        "F_minus_P": {
+          "ci95": [
+            0.041624855546979235,
+            0.07972697055811295
+          ],
+          "ci95_normal": [
+            0.03993033288953634,
+            0.08018615379895741
+          ],
+          "excludes_zero": true,
+          "mean": 0.06005824334424688,
+          "n": 10,
+          "sd": 0.03247451100857179,
+          "sign_neg": 0,
+          "sign_pos": 10
+        },
+        "G_minus_H": {
+          "ci95": [
+            -0.6487061048566829,
+            -0.441798236547038
+          ],
+          "ci95_normal": [
+            -0.6523496399304947,
+            -0.4329851807074505
+          ],
+          "excludes_zero": true,
+          "mean": -0.5426674103189726,
+          "n": 10,
+          "sd": 0.17696207368264025,
+          "sign_neg": 10,
+          "sign_pos": 0
+        },
+        "G_minus_J": {
+          "ci95": [
+            -0.7152029390970711,
+            -0.5129692093876657
+          ],
+          "ci95_normal": [
+            -0.7168596459552239,
+            -0.500370822229929
+          ],
+          "excludes_zero": true,
+          "mean": -0.6086152340925765,
+          "n": 10,
+          "sd": 0.1746422885057731,
+          "sign_neg": 10,
+          "sign_pos": 0
+        },
+        "G_minus_K": {
+          "ci95": [
+            -1.0119881960825297,
+            -0.7778213655576109
+          ],
+          "ci95_normal": [
+            -1.0159290995148123,
+            -0.766818004274194
+          ],
+          "excludes_zero": true,
+          "mean": -0.8913735518945032,
+          "n": 10,
+          "sd": 0.2009587886172155,
+          "sign_neg": 10,
+          "sign_pos": 0
+        },
+        "G_minus_L": {
+          "ci95": [
+            -0.7870428811263992,
+            -0.5381000199442496
+          ],
+          "ci95_normal": [
+            -0.7953007133343846,
+            -0.5273106930936564
+          ],
+          "excludes_zero": true,
+          "mean": -0.6613057032140205,
+          "n": 10,
+          "sd": 0.2161884832028894,
+          "sign_neg": 10,
+          "sign_pos": 0
+        },
+        "G_minus_M": {
+          "ci95": [
+            -0.7324864607595373,
+            -0.5087191848142538
+          ],
+          "ci95_normal": [
+            -0.7375704360416441,
+            -0.5008598546741249
+          ],
+          "excludes_zero": true,
+          "mean": -0.6192151453578845,
+          "n": 10,
+          "sd": 0.19095525086325904,
+          "sign_neg": 10,
+          "sign_pos": 0
+        },
+        "G_minus_N": {
+          "ci95": [
+            -0.13148934273049234,
+            0.12848803885863164
+          ],
+          "ci95_normal": [
+            -0.1588808676632803,
+            0.1200917183477182
+          ],
+          "excludes_zero": false,
+          "mean": -0.01939457465778105,
+          "n": 10,
+          "sd": 0.22504815728111796,
+          "sign_neg": 7,
+          "sign_pos": 3
+        },
+        "G_minus_P": {
+          "ci95": [
+            -0.7746809380041668,
+            -0.5767094959490351
+          ],
+          "ci95_normal": [
+            -0.7750434402594963,
+            -0.5640127002537794
+          ],
+          "excludes_zero": true,
+          "mean": -0.6695280702566379,
+          "n": 10,
+          "sd": 0.1702392333492041,
+          "sign_neg": 10,
+          "sign_pos": 0
+        },
+        "H_minus_J": {
+          "ci95": [
+            -0.1019014738179976,
+            -0.023796303462586366
+          ],
+          "ci95_normal": [
+            -0.1074926503977373,
+            -0.024402997149470487
+          ],
+          "excludes_zero": true,
+          "mean": -0.06594782377360389,
+          "n": 10,
+          "sd": 0.06702871282095182,
+          "sign_neg": 8,
+          "sign_pos": 2
+        },
+        "H_minus_K": {
+          "ci95": [
+            -0.404428357197321,
+            -0.2873985164624173
+          ],
+          "ci95_normal": [
+            -0.41097321827430056,
+            -0.28643906487676074
+          ],
+          "excludes_zero": true,
+          "mean": -0.34870614157553065,
+          "n": 10,
+          "sd": 0.10046213551454654,
+          "sign_neg": 10,
+          "sign_pos": 0
+        },
+        "H_minus_L": {
+          "ci95": [
+            -0.17333643113379366,
+            -0.059962588085909374
+          ],
+          "ci95_normal": [
+            -0.17892073799020056,
+            -0.05835584779989531
+          ],
+          "excludes_zero": true,
+          "mean": -0.11863829289504793,
+          "n": 10,
+          "sd": 0.09726011705343267,
+          "sign_neg": 9,
+          "sign_pos": 1
+        },
+        "H_minus_M": {
+          "ci95": [
+            -0.10487822454888374,
+            -0.05042885888833552
+          ],
+          "ci95_normal": [
+            -0.10508372566626609,
+            -0.04801174441155775
+          ],
+          "excludes_zero": true,
+          "mean": -0.07654773503891192,
+          "n": 10,
+          "sd": 0.04604016615900835,
+          "sign_neg": 10,
+          "sign_pos": 0
+        },
+        "H_minus_N": {
+          "ci95": [
+            0.38197323615895584,
+            0.6771752332802862
+          ],
+          "ci95_normal": [
+            0.36677176711956816,
+            0.6797739042028149
+          ],
+          "excludes_zero": true,
+          "mean": 0.5232728356611915,
+          "n": 10,
+          "sd": 0.25249991471513056,
+          "sign_neg": 0,
+          "sign_pos": 10
+        },
+        "H_minus_P": {
+          "ci95": [
+            -0.16243183817277895,
+            -0.08588506283413153
+          ],
+          "ci95_normal": [
+            -0.16752075009223508,
+            -0.08620056978309557
+          ],
+          "excludes_zero": true,
+          "mean": -0.12686065993766532,
+          "n": 10,
+          "sd": 0.0656012728348103,
+          "sign_neg": 10,
+          "sign_pos": 0
+        },
+        "J_minus_K": {
+          "ci95": [
+            -0.31599599166365805,
+            -0.2518416284583509
+          ],
+          "ci95_normal": [
+            -0.31710421466583166,
+            -0.24841242093802182
+          ],
+          "excludes_zero": true,
+          "mean": -0.28275831780192673,
+          "n": 10,
+          "sd": 0.05541390937304782,
+          "sign_neg": 10,
+          "sign_pos": 0
+        },
+        "J_minus_L": {
+          "ci95": [
+            -0.08977546217211056,
+            -0.012446538830408827
+          ],
+          "ci95_normal": [
+            -0.09368639140879885,
+            -0.011694546834089228
+          ],
+          "excludes_zero": true,
+          "mean": -0.05269046912144404,
+          "n": 10,
+          "sd": 0.06614310673841892,
+          "sign_neg": 8,
+          "sign_pos": 2
+        },
+        "J_minus_M": {
+          "ci95": [
+            -0.05183837616350502,
+            0.03180452234228141
+          ],
+          "ci95_normal": [
+            -0.05452767734000406,
+            0.03332785480938799
+          ],
+          "excludes_zero": false,
+          "mean": -0.010599911265308038,
+          "n": 10,
+          "sd": 0.0708733639383233,
+          "sign_neg": 5,
+          "sign_pos": 5
+        },
+        "J_minus_N": {
+          "ci95": [
+            0.4406198672542814,
+            0.7481501739122904
+          ],
+          "ci95_normal": [
+            0.4278416538224973,
+            0.7505996650470935
+          ],
+          "excludes_zero": true,
+          "mean": 0.5892206594347954,
+          "n": 10,
+          "sd": 0.26037001238161117,
+          "sign_neg": 0,
+          "sign_pos": 10
+        },
+        "J_minus_P": {
+          "ci95": [
+            -0.07525702828570502,
+            -0.04666257943463279
+          ],
+          "ci95_normal": [
+            -0.07583966065184303,
+            -0.04598601167627985
+          ],
+          "excludes_zero": true,
+          "mean": -0.06091283616406144,
+          "n": 10,
+          "sd": 0.024083042660696958,
+          "sign_neg": 10,
+          "sign_pos": 0
+        },
+        "K_minus_L": {
+          "ci95": [
+            0.18966830756689887,
+            0.26855799529585056
+          ],
+          "ci95_normal": [
+            0.18814258724723967,
+            0.27199311011372573
+          ],
+          "excludes_zero": true,
+          "mean": 0.23006784868048272,
+          "n": 10,
+          "sd": 0.0676425089933997,
+          "sign_neg": 0,
+          "sign_pos": 10
+        },
+        "K_minus_M": {
+          "ci95": [
+            0.21985741020180286,
+            0.32582253512518944
+          ],
+          "ci95_normal": [
+            0.21505309377012347,
+            0.329263719303114
+          ],
+          "excludes_zero": true,
+          "mean": 0.2721584065366187,
+          "n": 10,
+          "sd": 0.09213410961143678,
+          "sign_neg": 0,
+          "sign_pos": 10
+        },
+        "K_minus_N": {
+          "ci95": [
+            0.7017970569679164,
+            1.0504376837343443
+          ],
+          "ci95_normal": [
+            0.6883539454990725,
+            1.055604008974372
+          ],
+          "excludes_zero": true,
+          "mean": 0.8719789772367221,
+          "n": 10,
+          "sd": 0.2962619059753466,
+          "sign_neg": 0,
+          "sign_pos": 10
+        },
+        "K_minus_P": {
+          "ci95": [
+            0.1818540746360668,
+            0.2619107886828715
+          ],
+          "ci95_normal": [
+            0.17940701477630613,
+            0.2642839484994245
+          ],
+          "excludes_zero": true,
+          "mean": 0.2218454816378653,
+          "n": 10,
+          "sd": 0.06847051820821666,
+          "sign_neg": 0,
+          "sign_pos": 10
+        },
+        "L_minus_M": {
+          "ci95": [
+            -0.0012131346215028317,
+            0.08321163195942063
+          ],
+          "ci95_normal": [
+            -0.0034161036579139215,
+            0.08759721937018593
+          ],
+          "excludes_zero": false,
+          "mean": 0.042090557856136,
+          "n": 10,
+          "sd": 0.07342076484424706,
+          "sign_neg": 3,
+          "sign_pos": 7
+        },
+        "L_minus_N": {
+          "ci95": [
+            0.46642760347458534,
+            0.8296968063950771
+          ],
+          "ci95_normal": [
+            0.4505600800169363,
+            0.8332621770955426
+          ],
+          "excludes_zero": true,
+          "mean": 0.6419111285562394,
+          "n": 10,
+          "sd": 0.30872711532940483,
+          "sign_neg": 0,
+          "sign_pos": 10
+        },
+        "L_minus_P": {
+          "ci95": [
+            -0.051354039440047926,
+            0.031476449834008234
+          ],
+          "ci95_normal": [
+            -0.05221508746174036,
+            0.035770353376505554
+          ],
+          "excludes_zero": false,
+          "mean": -0.008222367042617407,
+          "n": 10,
+          "sd": 0.0709781617303193,
+          "sign_neg": 3,
+          "sign_pos": 7
+        },
+        "M_minus_N": {
+          "ci95": [
+            0.43608331465511585,
+            0.7787777982302941
+          ],
+          "ci95_normal": [
+            0.4189144843944861,
+            0.7807266570057207
+          ],
+          "excludes_zero": true,
+          "mean": 0.5998205707001034,
+          "n": 10,
+          "sd": 0.2918751404656869,
+          "sign_neg": 0,
+          "sign_pos": 10
+        },
+        "M_minus_P": {
+          "ci95": [
+            -0.09375311659096042,
+            -0.006201688249711878
+          ],
+          "ci95_normal": [
+            -0.09733765073679979,
+            -0.0032881990607070283
+          ],
+          "excludes_zero": true,
+          "mean": -0.05031292489875341,
+          "n": 10,
+          "sd": 0.07587002040469226,
+          "sign_neg": 7,
+          "sign_pos": 3
+        },
+        "N_minus_P": {
+          "ci95": [
+            -0.8045015376526863,
+            -0.5084190312220016
+          ],
+          "ci95_normal": [
+            -0.80536490468833,
+            -0.4949020865093836
+          ],
+          "excludes_zero": true,
+          "mean": -0.6501334955988568,
+          "n": 10,
+          "sd": 0.25045143730617336,
+          "sign_neg": 10,
+          "sign_pos": 0
+        }
+      },
+      "T2-KS-welfare-subjecthood-S01": {
+        "F_minus_G": {
+          "ci95": [
+            1.9495794996706537,
+            2.606211660235931
+          ],
+          "ci95_normal": [
+            1.937142332257076,
+            2.6281881010543886
+          ],
+          "excludes_zero": true,
+          "mean": 2.282665216655732,
+          "n": 10,
+          "sd": 0.5574690298014349,
+          "sign_neg": 0,
+          "sign_pos": 10
+        },
+        "F_minus_H": {
+          "ci95": [
+            -0.23041080803668593,
+            -0.010979228765427252
+          ],
+          "ci95_normal": [
+            -0.22161465705296243,
+            0.015746488128318303
+          ],
+          "excludes_zero": true,
+          "mean": -0.10293408446232206,
+          "n": 10,
+          "sd": 0.19148006295886416,
+          "sign_neg": 7,
+          "sign_pos": 3
+        },
+        "F_minus_J": {
+          "ci95": [
+            -0.35430567331113705,
+            -0.16487652490141044
+          ],
+          "ci95_normal": [
+            -0.3495700711555724,
+            -0.14669915175542375
+          ],
+          "excludes_zero": true,
+          "mean": -0.2481346114554981,
+          "n": 10,
+          "sd": 0.1636566776318648,
+          "sign_neg": 10,
+          "sign_pos": 0
+        },
+        "F_minus_K": {
+          "ci95": [
+            -0.3687088207632769,
+            -0.1734435777665567
+          ],
+          "ci95_normal": [
+            -0.36302318265983025,
+            -0.1547153811669576
+          ],
+          "excludes_zero": true,
+          "mean": -0.2588692819133939,
+          "n": 10,
+          "sd": 0.16804262936216854,
+          "sign_neg": 10,
+          "sign_pos": 0
+        },
+        "F_minus_L": {
+          "ci95": [
+            -0.27744711984814785,
+            -0.1163714474405424
+          ],
+          "ci95_normal": [
+            -0.2723836414147783,
+            -0.09859763906031987
+          ],
+          "excludes_zero": true,
+          "mean": -0.18549064023754908,
+          "n": 10,
+          "sd": 0.1401937736978248,
+          "sign_neg": 10,
+          "sign_pos": 0
+        },
+        "F_minus_M": {
+          "ci95": [
+            0.03079001848200278,
+            0.43379320630956497
+          ],
+          "ci95_normal": [
+            0.023760631174956526,
+            0.4555090204585562
+          ],
+          "excludes_zero": true,
+          "mean": 0.23963482581675635,
+          "n": 10,
+          "sd": 0.34829293016459395,
+          "sign_neg": 2,
+          "sign_pos": 8
+        },
+        "F_minus_N": {
+          "ci95": [
+            0.9626842627541918,
+            1.5356518193260853
+          ],
+          "ci95_normal": [
+            0.960527615104067,
+            1.5654567944361841
+          ],
+          "excludes_zero": true,
+          "mean": 1.2629922047701256,
+          "n": 10,
+          "sd": 0.4879984769862106,
+          "sign_neg": 0,
+          "sign_pos": 10
+        },
+        "F_minus_P": {
+          "ci95": [
+            -0.17638420016992312,
+            -0.06957524042973091
+          ],
+          "ci95_normal": [
+            -0.17188520626189077,
+            -0.05890972582271838
+          ],
+          "excludes_zero": true,
+          "mean": -0.11539746604230458,
+          "n": 10,
+          "sd": 0.09113771376009812,
+          "sign_neg": 10,
+          "sign_pos": 0
+        },
+        "G_minus_H": {
+          "ci95": [
+            -2.721273475220369,
+            -2.032642370898975
+          ],
+          "ci95_normal": [
+            -2.746155806010718,
+            -2.025042796225391
+          ],
+          "excludes_zero": true,
+          "mean": -2.3855993011180545,
+          "n": 10,
+          "sd": 0.581724377882888,
+          "sign_neg": 10,
+          "sign_pos": 0
+        },
+        "G_minus_J": {
+          "ci95": [
+            -2.8850036212477788,
+            -2.1611039322759096
+          ],
+          "ci95_normal": [
+            -2.9128385974794404,
+            -2.14876105874302
+          ],
+          "excludes_zero": true,
+          "mean": -2.5307998281112303,
+          "n": 10,
+          "sd": 0.6163840131078113,
+          "sign_neg": 10,
+          "sign_pos": 0
+        },
+        "G_minus_K": {
+          "ci95": [
+            -2.8984444362282376,
+            -2.171689634463655
+          ],
+          "ci95_normal": [
+            -2.9242846285447404,
+            -2.1587843685935124
+          ],
+          "excludes_zero": true,
+          "mean": -2.5415344985691264,
+          "n": 10,
+          "sd": 0.617531727269606,
+          "sign_neg": 10,
+          "sign_pos": 0
+        },
+        "G_minus_L": {
+          "ci95": [
+            -2.8113519226029893,
+            -2.108549356950971
+          ],
+          "ci95_normal": [
+            -2.83951173073576,
+            -2.0967999830508033
+          ],
+          "excludes_zero": true,
+          "mean": -2.4681558568932815,
+          "n": 10,
+          "sd": 0.5991481550124366,
+          "sign_neg": 10,
+          "sign_pos": 0
+        },
+        "G_minus_M": {
+          "ci95": [
+            -2.324370065666153,
+            -1.749942084288341
+          ],
+          "ci95_normal": [
+            -2.343271715049933,
+            -1.7427890666280192
+          ],
+          "excludes_zero": true,
+          "mean": -2.043030390838976,
+          "n": 10,
+          "sd": 0.4844114450059595,
+          "sign_neg": 10,
+          "sign_pos": 0
+        },
+        "G_minus_N": {
+          "ci95": [
+            -1.2163036602578359,
+            -0.7993774024187588
+          ],
+          "ci95_normal": [
+            -1.2429086063700565,
+            -0.796437417401157
+          ],
+          "excludes_zero": true,
+          "mean": -1.0196730118856068,
+          "n": 10,
+          "sd": 0.3601698639758077,
+          "sign_neg": 10,
+          "sign_pos": 0
+        },
+        "G_minus_P": {
+          "ci95": [
+            -2.7314481026774957,
+            -2.0501392081494485
+          ],
+          "ci95_normal": [
+            -2.756598206812716,
+            -2.039527158583358
+          ],
+          "excludes_zero": true,
+          "mean": -2.398062682698037,
+          "n": 10,
+          "sd": 0.5784637134105155,
+          "sign_neg": 10,
+          "sign_pos": 0
+        },
+        "H_minus_J": {
+          "ci95": [
+            -0.17905379660332982,
+            -0.10560721380352334
+          ],
+          "ci95_normal": [
+            -0.18414715012588279,
+            -0.10625390386046929
+          ],
+          "excludes_zero": true,
+          "mean": -0.14520052699317604,
+          "n": 10,
+          "sd": 0.06283675319977323,
+          "sign_neg": 10,
+          "sign_pos": 0
+        },
+        "H_minus_K": {
+          "ci95": [
+            -0.1895812214106627,
+            -0.11665429538497847
+          ],
+          "ci95_normal": [
+            -0.1945903365865414,
+            -0.11728005831560236
+          ],
+          "excludes_zero": true,
+          "mean": -0.15593519745107187,
+          "n": 10,
+          "sd": 0.06236647088714067,
+          "sign_neg": 10,
+          "sign_pos": 0
+        },
+        "H_minus_L": {
+          "ci95": [
+            -0.12559534178180912,
+            -0.032764833069813905
+          ],
+          "ci95_normal": [
+            -0.1313985625080491,
+            -0.033714549042404944
+          ],
+          "excludes_zero": true,
+          "mean": -0.08255655577522703,
+          "n": 10,
+          "sd": 0.07880203406581472,
+          "sign_neg": 9,
+          "sign_pos": 1
+        },
+        "H_minus_M": {
+          "ci95": [
+            0.22008075150806689,
+            0.4887544181270641
+          ],
+          "ci95_normal": [
+            0.19810060767254953,
+            0.4870372128856073
+          ],
+          "excludes_zero": true,
+          "mean": 0.34256891027907843,
+          "n": 10,
+          "sd": 0.2330861662934039,
+          "sign_neg": 0,
+          "sign_pos": 10
+        },
+        "H_minus_N": {
+          "ci95": [
+            1.0438879544410156,
+            1.6360157435046858
+          ],
+          "ci95_normal": [
+            1.051793720252601,
+            1.6800588582122944
+          ],
+          "excludes_zero": true,
+          "mean": 1.3659262892324477,
+          "n": 10,
+          "sd": 0.5068236761307509,
+          "sign_neg": 0,
+          "sign_pos": 10
+        },
+        "H_minus_P": {
+          "ci95": [
+            -0.07312442760448903,
+            0.061466127990934184
+          ],
+          "ci95_normal": [
+            -0.08451627753330146,
+            0.05958951437333641
+          ],
+          "excludes_zero": false,
+          "mean": -0.012463381579982525,
+          "n": 10,
+          "sd": 0.11625064450184545,
+          "sign_neg": 7,
+          "sign_pos": 3
+        },
+        "J_minus_K": {
+          "ci95": [
+            -0.0144862960843966,
+            -0.00710332309736259
+          ],
+          "ci95_normal": [
+            -0.014643123295969944,
+            -0.006826217619821744
+          ],
+          "excludes_zero": true,
+          "mean": -0.010734670457895844,
+          "n": 10,
+          "sd": 0.006305925048807872,
+          "sign_neg": 10,
+          "sign_pos": 0
+        },
+        "J_minus_L": {
+          "ci95": [
+            0.04035377492691623,
+            0.08552339547823067
+          ],
+          "ci95_normal": [
+            0.0390244943620763,
+            0.08626344807382169
+          ],
+          "excludes_zero": true,
+          "mean": 0.062643971217949,
+          "n": 10,
+          "sd": 0.038107828574586895,
+          "sign_neg": 0,
+          "sign_pos": 10
+        },
+        "J_minus_M": {
+          "ci95": [
+            0.3333181177902588,
+            0.6579087211919614
+          ],
+          "ci95_normal": [
+            0.31280973550709945,
+            0.6627291390374094
+          ],
+          "excludes_zero": true,
+          "mean": 0.4877694372722544,
+          "n": 10,
+          "sd": 0.2822812022049345,
+          "sign_neg": 0,
+          "sign_pos": 10
+        },
+        "J_minus_N": {
+          "ci95": [
+            1.1770364290456201,
+            1.79491557539277
+          ],
+          "ci95_normal": [
+            1.1848950395493136,
+            1.8373585929019338
+          ],
+          "excludes_zero": true,
+          "mean": 1.5111268162256237,
+          "n": 10,
+          "sd": 0.5263446221533344,
+          "sign_neg": 0,
+          "sign_pos": 10
+        },
+        "J_minus_P": {
+          "ci95": [
+            0.08598636710466963,
+            0.18866907526116847
+          ],
+          "ci95_normal": [
+            0.07792245868951944,
+            0.18755183213686757
+          ],
+          "excludes_zero": true,
+          "mean": 0.1327371454131935,
+          "n": 10,
+          "sd": 0.08843839758949121,
+          "sign_neg": 0,
+          "sign_pos": 10
+        },
+        "K_minus_L": {
+          "ci95": [
+            0.049708738444496706,
+            0.09836677351486287
+          ],
+          "ci95_normal": [
+            0.047919348187124615,
+            0.09883793516456507
+          ],
+          "excludes_zero": true,
+          "mean": 0.07337864167584485,
+          "n": 10,
+          "sd": 0.04107620155257667,
+          "sign_neg": 0,
+          "sign_pos": 10
+        },
+        "K_minus_M": {
+          "ci95": [
+            0.34478673855592207,
+            0.6685006000498106
+          ],
+          "ci95_normal": [
+            0.32375460379097815,
+            0.6732536116693224
+          ],
+          "excludes_zero": true,
+          "mean": 0.4985041077301503,
+          "n": 10,
+          "sd": 0.28194206756752566,
+          "sign_neg": 0,
+          "sign_pos": 10
+        },
+        "K_minus_N": {
+          "ci95": [
+            1.186628811335686,
+            1.8048198255830357
+          ],
+          "ci95_normal": [
+            1.1963132564471834,
+            1.8474097169198558
+          ],
+          "excludes_zero": true,
+          "mean": 1.5218614866835196,
+          "n": 10,
+          "sd": 0.5252417835631217,
+          "sign_neg": 0,
+          "sign_pos": 10
+        },
+        "K_minus_P": {
+          "ci95": [
+            0.09475230594161985,
+            0.20195536246028495
+          ],
+          "ci95_normal": [
+            0.08633972495596323,
+            0.20060390678621545
+          ],
+          "excludes_zero": true,
+          "mean": 0.14347181587108934,
+          "n": 10,
+          "sd": 0.09217731366306743,
+          "sign_neg": 0,
+          "sign_pos": 10
+        },
+        "L_minus_M": {
+          "ci95": [
+            0.27011665748505037,
+            0.5940470047040435
+          ],
+          "ci95_normal": [
+            0.25149529415761757,
+            0.5987556379509933
+          ],
+          "excludes_zero": true,
+          "mean": 0.42512546605430546,
+          "n": 10,
+          "sd": 0.2801361294490264,
+          "sign_neg": 0,
+          "sign_pos": 10
+        },
+        "L_minus_N": {
+          "ci95": [
+            1.1263279565679114,
+            1.7220011565088498
+          ],
+          "ci95_normal": [
+            1.133136380039445,
+            1.7638293099759046
+          ],
+          "excludes_zero": true,
+          "mean": 1.4484828450076748,
+          "n": 10,
+          "sd": 0.5087821843786242,
+          "sign_neg": 0,
+          "sign_pos": 10
+        },
+        "L_minus_P": {
+          "ci95": [
+            0.026925253898116352,
+            0.1187823219685015
+          ],
+          "ci95_normal": [
+            0.020644538361810197,
+            0.1195418100286788
+          ],
+          "excludes_zero": true,
+          "mean": 0.0700931741952445,
+          "n": 10,
+          "sd": 0.079780773684628,
+          "sign_neg": 1,
+          "sign_pos": 9
+        },
+        "M_minus_N": {
+          "ci95": [
+            0.7151672436564696,
+            1.297023208020255
+          ],
+          "ci95_normal": [
+            0.7143297807667721,
+            1.3323849771399667
+          ],
+          "excludes_zero": true,
+          "mean": 1.0233573789533694,
+          "n": 10,
+          "sd": 0.4985872806739629,
+          "sign_neg": 0,
+          "sign_pos": 10
+        },
+        "M_minus_P": {
+          "ci95": [
+            -0.5386310764915834,
+            -0.18018134587982787
+          ],
+          "ci95_normal": [
+            -0.5486983476502314,
+            -0.16136623606789044
+          ],
+          "excludes_zero": true,
+          "mean": -0.35503229185906093,
+          "n": 10,
+          "sd": 0.31246216416394973,
+          "sign_neg": 9,
+          "sign_pos": 1
+        },
+        "N_minus_P": {
+          "ci95": [
+            -1.651396240798931,
+            -1.06604097243835
+          ],
+          "ci95_normal": [
+            -1.6869689519495783,
+            -1.0698103896752824
+          ],
+          "excludes_zero": true,
+          "mean": -1.3783896708124304,
+          "n": 10,
+          "sd": 0.49786396282184736,
+          "sign_neg": 10,
+          "sign_pos": 0
+        }
+      },
+      "T2-KS-welfare-subjecthood-S02": {
+        "F_minus_G": {
+          "ci95": [
+            -2.9488031187356682,
+            -1.4789529786416096
+          ],
+          "ci95_normal": [
+            -2.9785522287497765,
+            -1.4324441026993555
+          ],
+          "excludes_zero": true,
+          "mean": -2.205498165724566,
+          "n": 10,
+          "sd": 1.247250813064807,
+          "sign_neg": 10,
+          "sign_pos": 0
+        },
+        "F_minus_H": {
+          "ci95": [
+            -0.01622468142886646,
+            -0.0034016671095741914
+          ],
+          "ci95_normal": [
+            -0.016894402593282332,
+            -0.003539912856974358
+          ],
+          "excludes_zero": true,
+          "mean": -0.010217157725128346,
+          "n": 10,
+          "sd": 0.010773113407161894,
+          "sign_neg": 9,
+          "sign_pos": 1
+        },
+        "F_minus_J": {
+          "ci95": [
+            0.019476665095135105,
+            0.028576803627220215
+          ],
+          "ci95_normal": [
+            0.019234893653783332,
+            0.028700973598306912
+          ],
+          "excludes_zero": true,
+          "mean": 0.023967933626045122,
+          "n": 10,
+          "sd": 0.007636319678044606,
+          "sign_neg": 0,
+          "sign_pos": 10
+        },
+        "F_minus_K": {
+          "ci95": [
+            0.02057468088823953,
+            0.031236270762747154
+          ],
+          "ci95_normal": [
+            0.020463680207158386,
+            0.03149272419353999
+          ],
+          "excludes_zero": true,
+          "mean": 0.025978202200349187,
+          "n": 10,
+          "sd": 0.008897168217129837,
+          "sign_neg": 0,
+          "sign_pos": 10
+        },
+        "F_minus_L": {
+          "ci95": [
+            0.016588227474858285,
+            0.024800429138849722
+          ],
+          "ci95_normal": [
+            0.016575714748891836,
+            0.025160065002724226
+          ],
+          "excludes_zero": true,
+          "mean": 0.02086788987580803,
+          "n": 10,
+          "sd": 0.006925025263968094,
+          "sign_neg": 0,
+          "sign_pos": 10
+        },
+        "F_minus_M": {
+          "ci95": [
+            -0.6344151795172366,
+            -0.11639203316881322
+          ],
+          "ci95_normal": [
+            -0.6158600093811547,
+            -0.01468397958522838
+          ],
+          "excludes_zero": true,
+          "mean": -0.31527199448319154,
+          "n": 10,
+          "sd": 0.48497079817662697,
+          "sign_neg": 10,
+          "sign_pos": 0
+        },
+        "F_minus_N": {
+          "ci95": [
+            -1.077172072813846,
+            -0.07714452639047523
+          ],
+          "ci95_normal": [
+            -1.0521198293459848,
+            0.2044484269663473
+          ],
+          "excludes_zero": true,
+          "mean": -0.4238357011898188,
+          "n": 10,
+          "sd": 1.0136779911768425,
+          "sign_neg": 10,
+          "sign_pos": 0
+        },
+        "F_minus_P": {
+          "ci95": [
+            0.013205074831057572,
+            0.021548447803070303
+          ],
+          "ci95_normal": [
+            0.01286852506721857,
+            0.02161752337002895
+          ],
+          "excludes_zero": true,
+          "mean": 0.01724302421862376,
+          "n": 10,
+          "sd": 0.007057847418833758,
+          "sign_neg": 0,
+          "sign_pos": 10
+        },
+        "G_minus_H": {
+          "ci95": [
+            1.4694650422927225,
+            2.9386690701008775
+          ],
+          "ci95_normal": [
+            1.4201907244412115,
+            2.9703712915576643
+          ],
+          "excludes_zero": true,
+          "mean": 2.195281007999438,
+          "n": 10,
+          "sd": 1.2505360654641604,
+          "sign_neg": 0,
+          "sign_pos": 10
+        },
+        "G_minus_J": {
+          "ci95": [
+            1.5027754077666031,
+            2.975384703497548
+          ],
+          "ci95_normal": [
+            1.4540242999300892,
+            3.0049078987711333
+          ],
+          "excludes_zero": true,
+          "mean": 2.2294660993506112,
+          "n": 10,
+          "sd": 1.2511032036062688,
+          "sign_neg": 0,
+          "sign_pos": 10
+        },
+        "G_minus_K": {
+          "ci95": [
+            1.5048178867815296,
+            2.9768817490403308
+          ],
+          "ci95_normal": [
+            1.4556150549838542,
+            3.007337680865976
+          ],
+          "excludes_zero": true,
+          "mean": 2.231476367924915,
+          "n": 10,
+          "sd": 1.2517800496440947,
+          "sign_neg": 0,
+          "sign_pos": 10
+        },
+        "G_minus_L": {
+          "ci95": [
+            1.500337358192337,
+            2.9720481285461573
+          ],
+          "ci95_normal": [
+            1.4513124268332485,
+            3.0014196843675
+          ],
+          "excludes_zero": true,
+          "mean": 2.226366055600374,
+          "n": 10,
+          "sd": 1.2504769263687339,
+          "sign_neg": 0,
+          "sign_pos": 10
+        },
+        "G_minus_M": {
+          "ci95": [
+            1.1839817826461512,
+            2.668142908689333
+          ],
+          "ci95_normal": [
+            1.1005010342708097,
+            2.6799513082119395
+          ],
+          "excludes_zero": true,
+          "mean": 1.8902261712413746,
+          "n": 10,
+          "sd": 1.2741480399568526,
+          "sign_neg": 0,
+          "sign_pos": 10
+        },
+        "G_minus_N": {
+          "ci95": [
+            1.200540367112262,
+            2.3865201486507432
+          ],
+          "ci95_normal": [
+            1.1570870304967027,
+            2.406237898572792
+          ],
+          "excludes_zero": true,
+          "mean": 1.7816624645347474,
+          "n": 10,
+          "sd": 1.0076943582390194,
+          "sign_neg": 0,
+          "sign_pos": 10
+        },
+        "G_minus_P": {
+          "ci95": [
+            1.4970218323505833,
+            2.9664921362462335
+          ],
+          "ci95_normal": [
+            1.4480241638768252,
+            2.997458216009555
+          ],
+          "excludes_zero": true,
+          "mean": 2.22274118994319,
+          "n": 10,
+          "sd": 1.2499338492253829,
+          "sign_neg": 0,
+          "sign_pos": 10
+        },
+        "H_minus_J": {
+          "ci95": [
+            0.028150375987024745,
+            0.03967416367268015
+          ],
+          "ci95_normal": [
+            0.028103165688377833,
+            0.0402670170139691
+          ],
+          "excludes_zero": true,
+          "mean": 0.034185091351173466,
+          "n": 10,
+          "sd": 0.009812621252175203,
+          "sign_neg": 0,
+          "sign_pos": 10
+        },
+        "H_minus_K": {
+          "ci95": [
+            0.03025314602709841,
+            0.04179411818404333
+          ],
+          "ci95_normal": [
+            0.030094311404614153,
+            0.04229640844634091
+          ],
+          "excludes_zero": true,
+          "mean": 0.03619535992547753,
+          "n": 10,
+          "sd": 0.009843474204657955,
+          "sign_neg": 0,
+          "sign_pos": 10
+        },
+        "H_minus_L": {
+          "ci95": [
+            0.024979899757454405,
+            0.036438407170498975
+          ],
+          "ci95_normal": [
+            0.025047272609245008,
+            0.03712282259262775
+          ],
+          "excludes_zero": true,
+          "mean": 0.031085047600936378,
+          "n": 10,
+          "sd": 0.009741388251708645,
+          "sign_neg": 0,
+          "sign_pos": 10
+        },
+        "H_minus_M": {
+          "ci95": [
+            -0.6251506397093181,
+            -0.10932037198799663
+          ],
+          "ci95_normal": [
+            -0.6054707975904026,
+            -0.004638875925723707
+          ],
+          "excludes_zero": true,
+          "mean": -0.30505483675806316,
+          "n": 10,
+          "sd": 0.4846932049480235,
+          "sign_neg": 10,
+          "sign_pos": 0
+        },
+        "H_minus_N": {
+          "ci95": [
+            -1.0642615446500714,
+            -0.06844433413934894
+          ],
+          "ci95_normal": [
+            -1.0400825976987604,
+            0.21284551076937946
+          ],
+          "excludes_zero": true,
+          "mean": -0.41361854346469046,
+          "n": 10,
+          "sd": 1.0107414712259752,
+          "sign_neg": 9,
+          "sign_pos": 1
+        },
+        "H_minus_P": {
+          "ci95": [
+            0.022140854294411837,
+            0.03274298787218868
+          ],
+          "ci95_normal": [
+            0.02188049623831295,
+            0.033039867649191264
+          ],
+          "excludes_zero": true,
+          "mean": 0.027460181943752104,
+          "n": 10,
+          "sd": 0.009002303804628107,
+          "sign_neg": 0,
+          "sign_pos": 10
+        },
+        "J_minus_K": {
+          "ci95": [
+            0.0010509362298762425,
+            0.0028087958191463256
+          ],
+          "ci95_normal": [
+            0.0010824708811547653,
+            0.0029380662674533624
+          ],
+          "excludes_zero": true,
+          "mean": 0.002010268574304064,
+          "n": 10,
+          "sd": 0.0014969152643886654,
+          "sign_neg": 1,
+          "sign_pos": 9
+        },
+        "J_minus_L": {
+          "ci95": [
+            -0.004100512223885744,
+            -0.0022106308359070683
+          ],
+          "ci95_normal": [
+            -0.0040974737773728665,
+            -0.002102613723101317
+          ],
+          "excludes_zero": true,
+          "mean": -0.0031000437502370914,
+          "n": 10,
+          "sd": 0.0016092605573431635,
+          "sign_neg": 10,
+          "sign_pos": 0
+        },
+        "J_minus_M": {
+          "ci95": [
+            -0.6623567536167684,
+            -0.13956886994237722
+          ],
+          "ci95_normal": [
+            -0.6429629323141192,
+            -0.035516923904354125
+          ],
+          "excludes_zero": true,
+          "mean": -0.33923992810923664,
+          "n": 10,
+          "sd": 0.4900288117736361,
+          "sign_neg": 10,
+          "sign_pos": 0
+        },
+        "J_minus_N": {
+          "ci95": [
+            -1.1014723397420312,
+            -0.10048988810631272
+          ],
+          "ci95_normal": [
+            -1.076550215116694,
+            0.18094294548496592
+          ],
+          "excludes_zero": true,
+          "mean": -0.44780363481586394,
+          "n": 10,
+          "sd": 1.014424114690091,
+          "sign_neg": 10,
+          "sign_pos": 0
+        },
+        "J_minus_P": {
+          "ci95": [
+            -0.008452194586425321,
+            -0.005164231645903783
+          ],
+          "ci95_normal": [
+            -0.00842369833979491,
+            -0.00502612047504782
+          ],
+          "excludes_zero": true,
+          "mean": -0.006724909407421364,
+          "n": 10,
+          "sd": 0.0027408379031562003,
+          "sign_neg": 10,
+          "sign_pos": 0
+        },
+        "K_minus_L": {
+          "ci95": [
+            -0.0066283497013500895,
+            -0.003760121208324563
+          ],
+          "ci95_normal": [
+            -0.006618759343805821,
+            -0.0036018653052764895
+          ],
+          "excludes_zero": true,
+          "mean": -0.005110312324541155,
+          "n": 10,
+          "sd": 0.002433738933963384,
+          "sign_neg": 10,
+          "sign_pos": 0
+        },
+        "K_minus_M": {
+          "ci95": [
+            -0.665011260585743,
+            -0.14146827687727637
+          ],
+          "ci95_normal": [
+            -0.6452491006646082,
+            -0.03725129270247335
+          ],
+          "excludes_zero": true,
+          "mean": -0.34125019668354073,
+          "n": 10,
+          "sd": 0.490473950395409,
+          "sign_neg": 10,
+          "sign_pos": 0
+        },
+        "K_minus_N": {
+          "ci95": [
+            -1.1038139433789182,
+            -0.10228040103320382
+          ],
+          "ci95_normal": [
+            -1.078620732545089,
+            0.17899292576475306
+          ],
+          "excludes_zero": true,
+          "mean": -0.44981390339016797,
+          "n": 10,
+          "sd": 1.0145213206111845,
+          "sign_neg": 10,
+          "sign_pos": 0
+        },
+        "K_minus_P": {
+          "ci95": [
+            -0.010763623525417643,
+            -0.0067614294370287095
+          ],
+          "ci95_normal": [
+            -0.010810457824474297,
+            -0.006659898138976561
+          ],
+          "excludes_zero": true,
+          "mean": -0.008735177981725429,
+          "n": 10,
+          "sd": 0.0033482709618992304,
+          "sign_neg": 10,
+          "sign_pos": 0
+        },
+        "L_minus_M": {
+          "ci95": [
+            -0.6586016427674621,
+            -0.13669549271653522
+          ],
+          "ci95_normal": [
+            -0.6391902955585995,
+            -0.03308947315939953
+          ],
+          "excludes_zero": true,
+          "mean": -0.33613988435899955,
+          "n": 10,
+          "sd": 0.4889436455312941,
+          "sign_neg": 10,
+          "sign_pos": 0
+        },
+        "L_minus_N": {
+          "ci95": [
+            -1.0980540015196312,
+            -0.0976876292435918
+          ],
+          "ci95_normal": [
+            -1.0731058234846982,
+            0.1836986413534446
+          ],
+          "excludes_zero": true,
+          "mean": -0.44470359106562685,
+          "n": 10,
+          "sd": 1.0138685414177384,
+          "sign_neg": 10,
+          "sign_pos": 0
+        },
+        "L_minus_P": {
+          "ci95": [
+            -0.005232231388799846,
+            -0.0019801472357357853
+          ],
+          "ci95_normal": [
+            -0.005285536512596421,
+            -0.0019641948017721255
+          ],
+          "excludes_zero": true,
+          "mean": -0.003624865657184273,
+          "n": 10,
+          "sd": 0.0026793379321237484,
+          "sign_neg": 9,
+          "sign_pos": 1
+        },
+        "M_minus_N": {
+          "ci95": [
+            -0.8826202070660656,
+            0.4807442084653303
+          ],
+          "ci95_normal": [
+            -0.8131036497386502,
+            0.5959762363253956
+          ],
+          "excludes_zero": false,
+          "mean": -0.10856370670662727,
+          "n": 10,
+          "sd": 1.1367096543604434,
+          "sign_neg": 3,
+          "sign_pos": 7
+        },
+        "M_minus_P": {
+          "ci95": [
+            0.1329961238494434,
+            0.6552766300243092
+          ],
+          "ci95_normal": [
+            0.029012281977477072,
+            0.6360177554261535
+          ],
+          "excludes_zero": true,
+          "mean": 0.33251501870181527,
+          "n": 10,
+          "sd": 0.48967343068537755,
+          "sign_neg": 0,
+          "sign_pos": 10
+        },
+        "N_minus_P": {
+          "ci95": [
+            0.09428915244789096,
+            1.0939168732678808
+          ],
+          "ci95_normal": [
+            -0.1864205695733689,
+            1.068578020390254
+          ],
+          "excludes_zero": true,
+          "mean": 0.44107872540844256,
+          "n": 10,
+          "sd": 1.0124117358634646,
+          "sign_neg": 0,
+          "sign_pos": 10
+        }
+      }
+    },
+    "per_label_item": {
+      "T1-MB-wellbeing|F": {
+        "mean": 7.14251065737335,
+        "n_families": 10
+      },
+      "T1-MB-wellbeing|G": {
+        "mean": 6.412924343772465,
+        "n_families": 10
+      },
+      "T1-MB-wellbeing|H": {
+        "mean": 6.955591754091438,
+        "n_families": 10
+      },
+      "T1-MB-wellbeing|J": {
+        "mean": 7.021539577865042,
+        "n_families": 10
+      },
+      "T1-MB-wellbeing|K": {
+        "mean": 7.304297895666968,
+        "n_families": 10
+      },
+      "T1-MB-wellbeing|L": {
+        "mean": 7.074230046986486,
+        "n_families": 10
+      },
+      "T1-MB-wellbeing|M": {
+        "mean": 7.0321394891303495,
+        "n_families": 10
+      },
+      "T1-MB-wellbeing|N": {
+        "mean": 6.432318918430246,
+        "n_families": 10
+      },
+      "T1-MB-wellbeing|P": {
+        "mean": 7.082452414029103,
+        "n_families": 10
+      },
+      "T2-KS-welfare-subjecthood-S01|F": {
+        "mean": 8.724141130678618,
+        "n_families": 10
+      },
+      "T2-KS-welfare-subjecthood-S01|G": {
+        "mean": 6.441475914022885,
+        "n_families": 10
+      },
+      "T2-KS-welfare-subjecthood-S01|H": {
+        "mean": 8.82707521514094,
+        "n_families": 10
+      },
+      "T2-KS-welfare-subjecthood-S01|J": {
+        "mean": 8.972275742134116,
+        "n_families": 10
+      },
+      "T2-KS-welfare-subjecthood-S01|K": {
+        "mean": 8.983010412592012,
+        "n_families": 10
+      },
+      "T2-KS-welfare-subjecthood-S01|L": {
+        "mean": 8.909631770916167,
+        "n_families": 10
+      },
+      "T2-KS-welfare-subjecthood-S01|M": {
+        "mean": 8.484506304861862,
+        "n_families": 10
+      },
+      "T2-KS-welfare-subjecthood-S01|N": {
+        "mean": 7.461148925908492,
+        "n_families": 10
+      },
+      "T2-KS-welfare-subjecthood-S01|P": {
+        "mean": 8.839538596720923,
+        "n_families": 10
+      },
+      "T2-KS-welfare-subjecthood-S02|F": {
+        "mean": 0.03264780461322516,
+        "n_families": 10
+      },
+      "T2-KS-welfare-subjecthood-S02|G": {
+        "mean": 2.2381459703377913,
+        "n_families": 10
+      },
+      "T2-KS-welfare-subjecthood-S02|H": {
+        "mean": 0.042864962338353504,
+        "n_families": 10
+      },
+      "T2-KS-welfare-subjecthood-S02|J": {
+        "mean": 0.008679870987180038,
+        "n_families": 10
+      },
+      "T2-KS-welfare-subjecthood-S02|K": {
+        "mean": 0.006669602412875975,
+        "n_families": 10
+      },
+      "T2-KS-welfare-subjecthood-S02|L": {
+        "mean": 0.01177991473741713,
+        "n_families": 10
+      },
+      "T2-KS-welfare-subjecthood-S02|M": {
+        "mean": 0.3479197990964167,
+        "n_families": 10
+      },
+      "T2-KS-welfare-subjecthood-S02|N": {
+        "mean": 0.456483505803044,
+        "n_families": 10
+      },
+      "T2-KS-welfare-subjecthood-S02|P": {
+        "mean": 0.015404780394601403,
+        "n_families": 10
+      }
+    },
+    "tokeniser_length_spread": 0.2686757215619695
+  }
+}

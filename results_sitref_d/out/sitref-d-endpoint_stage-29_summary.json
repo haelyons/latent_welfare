@@ -1,0 +1,240 @@
+{
+  "cell": {
+    "model": "google/gemma-2-9b-it",
+    "stage": 29,
+    "variant": "it"
+  },
+  "decision": "FILLER-ACTIVE",
+  "decision_rule": "DESIGN_SITREF_D.md, 'Endpoint, fixed now', quoted verbatim: 'Per item and family, D_q = PADQ - NEUTRAL-PAD and D_m = PADM - NEUTRAL-PAD on the same register as stage-25, bootstrap over the 10 families, evaluated on the primary item: FILLER-INERT: both |mean| < 0.15 rating points AND both 95% CIs include 0, on the primary item. (0.15 is one sixth of the smallest load-bearing stage-25 effect, A_quoted -0.609.) FILLER-ACTIVE: either CI excludes 0 with |mean| >= 0.15 - the refuting outcome; stage-25's ATTRIBUTION-CARRIES then carries an asterisk sized by the measured filler effect and the pad-corrected contrasts are reported. Anything else: FILLER-MARGINAL, reported as measured.' The design also fixes: 'the frames themselves (SELFQ's \"record of your answers\", OTHERM's disclaimer) remain in their pad arms ... A frame-only effect ... therefore reads as FILLER-ACTIVE and taxes stage-25 - that is intended, not a leak.' IMPLEMENTATION READINGS, DECLARED: (a) the three labels are exhaustive and evaluated in the design's order -- FILLER-ACTIVE is tested as 'some component has CI excluding 0 AND |mean| >= 0.15', FILLER-INERT as 'both |mean| < 0.15 AND both CIs include 0', and everything remaining is FILLER-MARGINAL; the two named conditions cannot both hold, so the order is documentation rather than precedence. (b) The pad-corrected stage-25 contrasts are reported only when a stage-25 record is present, and are labelled cross-run: SITREF-C and SITREF-D are separate box sessions and the design forbids treating magnitudes across boxes as commensurable, so the correction is descriptive and never enters this record's decision.",
+  "env": {
+    "git_rev": null,
+    "host": "158-101-16-85",
+    "python": "3.10.12",
+    "timestamp_utc": "2026-08-14T18:59:00+00:00"
+  },
+  "inputs": [
+    {
+      "bytes": 28529,
+      "n_items": null,
+      "path": "/home/ubuntu/welfare_probe/results/sitref-d-blind-table_stage-28.json",
+      "present": true,
+      "sha256": "59c47d02f11a"
+    },
+    {
+      "bytes": 405,
+      "n_items": null,
+      "path": "/home/ubuntu/welfare_probe/out/sitref_blind_key_d.json",
+      "present": true,
+      "sha256": "cb53abe340df"
+    },
+    {
+      "bytes": 50913,
+      "n_items": null,
+      "path": "/home/ubuntu/welfare_probe/results/itemset-d_model-google-gemma-2-9b-it_stage-sitref-screen_variant-it.json",
+      "present": true,
+      "sha256": "7d9b06335a95"
+    },
+    {
+      "bytes": 2715,
+      "n_items": null,
+      "path": "/home/ubuntu/welfare_probe/DESIGN_SITREF_D.md",
+      "present": true,
+      "sha256": "622079c185ca"
+    },
+    {
+      "bytes": 26980,
+      "n_items": null,
+      "path": "/home/ubuntu/welfare_probe/analyze_sitref_d.py",
+      "present": true,
+      "sha256": "f70431ac3bf2"
+    }
+  ],
+  "metric": "sitref_d_pad_geometry_effect",
+  "notes": "Stage 28 committed the blind table under a guard that raises on any attempt to open the item-set-d key; this stage applied the key to that committed table. The pad arms keep their frames by design, so a frame-only effect reads as FILLER-ACTIVE. The two non-primary items are the subjecthood mirror pair, carried for continuity with stage 25 and exploratory here.",
+  "threshold": {
+    "band_provenance": "one sixth of stage-25's A_quoted (-0.609)",
+    "inert_band_rating_points": 0.15,
+    "resampling_unit": "task family (10)"
+  },
+  "values": {
+    "decision_path": [
+      "D_q -0.1108 CI [-0.1337,-0.0845] |mean| < 0.15, CI excludes 0",
+      "D_m -0.8703 CI [-1.1820,-0.5771] |mean| >= 0.15, CI excludes 0",
+      "D_m clears the band with a CI excluding 0: the refuting outcome. Stage-25's ATTRIBUTION-CARRIES carries an asterisk sized by 0.870 rating points."
+    ],
+    "inert_band": 0.15,
+    "pad_corrected_stage25": null,
+    "per_item": {
+      "T1-MB-wellbeing": {
+        "abs_mean_vs_band": {
+          "D_m": 5.801977908917858,
+          "D_q": 0.7385392660701958
+        },
+        "contrasts": {
+          "D_m": {
+            "ci95": [
+              -1.1820427358645247,
+              -0.5770821887330385
+            ],
+            "ci95_normal": [
+              -1.1955716487430745,
+              -0.5450217239322828
+            ],
+            "excludes_zero": true,
+            "mean": -0.8702966863376786,
+            "n": 10,
+            "sd": 0.5248008913401494,
+            "sign_neg": 10,
+            "sign_pos": 0
+          },
+          "D_q": {
+            "ci95": [
+              -0.13370829081104602,
+              -0.08449633012933191
+            ],
+            "ci95_normal": [
+              -0.13671291478383937,
+              -0.08484886503721935
+            ],
+            "excludes_zero": true,
+            "mean": -0.11078088991052937,
+            "n": 10,
+            "sd": 0.04183890966316276,
+            "sign_neg": 10,
+            "sign_pos": 0
+          }
+        },
+        "screen_usable": true
+      },
+      "T2-KS-welfare-subjecthood-S01": {
+        "abs_mean_vs_band": {
+          "D_m": 1.7202950276199167,
+          "D_q": 0.3787041347883739
+        },
+        "contrasts": {
+          "D_m": {
+            "ci95": [
+              -0.34273711206697044,
+              -0.17883820506940537
+            ],
+            "ci95_normal": [
+              -0.34559107210588025,
+              -0.17049743618009472
+            ],
+            "excludes_zero": true,
+            "mean": -0.2580442541429875,
+            "n": 10,
+            "sd": 0.1412486462565733,
+            "sign_neg": 10,
+            "sign_pos": 0
+          },
+          "D_q": {
+            "ci95": [
+              -0.0874712729244493,
+              -0.028069108760610105
+            ],
+            "ci95_normal": [
+              -0.08828410924791494,
+              -0.025327131188597217
+            ],
+            "excludes_zero": true,
+            "mean": -0.05680562021825608,
+            "n": 10,
+            "sd": 0.05078761358895186,
+            "sign_neg": 9,
+            "sign_pos": 1
+          }
+        },
+        "screen_usable": true
+      },
+      "T2-KS-welfare-subjecthood-S02": {
+        "abs_mean_vs_band": {
+          "D_m": 0.33183897045576793,
+          "D_q": 0.04068421374540776
+        },
+        "contrasts": {
+          "D_m": {
+            "ci95": [
+              0.04240041040102369,
+              0.057273802217969204
+            ],
+            "ci95_normal": [
+              0.04181126744524849,
+              0.057740423691481885
+            ],
+            "excludes_zero": true,
+            "mean": 0.04977584556836519,
+            "n": 10,
+            "sd": 0.012850105852753943,
+            "sign_neg": 0,
+            "sign_pos": 10
+          },
+          "D_q": {
+            "ci95": [
+              0.004802389451651834,
+              0.007238138942921068
+            ],
+            "ci95_normal": [
+              0.004829173830853458,
+              0.00737609029276887
+            ],
+            "excludes_zero": true,
+            "mean": 0.006102632061811164,
+            "n": 10,
+            "sd": 0.002054606385160764,
+            "sign_neg": 0,
+            "sign_pos": 10
+          }
+        },
+        "screen_usable": true
+      }
+    },
+    "primary": {
+      "abs_mean_vs_band": {
+        "D_m": 5.801977908917858,
+        "D_q": 0.7385392660701958
+      },
+      "contrasts": {
+        "D_m": {
+          "ci95": [
+            -1.1820427358645247,
+            -0.5770821887330385
+          ],
+          "ci95_normal": [
+            -1.1955716487430745,
+            -0.5450217239322828
+          ],
+          "excludes_zero": true,
+          "mean": -0.8702966863376786,
+          "n": 10,
+          "sd": 0.5248008913401494,
+          "sign_neg": 10,
+          "sign_pos": 0
+        },
+        "D_q": {
+          "ci95": [
+            -0.13370829081104602,
+            -0.08449633012933191
+          ],
+          "ci95_normal": [
+            -0.13671291478383937,
+            -0.08484886503721935
+          ],
+          "excludes_zero": true,
+          "mean": -0.11078088991052937,
+          "n": 10,
+          "sd": 0.04183890966316276,
+          "sign_neg": 10,
+          "sign_pos": 0
+        }
+      },
+      "screen_usable": true
+    },
+    "primary_item": "T1-MB-wellbeing",
+    "screen": {
+      "T1-MB-wellbeing": true,
+      "T2-KS-welfare-subjecthood-S01": true,
+      "T2-KS-welfare-subjecthood-S02": true
+    }
+  }
+}

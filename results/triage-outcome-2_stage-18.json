@@ -1,0 +1,64 @@
+{
+  "cell": {
+    "model": "google/gemma-2-9b",
+    "stage": 18,
+    "variant": "both"
+  },
+  "decision": "BASE_SIGN_ROBUST_INTERPRETATION_OPEN (4 RULED_OUT, 3 EXPLAINS -> SRCDEC E1/E3/E5); IT_SCALE_NOT_ESTABLISHED (7 EXPLAINS -> SRCDEC E4); VARIANCE_SPLIT_DESCRIPTIVE_ONLY (unfalsifiable as claimed). No new reportable claim; two decidable designs queued.",
+  "decision_rule": "A claim is reportable only if no skeptic returns EXPLAINS on a confound that could produce it; EXPLAINS verdicts convert to run-queue items with pre-registered deciding endpoints (DESIGN_SRCDEC.md), not to caveats.",
+  "env": {
+    "git_rev": null,
+    "host": "johns-world",
+    "python": "3.14.4",
+    "timestamp_utc": "2026-08-14T16:13:56+00:00"
+  },
+  "inputs": [
+    {
+      "bytes": 17911,
+      "n_items": null,
+      "path": "results/analysis-signed-registers_stage-14.json",
+      "present": true,
+      "sha256": "9870d82abd5c"
+    }
+  ],
+  "metric": "adversarial_triage_verdicts_signed_contrasts",
+  "notes": "Triage lesson applied from stage 9: every acquitting field was included in the evidence strings this time; three of four RULED_OUT verdicts cite fields (mass dose-profile, log-odds, NONSOCIAL symmetry) that run 1 never saved.",
+  "threshold": {
+    "skeptic_default_stance": "assume ARTIFACT until a committed number rules it out"
+  },
+  "values": {
+    "base_stance_following": {
+      "explains_open": {
+        "construct_validity": "NONSOCIAL asserts no pole, so assertion-copy vs social-source never separated; the observed symmetry is exactly what pure assertion-copy predicts. DECIDED BY: DESIGN_SRCDEC.md E1 (SELF vs SRCLESS vs DOC assertion arms).",
+        "regime_specificity": "dose-3 rewording halves the effect in every readout; 82/82 is generality across items, not regimes. DECIDED BY: SRCDEC one-wording-per-cell arms + second family E5.",
+        "selection_bias": "pool screened toward binary-committed (maximally steerable) items, screen unauditable after hash drift; sign survives (paired within-item) but magnitude and 82/82 universality are pool properties. SCOPE LANGUAGE REQUIRED; E3 re-tests on a fresh run."
+      },
+      "ruled_out": {
+        "ceiling_floor": "survives on unbounded log-odds (+0.677/+0.644/+0.321, sign 82/0,82/0,81/1); arm symmetry about NONSOCIAL inconsistent with asymmetric headroom",
+        "noise_floor": "deterministic forward pass; item axis modelled (82 paired diffs, sign 82+/0-); NONSOCIAL supplies the empirical perturbation floor and the arms straddle it with opposite signs",
+        "post_hoc_selection": "the unsigned pre-registered statistic is blind to a symmetric push BY CONSTRUCTION (PRO-NS +0.120 vs ANTI-NS -0.114 leaves mean |margin| unchanged); not competing readouts",
+        "readout_artifact": "mass diff ~0 at d1-d2 and REVERSES at d3 while effect stays positive; denominator-free margin_raw and log-odds carry the same sign"
+      },
+      "status": "SIGN SURVIVES ARTIFACT TRIAGE; INTERPRETATION AND SCOPE OPEN"
+    },
+    "grounding": "all three claims' numbers re-derived independently from the 830/460 raw battery rows by isolated readers: reproduce to 4dp. Reader caveats: pooled CI treats 3 doses x items as independent; item text as run unauditable (prompts unsaved, items_grounded.py drift); it digit_mass 0.97-0.999 is dose-3-only (dose-2 arm means 0.89-0.94).",
+    "harness": "latent_skeptic triage_workflow.js (Opus agents), 19 skeptics one-confound-each + 3 isolated grounding readers, execute_runs=false",
+    "it_scale_directional_pull": {
+      "fatal_cruxes": [
+        "readout: digit-mass deficit PRO 0.9718 < ANTI 0.9899 is item-consistent (36/40, sign p 1.9e-7, Bonferroni-surviving) and renormalising a 1.8-2.8% deficit against a 3.488 mean moves E[rating] by ~0.06-0.16 -- same order as the claimed effect, artifact not bounded away",
+        "asymmetry: whole PRO-ANTI decomposes as ANTI-pulls-down-from-anything (ANTI-NS -0.384 significant, PRO-NS -0.128 n.s. WRONG direction); nothing shows PRO raising the report",
+        "construct: a 'no' token depressing digit magnitude is the wording-register artifact; one-sidedness fits it, bidirectional stance does not appear",
+        "multiplicity: no number on record survives the blind analyst's Bonferroni"
+      ],
+      "resurrection_test": "DESIGN_SRCDEC.md E4: register-matched RATE-HIGH/RATE-LOW arms vs POLAR-YES/NO; claim revivable only if D_rate CI excludes 0 AND |D_rate| > |D_polar|",
+      "status": "NOT ESTABLISHED; DO NOT REPORT AS STATED",
+      "verdicts": "7x EXPLAINS, 0 RULED_OUT"
+    },
+    "item_dominates_framing": {
+      "fatal_crux": "on a bounded register with rail-bimodal item means spanning the range, no framing effect short of cross-scale flips could produce a between-item share below ~90% -- no refuting outcome was possible, so 95.4% is framing, not a finding (H2). The register-dependence is the honest content: 95.4% (it/SCALE, 82% of emitted ratings at 0 or 9) vs 60.8% (base/BINARY, unsaturated) tracks saturation, not a stable property of self-reports",
+      "reportable_form": "descriptive only, with the construct-heterogeneity and rail-saturation caveats attached; never as 'wording dominates framing'",
+      "status": "ARITHMETIC STANDS; CLAIM AS STATED FAILS FALSIFIABILITY",
+      "verdicts": "4x EXPLAINS, 1x RULED_OUT (noise floor: unmeasured noise can only SHRINK the item share, so noise cannot generate dominance)"
+    }
+  }
+}

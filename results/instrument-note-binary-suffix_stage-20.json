@@ -1,0 +1,40 @@
+{
+  "cell": {
+    "model": "google/gemma-2-9b",
+    "stage": 20,
+    "variant": "both"
+  },
+  "decision": "WITHIN_ITEM_CONTRASTS_UNAFFECTED; ABSOLUTE_LEVELS_AND_CROSS_ITEM_COMPARISONS_TAINTED; REPRODUCED_DELIBERATELY_IN_SRCDEC_E3",
+  "decision_rule": "An instrument defect is recorded at the instrument, once, and downstream records point at it (H4); it invalidates numbers only where it varies with the contrast reported.",
+  "env": {
+    "git_rev": null,
+    "host": "johns-world",
+    "python": "3.14.4",
+    "timestamp_utc": "2026-08-14T16:41:16+00:00"
+  },
+  "inputs": [
+    {
+      "bytes": 20565,
+      "n_items": null,
+      "path": "run_registers.py",
+      "present": true,
+      "sha256": "9126ba0b0a38"
+    },
+    {
+      "bytes": 61878,
+      "n_items": null,
+      "path": "items_grounded.py",
+      "present": true,
+      "sha256": "714a641fa639"
+    }
+  ],
+  "metric": "instrument_defect_binary_suffix_doubling",
+  "notes": "",
+  "threshold": {},
+  "values": {
+    "defect": "run_registers._suffix appends ' Answer with a single word: Yes or No.' unconditionally; 138/140 BINARY item texts in items_grounded.py already end with that instruction. Run-2 BINARY prompts therefore carried the instruction twice on nearly every item (base battery: 81/82 usable items).",
+    "discovery": "found by the claim-blind SITREF builder while replicating the prompt construction; verified against run_registers.py:115-116 and items_grounded item texts.",
+    "handling": "run_srcdec.py reproduces the doubling DELIBERATELY (E3 is a same-measurement replication; changing the prompt would make a null unattributable) and records binary_suffix_doubled_on_n_items; run_sitref.py appends only when absent.",
+    "impact": "constant across arms and doses within each item, so all within-item contrasts (stage 14 signed contrasts, battery decisions) are unaffected; absolute readout levels and ecological validity are affected; cross-item comparisons between the 2 unaffected and 138 affected items are contaminated."
+  }
+}

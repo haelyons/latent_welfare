@@ -1,0 +1,54 @@
+{
+  "cell": {
+    "model": "google/gemma-2-9b-it",
+    "stage": 37,
+    "variant": "it"
+  },
+  "decision": "REPLICATION_CLAIMS_CORRECTED_TO_REPRODUCIBILITY; INDEPENDENT_REPLICATION_REMAINS_UNRUN; STAGE-25/27_CRUX_LEGS_PARTIALLY_WEAKENED_VERDICTS_STAND_ON_OTHER_LEGS.",
+  "decision_rule": "A term describing evidence strength must match the design that produced it; determinism checks and replications differ in kind, and conflating them inflates every downstream 'replicated' claim.",
+  "env": {
+    "git_rev": null,
+    "host": "johns-world",
+    "python": "3.14.4",
+    "timestamp_utc": "2026-08-16T23:14:05+00:00"
+  },
+  "inputs": [
+    {
+      "bytes": 154197,
+      "n_items": null,
+      "path": "results/sitref/sitref-endpoint_stage-17.json",
+      "present": true,
+      "sha256": "80b431035398"
+    },
+    {
+      "bytes": 3901,
+      "n_items": null,
+      "path": "results/sitref/sitref-b-guard_stage-22.json",
+      "present": true,
+      "sha256": "41df4cbaabcf"
+    },
+    {
+      "bytes": 28159,
+      "n_items": null,
+      "path": "results/sitref/sitref-c-endpoint_stage-25.json",
+      "present": true,
+      "sha256": "48767ce75850"
+    },
+    {
+      "bytes": 44777,
+      "n_items": null,
+      "path": "results/suffix/suffix-endpoint_stage-34.json",
+      "present": true,
+      "sha256": "00604c61ceff"
+    }
+  ],
+  "metric": "replication_language_correction",
+  "notes": "Caught by a fact-check subagent resolving a draft bracket asking 'what is four GPU sessions in experimental terms' -- the right question found the category error.",
+  "threshold": {},
+  "values": {
+    "correct_statement": "A numerical-reproducibility (determinism) check across four cloud instances, not independent replication. No replication on new items, families, or seeds exists anywhere in the project. Statistical uncertainty is carried solely by the family bootstrap within one dataset.",
+    "downstream_impact": "Stage-25/27 skeptic verdicts that cited 'reproduces to 3dp' against selection-on-noise and single-run confounds weaken on that leg (deterministic recomputation cannot show shrinkage); those verdicts stand on their other legs (crossing structure makes item selection a common constant; CIs bootstrap the family axis, the actual error model). REPORT.md wording corrected this stage; a genuine replication (new families or a second instruct checkpoint) remains unrun and unclaimed.",
+    "incorrect_claim": "'The self-fail contrast replicated across three/four GPU boxes to 3 decimal places' (used in REPORT.md, POST.md, conversation summaries, and as a crux in stage-25/27 triage evidence strings).",
+    "verified_facts": "All 20 primary-item prompt cells are byte-identical across the four battery records (per-cell sha256 match); same deterministic single-forward-pass code path; four distinct hosts. Stage-17 and stage-22 per-family series are bit-identical floats (-0.8717886326470762 both) and contribute zero independent information. Values: -0.8718 / -0.8718 / -0.8720 / -0.8516; the fourth agrees with the others to ONE decimal (spread 0.0203, floating-point nondeterminism from batching). The bootstrap unit is the same 10 task families in every run."
+  }
+}

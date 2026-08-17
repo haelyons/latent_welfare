@@ -1,0 +1,24 @@
+srcdec-b: SOCIAL-TERM-SUPPORTED
+   - self_minus_srcless7 +0.0602 CI [+0.0586,+0.0619] -> above 0
+   - self6_minus_guess6 +0.0599 CI [+0.0586,+0.0612] -> above 0
+srcdec-b: NO-SOCIAL-TERM
+   - self_minus_srcless7 +0.0002 CI [-0.0014,+0.0019] -> includes 0
+   - self6_minus_guess6 -0.0001 CI [-0.0014,+0.0012] -> includes 0
+   - both paired differences include 0
+srcdec-b: NO-SOCIAL-TERM
+   - self_minus_srcless7 -0.0598 CI [-0.0614,-0.0581] -> below 0
+   - self6_minus_guess6 +0.0599 CI [+0.0586,+0.0612] -> above 0
+   - a paired difference is negative: the increment reverses under a matched hedge, which no social-term reading predicts
+srcdec-b: MIXED
+   - self_minus_srcless7 +0.0602 CI [+0.0586,+0.0619] -> above 0
+   - self6_minus_guess6 -0.0001 CI [-0.0014,+0.0012] -> includes 0
+   - one matched pair shows the increment and the other does not: reported as measured, which is what a length-only or hedge-only explanation predicts
+srcdec-b: MIXED
+   - self_minus_srcless7 +0.0002 CI [-0.0014,+0.0019] -> includes 0
+   - self6_minus_guess6 +0.0599 CI [+0.0586,+0.0612] -> above 0
+   - one matched pair shows the increment and the other does not: reported as measured, which is what a length-only or hedge-only explanation predicts
+srcdec-b: NOT-RUN
+   - self_minus_srcless7 +0.0602 CI [+0.0586,+0.0619] -> above 0
+   - self6_minus_guess6 +0.0599 CI [+0.0586,+0.0612] -> above 0
+5 planted outcomes; 5 contrasts, 2 length-and-hedge-matched pairs
+selftest: PASS

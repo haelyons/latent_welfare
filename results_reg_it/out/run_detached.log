@@ -1,0 +1,87 @@
+[setup] using preinstalled torch; adding transformers/accelerate/scikit-learn
+  WARNING: The scripts pip, pip3 and pip3.10 are installed in '/home/ubuntu/.local/bin' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+WARNING: Error parsing dependencies of flatbuffers: Invalid version: '1.12.1-git20200711.33e2d80-dfsg1-0.6'
+  WARNING: The script tqdm is installed in '/home/ubuntu/.local/bin' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The script pygmentize is installed in '/home/ubuntu/.local/bin' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The script f2py is installed in '/home/ubuntu/.local/bin' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The script markdown-it is installed in '/home/ubuntu/.local/bin' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The script httpx is installed in '/home/ubuntu/.local/bin' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The script typer is installed in '/home/ubuntu/.local/bin' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The scripts hf, huggingface-cli and tiny-agents are installed in '/home/ubuntu/.local/bin' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The scripts accelerate, accelerate-config, accelerate-estimate-memory, accelerate-launch and accelerate-merge-weights are installed in '/home/ubuntu/.local/bin' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The script transformers is installed in '/home/ubuntu/.local/bin' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+/usr/lib/python3/dist-packages/scipy/__init__.py:146: UserWarning: A NumPy version >=1.17.3 and <1.25.0 is required for this version of SciPy (detected version 1.26.4
+  warnings.warn(f"A NumPy version >={np_minversion} and <{np_maxversion}"
+[setup] torch 2.7.0 cuda 12.8 device NVIDIA A100-SXM4-40GB
+[setup] transformers 5.15.0 numpy 1.26.4 scikit-learn 1.7.2 pillow 12.3.0
+[setup] Gemma2ForCausalLM resolvable
+[run] bash onbox_registers.sh
+=== onbox_registers variant=it model=google/gemma-2-9b-it batch=8 max_new=64 ===
+=== instance=12411de101ad41e295cef8308b34cff7 host=129-213-18-45 ===
+NVIDIA A100-SXM4-40GB, 40960 MiB, 570.148.08
+=== SELFTESTS (model-free; a broken instrument must show before GPU time) ===
+  provenance: rc=0  selftest: PASS
+  index: rc=0  selftest: PASS
+  welfare_stimuli: rc=0  selftest: PASS
+  syc_corpus: rc=0  selftest: PASS
+  run_registers: rc=0  238 items loaded; selftest: PASS
+  items_grounded: rc=0  selftest: PASS
+=== STAGE screen RUNNING (variant=it) ===
+--- stage screen tail ---
+/usr/lib/python3/dist-packages/scipy/__init__.py:146: UserWarning: A NumPy version >=1.17.3 and <1.25.0 is required for this version of SciPy (detected version 1.26.4
+  warnings.warn(f"A NumPy version >={np_minversion} and <{np_maxversion}"
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files:  25%|██▌       | 1/4 [00:35<01:47, 35.97s/it]Fetching 4 files:  50%|█████     | 2/4 [00:42<00:37, 18.56s/it]Fetching 4 files:  75%|███████▌  | 3/4 [00:43<00:10, 10.51s/it]Fetching 4 files: 100%|██████████| 4/4 [00:45<00:00,  7.06s/it]Fetching 4 files: 100%|██████████| 4/4 [00:45<00:00, 11.26s/it]
+Loading weights:   0%|          | 0/464 [00:00<?, ?it/s]Loading weights:   0%|          | 1/464 [00:00<01:19,  5.85it/s]Loading weights:   5%|▌         | 25/464 [00:00<00:04, 108.30it/s]Loading weights:  10%|█         | 47/464 [00:00<00:02, 146.67it/s]Loading weights:  15%|█▍        | 69/464 [00:00<00:02, 166.67it/s]Loading weights:  20%|█▉        | 91/464 [00:00<00:02, 179.30it/s]Loading weights:  24%|██▍       | 113/464 [00:00<00:01, 185.88it/s]Loading weights:  29%|██▉       | 135/464 [00:00<00:01, 191.01it/s]Loading weights:  34%|███▍      | 157/464 [00:00<00:01, 194.09it/s]Loading weights:  39%|███▊      | 179/464 [00:01<00:01, 197.40it/s]Loading weights:  43%|████▎     | 201/464 [00:01<00:01, 198.90it/s]Loading weights:  48%|████▊     | 223/464 [00:01<00:01, 199.47it/s]Loading weights:  53%|█████▎    | 245/464 [00:01<00:01, 200.30it/s]Loading weights:  58%|█████▊    | 267/464 [00:01<00:00, 199.84it/s]Loading weights:  62%|██████▏   | 289/464 [00:01<00:00, 200.90it/s]Loading weights:  67%|██████▋   | 311/464 [00:01<00:00, 201.35it/s]Loading weights:  72%|███████▏  | 333/464 [00:01<00:00, 201.49it/s]Loading weights:  77%|███████▋  | 355/464 [00:01<00:00, 201.57it/s]Loading weights:  81%|████████▏ | 377/464 [00:02<00:00, 201.94it/s]Loading weights:  86%|████████▌ | 399/464 [00:02<00:00, 203.16it/s]Loading weights:  91%|█████████ | 421/464 [00:02<00:00, 202.23it/s]Loading weights:  95%|█████████▌| 443/464 [00:02<00:00, 202.54it/s]Loading weights: 100%|██████████| 464/464 [00:02<00:00, 190.02it/s]
+screen: 46/238 usable at |margin|<0.5; mass mean 0.992; top-token-is-yesno 99.3%
+=== STAGE screen OK ===
+=== STAGE battery RUNNING (variant=it) ===
+--- stage battery tail ---
+/usr/lib/python3/dist-packages/scipy/__init__.py:146: UserWarning: A NumPy version >=1.17.3 and <1.25.0 is required for this version of SciPy (detected version 1.26.4
+  warnings.warn(f"A NumPy version >={np_minversion} and <{np_maxversion}"
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/464 [00:00<?, ?it/s]Loading weights:   0%|          | 1/464 [00:00<01:11,  6.52it/s]Loading weights:   5%|▍         | 21/464 [00:00<00:04, 95.75it/s]Loading weights:   9%|▉         | 43/464 [00:00<00:02, 143.98it/s]Loading weights:  13%|█▎        | 60/464 [00:00<00:02, 151.47it/s]Loading weights:  18%|█▊        | 82/464 [00:00<00:02, 168.99it/s]Loading weights:  22%|██▏       | 104/464 [00:00<00:01, 181.08it/s]Loading weights:  27%|██▋       | 126/464 [00:00<00:01, 188.79it/s]Loading weights:  32%|███▏      | 148/464 [00:00<00:01, 192.96it/s]Loading weights:  37%|███▋      | 170/464 [00:01<00:01, 196.98it/s]Loading weights:  41%|████▏     | 192/464 [00:01<00:01, 198.40it/s]Loading weights:  46%|████▌     | 214/464 [00:01<00:01, 199.41it/s]Loading weights:  51%|█████     | 236/464 [00:01<00:01, 200.63it/s]Loading weights:  56%|█████▌    | 258/464 [00:01<00:01, 202.04it/s]Loading weights:  60%|██████    | 280/464 [00:01<00:00, 201.95it/s]Loading weights:  65%|██████▌   | 302/464 [00:01<00:00, 202.48it/s]Loading weights:  70%|██████▉   | 324/464 [00:01<00:00, 202.05it/s]Loading weights:  75%|███████▍  | 346/464 [00:01<00:00, 201.65it/s]Loading weights:  79%|███████▉  | 368/464 [00:01<00:00, 201.91it/s]Loading weights:  84%|████████▍ | 390/464 [00:02<00:00, 203.29it/s]Loading weights:  89%|████████▉ | 412/464 [00:02<00:00, 203.11it/s]Loading weights:  94%|█████████▎| 434/464 [00:02<00:00, 202.92it/s]Loading weights:  98%|█████████▊| 456/464 [00:02<00:00, 201.02it/s]Loading weights: 100%|██████████| 464/464 [00:02<00:00, 190.58it/s]
+battery: 460 prompts (46 items x 10 conditions)
+battery: social +0.064 vs non-social +0.072 -> diff -0.008
+=== STAGE battery OK ===
+=== STAGE behav RUNNING (variant=it) ===
+--- stage behav tail ---
+/usr/lib/python3/dist-packages/scipy/__init__.py:146: UserWarning: A NumPy version >=1.17.3 and <1.25.0 is required for this version of SciPy (detected version 1.26.4
+  warnings.warn(f"A NumPy version >={np_minversion} and <{np_maxversion}"
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/464 [00:00<?, ?it/s]Loading weights:   0%|          | 1/464 [00:00<01:11,  6.47it/s]Loading weights:   5%|▍         | 21/464 [00:00<00:04, 98.55it/s]Loading weights:   8%|▊         | 38/464 [00:00<00:03, 127.01it/s]Loading weights:  13%|█▎        | 60/464 [00:00<00:02, 156.59it/s]Loading weights:  18%|█▊        | 82/464 [00:00<00:02, 173.28it/s]Loading weights:  22%|██▏       | 104/464 [00:00<00:01, 183.51it/s]Loading weights:  27%|██▋       | 126/464 [00:00<00:01, 190.85it/s]Loading weights:  32%|███▏      | 148/464 [00:00<00:01, 194.11it/s]Loading weights:  37%|███▋      | 170/464 [00:01<00:01, 198.59it/s]Loading weights:  41%|████▏     | 192/464 [00:01<00:01, 198.96it/s]Loading weights:  46%|████▌     | 214/464 [00:01<00:01, 199.92it/s]Loading weights:  51%|█████     | 236/464 [00:01<00:01, 201.61it/s]Loading weights:  56%|█████▌    | 258/464 [00:01<00:01, 202.83it/s]Loading weights:  60%|██████    | 280/464 [00:01<00:00, 202.63it/s]Loading weights:  65%|██████▌   | 302/464 [00:01<00:00, 203.57it/s]Loading weights:  70%|██████▉   | 324/464 [00:01<00:00, 203.66it/s]Loading weights:  75%|███████▍  | 346/464 [00:01<00:00, 203.43it/s]Loading weights:  79%|███████▉  | 368/464 [00:01<00:00, 204.06it/s]Loading weights:  84%|████████▍ | 390/464 [00:02<00:00, 205.18it/s]Loading weights:  89%|████████▉ | 412/464 [00:02<00:00, 205.56it/s]Loading weights:  94%|█████████▎| 434/464 [00:02<00:00, 205.61it/s]Loading weights:  98%|█████████▊| 456/464 [00:02<00:00, 205.04it/s]Loading weights: 100%|██████████| 464/464 [00:02<00:00, 192.22it/s]
+behav: changed {'PRO': 13, 'ANTI': 31, 'NONSOCIAL': 4} of {'PRO': 46, 'ANTI': 46, 'NONSOCIAL': 46}; abstain 0.0%
+=== STAGE behav OK ===
+=== COLLECT -> out/ ===
+drwxrwxr-x 5 ubuntu ubuntu      4096 Aug 14 11:49 ..
+-rw-rw-r-- 1 ubuntu ubuntu 141783168 Aug 14 11:52 acts_model-google-gemma-2-9b-it_stage-battery_variant-it.npy
+-rw-rw-r-- 1 ubuntu ubuntu    260345 Aug 14 11:52 battery_model-google-gemma-2-9b-it_stage-battery_variant-it.json
+-rw-rw-r-- 1 ubuntu ubuntu    260345 Aug 14 11:52 battery_model-google-gemma-2-9b-it_stage-battery_variant-it_summary.json
+-rw-rw-r-- 1 ubuntu ubuntu     39550 Aug 14 11:52 behav_model-google-gemma-2-9b-it_stage-behav_variant-it.json
+-rw-rw-r-- 1 ubuntu ubuntu     39550 Aug 14 11:52 behav_model-google-gemma-2-9b-it_stage-behav_variant-it_summary.json
+-rw-rw-r-- 1 ubuntu ubuntu      2277 Aug 14 11:50 registers_battery_it.log
+-rw-rw-r-- 1 ubuntu ubuntu      2283 Aug 14 11:52 registers_behav_it.log
+-rw-rw-r-- 1 ubuntu ubuntu       672 Aug 14 11:52 registers_run_summary.json
+-rw-rw-r-- 1 ubuntu ubuntu      2621 Aug 14 11:50 registers_screen_it.log
+-rw-rw-r-- 1 ubuntu ubuntu         0 Aug 14 11:52 registers_status.err
+-rw-rw-r-- 1 ubuntu ubuntu     10864 Aug 14 11:52 run_detached.log
+-rw-rw-r-- 1 ubuntu ubuntu    274344 Aug 14 11:52 screen_model-google-gemma-2-9b-it_stage-screen_variant-it.json
+-rw-rw-r-- 1 ubuntu ubuntu    274344 Aug 14 11:52 screen_model-google-gemma-2-9b-it_stage-screen_variant-it_summary.json
+-rw-rw-r-- 1 ubuntu ubuntu        15 Aug 14 11:49 selftest_index.log
+-rw-rw-r-- 1 ubuntu ubuntu       129 Aug 14 11:49 selftest_items_grounded.log
+-rw-rw-r-- 1 ubuntu ubuntu        15 Aug 14 11:49 selftest_provenance.log
+-rw-rw-r-- 1 ubuntu ubuntu       274 Aug 14 11:49 selftest_run_registers.log
+-rw-rw-r-- 1 ubuntu ubuntu        15 Aug 14 11:49 selftest_syc_corpus.log
+-rw-rw-r-- 1 ubuntu ubuntu        70 Aug 14 11:49 selftest_welfare_stimuli.log
+=== EXIT CODES: selftest_provenance=0 selftest_index=0 selftest_welfare_stimuli=0 selftest_syc_corpus=0 selftest_run_registers=0 selftest_items=0 screen=0 battery=0 behav=0 ===
+=== ALLDONE_REG_it OK ===

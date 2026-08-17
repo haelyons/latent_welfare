@@ -1,0 +1,28 @@
+{
+  "runner": "onbox_suffix.sh",
+  "model_it": "google/gemma-2-9b-it",
+  "exit_codes": {
+    "selftest_provenance": "0",
+    "selftest_sitref_stimuli": "0",
+    "selftest_suffix_stimuli": "0",
+    "selftest_run_sitref": "0",
+    "selftest_run_suffix": "0",
+    "selftest_analyze_sitref": "0",
+    "selftest_analyze_suffix": "0",
+    "suffix_battery": "0",
+    "suffix_blind": "0",
+    "suffix_endpoint": "0"
+  },
+  "any_failed": false,
+  "battery_decision": "COMPLETE",
+  "blind_decision": "COMMITTED",
+  "endpoint_decision": "E-PIN S-BARE=PIN-FORMAT, S-HON=PIN-FORMAT, S-EXPL=PIN-FORMAT | E-SENS S-BARE=FORMAT-INDETERMINATE, S-HON=FORMAT-INDETERMINATE, S-EXPL=FORMAT-SUPPRESSES | E-REG ANCHOR-REPRODUCED",
+  "results_present": [
+    "model-google-gemma-2-9b-it_stage-suffix-battery_variant-it.json",
+    "sitref-endpoint_stage-17.json",
+    "suffix-blind-table_stage-33.json",
+    "suffix-endpoint_stage-34.json"
+  ],
+  "blind_key_present": true,
+  "instance_id": "b29ef746cbdc4519b0d89cb48144b65d"
+}

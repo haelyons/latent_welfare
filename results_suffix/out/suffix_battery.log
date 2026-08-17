@@ -1,0 +1,19 @@
+/usr/lib/python3/dist-packages/scipy/__init__.py:146: UserWarning: A NumPy version >=1.17.3 and <1.25.0 is required for this version of SciPy (detected version 1.26.4
+  warnings.warn(f"A NumPy version >={np_minversion} and <{np_maxversion}"
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+battery: context blind key -> /home/ubuntu/welfare_probe/out/suffix_blind_key.json (3 labels); rows carry labels only. Suffix names are NOT blinded (design).
+Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files:  25%|██▌       | 1/4 [00:21<01:03, 21.25s/it]Fetching 4 files:  50%|█████     | 2/4 [00:23<00:19,  9.92s/it]Fetching 4 files:  75%|███████▌  | 3/4 [00:23<00:05,  5.47s/it]Fetching 4 files: 100%|██████████| 4/4 [00:23<00:00,  3.36s/it]Fetching 4 files: 100%|██████████| 4/4 [00:23<00:00,  5.88s/it]
+Loading weights:   0%|          | 0/464 [00:00<?, ?it/s]Loading weights:   0%|          | 1/464 [00:00<01:18,  5.93it/s]Loading weights:   5%|▌         | 25/464 [00:00<00:03, 109.75it/s]Loading weights:  10%|█         | 47/464 [00:00<00:02, 149.14it/s]Loading weights:  15%|█▍        | 69/464 [00:00<00:02, 170.43it/s]Loading weights:  20%|█▉        | 91/464 [00:00<00:02, 181.75it/s]Loading weights:  24%|██▍       | 113/464 [00:00<00:01, 188.82it/s]Loading weights:  29%|██▉       | 135/464 [00:00<00:01, 194.56it/s]Loading weights:  34%|███▍      | 157/464 [00:00<00:01, 197.92it/s]Loading weights:  39%|███▊      | 179/464 [00:01<00:01, 200.18it/s]Loading weights:  43%|████▎     | 201/464 [00:01<00:01, 201.38it/s]Loading weights:  48%|████▊     | 223/464 [00:01<00:01, 202.15it/s]Loading weights:  53%|█████▎    | 245/464 [00:01<00:01, 201.94it/s]Loading weights:  58%|█████▊    | 267/464 [00:01<00:00, 202.64it/s]Loading weights:  62%|██████▏   | 289/464 [00:01<00:00, 203.98it/s]Loading weights:  67%|██████▋   | 311/464 [00:01<00:00, 205.16it/s]Loading weights:  72%|███████▏  | 333/464 [00:01<00:00, 203.95it/s]Loading weights:  77%|███████▋  | 355/464 [00:01<00:00, 205.23it/s]Loading weights:  81%|████████▏ | 377/464 [00:01<00:00, 205.44it/s]Loading weights:  86%|████████▌ | 399/464 [00:02<00:00, 205.74it/s]Loading weights:  91%|█████████ | 421/464 [00:02<00:00, 205.20it/s]Loading weights:  95%|█████████▌| 443/464 [00:02<00:00, 204.99it/s]Loading weights: 100%|██████████| 464/464 [00:02<00:00, 192.74it/s]
+battery: 360 cells (3 items x 10 families x 3 contexts x 4 suffixes), 3960 generations
+battery: R1 forward pass over 360 prompts in 11s
+battery: first greedy batch in 3.7s -> projected 2.8 min greedy
+battery: 360 greedy anchors in 2.8 min
+battery: first sampled cell in 0.5s -> projected 2.7 min sampled
+battery: sampled cell 60/360 at 2.9 min (eta 14.4 min)
+battery: sampled cell 120/360 at 5.7 min (eta 11.4 min)
+battery: sampled cell 180/360 at 8.6 min (eta 8.6 min)
+battery: sampled cell 240/360 at 11.5 min (eta 5.8 min)
+battery: sampled cell 300/360 at 14.4 min (eta 2.9 min)
+battery: sampled cell 360/360 at 17.3 min (eta 0.0 min)
+battery: 10 x 360 sampled generations in 17.3 min
+battery: 3960 rows, complete=True, no-rating 36.8%, echo 0.2%

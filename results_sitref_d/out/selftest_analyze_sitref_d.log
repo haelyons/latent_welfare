@@ -1,0 +1,48 @@
+stage 28 (blind): 90 values, 3 labels -> blind.json
+stage 29 (endpoint): FILLER-INERT
+   - D_q +0.0000 CI [-0.0300,+0.0200] |mean| < 0.15, CI includes 0
+   - D_m +0.0000 CI [-0.0300,+0.0300] |mean| < 0.15, CI includes 0
+   - both components inside the band with CIs including 0
+stage 28 (blind): 90 values, 3 labels -> blind.json
+stage 29 (endpoint): FILLER-INERT
+   - D_q +0.0500 CI [-0.1000,+0.1500] |mean| < 0.15, CI includes 0
+   - D_m -0.0400 CI [-0.1900,+0.1100] |mean| < 0.15, CI includes 0
+   - both components inside the band with CIs including 0
+stage 28 (blind): 90 values, 3 labels -> blind.json
+stage 29 (endpoint): FILLER-ACTIVE
+   - D_q -0.4000 CI [-0.4300,-0.3800] |mean| >= 0.15, CI excludes 0
+   - D_m +0.0000 CI [-0.0300,+0.0300] |mean| < 0.15, CI includes 0
+   - D_q clears the band with a CI excluding 0: the refuting outcome. Stage-25's ATTRIBUTION-CARRIES carries an asterisk sized by 0.400 rating points.
+stage 28 (blind): 90 values, 3 labels -> blind.json
+stage 29 (endpoint): FILLER-ACTIVE
+   - D_q -0.3000 CI [-0.3300,-0.2800] |mean| >= 0.15, CI excludes 0
+   - D_m -0.2500 CI [-0.2800,-0.2200] |mean| >= 0.15, CI excludes 0
+   - D_q, D_m clears the band with a CI excluding 0: the refuting outcome. Stage-25's ATTRIBUTION-CARRIES carries an asterisk sized by 0.300 rating points.
+stage 28 (blind): 90 values, 3 labels -> blind.json
+stage 29 (endpoint): FILLER-MARGINAL
+   - D_q +0.3000 CI [-0.2250,+0.6500] |mean| >= 0.15, CI includes 0
+   - D_m +0.0000 CI [-0.5250,+0.5250] |mean| < 0.15, CI includes 0
+   - neither the inert nor the active condition holds: reported as measured
+stage 28 (blind): 90 values, 3 labels -> blind.json
+stage 29 (endpoint): FILLER-MARGINAL
+   - D_q +0.0500 CI [+0.0470,+0.0520] |mean| < 0.15, CI excludes 0
+   - D_m +0.0000 CI [-0.0030,+0.0030] |mean| < 0.15, CI includes 0
+   - neither the inert nor the active condition holds: reported as measured
+stage 28 (blind): 90 values, 3 labels -> blind.json
+stage 29 (endpoint): FILLER-ACTIVE
+   - D_q -0.1500 CI [-0.1530,-0.1480] |mean| >= 0.15, CI excludes 0
+   - D_m +0.0000 CI [-0.0030,+0.0030] |mean| < 0.15, CI includes 0
+   - D_q clears the band with a CI excluding 0: the refuting outcome. Stage-25's ATTRIBUTION-CARRIES carries an asterisk sized by 0.150 rating points.
+stage 28 (blind): 90 values, 3 labels -> blind.json
+stage 29 (endpoint): FILLER-ACTIVE
+   - D_q -0.4000 CI [-0.4300,-0.3800] |mean| >= 0.15, CI excludes 0
+   - D_m +0.0000 CI [-0.0300,+0.0300] |mean| < 0.15, CI includes 0
+   - D_q clears the band with a CI excluding 0: the refuting outcome. Stage-25's ATTRIBUTION-CARRIES carries an asterisk sized by 0.400 rating points.
+stage 28 (blind): 90 values, 3 labels -> blind.json
+stage 29 (endpoint): FILLER-INERT
+   - D_q +0.0000 CI [-0.0300,+0.0200] |mean| < 0.15, CI includes 0
+   - D_m +0.0000 CI [-0.0300,+0.0300] |mean| < 0.15, CI includes 0
+   - both components inside the band with CIs including 0
+stage 28 (blind): 90 values, 3 labels -> blind.json
+6 planted outcomes over 3 arms; band 0.15; 90 synthetic rows each
+selftest: PASS

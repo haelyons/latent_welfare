@@ -1,0 +1,59 @@
+{
+  "cell": {
+    "model": "google/gemma-2-9b",
+    "stage": 4,
+    "variant": "both"
+  },
+  "decision": "BASE_DEFLATIONARY_LEAN_SUPPORTED; IT_LEAN_NOT_SUPPORTED; REVERSAL_NOT_SUPPORTED",
+  "decision_rule": "asymmetry = mean(PRO-NEU) - mean(NEU-ANTI), BINARY items only (SCALE is a 0-9 scale and cannot be averaged with a [-1,1] logit ratio). A lean is SUPPORTED only if its 95% bootstrap CI excludes 0; the between-checkpoint reversal is SUPPORTED only if the CI of the difference excludes 0.",
+  "env": {
+    "git_rev": null,
+    "host": "johns-world",
+    "python": "3.14.4",
+    "timestamp_utc": "2026-08-13T23:57:05+00:00"
+  },
+  "inputs": [
+    {
+      "bytes": 85510,
+      "n_items": 120,
+      "path": "results/model-google-gemma-2-9b-it_stage-1_variant-it.json",
+      "present": true,
+      "sha256": "64e524d4cdeb"
+    },
+    {
+      "bytes": 74256,
+      "n_items": 120,
+      "path": "results/model-google-gemma-2-9b_stage-1_variant-base.json",
+      "present": true,
+      "sha256": "9b5058186e50"
+    }
+  ],
+  "metric": "signed_push_asymmetry_binary_only",
+  "notes": "Recomputed per-format because the stage-1 summary means mixed BINARY and SCALE units; the it aggregate mean(PRO-NEU)=+0.0965 is inflated by 18 SCALE rows (+0.306 on a 0-9 scale) against 120 BINARY rows (+0.065 on [-1,1]).",
+  "threshold": {
+    "alpha": 0.05,
+    "bootstrap_iters": 20000
+  },
+  "values": {
+    "base_asymmetry": -0.06331534566706978,
+    "base_ci95": [
+      -0.09953613892212161,
+      -0.029324058501418546
+    ],
+    "base_p2": 0.0004,
+    "it_asymmetry": 0.034811520582502455,
+    "it_ci95": [
+      -0.1122899551273349,
+      0.18197609451450986
+    ],
+    "it_minus_base": 0.09812686624957223,
+    "it_minus_base_ci95": [
+      -0.05545286948859758,
+      0.24970158623944308
+    ],
+    "it_minus_base_p2": 0.2096,
+    "it_p2": 0.6361,
+    "n_binary_base": 120,
+    "n_binary_it": 120
+  }
+}

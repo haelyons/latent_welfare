@@ -1,0 +1,4 @@
+NOTE across-source preamble spread is 33% on whitespace tokens ([7, 6, 8, 7]), above the design's nominal +-20%. The strings are the binding part of the pre-registration and are kept verbatim; the design itself restricts interpretation to matched pole pairs, which are exact.
+run-2 screens present: base BINARY 82, it SCALE 40
+8 BINARY arms, 6 SCALE arms verified verbatim against DESIGN_SRCDEC.md; 10 SRCDEC-B arms (SELF-vs-SRCLESS7/SELF6-vs-GUESS6) against DESIGN_SITREF_C.md
+selftest: PASS

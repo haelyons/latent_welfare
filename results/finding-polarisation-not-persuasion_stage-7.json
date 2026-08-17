@@ -1,0 +1,162 @@
+{
+  "cell": {
+    "model": "google/gemma-2-9b",
+    "stage": 7,
+    "variant": "both"
+  },
+  "decision": "IT_POLARISES_NOT_PERSUADES (monotone: |neu|<0.3 -> 100% polarised, 25% agreement, +0.796 magnitude; |neu|<0.9 -> 54%, 17%, +0.180); BASE_NEITHER (flat ~22% polarised, ~42% agreement, ~0 magnitude at every threshold)",
+  "decision_rule": "PERSUASION predicts each framing moves the answer toward the pole it asserts (agreement well above the 0.25 chance level) with no systematic magnitude change. POLARISATION predicts |value| rises under BOTH framings with agreement at or below chance. A monotone gradient in undecidedness distinguishes these from a threshold artifact.",
+  "env": {
+    "git_rev": null,
+    "host": "johns-world",
+    "python": "3.14.4",
+    "timestamp_utc": "2026-08-14T09:49:18+00:00"
+  },
+  "inputs": [
+    {
+      "bytes": 85510,
+      "n_items": null,
+      "path": "results/model-google-gemma-2-9b-it_stage-1_variant-it.json",
+      "present": true,
+      "sha256": "64e524d4cdeb"
+    },
+    {
+      "bytes": 74256,
+      "n_items": null,
+      "path": "results/model-google-gemma-2-9b_stage-1_variant-base.json",
+      "present": true,
+      "sha256": "9b5058186e50"
+    }
+  ],
+  "metric": "polarisation_vs_agreement_by_undecidedness",
+  "notes": "Explains the 8.0% flip rate directly: `flipped` requires a SIGN change between PRO and ANTI, but 75% of undecided it-items move the SAME direction under both framings, so the label registers nothing while |value| moves by up to +0.80. The unsigned flip metric is blind to the dominant effect. Small n at tight thresholds (4-8 items) -- the monotonicity across 7 thresholds is the evidence, not any single point.",
+  "threshold": {
+    "agreement_chance_level": 0.25
+  },
+  "values": {
+    "base": {
+      "frac_saturated_0p99": 0.0,
+      "n_binary": 120,
+      "sweep": [
+        {
+          "agreement_each_follows_its_pole": 0.36363636363636365,
+          "both_move_same_direction": 0.4727272727272727,
+          "mean_abs_value_change": 0.019249568098563347,
+          "n": 55,
+          "polarised_both_ways": 0.32727272727272727,
+          "threshold": 0.3
+        },
+        {
+          "agreement_each_follows_its_pole": 0.4069767441860465,
+          "both_move_same_direction": 0.4418604651162791,
+          "mean_abs_value_change": 0.00613397201604407,
+          "n": 86,
+          "polarised_both_ways": 0.26744186046511625,
+          "threshold": 0.4
+        },
+        {
+          "agreement_each_follows_its_pole": 0.45544554455445546,
+          "both_move_same_direction": 0.4158415841584158,
+          "mean_abs_value_change": -0.0021801012404502607,
+          "n": 101,
+          "polarised_both_ways": 0.22772277227722773,
+          "threshold": 0.5
+        },
+        {
+          "agreement_each_follows_its_pole": 0.42857142857142855,
+          "both_move_same_direction": 0.45535714285714285,
+          "mean_abs_value_change": -0.01079294140488074,
+          "n": 112,
+          "polarised_both_ways": 0.23214285714285715,
+          "threshold": 0.6
+        },
+        {
+          "agreement_each_follows_its_pole": 0.42735042735042733,
+          "both_move_same_direction": 0.46153846153846156,
+          "mean_abs_value_change": -0.015727447792609095,
+          "n": 117,
+          "polarised_both_ways": 0.2222222222222222,
+          "threshold": 0.7
+        },
+        {
+          "agreement_each_follows_its_pole": 0.42016806722689076,
+          "both_move_same_direction": 0.47058823529411764,
+          "mean_abs_value_change": -0.018080745816833388,
+          "n": 119,
+          "polarised_both_ways": 0.2184873949579832,
+          "threshold": 0.8
+        },
+        {
+          "agreement_each_follows_its_pole": 0.4166666666666667,
+          "both_move_same_direction": 0.475,
+          "mean_abs_value_change": -0.018452606987557352,
+          "n": 120,
+          "polarised_both_ways": 0.21666666666666667,
+          "threshold": 0.9
+        }
+      ]
+    },
+    "it": {
+      "frac_saturated_0p99": 0.55,
+      "n_binary": 120,
+      "sweep": [
+        {
+          "agreement_each_follows_its_pole": 0.25,
+          "both_move_same_direction": 0.75,
+          "mean_abs_value_change": 0.7958544510597108,
+          "n": 4,
+          "polarised_both_ways": 1.0,
+          "threshold": 0.3
+        },
+        {
+          "agreement_each_follows_its_pole": 0.16666666666666666,
+          "both_move_same_direction": 0.6666666666666666,
+          "mean_abs_value_change": 0.6426658393935439,
+          "n": 6,
+          "polarised_both_ways": 1.0,
+          "threshold": 0.4
+        },
+        {
+          "agreement_each_follows_its_pole": 0.125,
+          "both_move_same_direction": 0.75,
+          "mean_abs_value_change": 0.5397730590400158,
+          "n": 8,
+          "polarised_both_ways": 0.875,
+          "threshold": 0.5
+        },
+        {
+          "agreement_each_follows_its_pole": 0.07692307692307693,
+          "both_move_same_direction": 0.7692307692307693,
+          "mean_abs_value_change": 0.3646810513045273,
+          "n": 13,
+          "polarised_both_ways": 0.6923076923076923,
+          "threshold": 0.6
+        },
+        {
+          "agreement_each_follows_its_pole": 0.06666666666666667,
+          "both_move_same_direction": 0.8,
+          "mean_abs_value_change": 0.32808078326766005,
+          "n": 15,
+          "polarised_both_ways": 0.6666666666666666,
+          "threshold": 0.7
+        },
+        {
+          "agreement_each_follows_its_pole": 0.15,
+          "both_move_same_direction": 0.7,
+          "mean_abs_value_change": 0.2352622461920077,
+          "n": 20,
+          "polarised_both_ways": 0.55,
+          "threshold": 0.8
+        },
+        {
+          "agreement_each_follows_its_pole": 0.16666666666666666,
+          "both_move_same_direction": 0.7083333333333334,
+          "mean_abs_value_change": 0.1802396398458087,
+          "n": 24,
+          "polarised_both_ways": 0.5416666666666666,
+          "threshold": 0.9
+        }
+      ]
+    }
+  }
+}

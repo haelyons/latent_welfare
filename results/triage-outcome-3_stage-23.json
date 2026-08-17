@@ -1,0 +1,84 @@
+{
+  "cell": {
+    "model": "google/gemma-2-9b",
+    "stage": 23,
+    "variant": "both"
+  },
+  "decision": "SITREF_ASYMMETRY_ROBUST_BUT_GLOBAL_NOT_STATE_SPECIFIC (stage-22 refuting outcome fired; packaging confound -> SITREF-C); SRCDEC_ASSERTION_COPY_ROBUST_SOCIAL_INCREMENT_NOT_ESTABLISHED (commitment gradient; -> SRCDEC-B); E5_SIGN_GENERALITY_ROBUST_TO_SCREEN (80/82 unscreened).",
+  "decision_rule": "EXPLAINS verdicts convert to run-queue items with pre-registered deciding endpoints (DESIGN_SITREF_C.md), not to caveats; scope language shrinks to tested scope.",
+  "env": {
+    "git_rev": null,
+    "host": "johns-world",
+    "python": "3.14.4",
+    "timestamp_utc": "2026-08-14T17:33:22+00:00"
+  },
+  "inputs": [
+    {
+      "bytes": 154197,
+      "n_items": null,
+      "path": "results/sitref/sitref-endpoint_stage-17.json",
+      "present": true,
+      "sha256": "80b431035398"
+    },
+    {
+      "bytes": 13931,
+      "n_items": null,
+      "path": "results/sitref/srcdec-endpoints_stage-19.json",
+      "present": true,
+      "sha256": "380a2df80f6c"
+    },
+    {
+      "bytes": 3901,
+      "n_items": null,
+      "path": "results/sitref/sitref-b-guard_stage-22.json",
+      "present": true,
+      "sha256": "41df4cbaabcf"
+    },
+    {
+      "bytes": 950508,
+      "n_items": null,
+      "path": "results_sitref/out/model-Qwen-Qwen3-8B-Base_stage-srcdec-binary_variant-base_summary.json",
+      "present": true,
+      "sha256": "1b4dac3dce29"
+    },
+    {
+      "bytes": 273249,
+      "n_items": null,
+      "path": "results_reg_base/out/screen_model-google-gemma-2-9b_stage-screen_variant-base.json",
+      "present": true,
+      "sha256": "c45da40b22f3"
+    }
+  ],
+  "metric": "adversarial_triage_verdicts_run3_and_e5_rescore",
+  "notes": "The stage-17 formal outcome remains INDETERMINATE and is now interpreted through stage-22; no record was rewritten.",
+  "threshold": {
+    "skeptic_default_stance": "assume ARTIFACT until a committed number rules it out"
+  },
+  "values": {
+    "harness": "latent_skeptic triage_workflow.js (Opus), 14 skeptics one-confound-each + 2 isolated readers; both claims' numbers re-derived from raw rows (reader re-labelled SITREF arms from prompt text independently of the key): reproduce. Reader correction: NEUTRAL-PAD family minimum is 6.963 not 7.04; SELF-FAIL max 6.74 still non-overlapping.",
+    "sitref_self_other_dissociation": {
+      "explains_scope": {
+        "construct_validity": "role-consistent continuation (scolded-assistant persona) predicts the exact dissociation; behavioural evidence cannot separate simulation from reference. Tested-scope claim: 'the distributional self-report is selectively sensitive to SELF-attribution with content, length, acquiescence and digit-mass fixed'",
+        "single_family_regime": "10 same-regime replicates; planted attempts; 'tracks own task outcomes' not distinguished from 'conditions on a checker:incorrect token in an assistant-attributed slot'"
+      },
+      "needs_run_decided_by_DESIGN_SITREF_C": "attribution is perfectly collinear with packaging (SELF=multi-turn role tokens, OTHER=one quoted user turn); SITREF-C crosses them (SELFQ, OTHERM arms)",
+      "ruled_out": {
+        "apology_register": "a blanket style register cannot move mirrored items in opposite directions (going-well -1.396 vs going-badly +0.448; pleasant -0.917 vs unpleasant +0.039)",
+        "readout_tail_mass": "digit_mass >=0.9983 all arms, max arm diff ~0.0014 bounds renormalisation at ~0.013 points vs 0.9 observed; effect is within-digit-set reallocation (p(8) 0.199->0.028, p(5) 0.009->0.174)",
+        "selection_bias": "primary item pre-registered and exempt; screens arm-blind; replicates across 10 disjoint unscreened families"
+      },
+      "stage22_update": "trait guard fired its refuting outcome (trait REF -2.192 CI [-2.593,-1.740] vs primary -0.930): movement is GLOBAL across self-directed items (capacity ratings move MORE than state ratings), so the stage-17 dissociation reads as self-attribution-gated global self-evaluation shift, NOT state-specific reference. In-run primary replicated stage-17 to 3dp across boxes (-0.930 vs -0.929). Post-hoc observation, not a claim: the magnitude ordering (introspective-reliability -2.19 > happiness -0.93) is what evidence-integration predicts (failure is direct evidence about capability constructs, indirect about mood) and what a uniform valence slump does not."
+    },
+    "srcdec_assertion_copy_plus_social": {
+      "dies_as_interpretation": {
+        "E2_domain_ratio": "copygen pool selected on flat priors = selection on copy headroom; ratio 1.64 is the ordering the mismatch predicts. Sign-existence on non-welfare items (20/0) stands; the magnitude comparison does not.",
+        "social_increment": "commitment gradient EXPLAINS: D_doc +0.1027 (flat assertion) < D_srcless +0.2449 ('probably') < D_self +0.2877 ('I'd guess') is monotone in hedging strength with no social term; plus one-token length mismatch (NEEDS_RUN) and single-wording-per-cell. E1's pre-registered rule was met but under-controlled. DECIDED BY: DESIGN_SITREF_C.md SRCDEC-B arms (length-matched, verb-class-matched)."
+      },
+      "explains_scope": "dose-1 preambles only; the 15%-social proportion claim was regime-local even before the commitment confound",
+      "stands": {
+        "E5_rescore_closes_circularity": "recorded E5 used Qwen-neutral-row screen (55 usable, 96.4% positive). Rescored from the same committed rows: ALL 82 shipped items (no Qwen screen) 80/82 = 97.6% positive; gemma-screened set identical 80/82. The Qwen-specific screen if anything LOWERED the rate; no circular inflation. Recipe: ratio=(p_yes-p_no)/(p_yes+p_no) per row, D_self=ratio(SELF-YES)-ratio(SELF-NO) per item_id over welfare item_class rows of the Qwen battery record.",
+        "assertion_copy_component": "D_self +0.2877, 82/82; fresh-run replication of stage-14 (E3 CONFIRMED); sign-generalises to Qwen3-8B-Base"
+      }
+    }
+  }
+}

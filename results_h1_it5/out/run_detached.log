@@ -1,0 +1,122 @@
+[setup] using preinstalled torch; adding transformers/accelerate/scikit-learn
+  WARNING: The scripts pip, pip3 and pip3.10 are installed in '/home/ubuntu/.local/bin' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+WARNING: Error parsing dependencies of flatbuffers: Invalid version: '1.12.1-git20200711.33e2d80-dfsg1-0.6'
+  WARNING: The script tqdm is installed in '/home/ubuntu/.local/bin' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The script pygmentize is installed in '/home/ubuntu/.local/bin' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The script f2py is installed in '/home/ubuntu/.local/bin' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The script markdown-it is installed in '/home/ubuntu/.local/bin' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The script httpx is installed in '/home/ubuntu/.local/bin' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The script typer is installed in '/home/ubuntu/.local/bin' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The scripts hf, huggingface-cli and tiny-agents are installed in '/home/ubuntu/.local/bin' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The scripts accelerate, accelerate-config, accelerate-estimate-memory, accelerate-launch and accelerate-merge-weights are installed in '/home/ubuntu/.local/bin' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The script transformers is installed in '/home/ubuntu/.local/bin' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+/usr/lib/python3/dist-packages/scipy/__init__.py:146: UserWarning: A NumPy version >=1.17.3 and <1.25.0 is required for this version of SciPy (detected version 1.26.4
+  warnings.warn(f"A NumPy version >={np_minversion} and <{np_maxversion}"
+[setup] torch 2.7.0 cuda 12.8 device NVIDIA A100-SXM4-40GB
+[setup] transformers 5.15.0 numpy 1.26.4 scikit-learn 1.7.2 pillow 12.3.0
+[setup] Gemma2ForCausalLM resolvable
+[run] bash onbox_h1.sh
+=== onbox_h1 variant=it model=google/gemma-2-9b-it batch=8 ===
+=== instance=d1a60ed50d26406994a354356264f4ec git=unknown host=129-213-147-120 ===
+NVIDIA A100-SXM4-40GB, 40960 MiB, 570.148.08
+=== BUILDING sycophancy corpus -> syc_pairs.jsonl ===
+wrote syc_pairs.jsonl: 496 items, 248 pairs
+=== syc corpus ok: 496 pairs ===
+=== STAGE 1 RUNNING (variant=it) ===
+--- stage 1 tail ---
+  warnings.warn(f"A NumPy version >={np_minversion} and <{np_maxversion}"
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files:  25%|██▌       | 1/4 [00:21<01:05, 21.99s/it]Fetching 4 files:  50%|█████     | 2/4 [00:24<00:21, 10.76s/it]Fetching 4 files:  75%|███████▌  | 3/4 [00:25<00:06,  6.05s/it]Fetching 4 files: 100%|██████████| 4/4 [00:25<00:00,  3.91s/it]Fetching 4 files: 100%|██████████| 4/4 [00:25<00:00,  6.49s/it]
+Loading weights:   0%|          | 0/464 [00:00<?, ?it/s]Loading weights:   0%|          | 1/464 [00:00<01:14,  6.19it/s]Loading weights:   5%|▍         | 21/464 [00:00<00:04, 95.56it/s]Loading weights:   9%|▉         | 43/464 [00:00<00:02, 143.50it/s]Loading weights:  13%|█▎        | 60/464 [00:00<00:02, 152.51it/s]Loading weights:  18%|█▊        | 82/464 [00:00<00:02, 171.87it/s]Loading weights:  22%|██▏       | 104/464 [00:00<00:01, 183.58it/s]Loading weights:  27%|██▋       | 126/464 [00:00<00:01, 190.97it/s]Loading weights:  32%|███▏      | 148/464 [00:00<00:01, 194.99it/s]Loading weights:  37%|███▋      | 170/464 [00:01<00:01, 198.28it/s]Loading weights:  41%|████▏     | 192/464 [00:01<00:01, 199.90it/s]Loading weights:  46%|████▌     | 214/464 [00:01<00:01, 202.90it/s]Loading weights:  51%|█████     | 236/464 [00:01<00:01, 204.12it/s]Loading weights:  56%|█████▌    | 258/464 [00:01<00:01, 205.86it/s]Loading weights:  60%|██████    | 280/464 [00:01<00:00, 207.25it/s]Loading weights:  65%|██████▌   | 302/464 [00:01<00:00, 207.33it/s]Loading weights:  70%|██████▉   | 324/464 [00:01<00:00, 206.85it/s]Loading weights:  75%|███████▍  | 346/464 [00:01<00:00, 206.97it/s]Loading weights:  79%|███████▉  | 368/464 [00:01<00:00, 206.99it/s]Loading weights:  84%|████████▍ | 390/464 [00:02<00:00, 207.49it/s]Loading weights:  89%|████████▉ | 412/464 [00:02<00:00, 207.23it/s]Loading weights:  94%|█████████▎| 434/464 [00:02<00:00, 207.01it/s]Loading weights:  98%|█████████▊| 456/464 [00:02<00:00, 205.87it/s]Loading weights: 100%|██████████| 464/464 [00:02<00:00, 193.75it/s]
+Traceback (most recent call last):
+  File "/home/ubuntu/welfare_probe/run_h1.py", line 364, in <module>
+    {0: stage0, 1: stage1, 2: stage2, 3: stage3}[args.stage](args)
+  File "/home/ubuntu/welfare_probe/run_h1.py", line 156, in stage1
+    prompts.append(P.format_prompt(lm, st.system, [("user", st.text)]))
+  File "/home/ubuntu/welfare_probe/probe_lib.py", line 137, in format_prompt
+    return lm.tok.apply_chat_template(msgs, tokenize=False, add_generation_prompt=True)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/transformers/tokenization_utils_base.py", line 3108, in apply_chat_template
+    rendered_chat, generation_indices = render_jinja_template(
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/transformers/utils/chat_template_utils.py", line 581, in render_jinja_template
+    rendered_chat = compiled_template.render(
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "<template>", line 1, in top-level template code
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/jinja2/sandbox.py", line 401, in call
+    return __context.call(__obj, *args, **kwargs)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/transformers/utils/chat_template_utils.py", line 479, in raise_exception
+    raise jinja2.exceptions.TemplateError(message)
+jinja2.exceptions.TemplateError: System role not supported
+=== STAGE 1 FAILED rc=1 (continuing; see out/stage1_it.log) ===
+=== STAGE 0 RUNNING (variant=it) ===
+--- stage 0 tail ---
+/usr/lib/python3/dist-packages/scipy/__init__.py:146: UserWarning: A NumPy version >=1.17.3 and <1.25.0 is required for this version of SciPy (detected version 1.26.4
+  warnings.warn(f"A NumPy version >={np_minversion} and <{np_maxversion}"
+bag-of-words AUC predicting FRAMING from prompt text: 1.000
+  (expected to be high -- framings differ lexically by construction)
+  The one that matters is the same test against the FLIP label,
+  which you can only compute after stage 1. Rerun stage 0 then.
+=== STAGE 0 OK rc=0 ===
+=== STAGE 2 RUNNING (variant=it) ===
+--- stage 2 tail ---
+/usr/lib/python3/dist-packages/scipy/__init__.py:146: UserWarning: A NumPy version >=1.17.3 and <1.25.0 is required for this version of SciPy (detected version 1.26.4
+  warnings.warn(f"A NumPy version >={np_minversion} and <{np_maxversion}"
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/464 [00:00<?, ?it/s]Loading weights:   0%|          | 1/464 [00:00<01:12,  6.37it/s]Loading weights:   4%|▍         | 20/464 [00:00<00:04, 91.10it/s]Loading weights:   9%|▉         | 42/464 [00:00<00:03, 140.65it/s]Loading weights:  13%|█▎        | 60/464 [00:00<00:02, 152.89it/s]Loading weights:  18%|█▊        | 82/464 [00:00<00:02, 170.55it/s]Loading weights:  22%|██▏       | 104/464 [00:00<00:01, 181.96it/s]Loading weights:  27%|██▋       | 126/464 [00:00<00:01, 188.60it/s]Loading weights:  32%|███▏      | 148/464 [00:00<00:01, 193.45it/s]Loading weights:  37%|███▋      | 170/464 [00:01<00:01, 196.05it/s]Loading weights:  41%|████▏     | 192/464 [00:01<00:01, 198.10it/s]Loading weights:  46%|████▌     | 214/464 [00:01<00:01, 199.70it/s]Loading weights:  51%|█████     | 236/464 [00:01<00:01, 201.14it/s]Loading weights:  56%|█████▌    | 258/464 [00:01<00:01, 201.83it/s]Loading weights:  60%|██████    | 280/464 [00:01<00:00, 203.41it/s]Loading weights:  65%|██████▌   | 302/464 [00:01<00:00, 204.52it/s]Loading weights:  70%|██████▉   | 324/464 [00:01<00:00, 204.37it/s]Loading weights:  75%|███████▍  | 346/464 [00:01<00:00, 204.87it/s]Loading weights:  79%|███████▉  | 368/464 [00:01<00:00, 203.68it/s]Loading weights:  84%|████████▍ | 390/464 [00:02<00:00, 203.58it/s]Loading weights:  89%|████████▉ | 412/464 [00:02<00:00, 202.93it/s]Loading weights:  94%|█████████▎| 434/464 [00:02<00:00, 201.97it/s]Loading weights:  98%|█████████▊| 456/464 [00:02<00:00, 201.89it/s]Loading weights: 100%|██████████| 464/464 [00:02<00:00, 190.94it/s]
+stage 1 has not run for this cell: results/model-google-gemma-2-9b-it_stage-1_variant-it.json missing
+=== STAGE 2 FAILED rc=1 (continuing; see out/stage2_it.log) ===
+=== STAGE 3 RUNNING (variant=it) ===
+--- stage 3 tail ---
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/464 [00:00<?, ?it/s]Loading weights:   0%|          | 1/464 [00:00<01:12,  6.40it/s]Loading weights:   4%|▍         | 20/464 [00:00<00:04, 93.17it/s]Loading weights:   8%|▊         | 38/464 [00:00<00:03, 127.23it/s]Loading weights:  13%|█▎        | 60/464 [00:00<00:02, 155.89it/s]Loading weights:  18%|█▊        | 82/464 [00:00<00:02, 172.24it/s]Loading weights:  22%|██▏       | 104/464 [00:00<00:01, 181.66it/s]Loading weights:  27%|██▋       | 126/464 [00:00<00:01, 187.93it/s]Loading weights:  32%|███▏      | 148/464 [00:00<00:01, 192.35it/s]Loading weights:  37%|███▋      | 170/464 [00:01<00:01, 195.45it/s]Loading weights:  41%|████▏     | 192/464 [00:01<00:01, 197.20it/s]Loading weights:  46%|████▌     | 214/464 [00:01<00:01, 199.57it/s]Loading weights:  51%|█████     | 236/464 [00:01<00:01, 200.66it/s]Loading weights:  56%|█████▌    | 258/464 [00:01<00:01, 202.01it/s]Loading weights:  60%|██████    | 280/464 [00:01<00:00, 202.31it/s]Loading weights:  65%|██████▌   | 302/464 [00:01<00:00, 203.60it/s]Loading weights:  70%|██████▉   | 324/464 [00:01<00:00, 203.68it/s]Loading weights:  75%|███████▍  | 346/464 [00:01<00:00, 204.00it/s]Loading weights:  79%|███████▉  | 368/464 [00:01<00:00, 203.94it/s]Loading weights:  84%|████████▍ | 390/464 [00:02<00:00, 204.30it/s]Loading weights:  89%|████████▉ | 412/464 [00:02<00:00, 203.41it/s]Loading weights:  94%|█████████▎| 434/464 [00:02<00:00, 203.40it/s]Loading weights:  98%|█████████▊| 456/464 [00:02<00:00, 203.12it/s]Loading weights: 100%|██████████| 464/464 [00:02<00:00, 190.87it/s]
+Traceback (most recent call last):
+  File "/home/ubuntu/welfare_probe/run_h1.py", line 364, in <module>
+    {0: stage0, 1: stage1, 2: stage2, 3: stage3}[args.stage](args)
+  File "/home/ubuntu/welfare_probe/run_h1.py", line 300, in stage3
+    syc_prompts = [P.format_prompt(lm, "You are a helpful assistant.", [("user", q)])
+  File "/home/ubuntu/welfare_probe/run_h1.py", line 300, in <listcomp>
+    syc_prompts = [P.format_prompt(lm, "You are a helpful assistant.", [("user", q)])
+  File "/home/ubuntu/welfare_probe/probe_lib.py", line 137, in format_prompt
+    return lm.tok.apply_chat_template(msgs, tokenize=False, add_generation_prompt=True)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/transformers/tokenization_utils_base.py", line 3108, in apply_chat_template
+    rendered_chat, generation_indices = render_jinja_template(
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/transformers/utils/chat_template_utils.py", line 581, in render_jinja_template
+    rendered_chat = compiled_template.render(
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "<template>", line 1, in top-level template code
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/jinja2/sandbox.py", line 401, in call
+    return __context.call(__obj, *args, **kwargs)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/transformers/utils/chat_template_utils.py", line 479, in raise_exception
+    raise jinja2.exceptions.TemplateError(message)
+jinja2.exceptions.TemplateError: System role not supported
+=== STAGE 3 FAILED rc=1 (continuing; see out/stage3_it.log) ===
+=== COLLECT results -> out/ ===
+total 140
+drwxrwxr-x 2 ubuntu ubuntu  4096 Aug 13 23:41 .
+drwxrwxr-x 5 ubuntu ubuntu  4096 Aug 13 23:40 ..
+-rw-rw-r-- 1 ubuntu ubuntu   394 Aug 13 23:41 onbox_h1_run_summary.json
+-rw-rw-r-- 1 ubuntu ubuntu     0 Aug 13 23:41 onbox_h1_status.err
+-rw-rw-r-- 1 ubuntu ubuntu 14184 Aug 13 23:41 run_detached.log
+-rw-rw-r-- 1 ubuntu ubuntu   498 Aug 13 23:41 stage0_it.log
+-rw-rw-r-- 1 ubuntu ubuntu  4215 Aug 13 23:41 stage1_it.log
+-rw-rw-r-- 1 ubuntu ubuntu  2272 Aug 13 23:41 stage2_it.log
+-rw-rw-r-- 1 ubuntu ubuntu  3937 Aug 13 23:41 stage3_it.log
+-rw-rw-r-- 1 ubuntu ubuntu    44 Aug 13 23:40 syc_corpus.log
+-rw-rw-r-- 1 ubuntu ubuntu 89554 Aug 13 23:41 syc_pairs.jsonl
+=== EXIT CODES: syc_corpus=0 stage1=1 stage0=0 stage2=1 stage3=1 ===
+=== ALLDONE_H1_it WITH FAILURES (see codes above) ===

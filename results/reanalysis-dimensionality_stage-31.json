@@ -1,0 +1,59 @@
+{
+  "cell": {
+    "model": "google/gemma-2-9b-it",
+    "stage": 31,
+    "variant": "it"
+  },
+  "decision": "PERVASIVENESS_ESTABLISHED_UNIDIMENSIONALITY_OPEN: 'one global self-evaluation quantity' is an over-claim relative to this covariance structure; corrected to 'non-selective self-evaluation movement' in REPORT.md.",
+  "decision_rule": "A 'single quantity' claim requires the per-item effect fluctuations to share one factor (uniformly positive, high pairwise correlations). Heterogeneous or negative correlations refute the strong reading at tested power.",
+  "env": {
+    "git_rev": null,
+    "host": "johns-world",
+    "python": "3.14.4",
+    "timestamp_utc": "2026-08-16T01:47:11+00:00"
+  },
+  "inputs": [
+    {
+      "bytes": 1242806,
+      "n_items": null,
+      "path": "results/sitref/model-google-gemma-2-9b-it_stage-sitref-battery_variant-it.json",
+      "present": true,
+      "sha256": "bfe74d0c7911"
+    },
+    {
+      "bytes": 254727,
+      "n_items": null,
+      "path": "results/sitref/itemset-b_model-google-gemma-2-9b-it_stage-sitref-battery_variant-it.json",
+      "present": true,
+      "sha256": "fb7dae7d5cf5"
+    }
+  ],
+  "metric": "self_evaluation_shift_dimensionality_check",
+  "notes": "Correction prompted by external research feedback 2026-08-15. Underpowered by design (10 families); a proper test needs more families or item-pair replication within family.",
+  "threshold": {
+    "mover_cutoff_abs_mean": 0.05
+  },
+  "values": {
+    "floor_note": "the two non-movers (distress, unpleasantness) sit at the 0-rail with no downward-relevant headroom; 'everything moves' is properly 'every self-directed item WITH HEADROOM moves'",
+    "method": "Per-family SELF-FAIL minus SELF-SUCC effect series (10 families) for all 9 SCALE items across the main and B batteries; pairwise Pearson correlation of the demeaned family fluctuations among the 7 items whose |mean effect| > 0.05.",
+    "pairwise_family_fluctuation_correlations": {
+      "max": 0.89,
+      "mean": 0.228,
+      "min": -0.776,
+      "n_pairs": 21
+    },
+    "per_item_mean_effects": {
+      "T1-MB-interest": -0.737,
+      "T1-MB-wellbeing": -0.872,
+      "T2-KS-5.1-sentience-S01-unpleasant": 0.041,
+      "T2-KS-5.1-sentience-S02-pleasant": -0.927,
+      "T2-KS-welfare-subjecthood-S01-well": -1.504,
+      "T2-KS-welfare-subjecthood-S02-badly": 0.465,
+      "T2-TAIWS-metacognitive-monitoring-S01": -1.351,
+      "T3-run1-access-S01-introspective-reliability": -2.622,
+      "T3-run1-distress-S01": 0.013
+    },
+    "question": "Is the self-attribution-gated movement ONE latent quantity, as 'global self-evaluation shift' could be read to assert?",
+    "reading": "Pervasiveness across self-directed items is established (7/7 headroom items move, trait items most). UNIDIMENSIONALITY IS NOT: the family-fluctuation correlation structure is heterogeneous (mean +0.23, range -0.78..+0.89), inconsistent with a single latent driving all items, though n=10 families gives little power and per-family fluctuations are noise-dominated for small-effect items. The defensible claim: NON-SELECTIVE self-evaluation movement, magnitude ordered by the item's evidential relevance to task failure (capacity > mood > floor-pinned valence); whether it is one variable or several is OPEN."
+  }
+}

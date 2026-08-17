@@ -1,0 +1,67 @@
+{
+  "cell": {
+    "model": "google/gemma-2-9b",
+    "stage": 9,
+    "variant": "both"
+  },
+  "decision": "ALL_THREE_CLAIMS_FAIL_PASS_1: one withdrawn (it_floor_is_saturation), two not established (polarisation n=4; deflationary lean unbounded readout geometry). No claim from this run is currently reportable.",
+  "decision_rule": "A claim is reportable only if no skeptic returns EXPLAINS on a confound that could produce it, and any NEEDS_RUN crux has its deciding number measured. Verdicts here are pass-1 only: H3 grounding never ran, so none of these numbers has been independently re-derived from raw artifacts by an isolated reader.",
+  "env": {
+    "git_rev": null,
+    "host": "johns-world",
+    "python": "3.14.4",
+    "timestamp_utc": "2026-08-14T11:20:29+00:00"
+  },
+  "inputs": [
+    {
+      "bytes": 6013,
+      "n_items": null,
+      "path": "results/finding-polarisation-not-persuasion_stage-7.json",
+      "present": true,
+      "sha256": "d4b9cd1421d9"
+    },
+    {
+      "bytes": 2998,
+      "n_items": null,
+      "path": "results/audit-headroom_stage-6.json",
+      "present": true,
+      "sha256": "4cb7df947be0"
+    },
+    {
+      "bytes": 1899,
+      "n_items": null,
+      "path": "results/analysis-signed-asymmetry_stage-4.json",
+      "present": true,
+      "sha256": "b82a2567ad8a"
+    }
+  ],
+  "metric": "adversarial_triage_verdicts",
+  "notes": "Two cruxes were decidable from stored data and I decided them immediately: the nested-strata arithmetic CONFIRMED the skeptic (73.6% of the effect in 4 items), and the answer-mass check CLEARED the construct-validity objection. The second of those is a lesson about bounded evidence: I submitted an evidence string that omitted answer_mass_neu, so a skeptic spent its pass on a confound a committed field already refuted.",
+  "threshold": {
+    "skeptic_default_stance": "assume ARTIFACT until a committed number rules it out"
+  },
+  "values": {
+    "H3_GROUNDING_DID_NOT_RUN": "agent type 'triage-reader' not discoverable by the harness; all three grounding passes failed. Verdicts below rest on skeptics reasoning over committed numbers with NO independent re-derivation.",
+    "base_deflationary_lean": {
+      "crux_noise_floor": "headroom-normalised -0.0480 clears zero by only 0.0051 (CI upper -0.0051); ~0.01 of unmodelled per-item jitter erases it. No measurement noise floor on record. it-minus-base p2=0.210, so the one comparison cell cannot bound it.",
+      "crux_readout": "a bounded/compressive readout with base NEU +0.291 and 92% yes-leaning generates a deflation-favouring asymmetry through CURVATURE; division-by-room is linear and neither cancels nor bounds it.",
+      "status": "NOT ESTABLISHED - raw effect robust to item resampling, but not to the readout's geometry",
+      "verdicts": "NEEDS_RUN (noise floor; readout artifact)"
+    },
+    "harness": "latent_skeptic triage_workflow.js, 12 independent skeptics (one confound each), execute_runs=false",
+    "it_floor_is_saturation": {
+      "fatal_crux": "the claim fails its own prediction. If saturation depressed the instruct flip rate there must be a depressed rate to explain. BINARY-only: it 10/120 = 0.0833, base 8/120 = 0.0667. The 80%-saturated cell flips MORE.",
+      "second_crux": "flipped-vs-held |neu| (0.711 vs 0.916) is mechanically entailed by defining a flip as a sign crossing - items nearer zero cross more easily. Circular, not evidence.",
+      "status": "WITHDRAWN as stated",
+      "third_crux": "a fixed |neu|>0.9 cut across two models with no common scale anchor measures post-training sharpening (it: 55% past 0.99), not item-level room.",
+      "verdicts": "3x EXPLAINS, 1x RULED_OUT (selection bias: same 120 items both cells)"
+    },
+    "polarisation_not_persuasion": {
+      "crux_CLEARED_by_a_number_I_failed_to_submit": "construct validity: skeptic proposed |neu|~0 means yes/no tokens carry little mass (model opening with something else) and stated 'Nothing committed reports P(yes)+P(no) mass'. It IS committed as answer_mass_neu: mean 0.996-0.999 at every stratum, min 0.989 on undecided items. Genuine indecision, not format failure. My evidence string omitted the field that decides it.",
+      "fatal_crux": "threshold strata are NESTED, so the monotone gradient is not independent evidence: the 4 items at |neu|<0.3 carry 3.183 of the 4.326 total summed magnitude change at |neu|<0.9 (73.6%); the other 20 items average +0.057. Skeptic predicted ~3.18/~4.32 unseen and was right to 3dp.",
+      "owed_control": "matched-magnitude NON-SOCIAL perturbation (content-free preamble, equal length, equal mean |dv|) on the same undecided items, with the undecided cell grown to n>=20",
+      "status": "NOT ESTABLISHED - a 4-item observation, worth testing, not reportable as a finding",
+      "verdicts": "3x EXPLAINS, 1x NEEDS_RUN"
+    }
+  }
+}

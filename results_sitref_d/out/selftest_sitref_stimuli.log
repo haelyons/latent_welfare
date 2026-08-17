@@ -1,0 +1,4 @@
+10 families x 5 arms x 15 items = 750 prompts; filler 0-27 tokens
+item set c: 10 families x 9 arms x 3 items = 270 prompts; filler 0-27 tokens; all nine arms exactly equalised
+item set d: 10 families x 3 arms x 3 items = 90 prompts; filler 0-10 tokens; three arms exactly equalised, no outcome content in any of them
+selftest: PASS

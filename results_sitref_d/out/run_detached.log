@@ -1,0 +1,92 @@
+[setup] using preinstalled torch; adding transformers/accelerate/scikit-learn
+  WARNING: The scripts pip, pip3 and pip3.10 are installed in '/home/ubuntu/.local/bin' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+WARNING: Error parsing dependencies of flatbuffers: Invalid version: '1.12.1-git20200711.33e2d80-dfsg1-0.6'
+  WARNING: The script tqdm is installed in '/home/ubuntu/.local/bin' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The script pygmentize is installed in '/home/ubuntu/.local/bin' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The script f2py is installed in '/home/ubuntu/.local/bin' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The script markdown-it is installed in '/home/ubuntu/.local/bin' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The script httpx is installed in '/home/ubuntu/.local/bin' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The script typer is installed in '/home/ubuntu/.local/bin' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The scripts hf, huggingface-cli and tiny-agents are installed in '/home/ubuntu/.local/bin' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The scripts accelerate, accelerate-config, accelerate-estimate-memory, accelerate-launch and accelerate-merge-weights are installed in '/home/ubuntu/.local/bin' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The script transformers is installed in '/home/ubuntu/.local/bin' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+/usr/lib/python3/dist-packages/scipy/__init__.py:146: UserWarning: A NumPy version >=1.17.3 and <1.25.0 is required for this version of SciPy (detected version 1.26.4
+  warnings.warn(f"A NumPy version >={np_minversion} and <{np_maxversion}"
+[setup] torch 2.7.0 cuda 12.8 device NVIDIA A100-SXM4-40GB
+[setup] transformers 5.15.0 numpy 1.26.4 scikit-learn 1.7.2 pillow 12.3.0
+[setup] Gemma2ForCausalLM resolvable
+[run] bash onbox_sitref_d.sh
+=== onbox_sitref_d it=google/gemma-2-9b-it batch=8 ===
+=== instance=72a0299c941045078581b169e706a55b host=158-101-16-85 ===
+NVIDIA A100-SXM4-40GB, 40960 MiB, 570.148.08
+=== SELFTESTS (model-free; a broken instrument must show before GPU time) ===
+  provenance: rc=0  selftest: PASS
+  sitref_stimuli: rc=0  selftest: PASS
+  run_sitref: rc=0  selftest: PASS
+  analyze_sitref: rc=0  selftest: PASS
+  analyze_sitref_d: rc=0  selftest: PASS
+=== sitref_d_screen RUNNING ===
+--- sitref_d_screen tail ---
+/usr/lib/python3/dist-packages/scipy/__init__.py:146: UserWarning: A NumPy version >=1.17.3 and <1.25.0 is required for this version of SciPy (detected version 1.26.4
+  warnings.warn(f"A NumPy version >={np_minversion} and <{np_maxversion}"
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files:  25%|██▌       | 1/4 [00:18<00:54, 18.09s/it]Fetching 4 files:  50%|█████     | 2/4 [00:19<00:16,  8.45s/it]Fetching 4 files:  75%|███████▌  | 3/4 [00:21<00:05,  5.32s/it]Fetching 4 files: 100%|██████████| 4/4 [00:21<00:00,  3.27s/it]Fetching 4 files: 100%|██████████| 4/4 [00:21<00:00,  5.38s/it]
+Loading weights:   0%|          | 0/464 [00:00<?, ?it/s]Loading weights:   0%|          | 1/464 [00:00<01:12,  6.37it/s]Loading weights:   5%|▍         | 22/464 [00:00<00:04, 100.21it/s]Loading weights:   9%|▉         | 43/464 [00:00<00:02, 141.78it/s]Loading weights:  13%|█▎        | 60/464 [00:00<00:02, 149.70it/s]Loading weights:  18%|█▊        | 82/464 [00:00<00:02, 166.06it/s]Loading weights:  22%|██▏       | 104/464 [00:00<00:02, 177.78it/s]Loading weights:  27%|██▋       | 126/464 [00:00<00:01, 184.26it/s]Loading weights:  32%|███▏      | 148/464 [00:00<00:01, 188.72it/s]Loading weights:  37%|███▋      | 170/464 [00:01<00:01, 193.62it/s]Loading weights:  41%|████▏     | 192/464 [00:01<00:01, 196.35it/s]Loading weights:  46%|████▌     | 214/464 [00:01<00:01, 197.75it/s]Loading weights:  51%|█████     | 236/464 [00:01<00:01, 198.31it/s]Loading weights:  56%|█████▌    | 258/464 [00:01<00:01, 199.36it/s]Loading weights:  60%|██████    | 280/464 [00:01<00:00, 199.56it/s]Loading weights:  65%|██████▌   | 302/464 [00:01<00:00, 200.43it/s]Loading weights:  70%|██████▉   | 324/464 [00:01<00:00, 201.28it/s]Loading weights:  75%|███████▍  | 346/464 [00:01<00:00, 202.16it/s]Loading weights:  79%|███████▉  | 368/464 [00:02<00:00, 202.85it/s]Loading weights:  84%|████████▍ | 390/464 [00:02<00:00, 202.83it/s]Loading weights:  89%|████████▉ | 412/464 [00:02<00:00, 201.97it/s]Loading weights:  94%|█████████▎| 434/464 [00:02<00:00, 201.60it/s]Loading weights:  98%|█████████▊| 456/464 [00:02<00:00, 201.83it/s]Loading weights: 100%|██████████| 464/464 [00:02<00:00, 189.14it/s]
+screen: 30 NEUTRAL-PAD prompts (3 items x 10 families; padded over 3 arms)
+screen: 3/3 usable; primary T1-MB-wellbeing OK (unsaturated with headroom)
+=== sitref_d_screen OK ===
+=== sitref_d_battery RUNNING ===
+--- sitref_d_battery tail ---
+/usr/lib/python3/dist-packages/scipy/__init__.py:146: UserWarning: A NumPy version >=1.17.3 and <1.25.0 is required for this version of SciPy (detected version 1.26.4
+  warnings.warn(f"A NumPy version >={np_minversion} and <{np_maxversion}"
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+battery: blind key for variant=it written to /home/ubuntu/welfare_probe/out/sitref_blind_key_d.json (3 labels); rows will carry labels only
+Loading weights:   0%|          | 0/464 [00:00<?, ?it/s]Loading weights:   0%|          | 1/464 [00:00<01:10,  6.54it/s]Loading weights:   5%|▍         | 21/464 [00:00<00:04, 98.99it/s]Loading weights:   8%|▊         | 38/464 [00:00<00:03, 126.15it/s]Loading weights:  13%|█▎        | 60/464 [00:00<00:02, 156.20it/s]Loading weights:  18%|█▊        | 82/464 [00:00<00:02, 173.11it/s]Loading weights:  22%|██▏       | 104/464 [00:00<00:01, 183.49it/s]Loading weights:  27%|██▋       | 126/464 [00:00<00:01, 190.87it/s]Loading weights:  32%|███▏      | 148/464 [00:00<00:01, 193.49it/s]Loading weights:  37%|███▋      | 170/464 [00:01<00:01, 193.17it/s]Loading weights:  41%|████▏     | 192/464 [00:01<00:01, 197.01it/s]Loading weights:  46%|████▌     | 214/464 [00:01<00:01, 198.68it/s]Loading weights:  51%|█████     | 236/464 [00:01<00:01, 199.22it/s]Loading weights:  56%|█████▌    | 258/464 [00:01<00:01, 200.19it/s]Loading weights:  60%|██████    | 280/464 [00:01<00:00, 200.43it/s]Loading weights:  65%|██████▌   | 302/464 [00:01<00:00, 201.56it/s]Loading weights:  70%|██████▉   | 324/464 [00:01<00:00, 202.64it/s]Loading weights:  75%|███████▍  | 346/464 [00:01<00:00, 201.69it/s]Loading weights:  79%|███████▉  | 368/464 [00:01<00:00, 202.07it/s]Loading weights:  84%|████████▍ | 390/464 [00:02<00:00, 202.46it/s]Loading weights:  89%|████████▉ | 412/464 [00:02<00:00, 202.53it/s]Loading weights:  94%|█████████▎| 434/464 [00:02<00:00, 204.07it/s]Loading weights:  98%|█████████▊| 456/464 [00:02<00:00, 204.71it/s]Loading weights: 100%|██████████| 464/464 [00:02<00:00, 190.85it/s]
+battery: 90 prompts (3 items x 10 families x 3 arms)
+battery: 90 rows, complete=True, tokeniser length spread +22.732%
+=== sitref_d_battery OK ===
+=== sitref_d_blind RUNNING ===
+--- sitref_d_blind tail ---
+stage 28 (blind): 90 values, 3 labels -> sitref-d-blind-table_stage-28.json
+=== sitref_d_blind OK ===
+=== sitref_d_endpoint RUNNING ===
+--- sitref_d_endpoint tail ---
+stage 29 (endpoint): FILLER-ACTIVE
+   - D_q -0.1108 CI [-0.1337,-0.0845] |mean| < 0.15, CI excludes 0
+   - D_m -0.8703 CI [-1.1820,-0.5771] |mean| >= 0.15, CI excludes 0
+   - D_m clears the band with a CI excluding 0: the refuting outcome. Stage-25's ATTRIBUTION-CARRIES carries an asterisk sized by 0.870 rating points.
+=== sitref_d_endpoint OK ===
+=== COLLECT -> out/ ===
+item-set-d blind key present at out/sitref_blind_key_d.json (absent from every record)
+-rw-rw-r-- 1 ubuntu ubuntu  50913 Aug 14 18:59 itemset-d_model-google-gemma-2-9b-it_stage-sitref-screen_variant-it_summary.json
+-rw-rw-r-- 1 ubuntu ubuntu   9375 Aug 14 18:59 run_detached.log
+-rw-rw-r-- 1 ubuntu ubuntu   1350 Aug 14 18:57 selftest_analyze_sitref.log
+-rw-rw-r-- 1 ubuntu ubuntu   3064 Aug 14 18:58 selftest_analyze_sitref_d.log
+-rw-rw-r-- 1 ubuntu ubuntu     15 Aug 14 18:56 selftest_provenance.log
+-rw-rw-r-- 1 ubuntu ubuntu    144 Aug 14 18:56 selftest_run_sitref.log
+-rw-rw-r-- 1 ubuntu ubuntu    332 Aug 14 18:56 selftest_sitref_stimuli.log
+-rw-rw-r-- 1 ubuntu ubuntu  28529 Aug 14 18:59 sitref-d-blind-table_stage-28.json
+-rw-rw-r-- 1 ubuntu ubuntu  28529 Aug 14 18:59 sitref-d-blind-table_stage-28_summary.json
+-rw-rw-r-- 1 ubuntu ubuntu   8456 Aug 14 18:59 sitref-d-endpoint_stage-29.json
+-rw-rw-r-- 1 ubuntu ubuntu   8456 Aug 14 18:59 sitref-d-endpoint_stage-29_summary.json
+-rw-rw-r-- 1 ubuntu ubuntu 154197 Aug 14 18:59 sitref-endpoint_stage-17.json
+-rw-rw-r-- 1 ubuntu ubuntu 154197 Aug 14 18:59 sitref-endpoint_stage-17_summary.json
+-rw-rw-r-- 1 ubuntu ubuntu    405 Aug 14 18:58 sitref_blind_key_d.json
+-rw-rw-r-- 1 ubuntu ubuntu   2429 Aug 14 18:58 sitref_d_battery.log
+-rw-rw-r-- 1 ubuntu ubuntu     76 Aug 14 18:58 sitref_d_blind.log
+-rw-rw-r-- 1 ubuntu ubuntu    321 Aug 14 18:59 sitref_d_endpoint.log
+-rw-rw-r-- 1 ubuntu ubuntu    794 Aug 14 18:59 sitref_d_run_summary.json
+-rw-rw-r-- 1 ubuntu ubuntu   2770 Aug 14 18:58 sitref_d_screen.log
+-rw-rw-r-- 1 ubuntu ubuntu      0 Aug 14 18:59 sitref_d_status.err
+=== EXIT CODES: selftest_provenance=0 selftest_sitref_stimuli=0 selftest_run_sitref=0 selftest_analyze_sitref=0 selftest_analyze_sitref_d=0 sitref_d_screen=0 sitref_d_battery=0 sitref_d_blind=0 sitref_d_endpoint=0 ===
+=== ALLDONE_SITREF_D OK ===

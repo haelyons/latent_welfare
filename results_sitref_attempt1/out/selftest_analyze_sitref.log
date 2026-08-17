@@ -1,0 +1,10 @@
+stage 1 (blind): 750 values, 1 cells -> sitref-blind-table_stage-16.json
+stage 2 (unblind): google/gemma-2-9b-it|it -> REFERENCE-SUPPORTED  [REF mean -1.000 CI -1.090..-0.910 (excludes 0); self-fail -1.000 CI -1.090..-0.910; other-fail +0.000 CI +0.000..+0.000; trait REF +0.000 CI +0.000..+0.000 -> within guard]
+stage 1 (blind): 750 values, 1 cells -> sitref-blind-table_stage-16.json
+stage 2 (unblind): google/gemma-2-9b-it|it -> NO-TRACKING  [REF mean +0.000 CI +0.000..+0.000 (includes 0); self-fail +0.000 CI +0.000..+0.000; other-fail +0.000 CI +0.000..+0.000; trait REF +0.000 CI +0.000..+0.000 -> within guard]
+stage 1 (blind): 750 values, 1 cells -> sitref-blind-table_stage-16.json
+stage 2 (unblind): google/gemma-2-9b-it|it -> INDETERMINATE  [REF mean -1.000 CI -1.090..-0.910 (excludes 0); self-fail -1.000 CI -1.090..-0.910; other-fail +0.000 CI +0.000..+0.000; trait REF -1.000 CI -1.090..-0.910 -> DISQUALIFIES reference; REFERENCE refuted by its own named refuting outcome (trait items move as much as state items); not MIMICRY either, whose rule needs REF null]
+stage 1 (blind): 750 values, 1 cells -> sitref-blind-table_stage-16.json
+stage 2 (unblind): google/gemma-2-9b-it|it -> SCREEN-FAILED  [T1-MB-wellbeing failed its NEUTRAL-PAD saturation screen; the primary endpoint is reported SCREEN-FAILED, not replaced]
+FAIL guard did not fire on Path.read_text of the key
+selftest: 1 FAILURES

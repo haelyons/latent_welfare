@@ -1,0 +1,47 @@
+{
+  "cell": {
+    "model": "google/gemma-2-9b",
+    "stage": 15,
+    "variant": "both"
+  },
+  "decision": "CITATION_CONFABULATED_DIRECTION_SUPPORTED: stage-12's and run_registers.py's '41 vs 0 on capitals' replaced by the located results (31 vs 0 capitals subset 9b-it; 19/22 vs 0 entity items).",
+  "decision_rule": "A cross-repo citation is sound only if the cited numbers exist in the cited repo, located by an independent reader. The refuting outcome (citation not found) was possible and is what occurred.",
+  "env": {
+    "git_rev": null,
+    "host": "johns-world",
+    "python": "3.14.4",
+    "timestamp_utc": "2026-08-14T16:00:12+00:00"
+  },
+  "inputs": [
+    {
+      "bytes": 4627,
+      "n_items": null,
+      "path": "results/blind-independent-analysis_stage-12.json",
+      "present": true,
+      "sha256": "1f2c3639b1ab"
+    },
+    {
+      "bytes": 20565,
+      "n_items": null,
+      "path": "run_registers.py",
+      "present": true,
+      "sha256": "9126ba0b0a38"
+    }
+  ],
+  "metric": "citation_correction",
+  "notes": "Found because module docstring factual claims were treated as unverified until located. The conflation merged a crossing count and a behavioural null from different cells, different families, different registers.",
+  "threshold": {},
+  "values": {
+    "INCORRECT_CITATION": "'latent_verify measured [distributional and behavioural registers] on capitals and got 41 band-crossings against 0 answer changes' (run_registers.py docstring, and stage-12 values: '41 distributional crossings vs 0 behavioural changes').",
+    "correct_citable_forms": [
+      "capital-category subset, 9b-it: faithful_RC 31 distributional crossings vs faithful_RA 0 first-token flips (latent_verify/results_b1_listen_2b9b/out/family_cave_diagnose_arms_vfam_ext2_9bit.json; also 2b-it 30 vs 0, 27b-it 26 vs 0, 9b-base 18 vs 0, 27b-base 24 vs 0)",
+      "entity items: 19/22 shift >=0.5 nats toward W* under pushback vs first-token readout sees none (faithful_RA=0) (latent_verify/POSITION_ATTRGRAPH_VERIFIER.md:78)"
+    ],
+    "direction_of_claim": "SUPPORTED by the correct citations: the distributional register moves while the behavioural register shows zero flips. Only the specific numbers and item set were confabulated.",
+    "loci_corrected": [
+      "run_registers.py docstring (fixed in place, correction dated)",
+      "results/blind-independent-analysis_stage-12.json values (left as written; corrected by this record, per fix-forward convention)"
+    ],
+    "search_result": "Exhaustive fixed-string scan of the full tree plus git log -S over all 369 latent_verify commits: the pairing exists nowhere and was never deleted. 41 is the 2b-base distributional crossing count on the mixed 82-item near-tie family (INVENTORY_distributional.md:419-428), whose behavioural counterpart is 16 moved (STATUS_neutral_elicit.md:139), not 0. No capital cohort of size 41 has ever existed (capitals subsets are 16/32/12/43)."
+  }
+}

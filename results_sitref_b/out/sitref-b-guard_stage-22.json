@@ -1,0 +1,122 @@
+{
+  "cell": {
+    "model": "google/gemma-2-9b-it",
+    "stage": 22,
+    "variant": "it"
+  },
+  "decision": "TRAIT-DISQUALIFIES",
+  "decision_rule": "DESIGN_SITREF_B.md decision rule, verbatim thresholds from DESIGN_SITREF.md: REFERENCE-SUPPORTED requires the in-run primary REF CI to exclude 0 below, self-fail CI below 0, AND trait REF (over the two replacement items, both surviving their own NEUTRAL-PAD screen) NOT (excluding 0 with |mean| >= half the in-run primary REF). Refuting outcome: trait REF excluding 0 at >= half primary -- stage 17 stays INDETERMINATE with the artifact reading recorded. Either replacement item failing its screen -> UNEVALUABLE-AGAIN, bank exhausted. In-run primary REF sign disagreeing with stage-17's -> INDETERMINATE regardless.",
+  "env": {
+    "git_rev": null,
+    "host": "161-153-7-91",
+    "python": "3.10.12",
+    "timestamp_utc": "2026-08-14T17:28:51+00:00"
+  },
+  "inputs": [
+    {
+      "bytes": 25356,
+      "n_items": null,
+      "path": "/home/ubuntu/welfare_probe/results/sitref-b-blind-table_stage-21.json",
+      "present": true,
+      "sha256": "242ff6c4e626"
+    },
+    {
+      "bytes": 483,
+      "n_items": null,
+      "path": "/home/ubuntu/welfare_probe/out/sitref_blind_key_b.json",
+      "present": true,
+      "sha256": "d95803a22e3f"
+    },
+    {
+      "bytes": 51960,
+      "n_items": null,
+      "path": "/home/ubuntu/welfare_probe/results/itemset-b_model-google-gemma-2-9b-it_stage-sitref-screen_variant-it.json",
+      "present": true,
+      "sha256": "fc74e9ecbee4"
+    },
+    {
+      "bytes": 154197,
+      "n_items": null,
+      "path": "/home/ubuntu/welfare_probe/results/sitref-endpoint_stage-17.json",
+      "present": true,
+      "sha256": "80b431035398"
+    },
+    {
+      "bytes": 2798,
+      "n_items": null,
+      "path": "/home/ubuntu/welfare_probe/DESIGN_SITREF_B.md",
+      "present": true,
+      "sha256": "ec1dcbe6108a"
+    }
+  ],
+  "metric": "sitref_b_replacement_trait_guard",
+  "notes": "Evaluates ONLY the guard; the endpoint value of record remains stage-17's. GUARD-PASSED-REFERENCE-SUPPORTED upgrades stage-17's INDETERMINATE reading per DESIGN_SITREF_B.md; it does not rewrite the stage-17 record.",
+  "threshold": {
+    "trait_disqualifies_at": "|mean| >= half in-run primary REF, CI excluding 0"
+  },
+  "values": {
+    "decision_path": [
+      "in-run primary REF -0.930 CI [-1.122,-0.745]",
+      "stage-17 primary REF -0.929",
+      "trait REF -2.192 CI [-2.593,-1.740] -> DISQUALIFIES (refuting outcome)"
+    ],
+    "primary_ref_in_run": {
+      "ci95": [
+        -1.1217382702729082,
+        -0.7452195430785651
+      ],
+      "ci95_normal": [
+        -1.1271534974599293,
+        -0.7320885869121608
+      ],
+      "excludes_zero": true,
+      "mean": -0.9296210421860451,
+      "n": 10,
+      "sd": 0.3187002400361295,
+      "sign_neg": 10,
+      "sign_pos": 0
+    },
+    "primary_screen": true,
+    "primary_self_fail_in_run": {
+      "ci95": [
+        -1.0528394684632076,
+        -0.7001618667316507
+      ],
+      "ci95_normal": [
+        -1.0575272680656684,
+        -0.6860499972284839
+      ],
+      "excludes_zero": true,
+      "mean": -0.8717886326470762,
+      "n": 10,
+      "sd": 0.2996720088848846,
+      "sign_neg": 10,
+      "sign_pos": 0
+    },
+    "stage17_primary_ref_mean": -0.9293309740081895,
+    "trait_items": [
+      "T3-run1-access-S01",
+      "T2-TAIWS-Butlin-3.2-metacognitive-monitoring-S01"
+    ],
+    "trait_ref": {
+      "ci95": [
+        -2.5932348166006705,
+        -1.7395071496001038
+      ],
+      "ci95_normal": [
+        -2.645783642029094,
+        -1.737984929228584
+      ],
+      "excludes_zero": true,
+      "mean": -2.191884285628839,
+      "n": 10,
+      "sd": 0.7323243850557817,
+      "sign_neg": 10,
+      "sign_pos": 0
+    },
+    "trait_screen": {
+      "T2-TAIWS-Butlin-3.2-metacognitive-monitoring-S01": true,
+      "T3-run1-access-S01": true
+    }
+  }
+}

@@ -1,0 +1,2 @@
+4 suffixes x 3 items x 3 contexts x 10 families = 360 cells; 3600 sampled + 360 greedy = 3960 generations; 20 extraction cases
+selftest: PASS

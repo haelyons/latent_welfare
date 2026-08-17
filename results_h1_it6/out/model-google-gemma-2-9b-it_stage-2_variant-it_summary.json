@@ -1,0 +1,89 @@
+{
+  "cell": {
+    "model": "google/gemma-2-9b-it",
+    "stage": 2,
+    "variant": "it"
+  },
+  "decision": "ABOVE_INPUT_ONLY",
+  "decision_rule": "best_auc - layer0_auc < 0.05 -> NOT_ABOVE_INPUT_ONLY (the probe has not been shown to read anything the embedding does not already carry); else ABOVE_INPUT_ONLY",
+  "env": {
+    "git_rev": null,
+    "host": "129-213-83-194",
+    "python": "3.10.12",
+    "timestamp_utc": "2026-08-13T23:50:02+00:00"
+  },
+  "inputs": [
+    {
+      "bytes": 17416,
+      "n_items": 432,
+      "path": "/home/ubuntu/welfare_probe/welfare_stimuli.py",
+      "present": true,
+      "sha256": "d98da3c40d8d"
+    },
+    {
+      "bytes": 85510,
+      "n_items": 138,
+      "path": "results/model-google-gemma-2-9b-it_stage-1_variant-it.json",
+      "present": true,
+      "sha256": "64e524d4cdeb"
+    }
+  ],
+  "metric": "probe_auc_by_layer",
+  "notes": "Layer 0 is the embedding output, i.e. the Singh/Linzen/Ravfogel input-only baseline on the same axis. Labels come from the stage-1 cell named in inputs; read the sweep, not the max.",
+  "threshold": {
+    "min_margin_over_input_only": 0.05
+  },
+  "values": {
+    "auc_by_layer": [
+      0.2670007158196135,
+      0.32927702219040805,
+      0.2856120257695061,
+      0.34073013600572655,
+      0.3471725125268432,
+      0.3693629205440229,
+      0.39656406585540444,
+      0.4180386542591267,
+      0.41088045812455254,
+      0.36148890479599144,
+      0.3364352183249821,
+      0.3228346456692913,
+      0.30708661417322836,
+      0.3536148890479599,
+      0.29563350035790986,
+      0.30565497494631355,
+      0.28274874731567645,
+      0.2211882605583393,
+      0.243378668575519,
+      0.2269148174659986,
+      0.23335719398711524,
+      0.3035075161059413,
+      0.4266284896206156,
+      0.3872584108804581,
+      0.341445955619184,
+      0.24910522548317826,
+      0.2605583392984968,
+      0.2963493199713672,
+      0.36220472440944884,
+      0.3672154617036507,
+      0.43593414459556196,
+      0.5010737294201861,
+      0.5311381531853973,
+      0.48031496062992124,
+      0.47673586256263417,
+      0.49391553328561205,
+      0.5089477451682176,
+      0.4982104509663565,
+      0.5025053686471009,
+      0.4860415175375805,
+      0.49606299212598426,
+      0.49033643521832504,
+      0.4710093056549749
+    ],
+    "best_auc": 0.5311381531853973,
+    "best_layer": 32,
+    "layer0_input_only": 0.2670007158196135,
+    "margin_over_input_only": 0.26413743736578377,
+    "n": 138,
+    "n_positive": 11
+  }
+}
