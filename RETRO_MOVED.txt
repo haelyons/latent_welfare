@@ -1,0 +1,1 @@
+The retro question-elicitation program moved to the private latent_skeptic_meta repo, experiments/elicitation/, 2026-08-25. Its conclusions remain published in latent_skeptic (heuristics); full retro history remains in this repo history.
