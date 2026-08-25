@@ -1,7 +1,0 @@
-# OS + editor cruft
-.DS_Store
-Thumbs.db
-
-# local run artifacts (triage output, logs)
-out/
-*.log
